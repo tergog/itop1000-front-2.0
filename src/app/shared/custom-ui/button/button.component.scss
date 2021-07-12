@@ -1,0 +1,31 @@
+@import "src/assets/scss/mixins";
+
+button.btn {
+  @include setFontParams($fontFamily, normal, bold, 18px);
+  text-align: center;
+  text-transform: uppercase;
+  color: $buttonColor;
+  background: $buttonBackground;
+  border: none;
+  cursor: pointer;
+  border-radius: 50px;
+
+  &__big {
+    @include setButtonSize(352px, 75px, 22px);
+  }
+
+  &__medium {
+    @include setButtonSize(214px, 55px, 16px);
+  }
+
+  &__small {
+    @include setButtonSize(141px, 38px, 14px);
+  }
+
+  &:hover {
+    background: $buttonHoverBackground;
+  }
+  &[disabled]{
+    background: $buttonDisabledBackground;
+  }
+}

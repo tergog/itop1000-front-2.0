@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ITOP1000-FRONT2';
+
+  buttonParameters = {
+    text: 'Discover Projects',
+    type: '',
+    view: 'big',
+    disabled: false
+  }
 }
