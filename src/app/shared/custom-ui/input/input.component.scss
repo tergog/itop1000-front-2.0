@@ -1,0 +1,52 @@
+@import "src/assets/scss/mixins";
+
+.form-item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 1px;
+  box-sizing: border-box;
+
+  .item-label {
+    width: 100%;
+
+    label {
+      color: $white;
+      @include setFontParams($fontFamily, 600, normal, 16px);
+      font-size: 12px;
+    }
+
+    margin-bottom: 7px;
+  }
+
+  .item-input {
+    width: 100%;
+    background: linear-gradient($pageBackground, $pageBackground) padding-box,
+    $borderGradient border-box;
+    border: 1px solid transparent;
+    border-radius: 50px;
+    max-width: 769px;
+
+    input {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 23px 28px;
+      border-radius: 50px;
+      border: none;
+      background: $inputBackground;
+      color: $white;
+      display: inline-block;
+    }
+
+    input::placeholder {
+      color: $placeholderColor;
+    }
+  }
+  .item-error{
+    color: $textError;
+    @include setFontParams($fontError, 300, normal, 30px);
+    font-size: 14px;
+  }
+
+
+}

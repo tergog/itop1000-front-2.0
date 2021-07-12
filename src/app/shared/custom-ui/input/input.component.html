@@ -1,0 +1,33 @@
+<div class="form-item">
+  <div class="item-label">
+    <label>{{ _inputParameters.label }}</label>
+  </div>
+  <div class="item-input">
+    <input *ngIf=" _inputParameters.type === EInputElementType.Email"
+           class=""
+           [type]="_inputParameters.type"
+           [placeholder]="_inputParameters.placeholder"
+           (input)="change($event)"
+           [value]="value"
+           [disabled]="disableState">
+
+    <input *ngIf=" _inputParameters.type === EInputElementType.Password"
+           class=""
+           [type]="_inputParameters.type"
+           [placeholder]="_inputParameters.placeholder"
+           (input)="change($event)"
+           [value]="value"
+           [disabled]="disableState">
+
+    <input *ngIf=" _inputParameters.type === EInputElementType.Text"
+           class=""
+           [type]="_inputParameters.type"
+           [placeholder]="_inputParameters.placeholder"
+           (input)="change($event)"
+           [value]="value"
+           [disabled]="disableState">
+  </div>
+  <div class="item-error">
+   {{ _inputParameters.error }}
+  </div>
+</div>

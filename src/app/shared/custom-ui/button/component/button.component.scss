@@ -44,6 +44,7 @@ button.btn {
   // button (login, sign up)
   &__login, &__sign-up {
     background: transparent;
+    font-weight: 400;
   }
 
   &__login {
@@ -75,7 +76,7 @@ a.link{
   &__sign-up{
     max-width: 214px;
     background:
-      linear-gradient($white,$white) padding-box,
+      linear-gradient($pageBackground,$pageBackground) padding-box,
       $borderGradient border-box;
     border: 1px solid transparent;
     border-radius: 50px;

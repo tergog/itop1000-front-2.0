@@ -2,21 +2,21 @@
         [type]="_buttonParameters.type"
         [disabled]="_buttonParameters.disabled"
         class="btn btn__big">
-  {{_buttonParameters.text}}
+  {{ _buttonParameters.text }}
 </button>
 
 <button *ngIf="_buttonParameters.view === EButtonView.Medium"
         [type]="_buttonParameters.type"
         [disabled]="_buttonParameters.disabled"
         class="btn btn__medium">
-  {{_buttonParameters.text}}
+  {{ _buttonParameters.text }}
 </button>
 
 <button *ngIf="_buttonParameters.view === EButtonView.Small"
         [type]="_buttonParameters.type"
         [disabled]="_buttonParameters.disabled"
         class="btn btn__small">
-  {{_buttonParameters.text}}
+  {{ _buttonParameters.text }}
 </button>
 
 <a *ngIf="_buttonParameters.view === EButtonView.Login"
@@ -26,7 +26,7 @@
           [type]="_buttonParameters.type"
           [disabled]="_buttonParameters.disabled"
           class="btn btn__login">
-    {{_buttonParameters.text}}
+    {{ _buttonParameters.text }}
   </button>
 </a>
 
@@ -37,6 +37,6 @@
     [type]="_buttonParameters.type"
     [disabled]="_buttonParameters.disabled"
     class="btn btn__sign-up">
-    {{_buttonParameters.text}}
+    {{ _buttonParameters.text }}
   </button>
 </a>
