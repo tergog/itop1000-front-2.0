@@ -1,16 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { ButtonComponent } from './button/button.component';
+import { ButtonModule } from './button/button.module';
 
 @NgModule({
-  declarations: [
-    ButtonComponent
-  ],
+  declarations: [],
   imports: [
-    CommonModule
+    CommonModule,
+    ButtonModule
   ],
-  exports: [ButtonComponent]
+  exports: [ButtonModule]
 })
 export class CustomUiModule {
 }

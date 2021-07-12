@@ -3,4 +3,5 @@ export interface IButtonParameters {
   text: string;
   view: string;
   disabled: boolean;
+  href?: string;
 }

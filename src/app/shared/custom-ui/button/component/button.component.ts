@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-import { EButtonView } from './button.enums';
-import { IButtonParameters } from './button.interfaces';
+import { EButtonView } from '../button.enums';
+import { IButtonParameters } from '../button.interfaces';
 
 @Component({
   selector: 'app-button',

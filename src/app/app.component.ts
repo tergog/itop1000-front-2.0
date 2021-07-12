@@ -8,10 +8,44 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'ITOP1000-FRONT2';
 
-  buttonParameters = {
-    text: 'Discover Projects',
-    type: '',
-    view: 'big',
-    disabled: false
-  }
+  objButtonParameters = {
+    big: {
+      text: 'Discover Projects',
+      type: '',
+      view: 'big',
+      disabled: false
+    },
+    medium: {
+      text: 'Next',
+      type: '',
+      view: 'medium',
+      disabled: false
+    },
+    disable: {
+      text: 'Save',
+      type: '',
+      view: 'medium',
+      disabled: true
+    },
+    small: {
+      text: 'Accept',
+      type: '',
+      view: 'small',
+      disabled: false
+    },
+    login: {
+      text: 'Login',
+      type: '',
+      view: 'login',
+      disabled: false,
+      href: ''
+    },
+    signUp: {
+      text: 'Sign Up',
+      type: '',
+      view: 'sign-up',
+      disabled: false,
+      href: ''
+    },
+  };
 }

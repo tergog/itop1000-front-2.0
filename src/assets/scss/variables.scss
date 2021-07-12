@@ -1,7 +1,19 @@
-$fontFamily: Raleway;
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap');
+
+$fontFamily: 'Raleway', sans-serif;
 
 // Buttons
 $buttonColor: #FFFFFF;
 $buttonBackground: #E81C3F;
 $buttonHoverBackground: #B91C37;
 $buttonDisabledBackground: #828282;
+
+// Link Buttons
+$borderGradient: linear-gradient(164.88deg, #E07504 41.53%, #E07504 41.54%, #FBDF15 79.69%, #FFFFFF 112.9%);
+
+// Text
+$textGradient: linear-gradient(164.88deg, #E07504 41.53%, #FBDF15 79.69%, #FFFFFF 112.9%);
+
+
+// Colors
+$white: #FFFFFF;
