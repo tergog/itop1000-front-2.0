@@ -19,22 +19,44 @@
     margin-bottom: 7px;
   }
 
-  .item-input {
+  .item-input, .item-textarea {
     width: 100%;
     background: linear-gradient($pageBackground, $pageBackground) padding-box,
     $borderGradient border-box;
     border: 1px solid transparent;
-    border-radius: 50px;
     max-width: 769px;
+    max-height: 103px;
+
+    textarea, input {
+      width: 100%;
+      color: $white;
+      background: $inputBackground;
+      box-sizing: border-box;
+      border: none;
+    }
+  }
+
+  .item-textarea {
+    border-radius: 10px;
+
+    textarea {
+      padding: 13px 22px;
+      border-radius: 10px;
+      height: 103px;
+      resize: none;
+    }
+
+    textarea::placeholder {
+      color: $placeholderColor;
+    }
+  }
+
+  .item-input {
+    border-radius: 50px;
 
     input {
-      width: 100%;
-      box-sizing: border-box;
       padding: 23px 28px;
       border-radius: 50px;
-      border: none;
-      background: $inputBackground;
-      color: $white;
       display: inline-block;
     }
 
@@ -42,11 +64,10 @@
       color: $placeholderColor;
     }
   }
-  .item-error{
+
+  .item-error {
     color: $textError;
     @include setFontParams($fontError, 300, normal, 30px);
     font-size: 14px;
   }
-
-
 }

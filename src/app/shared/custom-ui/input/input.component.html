@@ -2,7 +2,10 @@
   <div class="item-label">
     <label>{{ _inputParameters.label }}</label>
   </div>
-  <div class="item-input">
+  <div [ngClass]="{
+  'item-input': _inputParameters.type !== EInputElementType.TextArea,
+  'item-textarea': _inputParameters.type === EInputElementType.TextArea
+  }">
     <input *ngIf=" _inputParameters.type === EInputElementType.Email"
            class=""
            [type]="_inputParameters.type"
@@ -26,8 +29,17 @@
            (input)="change($event)"
            [value]="value"
            [disabled]="disableState">
+
+    <textarea *ngIf=" _inputParameters.type === EInputElementType.TextArea"
+              class=""
+              [placeholder]="_inputParameters.placeholder"
+              (input)="change($event)"
+              [value]="value"
+              [disabled]="disableState">
+    </textarea>
   </div>
+
   <div class="item-error">
-   {{ _inputParameters.error }}
+    {{ _inputParameters.error }}
   </div>
 </div>

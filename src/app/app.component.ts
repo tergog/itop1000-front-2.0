@@ -34,8 +34,8 @@ export class AppComponent {
       error: ''
     },
     textarea: {
-      placeholder: '',
-      type: '',
+      placeholder: 'Enter message',
+      type: 'textarea',
       label: 'Textarea',
       error: ''
     }
