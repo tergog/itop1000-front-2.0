@@ -4,4 +4,5 @@ export interface IPreviewCardParameters {
   name: string;
   surname?: string;
   rate?: number;
+  href: string;
 }

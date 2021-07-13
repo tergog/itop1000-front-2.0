@@ -29,12 +29,14 @@ export class AppComponent {
       img: 'ellipse.png',
       name: 'Name',
       surname: 'Surname',
-      rate: 40.00
+      rate: 40.00,
+      href: ''
     },
     productOwner: {
       role: 'product-owner',
       img: 'adobe.svg',
-      name: 'Project name'
+      name: 'Project name',
+      href: ''
     }
   };
 

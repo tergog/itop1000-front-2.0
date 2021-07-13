@@ -1,0 +1,5 @@
+<nav class="navigation">
+  <ul class="navigation-list">
+    <li *ngFor="let link of _navigationParameters" class="navigation-item"><a [routerLink]="[link.href]">{{ link.text }}</a></li>
+  </ul>
+</nav>

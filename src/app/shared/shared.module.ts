@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { CustomUiModule } from './custom-ui/custom-ui.module';
 import { HeaderModule } from './header/header.module';
 import { MaterialUiModule } from './material-ui/material-ui.module';
+import { NavigationModule } from './navigation/navigation.module';
 
 @NgModule({
   declarations: [],
@@ -10,12 +11,14 @@ import { MaterialUiModule } from './material-ui/material-ui.module';
     CommonModule,
     CustomUiModule,
     HeaderModule,
-    MaterialUiModule
+    MaterialUiModule,
+    NavigationModule
   ],
   exports: [
     CustomUiModule,
     HeaderModule,
-    MaterialUiModule
+    MaterialUiModule,
+    NavigationModule
   ]
 })
 export class SharedModule {

@@ -1,5 +1,9 @@
 @import "src/assets/scss/mixins";
 
+a{
+  text-decoration: none;
+}
+
 .preview-card {
   width: 232px;
   display: flex;
