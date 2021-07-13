@@ -1,0 +1,20 @@
+<div class="landing-guide">
+  <div class="landing-guide__title">
+    <h2>How <span>ITOP 1000</span> works</h2>
+  </div>
+  <div class="landing-guide__list">
+    <div *ngFor="let item of _landingGuideParameters; index as i" class="list-item">
+      <div class="headline">
+        <span>{{ i + 1 }}</span>
+      </div>
+      <div class="description">
+        <div class="description-title">
+          {{ item.title }}
+        </div>
+        <div class="description-subtitle">
+          {{ item.subtitle }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

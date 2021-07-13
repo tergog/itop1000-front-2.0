@@ -8,7 +8,15 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'ITOP1000-FRONT2';
 
-  objLogoParameters = {
+  public arrLandingGuideParameters = [
+    { title: 'Create a profile', subtitle: 'Sign up on our platform and create a detailed profile.' },
+    { title: 'Search For Projects', subtitle: 'Go through current projects and choose the one that suits your skill.\n' },
+    { title: 'Send an Offer\n', subtitle: 'Submit a well-crafted offer to stand a chance of winning the gig.' },
+    { title: 'Provide Quality Services', subtitle: 'Work on the project and deliver results within the deadline.' },
+    { title: 'Earn Your Money\n', subtitle: 'Work on the project and deliver results within the deadline.' },
+  ];
+
+  public objLogoParameters = {
     big: {
       view: 'big'
     },
@@ -23,7 +31,7 @@ export class AppComponent {
     }
   };
 
-  objPreviewCardParameters = {
+  public objPreviewCardParameters = {
     developer: {
       role: 'developer',
       img: 'ellipse.png',
@@ -40,7 +48,7 @@ export class AppComponent {
     }
   };
 
-  objInputParameters = {
+  public objInputParameters = {
     email: {
       placeholder: 'email@example.com',
       type: 'email',
@@ -73,7 +81,7 @@ export class AppComponent {
     }
   };
 
-  objButtonParameters = {
+  public objButtonParameters = {
     big: {
       text: 'Discover Projects',
       type: '',

@@ -4,9 +4,12 @@ import { CustomUiModule } from './custom-ui/custom-ui.module';
 import { HeaderModule } from './header/header.module';
 import { MaterialUiModule } from './material-ui/material-ui.module';
 import { NavigationModule } from './navigation/navigation.module';
+import { LandingGuideComponent } from './landing-guide/landing-guide.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    LandingGuideComponent
+  ],
   imports: [
     CommonModule,
     CustomUiModule,
@@ -18,7 +21,8 @@ import { NavigationModule } from './navigation/navigation.module';
     CustomUiModule,
     HeaderModule,
     MaterialUiModule,
-    NavigationModule
+    NavigationModule,
+    LandingGuideComponent
   ]
 })
 export class SharedModule {
