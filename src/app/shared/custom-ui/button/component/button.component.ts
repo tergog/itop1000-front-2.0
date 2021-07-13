@@ -9,8 +9,8 @@ import { IButtonParameters } from '../button.interfaces';
   styleUrls: ['./button.component.scss']
 })
 export class ButtonComponent implements OnInit {
-  EButtonView = EButtonView;
-  _buttonParameters: IButtonParameters;
+  public EButtonView = EButtonView;
+  public _buttonParameters: IButtonParameters;
   @Input() set buttonParameters(value: IButtonParameters) {
     this._buttonParameters = value;
   }

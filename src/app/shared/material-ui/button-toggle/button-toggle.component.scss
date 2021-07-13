@@ -1,0 +1,45 @@
+@import "src/assets/scss/mixins";
+
+.button-toggle {
+  padding-top: 67px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__element {
+    ::ng-deep {
+      mat-button-toggle-group mat-button-toggle:first-child {
+        border-radius: 9px 0px 0px 9px;
+      }
+
+      mat-button-toggle-group mat-button-toggle:last-child {
+        border-radius: 0px 9px 9px 0px;
+      }
+
+      mat-button-toggle {
+        color: $white;
+        @include setFontParams($fontFamily, 600, bold, 24px);
+        font-size: 24px;
+        width: 198px;
+        background: linear-gradient(180deg, #6A6363 48.48%, #413E3E 136.36%);
+      }
+
+      mat-button-toggle.mat-button-toggle-checked {
+        font-weight: 300;
+        background: rgb(40,37,37);
+        background: linear-gradient(180deg, rgba(40,37,37,1) 0%, rgba(59,56,56,1) 100%);
+      }
+    }
+  }
+
+  &__underline {
+    margin: 38.65px 0 20.65px 0;
+    width: 784px;
+    height: 1px;
+    background: $dimGray;
+  }
+}
+
+.button-toggle::after {
+  background: linear-gradient(184.44deg, #100E0E -37.17%, rgba(100, 97, 97, 0) 138.59%);
+}

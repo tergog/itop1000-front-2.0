@@ -1,0 +1,21 @@
+<div *ngIf="_previewCardParameters.role === EPreviewCardView.Developer" class="preview-card developer">
+  <div class="preview-card__img">
+    <img src="/assets/img/preview-card/ellipse.png" alt="preview-card">
+  </div>
+  <div class="preview-card__name">
+    <span>{{ _previewCardParameters.name }}</span>
+    <span>{{ _previewCardParameters.surname }}</span>
+  </div>
+  <div class="preview-card__rate">
+    <span>${{_previewCardParameters.rate}}/hr</span>
+  </div>
+</div>
+
+<div *ngIf="_previewCardParameters.role === EPreviewCardView.ProductOwner" class="preview-card owner">
+  <div class="preview-card__img">
+    <img src="/assets/img/preview-card/adobe.svg" alt="preview-card">
+  </div>
+  <div class="preview-card__name">
+    <span>{{ _previewCardParameters.name }}</span>
+  </div>
+</div>

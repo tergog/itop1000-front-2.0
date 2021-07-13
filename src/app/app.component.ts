@@ -8,6 +8,21 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'ITOP1000-FRONT2';
 
+  objPreviewCardParameters = {
+    developer: {
+      role: 'developer',
+      img: 'ellipse.png',
+      name: 'Name',
+      surname: 'Surname',
+      rate: 40.00
+    },
+    productOwner: {
+      role: 'product-owner',
+      img: 'adobe.svg',
+      name: 'Project name'
+    }
+  }
+
   objInputParameters = {
     email: {
       placeholder: 'email@example.com',

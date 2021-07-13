@@ -1,0 +1,69 @@
+@import "src/assets/scss/mixins";
+
+.preview-card {
+  width: 232px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: $white;
+  cursor: pointer;
+
+  &__img {
+    box-sizing: border-box;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 175px;
+    height: 175px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__name {
+    margin-top: 5px;
+    span {
+      display: block;
+      text-align: center;
+      text-transform: uppercase;
+      @include setFontParams($fontFamily, 500, normal, 36px);
+      font-size: 30px;
+    }
+  }
+}
+
+.developer{
+  height: 285px;
+  .preview-card__rate {
+    margin-top: 12px;
+
+    span {
+      @include setFontParams($fontError, 500, normal, 16px);
+      font-size: 20px;
+      background: $textGradient;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+}
+
+.owner{
+  height: 247px;
+  .preview-card__img {
+    border: 1px solid $white;
+  }
+  .preview-card__name {
+    span {
+      margin: 0 auto;
+      max-width: 90%;
+      word-wrap: break-word;
+    }
+  }
+}
+
+.preview-card:hover{
+    color: $textPreviewCardHover;
+}
+
+.preview-card:hover .preview-card__img{
+    border: 7px solid $borderPreviewCardHover;
+}

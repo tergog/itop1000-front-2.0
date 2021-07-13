@@ -1,0 +1,15 @@
+@import "src/assets/scss/variables";
+
+.arrow-down {
+
+}
+
+.arrow-down:hover {
+  svg g path {
+    fill: $brightGray;
+  }
+
+  svg circle {
+    stroke: $brightGray;
+  }
+}
