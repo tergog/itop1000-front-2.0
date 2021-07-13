@@ -7,6 +7,7 @@ import { ArrowDownComponent } from './arrow-down/arrow-down.component';
 import { LogoComponent } from './logo/logo.component';
 import { PreviewCardComponent } from './preview-card/preview-card.component';
 import { BenefitsCardComponent } from './benefits-card/benefits-card.component';
+import { ProjectCardComponent } from './project-card/project-card.component';
 
 @NgModule({
   declarations: [
@@ -14,13 +15,14 @@ import { BenefitsCardComponent } from './benefits-card/benefits-card.component';
     ArrowDownComponent,
     LogoComponent,
     PreviewCardComponent,
-    BenefitsCardComponent
+    BenefitsCardComponent,
+    ProjectCardComponent
   ],
   imports: [
     CommonModule,
     ButtonModule
   ],
-  exports: [ButtonModule, InputComponent, ArrowDownComponent, LogoComponent, PreviewCardComponent, BenefitsCardComponent]
+  exports: [ButtonModule, InputComponent, ArrowDownComponent, LogoComponent, PreviewCardComponent, BenefitsCardComponent, ProjectCardComponent]
 })
 export class CustomUiModule {
 }

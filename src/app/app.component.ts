@@ -54,6 +54,24 @@ export class AppComponent {
     }
   };
 
+  public objProjectCardParameters = {
+    productOwner: {
+      role: 'product-owner',
+      img: 'star.svg',
+      companyName: 'Company Name',
+      projectName: 'Project Name',
+      budget: 400.00,
+      href: ''
+    },
+    developer: {
+      role: 'developer',
+      img: 'star.svg',
+      companyName: 'Company Name',
+      date: 1626190691000,
+      href: ''
+    }
+  };
+
   public objInputParameters = {
     email: {
       placeholder: 'email@example.com',

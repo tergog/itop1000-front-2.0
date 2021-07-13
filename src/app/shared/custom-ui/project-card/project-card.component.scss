@@ -1,0 +1,66 @@
+@import "src/assets/scss/mixins";
+
+a {
+  text-decoration: none;
+}
+
+.project-card {
+  width: 344px;
+  height: 256px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: $projectCardBackground;
+  border-radius: 10px;
+  color: $white;
+  box-shadow: 0px 2px 4px $projectCardBoxShadow;
+
+  &__img {
+    border-radius: 50%;
+    background: linear-gradient($pageBackground, $pageBackground) padding-box,
+    $borderGradient border-box;
+    border: 1px solid transparent;
+    width: 90px;
+    height: 90px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.project-card:hover {
+  background: $projectCardHoverBackground;
+}
+
+.developer .project-card__company-name, .owner .project-card__project-name {
+  @include setFontParams($fontFamily, 500, normal, 24px);
+  font-size: 24px;
+  background: $textGradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  margin: 22px 0 7px 0;
+}
+
+.developer .project-card__date {
+  @include setFontParams($fontError, 300, normal, 16px);
+  font-size: 20px;
+  color: $gray;
+}
+
+.owner .project-card__company-name {
+  @include setFontParams($fontFamily, 300, normal, 24px);
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.owner .project-card__budget {
+  margin-top: 9px;
+  @include setFontParams($fontError, 400, normal, 16px);
+  font-size: 12px;
+  background: $textGradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
