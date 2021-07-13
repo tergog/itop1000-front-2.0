@@ -15,11 +15,24 @@ button.btn {
     border: none;
     border-radius: 50px;
   }
+  &__small{
+    font-size: 14px;
+  }
+  &__small-empty{
+    text-transform: uppercase;
+    background: transparent;
+    color: $buttonEmptyColor;
+    border: none;
+    font-size: 14px;
+  }
 
   &__big:hover,
   &__medium:hover,
   &__small:hover {
     background: $buttonHoverBackground;
+  }
+  &__small-empty:hover{
+    color: $buttonEmptyHoverColor;
   }
 
   &__big[disabled],
@@ -39,6 +52,10 @@ button.btn {
 
   &__small {
     @include setButtonSize(141px, 38px, 14px);
+  }
+
+  &__small-empty {
+    @include setButtonSize(100px, 38px, 14px);
   }
 
   // button (login, sign up)
@@ -65,29 +82,32 @@ button.btn {
 }
 
 // link
-a.link{
+a.link {
   box-sizing: border-box;
   text-decoration: none;
-  &__sign-up,&__login{
+
+  &__sign-up, &__login {
     display: inline-flex;
     justify-content: center;
     align-items: center;
   }
-  &__sign-up{
+
+  &__sign-up {
     max-width: 214px;
-    background:
-      linear-gradient($pageBackground,$pageBackground) padding-box,
-      $borderGradient border-box;
+    background: linear-gradient($pageBackground, $pageBackground) padding-box,
+    $borderGradient border-box;
     border: 1px solid transparent;
     border-radius: 50px;
   }
-  &__sign-up:hover{
+
+  &__sign-up:hover {
     border-width: 4px;
   }
-  &__login:hover{
+
+  &__login:hover {
     display: inline;
     text-decoration: none;
-    background-image: linear-gradient(transparent, transparent),linear-gradient(transparent, transparent),$textGradient;
+    background-image: linear-gradient(transparent, transparent), linear-gradient(transparent, transparent), $textGradient;
     background-repeat: no-repeat;
     background-position: 120%, 122%, 0 130%;
     background-size: 100% 6px;

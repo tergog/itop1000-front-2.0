@@ -3,5 +3,6 @@ export enum EButtonView {
   Medium = 'medium',
   Small = 'small',
   Login = 'login',
-  SignUp = 'sign-up'
+  SignUp = 'sign-up',
+  SmallEmpty = 'small-empty'
 }

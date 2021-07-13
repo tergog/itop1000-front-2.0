@@ -38,12 +38,6 @@ export class AppComponent {
       type: '',
       label: 'Textarea',
       error: ''
-    },
-    search: {
-      placeholder: '',
-      type: 'text',
-      label: 'Search',
-      error: ''
     }
   };
 
@@ -70,6 +64,12 @@ export class AppComponent {
       text: 'Accept',
       type: '',
       view: 'small',
+      disabled: false
+    },
+    smallEmpty: {
+      text: 'Decline',
+      type: '',
+      view: 'small-empty',
       disabled: false
     },
     login: {
