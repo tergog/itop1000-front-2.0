@@ -8,6 +8,21 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'ITOP1000-FRONT2';
 
+  objLogoParameters = {
+    big: {
+      view: 'big'
+    },
+    small: {
+      view: 'small'
+    },
+    empty: {
+      view: 'empty'
+    },
+    loader: {
+      view: 'loader'
+    }
+  };
+
   objPreviewCardParameters = {
     developer: {
       role: 'developer',
@@ -21,7 +36,7 @@ export class AppComponent {
       img: 'adobe.svg',
       name: 'Project name'
     }
-  }
+  };
 
   objInputParameters = {
     email: {
