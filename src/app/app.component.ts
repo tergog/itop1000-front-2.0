@@ -31,6 +31,12 @@ export class AppComponent {
     }
   };
 
+  public objBenefitsCardParameters = {
+      img: 'certificate.svg',
+      title: 'Certified pros',
+      subtitle: 'Entrust your project to experts with lots of experience in their given field.'
+  };
+
   public objPreviewCardParameters = {
     developer: {
       role: 'developer',
