@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { ButtonToggleComponent } from './button-toggle/button-toggle.component';
+import { SelectModule } from './select/select.module';
 
 @NgModule({
   declarations: [
@@ -9,10 +10,12 @@ import { ButtonToggleComponent } from './button-toggle/button-toggle.component';
   ],
   imports: [
     CommonModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    SelectModule
   ],
   exports: [
-    ButtonToggleComponent
+    ButtonToggleComponent,
+    SelectModule
   ]
 })
 export class MaterialUiModule {

@@ -1,0 +1,40 @@
+<div class="form-item">
+  <div class="item-label">
+    <label for="">{{ _selectParameters.label }}</label>
+  </div>
+  <div class="item-select">
+    <mat-accordion>
+      <mat-expansion-panel
+        #expansionPanel
+        (opened)="panelOpenState = true"
+        (closed)="panelOpenState = false"
+        [ngClass]="{
+        opened: panelOpenState,
+        closed: !panelOpenState
+      }">
+
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+
+            <span [ngClass]="{
+                  default: selectValue === defaultSelectValue,
+                  selected: selectValue !== defaultSelectValue
+            }">
+            {{ selectValue }}
+            </span>
+
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <p *ngFor="let option of _selectParameters.options"
+           class="select-option"
+           [attr.data-value]="option"
+           (click)="setSelectValue($event)">
+          {{ option }}
+        </p>
+
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+</div>
+

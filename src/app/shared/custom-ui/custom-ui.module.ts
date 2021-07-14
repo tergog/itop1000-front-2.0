@@ -22,7 +22,15 @@ import { ProjectCardComponent } from './project-card/project-card.component';
     CommonModule,
     ButtonModule
   ],
-  exports: [ButtonModule, InputComponent, ArrowDownComponent, LogoComponent, PreviewCardComponent, BenefitsCardComponent, ProjectCardComponent]
+  exports: [
+    ButtonModule,
+    InputComponent,
+    ArrowDownComponent,
+    LogoComponent,
+    PreviewCardComponent,
+    BenefitsCardComponent,
+    ProjectCardComponent
+  ]
 })
 export class CustomUiModule {
 }

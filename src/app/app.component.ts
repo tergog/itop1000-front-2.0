@@ -8,6 +8,23 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'ITOP1000-FRONT2';
 
+  public objSelectParameters = {
+    label: 'Category',
+    options: [
+      'Accounting & Consulting',
+      'Admin Support',
+      'Customer Service',
+      'Data science & Analytics',
+      'Design & Creative',
+      'Engineering & Architecture',
+      'IT & Networking',
+      'Legal',
+      'Sales & Marketing',
+      'Translation'
+    ],
+    defaultValue: 'Select the category'
+  };
+
   public arrLandingGuideParameters = [
     { title: 'Create a profile', subtitle: 'Sign up on our platform and create a detailed profile.' },
     { title: 'Search For Projects', subtitle: 'Go through current projects and choose the one that suits your skill.\n' },
@@ -32,9 +49,9 @@ export class AppComponent {
   };
 
   public objBenefitsCardParameters = {
-      img: 'certificate.svg',
-      title: 'Certified pros',
-      subtitle: 'Entrust your project to experts with lots of experience in their given field.'
+    img: 'certificate.svg',
+    title: 'Certified pros',
+    subtitle: 'Entrust your project to experts with lots of experience in their given field.'
   };
 
   public objPreviewCardParameters = {
