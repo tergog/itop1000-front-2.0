@@ -8,6 +8,11 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'ITOP1000-FRONT2';
 
+  public objCheckboxParameters = {
+    label: 'Accent Terms of Use and Privace',
+    errorMessage: 'Please, accept Terms of use and privace',
+  }
+
   public objSelectParameters = {
     label: 'Category',
     options: [
