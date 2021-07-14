@@ -5,6 +5,7 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { ButtonToggleComponent } from './button-toggle/button-toggle.component';
 import { SelectModule } from './select/select.module';
 import { CheckboxModule } from './checkbox/checkbox.module';
+import { RoleToggleModule } from './role-toggle/role-toggle.module';
 
 @NgModule({
   declarations: [
@@ -14,12 +15,14 @@ import { CheckboxModule } from './checkbox/checkbox.module';
     CommonModule,
     MatButtonToggleModule,
     SelectModule,
-    CheckboxModule
+    CheckboxModule,
+    RoleToggleModule
   ],
   exports: [
     ButtonToggleComponent,
     SelectModule,
-    CheckboxModule
+    CheckboxModule,
+    RoleToggleModule
   ]
 })
 export class MaterialUiModule {
