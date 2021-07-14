@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { MatIconModule } from '@angular/material/icon';
+import { RouterModule } from '@angular/router';
 
 import { ButtonModule } from './button/button.module';
 import { InputComponent } from './input/input.component';
@@ -11,7 +10,7 @@ import { PreviewCardComponent } from './preview-card/preview-card.component';
 import { BenefitsCardComponent } from './benefits-card/benefits-card.component';
 import { ProjectCardComponent } from './project-card/project-card.component';
 import { SocialListComponent } from './social-list/social-list.component';
-import { RouterModule } from '@angular/router';
+import { CustomTooltipModule } from './custom-tooltip/custom-tooltip.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +25,8 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     ButtonModule,
-    RouterModule
+    RouterModule,
+    CustomTooltipModule
   ],
   exports: [
     ButtonModule,
@@ -36,7 +36,8 @@ import { RouterModule } from '@angular/router';
     PreviewCardComponent,
     BenefitsCardComponent,
     ProjectCardComponent,
-    SocialListComponent
+    SocialListComponent,
+    CustomTooltipModule
   ]
 })
 export class CustomUiModule {

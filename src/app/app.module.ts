@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { OverlayModule } from '@angular/cdk/overlay';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,9 +17,11 @@ import { HeaderModule } from './shared/header/header.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     SharedModule,
-    HeaderModule
+    HeaderModule,
+    OverlayModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
