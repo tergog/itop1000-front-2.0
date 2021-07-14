@@ -8,6 +8,16 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'ITOP1000-FRONT2';
 
+  public arrSocialListParameters = [
+    { view: 'instagram', href: '' },
+    { view: 'google', href: '' },
+    { view: 'apple', href: '' },
+    { view: 'linkedin', href: '' },
+    { view: 'tiktok', href: '' },
+    { view: 'facebook', href: '' },
+    { view: 'facebook-empty', href: '' },
+  ];
+
   public objCheckboxParameters = {
     label: 'Accent Terms of Use and Privace',
     errorMessage: 'Please, accept Terms of use and privace',
