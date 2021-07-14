@@ -1,0 +1,98 @@
+@import "src/assets/scss/mixins";
+
+.role-toggle {
+  color: $white;
+
+  mat-radio-group {
+    display: flex;
+  }
+
+  mat-radio-group &__item:first-child {
+    margin-right: 12px;
+  }
+
+  &__item {
+    cursor: pointer;
+    width: 232px;
+    border-radius: 9px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 10px;
+    border: 1px solid $dimGray;
+
+    mat-radio-button {
+      align-self: flex-end;
+    }
+
+    .item-title h2 {
+      @include setFontParams($fontError, 500, normal, 30px);
+      font-size: 16px;
+      text-align: center;
+      text-transform: uppercase;
+      margin: 10px 0 0 0;
+    }
+
+    .item-description {
+      margin-bottom: 10px;
+
+      ul {
+        padding: 0;
+        margin: 0;
+      }
+
+      ul li {
+        color: $gray;
+        @include setFontParams($fontFamily, 400, normal, 16px);
+        font-size: 12px;
+      }
+    }
+  }
+
+  &__item.active {
+    border: 1px solid transparent;
+    background: linear-gradient($pageBackground, $pageBackground) padding-box,
+    $borderGradient border-box;
+
+    .item-title h2 {
+      background: $textGradient;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+}
+
+
+::ng-deep {
+  span.mat-radio-outer-circle {
+    border: 1px solid $dimGray;
+    width: 12px;
+    height: 12px;
+  }
+
+  mat-radio-button.mat-radio-checked {
+    span.mat-radio-outer-circle {
+      border: 1px solid transparent !important;
+    }
+
+    span.mat-radio-inner-circle {
+      background: $radioButtonGradient;
+      transform: none;
+      width: 12px;
+      height: 12px;
+    }
+  }
+
+  .mat-ripple-element {
+    display: none;
+    background: transparent !important;
+    transition: none;
+  }
+
+  .mat-radio-button.mat-accent .mat-radio-inner-circle,
+  .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple),
+  .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-persistent-ripple,
+  .mat-radio-button.mat-accent:active .mat-radio-persistent-ripple {
+    background-color: transparent;
+  }
+}

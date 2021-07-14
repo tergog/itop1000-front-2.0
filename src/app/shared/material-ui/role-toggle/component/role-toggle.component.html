@@ -1,6 +1,38 @@
 <div class="role-toggle">
-  <mat-radio-group aria-label="Select an option">
-    <mat-radio-button value="1">Option 1</mat-radio-button>
-    <mat-radio-button value="2">Option 2</mat-radio-button>
+  <mat-radio-group>
+
+    <div class="role-toggle__item"
+         [ngClass]="{active:  first.checked}"
+         (click)="first.checked = true">
+      <mat-radio-button value="1" #first checked></mat-radio-button>
+      <div class="item-title">
+        <h2>Product owner</h2>
+      </div>
+      <div class="item-description">
+        <ul>
+          <li>post your projects</li>
+          <li>search for the performers</li>
+          <li>control workflow</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="role-toggle__item"
+         [ngClass]="{active:  second.checked}"
+         (click)="second.checked = true">
+      <mat-radio-button value="2" #second></mat-radio-button>
+      <div class="item-title">
+      <h2>Performer</h2>
+    </div>
+      <div class="item-description">
+        <ul>
+          <li>fill your CV</li>
+          <li>interview with HR</li>
+          <li>find the projects</li>
+          <li>earn money</li>
+        </ul>
+      </div>
+    </div>
+
   </mat-radio-group>
 </div>
