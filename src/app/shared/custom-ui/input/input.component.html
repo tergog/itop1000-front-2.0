@@ -3,8 +3,8 @@
     <label>{{ _inputParameters.label }}</label>
   </div>
   <div [ngClass]="{
-  'item-input': _inputParameters.type !== EInputElementType.TextArea,
-  'item-textarea': _inputParameters.type === EInputElementType.TextArea
+        'item-input': _inputParameters.type !== EInputElementType.TextArea,
+        'item-textarea': _inputParameters.type === EInputElementType.TextArea
   }">
     <input *ngIf=" _inputParameters.type === EInputElementType.Email"
            class=""

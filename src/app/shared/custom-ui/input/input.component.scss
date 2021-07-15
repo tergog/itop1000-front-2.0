@@ -36,6 +36,11 @@
     }
   }
 
+  .item-input.focus, .item-textarea.focus {
+    background: none;
+    border: 1px solid blue;
+  }
+
   .item-textarea {
     border-radius: 10px;
 
