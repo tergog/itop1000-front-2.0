@@ -35,12 +35,18 @@ $ITOP1000-FRONT2-theme: mat-light-theme((
 
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  height: 100%;
+}
 body {
   margin: 0;
-  background: #171616;
   width: 100vw;
   height: 100vh;
+
+  background: #201F1F;
 }
 
 textarea:focus, input:focus{

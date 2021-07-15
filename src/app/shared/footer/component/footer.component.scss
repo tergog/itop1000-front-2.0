@@ -1,0 +1,67 @@
+@import "src/assets/scss/mixins";
+
+footer {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 62px;
+}
+
+footer::before {
+  content: '';
+  border-top: 5px solid $footerBorderTopColor;
+  margin-bottom: 115px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.footer-navigation, .footer-question {
+  .footer-navigation-list, .footer-question-list {
+    list-style-type: none;
+
+    .navigation-list-item a, .question-list-item a {
+      @include setFontParams($fontFamily, 300, normal, 40px);
+      font-size: 24px;
+      text-transform: uppercase;
+      color: $white;
+
+      span {
+        @include setFontParams($fontError, 300, normal, 40px);
+      }
+    }
+
+    .navigation-list-item a:hover, .question-list-item a:hover {
+      color: $footerListNavigationItemHoverColor;
+    }
+  }
+}
+
+.footer-social {
+  display: flex;
+
+  .social-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    app-navigation{
+      margin-top: 20px;
+    }
+  }
+}
+
+.footer-social::before {
+  content: '';
+  display: block;
+  border-left: 1px solid $footerBorderAfterColor;
+  margin-right: 50px;
+  height: 238px;
+}
+
+

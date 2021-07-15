@@ -1,1 +1,94 @@
-<p>landing works!</p>
+<app-header></app-header>
+
+<div class="container">
+
+  <section class="landing-fullscreen">
+
+    <app-button-toggle></app-button-toggle>
+
+    <h1 class="fullscreen-title">
+      {{ landingData.freelancer.fullscreen.title }}
+    </h1>
+    <h3 class="fullscreen-subtitle">
+      {{ landingData.freelancer.fullscreen.subtitle }}
+    </h3>
+
+    <app-button [buttonParameters]="landingData.freelancer.fullscreen.button"></app-button>
+
+    <app-arrow-down></app-arrow-down>
+
+  </section>
+
+  <section class="landing-benefits">
+    <h2 class="benefits-title">
+      {{ landingData.freelancer.benefits.title }}
+    </h2>
+
+    <div class="benefits-cards">
+      <div *ngFor="let card of landingData.freelancer.benefits.cards" class="cards-item">
+        <app-benefits-card [benefitsCardParameters]="card"></app-benefits-card>
+      </div>
+    </div>
+  </section>
+
+  <section class="landing-guide">
+    <app-landing-guide [landingGuideParameters]="landingData.freelancer.guide"></app-landing-guide>
+  </section>
+
+  <section class="landing-top">
+    <h2 class="top-title">
+      {{ landingData.freelancer.top.title }}
+    </h2>
+
+    <div class="top-cards">
+      <div *ngFor="let card of landingData.freelancer.top.cards" class="cards-item">
+        <app-preview-card [previewCardParameters]="card"></app-preview-card>
+      </div>
+    </div>
+
+    <div class="top-see-all">
+      <a [routerLink]="[landingData.freelancer.top.seeAllLink.href]">
+        {{ landingData.freelancer.top.seeAllLink.text }}
+      </a>
+    </div>
+  </section>
+
+  <section class="landing-top-project">
+    <h2 class="top-project-title">
+      {{ landingData.freelancer.topProject.title }}
+    </h2>
+
+    <div class="top-project-cards">
+      <div *ngFor="let card of landingData.freelancer.topProject.cards" class="cards-item">
+        <app-project-card [projectCardParameters]="card"></app-project-card>
+      </div>
+    </div>
+
+    <div class="top-project-see-all">
+      <a [routerLink]="[landingData.freelancer.topProject.seeAllLink.href]">
+        {{ landingData.freelancer.topProject.seeAllLink.text }}
+      </a>
+    </div>
+  </section>
+
+  <section class="landing-description">
+    <h3 class="description-title">
+      {{ landingData.freelancer.description.title }}
+    </h3>
+    <div class="description-body">
+      <div class="description-item" *ngFor="let item of landingData.freelancer.description.contentItems">
+        <div class="description-item-title">
+          {{ item.title }}
+        </div>
+        <div class="description-item-content">
+          {{ item.description }}
+        </div>
+      </div>
+    </div>
+
+    <app-button [buttonParameters]="landingData.freelancer.description.button"></app-button>
+  </section>
+
+</div>
+
+<app-footer></app-footer>

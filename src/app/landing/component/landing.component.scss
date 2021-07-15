@@ -1,0 +1,195 @@
+@import "src/assets/scss/mixins";
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.landing-fullscreen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 145px;
+
+  .fullscreen-title {
+    @include setFontParams($fontTitle, normal, 700, 75px);
+    font-size: 90px;
+    text-transform: uppercase;
+    text-align: center;
+    color: $titleTextColor;
+    margin-top: 52px;
+  }
+
+  .fullscreen-subtitle {
+    @include setFontParams($fontFamily, normal, 300, 75px);
+    font-size: 28px;
+    text-align: center;
+    color: $white;
+  }
+
+  app-button {
+    margin: 57px 0 95px 0;
+  }
+}
+
+.landing-benefits {
+  margin-bottom: 183px;
+
+  .benefits-title {
+    @include setFontParams($fontError, normal, 700, 40px);
+    font-size: 56px;
+    text-align: center;
+    text-transform: uppercase;
+    color: $white;
+    margin-bottom: 74px;
+
+    span {
+      color: $textSpanLandingTitleColor;
+    }
+  }
+
+  .benefits-cards {
+    display: flex;
+    flex-wrap: wrap;
+
+    .cards-item {
+      margin-top: 40px;
+      width: 33.333%;
+    }
+  }
+}
+
+.landing-guide {
+  margin-bottom: 183px;
+}
+
+.landing-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 183px;
+
+  .top-title {
+    @include setFontParams($fontError, normal, 700, 40px);
+    font-size: 56px;
+    text-align: center;
+    text-transform: uppercase;
+    color: $white;
+    margin-bottom: 74px;
+  }
+
+  .top-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .cards-item {
+      margin-top: 96px;
+      width: 25%;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .top-see-all {
+    cursor: pointer;
+    margin-top: 112px;
+
+    a {
+      color: $linkSeeAllColor;
+      text-decoration: underline;
+      @include setFontParams($fontError, normal, 500, 16px);
+      font-size: 20px;
+    }
+
+    a:hover {
+      color: $linkSeeAllHoverColor;
+    }
+  }
+}
+
+.landing-top-project {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 78px;
+
+  .top-project-title {
+    @include setFontParams($fontError, normal, 700, 40px);
+    font-size: 56px;
+    text-align: center;
+    text-transform: uppercase;
+    color: $white;
+  }
+
+  .top-project-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+
+    .cards-item {
+      margin-top: 105px;
+      width: 25%;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .top-project-see-all {
+    cursor: pointer;
+    margin-top: 112px;
+
+    a {
+      color: $linkSeeAllColor;
+      text-decoration: underline;
+      @include setFontParams($fontError, normal, 500, 16px);
+      font-size: 20px;
+    }
+
+    a:hover {
+      color: $linkSeeAllHoverColor;
+    }
+  }
+}
+
+.landing-description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: $white;
+  margin-bottom: 81px;;
+
+  .description-title {
+    @include setFontParams($fontError, normal, 600, 55px);
+    font-size: 44px;
+    text-align: center;
+    margin-bottom: 64px;
+  }
+
+  .description-body {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 81px;
+
+    .description-item {
+      max-width: 489px;
+    }
+
+    .description-item-title {
+      @include setFontParams($fontFamily, normal, 500, 24px);
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .description-item-content {
+      @include setFontParams($fontFamily, normal, 300, 24px);
+      font-size: 20px;
+    }
+
+  }
+}
