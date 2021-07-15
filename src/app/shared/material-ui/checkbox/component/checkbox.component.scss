@@ -1,0 +1,46 @@
+@import "src/assets/scss/mixins";
+
+::ng-deep {
+  mat-checkbox {
+    .mat-checkbox-frame {
+      background: $white;
+      border: none;
+    }
+  }
+
+  .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background, .mat-checkbox-checked.mat-accent .mat-checkbox-background {
+    background-color: $white !important;
+  }
+
+  mat-checkbox.mat-checkbox-checked {
+    svg.mat-checkbox-checkmark path {
+      stroke: $checkmarkColor !important;
+    }
+  }
+
+  div.mat-ripple-element {
+    display: none !important;
+  }
+
+  .mat-checkbox-label {
+    color: $white;
+    @include setFontParams($fontFamily, 500, normal, 16px);
+    font-size: 14px;
+  }
+}
+
+.checkbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  &__error {
+    margin-left: 24px;
+    margin-top: -5px;
+    color: $textError;
+    @include setFontParams($fontError, 300, normal, 30px);
+    font-size: 12px;
+  }
+}
+
+

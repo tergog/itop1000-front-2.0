@@ -36,4 +36,30 @@ $ITOP1000-FRONT2-theme: mat-light-theme((
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+  margin: 0;
+  background: #171616;
+  width: 100vw;
+  height: 100vh;
+}
+
+textarea:focus, input:focus{
+  outline: none;
+}
+
+a{
+  outline: none;
+  text-decoration: none;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+a:visited,
+a:hover,
+a:focus,
+a:active {
+  outline: none;
+  text-decoration: none;
+}

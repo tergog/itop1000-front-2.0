@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;700&display=swap');
+
+$fontFamily: 'Raleway', sans-serif;
+$fontError: 'Work Sans', sans-serif;;
+
+// Page
+$pageBackground: #171616;
+
+// Buttons
+$buttonColor: #FFFFFF;
+$buttonEmptyColor: #F31D42;
+$buttonBackground: #E81C3F;
+$buttonHoverBackground: #B91C37;
+$buttonEmptyHoverColor: #B91C37;
+$buttonDisabledBackground: #828282;
+
+// Link Buttons
+$borderGradient: linear-gradient(164.88deg, #E07504 41.53%, #E07504 41.54%, #FBDF15 79.69%, #FFFFFF 112.9%);
+
+// Text
+$textGradient: linear-gradient(164.88deg, #E07504 41.53%, #FBDF15 79.69%, #FFFFFF 112.9%);
+$textError: #FF0707;
+$textSpanLandingGuideColor: #F31D42;
+
+// Role toggle
+$radioButtonGradient: linear-gradient(164.88deg, #E07504 41.53%, #E07504 41.54%, #FBDF15 79.69%, #FFFFFF 112.9%);
+$roleToggleBackgroundColor: #242424F2;
+
+// Social Icon
+$socialIconHover: #F1D261;
+
+// Preview Card
+$textPreviewCardHover: #F31D42;
+$borderPreviewCardHover: #F31D42;
+
+// Project Card
+$projectCardBoxShadow: #000000;
+$projectCardBackground: #1E1D1D;
+$projectCardHoverBackground: #101010;
+
+// Colors
+$white: #FFFFFF;
+$brightGray: #EFEFEF;
+$dimGray: #696969;
+$gray: #848484;
+
+// Selects
+$textSelectOptionHover: #F31D42;
+$selectArrowDownColor: #F31D42;
+
+//Checkbox
+$checkmarkColor: #000000;
+
+// Inputs
+$inputBackground: #2D2C2C;
+$placeholderColor: #848484;
+
+// Header
+$headerBackground: #0E0E0E;
+$navigationListAfterColor: #F31D42;
+

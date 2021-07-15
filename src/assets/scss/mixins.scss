@@ -1,0 +1,14 @@
+@import "variables";
+
+@mixin setFontParams($fontFamily, $fontStyle, $fontWeight, $lineHeight) {
+  font-family: $fontFamily;
+  font-style: $fontStyle;
+  font-weight: $fontWeight;
+  line-height: $lineHeight;
+}
+
+@mixin setButtonSize($width, $height, $fontSize) {
+  width: $width;
+  height: $height;
+  font-size: $fontSize;
+}

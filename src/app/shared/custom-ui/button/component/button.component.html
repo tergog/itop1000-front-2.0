@@ -1,0 +1,49 @@
+<button *ngIf="_buttonParameters.view === EButtonView.Big"
+        [type]="_buttonParameters.type"
+        [disabled]="_buttonParameters.disabled"
+        class="btn btn__big">
+  {{ _buttonParameters.text }}
+</button>
+
+<button *ngIf="_buttonParameters.view === EButtonView.Medium"
+        [type]="_buttonParameters.type"
+        [disabled]="_buttonParameters.disabled"
+        class="btn btn__medium">
+  {{ _buttonParameters.text }}
+</button>
+
+<button *ngIf="_buttonParameters.view === EButtonView.Small"
+        [type]="_buttonParameters.type"
+        [disabled]="_buttonParameters.disabled"
+        class="btn btn__small">
+  {{ _buttonParameters.text }}
+</button>
+
+<button *ngIf="_buttonParameters.view === EButtonView.SmallEmpty"
+        [type]="_buttonParameters.type"
+        [disabled]="_buttonParameters.disabled"
+        class="btn btn__small-empty">
+  {{ _buttonParameters.text }}
+</button>
+
+<a *ngIf="_buttonParameters.view === EButtonView.Login"
+   [routerLink]="[_buttonParameters.href]"
+   class="link link__login">
+  <button
+          [type]="_buttonParameters.type"
+          [disabled]="_buttonParameters.disabled"
+          class="btn btn__login">
+    {{ _buttonParameters.text }}
+  </button>
+</a>
+
+<a *ngIf="_buttonParameters.view === EButtonView.SignUp"
+   [routerLink]="[_buttonParameters.href]"
+   class="link link__sign-up">
+  <button
+    [type]="_buttonParameters.type"
+    [disabled]="_buttonParameters.disabled"
+    class="btn btn__sign-up">
+    {{ _buttonParameters.text }}
+  </button>
+</a>

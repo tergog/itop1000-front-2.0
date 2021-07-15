@@ -1,0 +1,68 @@
+@import "src/assets/scss/mixins";
+
+.landing-guide {
+  margin: 0 auto;
+  color: $white;
+  width: 1038px;
+  max-width: 1038px;
+
+  &__title {
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 114px;
+
+    span {
+      color: $textSpanLandingGuideColor;
+    }
+  }
+
+  ::ng-deep h2 {
+    @include setFontParams($fontError, 700, bold, 50px);
+    font-size: 56px;
+  }
+
+  &__list {
+    width: 100%;
+
+    .list-item {
+      display: flex;
+      width: 100%;
+      justify-content: flex-start;
+      align-items: center;
+      margin-bottom: 48px;
+    }
+    .list-item:last-child{
+      margin-bottom: 0;
+    }
+
+    .list-item .headline {
+      border-radius: 50%;
+      background: $buttonBackground;
+      width: 83px;
+      height: 83px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      span {
+        color: $white;
+        @include setFontParams($fontFamily, 700, bold, 40px);
+        font-size: 44px;
+      }
+    }
+
+    .list-item .description {
+      margin-left: 19px;
+      .description-title {
+        @include setFontParams($fontError, 400, normal, 40px);
+        font-size: 36px;
+      }
+
+      .description-subtitle {
+        @include setFontParams($fontError, 300, normal, 40px);
+        font-size: 28px;
+        color: $gray;
+      }
+    }
+  }
+}

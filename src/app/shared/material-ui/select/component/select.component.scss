@@ -1,0 +1,92 @@
+@import "src/assets/scss/mixins";
+
+.form-item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 1px;
+  box-sizing: border-box;
+
+  .item-label {
+    width: 100%;
+
+    label {
+      color: $white;
+      @include setFontParams($fontFamily, 600, normal, 16px);
+      font-size: 16px;
+    }
+
+    margin-bottom: 7px;
+  }
+
+  .item-select {
+    width: 100%;
+  }
+
+  .select-option {
+    @include setFontParams($fontFamily, 400, normal, 16px);
+    font-size: 16px;
+    color: $white;
+    cursor: pointer;
+    margin: 16px 0;
+  }
+
+  .select-option:first-child {
+    margin: 0 0 16px 0;
+  }
+
+  .select-option:last-child {
+    margin: 16px 0 0 0;
+  }
+
+  .select-option:hover {
+    @include setFontParams($fontFamily, 700, bold, 16px);
+    color: $textSelectOptionHover;
+  }
+
+  ::ng-deep mat-accordion {
+    mat-panel-title {
+      span {
+        @include setFontParams($fontFamily, 400, normal, 16px);
+      }
+
+      span.default {
+        color: $gray;
+      }
+
+      span.selected {
+        color: $white;
+      }
+    }
+
+    mat-expansion-panel {
+      width: 100%;
+      max-width: 769px;
+      background: linear-gradient($pageBackground, $pageBackground) padding-box,
+      $borderGradient border-box;
+      border: 1px solid transparent;
+    }
+
+    mat-expansion-panel.closed {
+      border-radius: 55px !important;
+      transition: 1s all ease;
+    }
+
+    mat-expansion-panel.opened {
+      border-radius: 17px !important;
+    }
+
+    .mat-expansion-panel:not(.mat-expanded):not([aria-disabled=true]) .mat-expansion-panel-header:hover {
+      background: $inputBackground;
+    }
+
+    span.mat-expansion-indicator::after {
+      content: '';
+      border: none;
+      height: 12.5px;
+      width: 23px;
+      background: url("/assets/img/arrow-down-select.svg") center center no-repeat;
+      transform: rotate(0);
+    }
+  }
+}

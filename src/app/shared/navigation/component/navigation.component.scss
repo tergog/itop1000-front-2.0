@@ -1,0 +1,47 @@
+@import "src/assets/scss/mixins";
+
+.navigation {
+  .navigation-list {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+
+    .navigation-item {
+      @include setFontParams($fontFamily, 300, normal, 18px);
+      font-size: 24px;
+
+      a {
+        color: $white;
+      }
+    }
+
+    .navigation-item::after {
+      content: '';
+      margin: 0 19px;
+      border-right: 1px solid $navigationListAfterColor;
+    }
+
+    .navigation-item:last-child::after {
+      content: '';
+      border: none;
+      margin: 0;
+    }
+
+    .navigation-item:hover {
+      a {
+        background: $textGradient;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+
+    .navigation-item.active-route {
+      a {
+        background: $textGradient;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+.logo-container {
+  display: inline-flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.logo-container.small:hover .logo-image,
+.logo-container.big:hover .logo-image,
+.logo-container.loader .logo-image {
+  animation: 3s linear 0s normal none infinite running rotation;
+  -webkit-animation: 3s linear 0s normal none infinite running rotation;
+}
+
+@keyframes rotation {
+  from {
+    -webkit-transform: rotateX(0);
+    -moz-transform: rotateX(0);
+    transform: rotateX(0);
+  }
+
+  to {
+    -webkit-transform: rotateY(360deg);
+    -moz-transform: rotateY(360deg);
+    transform: rotateY(360deg);
+  }
+}
