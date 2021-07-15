@@ -19,14 +19,14 @@ export class HeaderComponent implements OnInit {
       type: '',
       view: 'login',
       disabled: false,
-      href: ''
+      href: 'authorization'
     },
     signUp: {
       text: 'Sign Up',
       type: '',
       view: 'sign-up',
       disabled: false,
-      href: ''
+      href: 'authorization'
     },
   };
 
