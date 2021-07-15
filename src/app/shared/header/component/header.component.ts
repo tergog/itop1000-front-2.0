@@ -30,13 +30,17 @@ export class HeaderComponent implements OnInit {
     },
   };
 
-  public arrNavigationParameters = [
-    { text: 'Projects', href: 'projects' },
-    { text: 'Chat', href: 'chat' },
-    { text: 'Support / FAQ', href: 'support' }
-  ];
+  public objNavigationParameters = {
+    view: 'header',
+    links: [
+      { text: 'Projects', href: 'projects' },
+      { text: 'Chat', href: 'chat' },
+      { text: 'Support / FAQ', href: 'support' }
+    ]
+  };
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

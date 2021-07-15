@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+
 import { INavigationParameters } from '../navigation.interfaces';
+import { ENavigationView } from '../navigation.enums';
 
 @Component({
   selector: 'app-navigation',
@@ -7,12 +9,13 @@ import { INavigationParameters } from '../navigation.interfaces';
   styleUrls: ['./navigation.component.scss']
 })
 export class NavigationComponent implements OnInit {
-  public _navigationParameters: INavigationParameters[];
-  @Input() set navigationParameters(value: INavigationParameters[]) {
+  public ENavigationView = ENavigationView;
+  public _navigationParameters: INavigationParameters;
+  @Input() set navigationParameters(value: INavigationParameters) {
     this._navigationParameters = value;
   }
 
-  get navigationParameters(): INavigationParameters[] {
+  get navigationParameters(): INavigationParameters {
     return this._navigationParameters;
   }
 

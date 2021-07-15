@@ -27,7 +27,11 @@
       border: none;
       margin: 0;
     }
+  }
+}
 
+.header {
+  .navigation-list {
     .navigation-item:hover {
       a {
         background: $textGradient;
@@ -41,6 +45,22 @@
         background: $textGradient;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+      }
+    }
+  }
+}
+
+.footer {
+  .navigation-list {
+    .navigation-item:hover {
+      a {
+        color: $footerListNavigationItemHoverColor;
+      }
+    }
+
+    .navigation-item.active-route {
+      a {
+        color: $footerListNavigationItemHoverColor;
       }
     }
   }

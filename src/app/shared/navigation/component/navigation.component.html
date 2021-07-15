@@ -1,5 +1,11 @@
-<nav class="navigation">
+<nav *ngIf="_navigationParameters.view === ENavigationView.Header" class="navigation header">
   <ul class="navigation-list">
-    <li *ngFor="let link of _navigationParameters" class="navigation-item"><a [routerLink]="[link.href]">{{ link.text }}</a></li>
+    <li *ngFor="let link of _navigationParameters.links" class="navigation-item"><a [routerLink]="[link.href]">{{ link.text }}</a></li>
+  </ul>
+</nav>
+
+<nav *ngIf="_navigationParameters.view === ENavigationView.Footer" class="navigation footer">
+  <ul class="navigation-list">
+    <li *ngFor="let link of _navigationParameters.links" class="navigation-item"><a [routerLink]="[link.href]">{{ link.text }}</a></li>
   </ul>
 </nav>

@@ -8,6 +8,7 @@
 
 .logo-container.small:hover .logo-image,
 .logo-container.big:hover .logo-image,
+.logo-container.medium:hover .logo-image,
 .logo-container.loader .logo-image {
   animation: 3s linear 0s normal none infinite running rotation;
   -webkit-animation: 3s linear 0s normal none infinite running rotation;

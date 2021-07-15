@@ -9,7 +9,7 @@ export class FooterComponent implements OnInit {
 
   public footerObjectParameters = {
     logo: {
-      view: 'small'
+      view: 'medium'
     },
     socialList: [
       { view: 'facebook', href: '' },
@@ -17,10 +17,13 @@ export class FooterComponent implements OnInit {
       { view: 'instagram', href: '' },
       { view: 'tiktok', href: '' }
     ],
-    navigationList: [
-      { text: 'Client', href: 'client' },
-      { text: 'Freelancer', href: 'freelance' },
-    ]
+    navigationList: {
+      view: 'footer',
+      links: [
+        { text: 'Client', href: 'client' },
+        { text: 'Freelancer', href: 'freelance' }
+      ]
+    }
   };
 
   constructor() {

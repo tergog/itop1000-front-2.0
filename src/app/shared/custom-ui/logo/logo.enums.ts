@@ -2,5 +2,6 @@ export enum ELogoView {
   Big = 'big',
   Small = 'small',
   Loader = 'loader',
-  Empty = 'empty'
+  Empty = 'empty',
+  Medium = 'medium'
 }

@@ -17,6 +17,15 @@
     </div>
   </div>
 
+  <div *ngIf="_logoParameters.view === ELogoView.Medium" class="logo-container medium">
+    <div class="logo-image">
+      <img src="/assets/img/medium-logo-img.svg" alt="header-logo-img">
+    </div>
+    <div class="logo-title">
+      <img src="/assets/img/medium-logo-title.svg" alt="header-logo-title">
+    </div>
+  </div>
+
   <div *ngIf="_logoParameters.view === ELogoView.Empty" class="logo-container empty">
     <div class="logo-image">
       <img src="/assets/img/medium-logo-img.svg" alt="medium-logo-img">
