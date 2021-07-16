@@ -24,4 +24,8 @@ export class LogoComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  rotate(event: any): void{
+    event.target.classList.add('rotate');
+  }
+
 }

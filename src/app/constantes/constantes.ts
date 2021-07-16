@@ -1,6 +1,8 @@
+import { ELandingRole } from '../landing/landing.enums';
+
 export const CLandingData = {
-  productOwner: {
-    role: 'product-owner',
+[ELandingRole.ProductOwner] : {
+    role: ELandingRole.ProductOwner,
     fullscreen: {
       title: 'Find world-class companies with exiSting projects',
       subtitle: 'Convert your special skills into money instantly',
@@ -83,8 +85,8 @@ export const CLandingData = {
       }
     }
   },
-  freelancer: {
-    role: 'freelancer',
+  [ELandingRole.Freelancer]: {
+    role: ELandingRole.Freelancer,
     fullscreen: {
       title: 'Find top-level freelance developers for your project',
       subtitle: 'Hire certified developers with years of experience in the tech world',
@@ -165,7 +167,7 @@ export const CLandingData = {
       }
     },
     description: {
-      title: 'ITOP1000 – ITOP1000 is an amazing user-friendly platform for freelance developers and clients:',
+      title: 'ITOP1000 is an amazing user-friendly platform for freelance developers and clients:',
       contentItems: [
         { title: 'For Employers: ', description: 'You gain access to the best freelance developers in the industry. All you need is to post a project, and our team will match you with the best-fitted talent to complete your project. Monitor your project status on our platform and communicate with the writer throughout the duration of the project. You can also pay with your preferred payment option, and the freelancer will only get paid once you accept the final task.' },
         { title: 'For Freelancers:', description: 'Create an account and upload your qualifications. Our team will verify your credentials, and you can start accepting gigs. Earn money by working with world-renowned companies. Boost your portfolio and reputation in the industry. ' }

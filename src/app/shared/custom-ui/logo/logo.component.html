@@ -8,7 +8,7 @@
     </div>
   </div>
 
-  <div *ngIf="_logoParameters.view === ELogoView.Small" class="logo-container small">
+  <div *ngIf="_logoParameters.view === ELogoView.Small" class="logo-container small" (mouseleave)="rotate($event)">
     <div class="logo-image">
       <img src="/assets/img/small-logo-img.svg" alt="header-logo-img">
     </div>

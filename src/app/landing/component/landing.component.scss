@@ -168,6 +168,10 @@
     font-size: 44px;
     text-align: center;
     margin-bottom: 64px;
+
+    span {
+      color: $textSpanLandingTitleColor;
+    }
   }
 
   .description-body {
