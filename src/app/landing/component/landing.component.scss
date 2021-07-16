@@ -102,10 +102,12 @@
       text-decoration: underline;
       @include setFontParams($fontError, normal, 500, 16px);
       font-size: 20px;
+      transition: 0.5s all ease;
     }
 
     a:hover {
       color: $linkSeeAllHoverColor;
+      transition: 0.5s all ease;
     }
   }
 }
@@ -148,10 +150,12 @@
       text-decoration: underline;
       @include setFontParams($fontError, normal, 500, 16px);
       font-size: 20px;
+      transition: 0.5s all ease;
     }
 
     a:hover {
       color: $linkSeeAllHoverColor;
+      transition: 0.5s all ease;
     }
   }
 }

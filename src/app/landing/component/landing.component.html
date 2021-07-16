@@ -6,7 +6,7 @@
 
     <app-button-toggle></app-button-toggle>
 
-    <h1 class="fullscreen-title">
+    <h1 [@animateText]="'start'" class="fullscreen-title">
       {{ (landingData$ | ngrxPush).fullscreen.title }}
     </h1>
     <h3 class="fullscreen-subtitle">

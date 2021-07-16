@@ -4,6 +4,7 @@ button.btn {
   @include setFontParams($fontFamily, 500, bold, 18px);
   text-align: center;
   cursor: pointer;
+  transition: 0.5s all ease;
 
   // standart
   &__big,
@@ -15,10 +16,12 @@ button.btn {
     border: none;
     border-radius: 50px;
   }
-  &__small{
+
+  &__small {
     font-size: 14px;
   }
-  &__small-empty{
+
+  &__small-empty {
     text-transform: uppercase;
     background: transparent;
     color: $buttonEmptyColor;
@@ -31,7 +34,8 @@ button.btn {
   &__small:hover {
     background: $buttonHoverBackground;
   }
-  &__small-empty:hover{
+
+  &__small-empty:hover {
     color: $buttonEmptyHoverColor;
   }
 
@@ -85,6 +89,7 @@ button.btn {
 a.link {
   box-sizing: border-box;
   text-decoration: none;
+  transition: 0.3s all ease;
 
   &__sign-up, &__login {
     display: inline-flex;
@@ -94,14 +99,25 @@ a.link {
 
   &__sign-up {
     max-width: 214px;
-    background: linear-gradient($pageBackground, $pageBackground) padding-box,
-    $borderGradient border-box;
-    border: 1px solid transparent;
+    //background: linear-gradient($pageBackground, $pageBackground) padding-box,
+    //$borderGradient border-box;
+    //border: 1px solid transparent;
+    box-shadow: inset 0 0 0 1px #E07504,
+                inset 0 0 0 1px #E07504,
+                inset 0 0 0 1px #FBDF15,
+                inset 0 0 0 1px #FFFFFF;
     border-radius: 50px;
+    transition: 0.5s all ease;
   }
 
   &__sign-up:hover {
-    border-width: 4px;
+    //border-width: 4px;
+
+    transition: 0.5s all ease;
+    box-shadow: inset 0 0 0 4px #E07504,
+                inset 0 0 0 4px #E07504,
+                inset 0 0 0 4px #FBDF15,
+                inset 0 0 0 4px #FFFFFF;
   }
 
   &__login:hover {

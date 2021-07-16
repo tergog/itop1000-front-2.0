@@ -1,6 +1,6 @@
 @import "src/assets/scss/mixins";
 
-a{
+a {
   text-decoration: none;
 }
 
@@ -11,9 +11,9 @@ a{
   align-items: center;
   color: $white;
   cursor: pointer;
+  transition: 0.5s all ease;
 
   &__img {
-    box-sizing: border-box;
     border-radius: 50%;
     overflow: hidden;
     width: 175px;
@@ -21,10 +21,15 @@ a{
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: 0.2s all ease-in-out;
+    img {
+      z-index: -1;
+    }
   }
 
   &__name {
     margin-top: 5px;
+
     span {
       display: block;
       text-align: center;
@@ -35,8 +40,9 @@ a{
   }
 }
 
-.developer{
+.developer {
   height: 285px;
+
   .preview-card__rate {
     margin-top: 12px;
 
@@ -50,11 +56,13 @@ a{
   }
 }
 
-.owner{
+.owner {
   height: 247px;
+
   .preview-card__img {
     border: 1px solid $white;
   }
+
   .preview-card__name {
     span {
       margin: 0 auto;
@@ -64,10 +72,14 @@ a{
   }
 }
 
-.preview-card:hover{
-    color: $textPreviewCardHover;
+.preview-card:hover {
+  transition: 0.5s all ease;
+  color: $textPreviewCardHover;
 }
 
-.preview-card:hover .preview-card__img{
-    border: 7px solid $borderPreviewCardHover;
+.preview-card:hover .preview-card__img {
+  border: 1px solid $borderPreviewCardHover;
+  transition: 0.2s all ease-in-out;
+  -webkit-box-shadow: inset 0px 0px 0px 5px $borderPreviewCardHover;
+  box-shadow: inset 0px 0px 0px 5px $borderPreviewCardHover;
 }

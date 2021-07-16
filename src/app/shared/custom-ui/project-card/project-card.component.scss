@@ -15,6 +15,7 @@ a {
   border-radius: 10px;
   color: $white;
   box-shadow: 0px 2px 4px $projectCardBoxShadow;
+  transition: 0.5s all ease;
 
   &__img {
     border-radius: 50%;
@@ -31,6 +32,7 @@ a {
 }
 
 .project-card:hover {
+  transition: 0.5s all ease;
   background: $projectCardHoverBackground;
 }
 

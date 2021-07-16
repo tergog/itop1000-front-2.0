@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ELandingRole } from '../../../landing/landing.enums';
 
 @Component({
   selector: 'app-footer',
@@ -20,8 +21,8 @@ export class FooterComponent implements OnInit {
     navigationList: {
       view: 'footer',
       links: [
-        { text: 'Client', href: 'client' },
-        { text: 'Freelancer', href: 'freelance' }
+        { text: 'Client', href: 'client', role: ELandingRole.ProductOwner},
+        { text: 'Freelancer', href: 'freelance', role: ELandingRole.Freelancer}
       ]
     }
   };
