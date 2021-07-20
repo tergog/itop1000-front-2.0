@@ -8,8 +8,9 @@ import { ICheckboxParameters } from '../checkbox.interfaces';
   styleUrls: ['./checkbox.component.scss']
 })
 export class CheckboxComponent implements OnInit {
-  checked = false;
-  disabled = false;
+  public checked = false;
+  public disabled = false;
+  public invalid = false;
   public _checkboxParameters: ICheckboxParameters;
   @Input() set checkboxParameters(value: ICheckboxParameters) {
     this._checkboxParameters = value;

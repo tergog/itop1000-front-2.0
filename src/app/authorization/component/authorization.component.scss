@@ -81,6 +81,9 @@ aside {
     app-input{
       width: 49%;
     }
+    app-input:last-child{
+      margin-right: 1px;
+    }
   }
   .form-item:last-child{
     justify-content: center;

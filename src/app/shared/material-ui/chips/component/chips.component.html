@@ -1,0 +1,6 @@
+<div class="chips-list">
+  <mat-chip-list aria-label="Fish selection" multiple>
+    <mat-chip *ngFor="let chip of chipsElements" selectable  #chips="matChip" (click)="selectChip(chips)">{{ chip }}</mat-chip>
+  </mat-chip-list>
+</div>
+

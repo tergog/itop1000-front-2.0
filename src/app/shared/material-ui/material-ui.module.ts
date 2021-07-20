@@ -12,6 +12,7 @@ import { ButtonToggleComponent } from './button-toggle/button-toggle.component';
 import { SelectModule } from './select/select.module';
 import { CheckboxModule } from './checkbox/checkbox.module';
 import { RoleToggleModule } from './role-toggle/role-toggle.module';
+import { MatChipsModule } from '@angular/material/chips';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { RoleToggleModule } from './role-toggle/role-toggle.module';
     MatFormFieldModule,
     MatButtonModule,
     MatInputModule,
-    MatTabsModule
+    MatTabsModule,
+    MatChipsModule
   ],
   exports: [
     ButtonToggleComponent,
@@ -40,7 +42,8 @@ import { RoleToggleModule } from './role-toggle/role-toggle.module';
     MatFormFieldModule,
     MatButtonModule,
     MatInputModule,
-    MatTabsModule
+    MatTabsModule,
+    MatChipsModule
   ]
 })
 

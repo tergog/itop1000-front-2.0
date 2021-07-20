@@ -1,6 +1,7 @@
 @import "src/assets/scss/mixins";
 
 .form-item {
+  min-height: 122px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -14,6 +15,12 @@
       color: $white;
       @include setFontParams($fontFamily, 600, normal, 16px);
       font-size: 12px;
+    }
+    label.focus{
+      color: $focusLabelColor;
+    }
+    label.invalid{
+      color: $invalidLabelColor;
     }
 
     margin-bottom: 7px;
@@ -38,7 +45,12 @@
 
   .item-input.focus, .item-textarea.focus {
     background: none;
-    border: 1px solid blue;
+    border: 1px solid $focusBorderColor;
+  }
+
+  .item-input.invalid, .item-textarea.invalid {
+    background: none;
+    border: 1px solid $invalidBorderColor;
   }
 
   .item-textarea {

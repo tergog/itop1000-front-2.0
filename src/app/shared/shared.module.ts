@@ -6,6 +6,7 @@ import { MaterialUiModule } from './material-ui/material-ui.module';
 import { NavigationModule } from './navigation/navigation.module';
 import { LandingGuideComponent } from './landing-guide/landing-guide.component';
 import { FooterModule } from './footer/footer.module';
+import { StepperModule } from './stepper/stepper.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FooterModule } from './footer/footer.module';
     HeaderModule,
     MaterialUiModule,
     NavigationModule,
-    FooterModule
+    FooterModule,
+    StepperModule
   ],
   exports: [
     CustomUiModule,
@@ -25,7 +27,8 @@ import { FooterModule } from './footer/footer.module';
     MaterialUiModule,
     NavigationModule,
     LandingGuideComponent,
-    FooterModule
+    FooterModule,
+    StepperModule
   ]
 })
 export class SharedModule {

@@ -5,6 +5,10 @@
   align-items: center;
 }
 
+.logo-container.big .logo-image{
+  margin-bottom: 30px;
+}
+
 .logo-container.small:hover .logo-image,
 .logo-container.big:hover .logo-image,
 .logo-container.medium:hover .logo-image,

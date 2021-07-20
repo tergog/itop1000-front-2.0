@@ -1,10 +1,15 @@
 <div class="form-item">
   <div class="item-label">
-    <label>{{ _inputParameters.label }}</label>
+    <label [ngClass]="{ focus: focus, invalid: invalid}">
+      {{ _inputParameters.label }}
+    </label>
+    }
   </div>
   <div [ngClass]="{
         'item-input': _inputParameters.type !== EInputElementType.TextArea,
-        'item-textarea': _inputParameters.type === EInputElementType.TextArea
+        'item-textarea': _inputParameters.type === EInputElementType.TextArea,
+        focus: focus,
+        invalid: invalid
   }">
     <input *ngIf=" _inputParameters.type === EInputElementType.Email"
            class=""
@@ -12,7 +17,9 @@
            [placeholder]="_inputParameters.placeholder"
            (input)="change($event)"
            [value]="value"
-           [disabled]="disableState">
+           [disabled]="disableState"
+           (focusin)="focus = true"
+           (focusout)="focus = false">
 
     <input *ngIf=" _inputParameters.type === EInputElementType.Password"
            class=""
@@ -20,7 +27,9 @@
            [placeholder]="_inputParameters.placeholder"
            (input)="change($event)"
            [value]="value"
-           [disabled]="disableState">
+           [disabled]="disableState"
+           (focusin)="focus = true"
+           (focusout)="focus = false">
 
     <input *ngIf=" _inputParameters.type === EInputElementType.Text"
            class=""
@@ -28,18 +37,22 @@
            [placeholder]="_inputParameters.placeholder"
            (input)="change($event)"
            [value]="value"
-           [disabled]="disableState">
+           [disabled]="disableState"
+           (focusin)="focus = true"
+           (focusout)="focus = false">
 
     <textarea *ngIf=" _inputParameters.type === EInputElementType.TextArea"
               class=""
               [placeholder]="_inputParameters.placeholder"
               (input)="change($event)"
               [value]="value"
-              [disabled]="disableState">
+              [disabled]="disableState"
+              (focusin)="focus = true"
+              (focusout)="focus = false">
     </textarea>
   </div>
 
   <div class="item-error">
-    {{ _inputParameters.error }}
+    <span *ngIf="invalid">{{ _inputParameters.error }}</span>
   </div>
 </div>

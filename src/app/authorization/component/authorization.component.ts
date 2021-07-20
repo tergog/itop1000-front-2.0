@@ -53,7 +53,7 @@ export class AuthorizationComponent implements OnInit {
         error: 'Please, enter required data'
       },
       password: {
-        placeholder: 'Enter password',
+        placeholder: 'Your password',
         type: 'password',
         label: 'Password',
         error: 'The password is not correct, try again :('
@@ -61,7 +61,7 @@ export class AuthorizationComponent implements OnInit {
       confirmPassword: {
         placeholder: 'Confirm password',
         type: 'password',
-        label: 'Password',
+        label: 'Confirm Password',
         error: 'The password is not correct, try again :('
       },
       firstName: {

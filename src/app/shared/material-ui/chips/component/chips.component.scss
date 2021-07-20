@@ -1,0 +1,33 @@
+@import "src/assets/scss/mixins";
+
+.chips-list{
+  max-width: 769px;
+}
+
+::ng-deep{
+  .mat-chip-list-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  mat-chip{
+    justify-content: center;
+  }
+
+  mat-chip.mat-standard-chip.mat-chip-selected{
+    //background: transparent !important;
+  }
+
+  .mat-chip.mat-standard-chip{
+    background: #2D2C2C;
+    border: 0.5px solid #5E5A5A;
+    box-sizing: border-box;
+    border-radius: 5px;
+    color: $white;
+    @include setFontParams($fontFamily, normal, 300, 16px);
+    font-size: 14px;
+    padding: 9px 40px;
+    flex: 1 0 auto;
+  }
+}

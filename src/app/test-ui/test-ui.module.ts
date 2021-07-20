@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { TestUiComponent } from './component/test-ui.component';
 import { SharedModule } from '../shared/shared.module';
 import { TestUiRoutingModule } from './test-ui-routing.module';
+import { ChipsModule } from '../shared/material-ui/chips/chips.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { TestUiRoutingModule } from './test-ui-routing.module';
   imports: [
     CommonModule,
     SharedModule,
-    TestUiRoutingModule
+    TestUiRoutingModule,
+    ChipsModule
   ],
   exports: [
     TestUiComponent

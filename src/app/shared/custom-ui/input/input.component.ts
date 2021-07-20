@@ -17,11 +17,13 @@ export const INPUT_VALUE_ACCESSOR: any = {
   providers: [INPUT_VALUE_ACCESSOR]
 })
 export class InputComponent implements OnInit, ControlValueAccessor {
+  public focus = false;
+  public invalid = false;
   public EInputElementType = EInputElementType;
   public _inputParameters: IInputParameters;
   @Input() set inputParameters(value: IInputParameters){
     this._inputParameters = value;
-  };
+  }
 
   get inputParameters(): IInputParameters{
     return this._inputParameters;
