@@ -59,7 +59,12 @@ export class AddExperienceModalComponent implements OnInit {
         view: 'small-empty',
         disabled: false
       },
-      close: {}
+      close: {
+        text: '',
+        type: '',
+        view: 'close',
+        disabled: false
+      }
     }
   };
 

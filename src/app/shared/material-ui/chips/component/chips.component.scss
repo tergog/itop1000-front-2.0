@@ -20,7 +20,7 @@
     $borderGradient border-box;
     border: 1px solid transparent;
 
-    .chips-content{
+    .chips-content {
       background: $textGradient;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -28,15 +28,9 @@
       font-size: 14px;
     }
 
-
-    span.chips-remove {
+    .chips-remove {
       position: absolute;
       right: 15px;
-      display: inline-block;
-      width: 12px;
-      height: 12px;
-      background: url("/assets/img/close.svg") center center no-repeat;
-      background-size: contain;
     }
   }
 
@@ -48,7 +42,7 @@
     padding: 9px 40px;
     flex: 1 0 auto;
 
-    .chips-content{
+    .chips-content {
       color: $white;
       @include setFontParams($fontFamily, normal, 300, 16px);
       font-size: 14px;

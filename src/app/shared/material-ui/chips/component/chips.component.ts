@@ -8,20 +8,32 @@ import { FormArray, FormBuilder } from '@angular/forms';
 })
 export class ChipsComponent implements OnInit {
   public chipsGroup: FormArray;
-  public _chipsParameters: string[];
-  @Input() set chipsParameters(value: string[]) {
-    this._chipsParameters = value;
+  public _chipsValues: string[];
+  @Input() set chipsValues(value: string[]) {
+    this._chipsValues = value;
   }
-  get chipsParameters(): string[] {
-    return this._chipsParameters;
+
+  get chipsValues(): string[] {
+    return this._chipsValues;
   }
+
+  public chipsComponentParameters = {
+    buttons: {
+      close: {
+        text: '',
+        type: '',
+        view: 'close-small',
+        disabled: false
+      }
+    }
+  };
 
   constructor(private formBuilder: FormBuilder) {
 
   }
 
   ngOnInit(): void {
-    this.chipsGroup = this.formBuilder.array([...this.chipsParameters]);
+    this.chipsGroup = this.formBuilder.array([...this.chipsValues]);
   }
 
   selectChip(chip: any): void {

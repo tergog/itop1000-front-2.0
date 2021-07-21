@@ -26,6 +26,20 @@
   {{ _buttonParameters.text }}
 </button>
 
+<button *ngIf="_buttonParameters.view === EButtonView.Close"
+        [type]="_buttonParameters.type"
+        [disabled]="_buttonParameters.disabled"
+        class="btn btn__close">
+  {{ _buttonParameters.text }}
+</button>
+
+<button *ngIf="_buttonParameters.view === EButtonView.CloseSmall"
+        [type]="_buttonParameters.type"
+        [disabled]="_buttonParameters.disabled"
+        class="btn btn__close-small">
+  {{ _buttonParameters.text }}
+</button>
+
 <a *ngIf="_buttonParameters.view === EButtonView.Login"
    [routerLink]="[_buttonParameters.href]"
    class="link link__login">

@@ -2,7 +2,11 @@
   <mat-chip-list aria-label="Fish selection" multiple>
     <mat-chip *ngFor="let chip of chipsGroup.value; index as i" selectable #chips="matChip" (click)="selectChip(chips)">
       <div class="chips-content">{{ chip }}</div>
-      <span class="chips-remove" *ngIf="chips.selected" (click)="deleteChip(i)"></span>
+      <app-button *ngIf="chips.selected"
+                  [buttonParameters]="chipsComponentParameters.buttons.close"
+                  class="chips-remove"
+                  (click)="deleteChip(i)">
+      </app-button>
     </mat-chip>
   </mat-chip-list>
 </div>
