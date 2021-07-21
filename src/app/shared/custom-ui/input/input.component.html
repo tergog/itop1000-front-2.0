@@ -40,6 +40,16 @@
            (focusin)="focus = true"
            (focusout)="focus = false">
 
+    <input *ngIf=" _inputParameters.type === EInputElementType.Date"
+           class=""
+           [type]="_inputParameters.type"
+           [placeholder]="_inputParameters.placeholder"
+           (input)="change($event)"
+           [value]="value"
+           [disabled]="disableState"
+           (focusin)="focus = true"
+           (focusout)="focus = false" appDateFormatCustomInput>
+
     <textarea *ngIf=" _inputParameters.type === EInputElementType.TextArea"
               class=""
               [placeholder]="_inputParameters.placeholder"

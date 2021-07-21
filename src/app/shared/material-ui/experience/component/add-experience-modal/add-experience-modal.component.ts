@@ -35,13 +35,13 @@ export class AddExperienceModalComponent implements OnInit {
       },
       dateFrom: {
         placeholder: 'Enter data',
-        type: 'date',
+        type: 'text',
         label: 'Date',
         error: 'Please, enter required data'
       },
       dateTill: {
         placeholder: 'Enter data',
-        type: 'date',
+        type: 'text',
         label: 'Date',
         error: 'Please, enter required data'
       }
@@ -49,7 +49,7 @@ export class AddExperienceModalComponent implements OnInit {
     buttons: {
       save: {
         text: 'Save',
-        type: '',
+        type: 'submit',
         view: 'small',
         disabled: false
       },

@@ -14,7 +14,7 @@ export const INPUT_VALUE_ACCESSOR: any = {
   selector: 'app-input',
   templateUrl: './input.component.html',
   styleUrls: ['./input.component.scss'],
-  providers: [INPUT_VALUE_ACCESSOR]
+  providers: [INPUT_VALUE_ACCESSOR],
 })
 export class InputComponent implements OnInit, ControlValueAccessor {
   public focus = false;

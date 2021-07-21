@@ -11,6 +11,7 @@ import { BenefitsCardComponent } from './benefits-card/benefits-card.component';
 import { ProjectCardComponent } from './project-card/project-card.component';
 import { SocialListComponent } from './social-list/social-list.component';
 import { CustomTooltipModule } from './custom-tooltip/custom-tooltip.module';
+import { DateFormatInputDirective } from '../../directives/date-format-input/date-format-input.directive';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CustomTooltipModule } from './custom-tooltip/custom-tooltip.module';
     PreviewCardComponent,
     BenefitsCardComponent,
     ProjectCardComponent,
-    SocialListComponent
+    SocialListComponent,
+    DateFormatInputDirective
   ],
   imports: [
     CommonModule,

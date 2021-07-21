@@ -1,7 +1,7 @@
 <div class="experience-modal">
   <div class="experience-modal__header">
     <h2>Employment</h2>
-    <app-button [buttonParameters]="modalData.buttons.close"></app-button>
+    <app-button [buttonParameters]="modalData.buttons.close" mat-dialog-close="false"></app-button>
   </div>
   <div class="experience-modal__body">
     <form action="" class="experience-form">
@@ -22,8 +22,8 @@
         <app-input [inputParameters]="modalData.inputs.dateTill"></app-input>
       </div>
       <div class="experience-form__item">
-        <app-button [buttonParameters]="modalData.buttons.cancel"></app-button>
-        <app-button [buttonParameters]="modalData.buttons.save"></app-button>
+        <app-button [buttonParameters]="modalData.buttons.cancel" mat-dialog-close="false"></app-button>
+        <app-button [buttonParameters]="modalData.buttons.save" mat-dialog-close="true"></app-button>
       </div>
     </form>
   </div>
