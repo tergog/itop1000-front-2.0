@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { FormArray, FormBuilder } from '@angular/forms';
+
 import { AddExperienceModalComponent } from './add-experience-modal/add-experience-modal.component';
-import { Form, FormArray, FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-experience',
@@ -23,9 +24,10 @@ export class ExperienceComponent implements OnInit {
   }
 
   openAddExperienceModal(): void {
-    this.dialog.open(AddExperienceModalComponent).afterClosed().subscribe(exp => {
+    this.dialog.open(AddExperienceModalComponent)
+      .afterClosed()
+      .subscribe(exp => {
       if (exp) {
-        console.log(exp);
         (this.experienceGroup as FormArray).push(exp);
       }
     });

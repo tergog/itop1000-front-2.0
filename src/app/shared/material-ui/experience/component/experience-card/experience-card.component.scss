@@ -1,7 +1,7 @@
 @import "src/assets/scss/mixins";
 
 .experience-card {
-  color: #B7B7B7;
+  color: $experienceCardColor;
 
   &__header {
     display: flex;
@@ -30,5 +30,5 @@
     }
   }
 
-  border-bottom: 1px solid #4B4949;
+  border-bottom: 1px solid $experienceBorderBottomColor;
 }

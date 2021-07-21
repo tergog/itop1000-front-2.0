@@ -8,7 +8,7 @@
   &__header {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid #4B4949;
+    border-bottom: 1px solid $experienceBorderBottomColor;
     opacity: 0.9;
   }
 
@@ -44,11 +44,7 @@
     }
   }
 
-  &__body {
+  &__body {}
 
-  }
-
-  &__item {
-
-  }
+  &__item {}
 }

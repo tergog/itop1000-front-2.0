@@ -32,7 +32,7 @@
 
     <input *ngIf=" _inputParameters.type === EInputElementType.Text"
            class=""
-           [type]="_inputParameters.type"
+           type="text"
            [placeholder]="_inputParameters.placeholder"
            (input)="change($event)"
            [value]="value"
@@ -42,7 +42,7 @@
 
     <input *ngIf=" _inputParameters.type === EInputElementType.Date"
            class=""
-           [type]="_inputParameters.type"
+           type="text"
            [placeholder]="_inputParameters.placeholder"
            (input)="change($event)"
            [value]="value"
