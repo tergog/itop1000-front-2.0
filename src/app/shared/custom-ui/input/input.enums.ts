@@ -3,5 +3,6 @@ export enum EInputElementType {
   Text = 'text',
   TextArea = 'textarea',
   Date = 'date',
-  Password = 'password'
+  Password = 'password',
+  Money = 'money'
 }

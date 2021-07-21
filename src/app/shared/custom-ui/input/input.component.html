@@ -50,6 +50,16 @@
            (focusin)="focus = true"
            (focusout)="focus = false" appDateFormatCustomInput>
 
+    <input *ngIf=" _inputParameters.type === EInputElementType.Money"
+           class=""
+           type="text"
+           [placeholder]="_inputParameters.placeholder"
+           (input)="change($event)"
+           [value]="value"
+           [disabled]="disableState"
+           (focusin)="focus = true"
+           (focusout)="focus = false">
+
     <textarea *ngIf=" _inputParameters.type === EInputElementType.TextArea"
               class=""
               [placeholder]="_inputParameters.placeholder"

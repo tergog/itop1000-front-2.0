@@ -112,6 +112,10 @@ aside {
     color: $tabLabelHoverTextColor;
   }
 
+  .mat-tab-label.mat-tab-label-active{
+    opacity: 1.0;
+  }
+
   .mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar {
     background-color: $tabLabelHoverTextColor;
     display: flex;
