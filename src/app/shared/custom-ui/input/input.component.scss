@@ -15,12 +15,15 @@
       color: $white;
       @include setFontParams($fontFamily, 600, normal, 16px);
       font-size: 12px;
+      transition: 0.5s all ease;
     }
     label.focus{
       color: $focusLabelColor;
+      transition: 0.5s all ease;
     }
     label.invalid{
       color: $invalidLabelColor;
+      transition: 0.5s all ease;
     }
 
     margin-bottom: 7px;
@@ -40,17 +43,20 @@
       background: $inputBackground;
       box-sizing: border-box;
       border: none;
+      transition: 0.5s all ease;
     }
   }
 
   .item-input.focus, .item-textarea.focus {
     background: none;
     border: 1px solid $focusBorderColor;
+    transition: 0.5s all ease;
   }
 
   .item-input.invalid, .item-textarea.invalid {
     background: none;
     border: 1px solid $invalidBorderColor;
+    transition: 0.5s all ease;
   }
 
   .item-textarea {

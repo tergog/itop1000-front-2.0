@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add-experience-modal',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-experience-modal.component.scss']
 })
 export class AddExperienceModalComponent implements OnInit {
+  public addModalFormGroup: FormGroup;
 
   public modalData = {
     inputs: {
@@ -36,13 +38,13 @@ export class AddExperienceModalComponent implements OnInit {
       dateFrom: {
         placeholder: 'Enter data',
         type: 'text',
-        label: 'Date',
+        label: 'Date From',
         error: 'Please, enter required data'
       },
       dateTill: {
         placeholder: 'Enter data',
         type: 'text',
-        label: 'Date',
+        label: 'Till',
         error: 'Please, enter required data'
       }
     },
@@ -50,7 +52,7 @@ export class AddExperienceModalComponent implements OnInit {
       save: {
         text: 'Save',
         type: 'submit',
-        view: 'small',
+        view: 'medium',
         disabled: false
       },
       cancel: {
@@ -68,7 +70,15 @@ export class AddExperienceModalComponent implements OnInit {
     }
   };
 
-  constructor() {
+  constructor(private formBuilder: FormBuilder) {
+    this.addModalFormGroup = this.formBuilder.group({
+      companyName: this.formBuilder.control({ value: 'Deal Design', disabled: false }, [Validators.required]),
+      jobTitle: this.formBuilder.control({ value: 'Job Title', disabled: false }, [Validators.required]),
+      positionTitle: this.formBuilder.control({ value: 'Position Title', disabled: false }, [Validators.required]),
+      jobDescription: this.formBuilder.control({ value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam', disabled: false }, [Validators.required]),
+      dateFrom: this.formBuilder.control({ value: 'Date From', disabled: false }, [Validators.required]),
+      dateTill: this.formBuilder.control({ value: 'Date Till', disabled: false }, [Validators.required]),
+    });
   }
 
   ngOnInit(): void {

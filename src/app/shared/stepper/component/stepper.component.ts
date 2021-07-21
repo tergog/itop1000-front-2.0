@@ -49,7 +49,7 @@ export class StepperComponent implements OnInit {
     buttonNext: {
       text: 'NEXT',
       type: '',
-      view: 'small',
+      view: 'medium',
       disabled: false
     },
     buttonPrevious: {

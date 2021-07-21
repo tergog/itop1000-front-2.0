@@ -6,6 +6,7 @@ import { ExperienceComponent } from './component/experience.component';
 import { AddExperienceModalComponent } from './component/add-experience-modal/add-experience-modal.component';
 import { ExperienceCardComponent } from './component/experience-card/experience-card.component';
 import { CustomUiModule } from '../../custom-ui/custom-ui.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { CustomUiModule } from '../../custom-ui/custom-ui.module';
   imports: [
     CommonModule,
     MatDialogModule,
-    CustomUiModule
+    CustomUiModule,
+    ReactiveFormsModule
   ],
   exports: [
     ExperienceComponent

@@ -8,8 +8,8 @@
     </div>
   </div>
   <div class="work-experience__body">
-    <div class="work-experience__item">
-
+    <div class="work-experience__item" *ngFor="let item of this.experienceGroup.value">
+      <app-experience-card [experienceCardData]="item"></app-experience-card>
     </div>
   </div>
 </div>

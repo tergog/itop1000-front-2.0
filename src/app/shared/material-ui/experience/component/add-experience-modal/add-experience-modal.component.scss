@@ -4,6 +4,7 @@
   .mat-dialog-container {
     width: 495px;
     max-width: 495px;
+    border-radius: 9px;
     padding: 0;
     background-color: $addModalBackground;
     overflow: hidden;
@@ -36,6 +37,28 @@
 
 form.experience-form {
   .experience-form__item {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
 
+    app-input {
+      width: 100%;
+    }
+
+    app-input.date{
+      margin-top: 25px;
+      width: 45%;
+    }
+  }
+
+  .experience-form__item:nth-child(5){
+    border-bottom: 1px solid $addModalBodyBorderBottomColor;
+    margin-bottom: 42px;
+  }
+
+  .experience-form__item:last-child{
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 28px;
   }
 }

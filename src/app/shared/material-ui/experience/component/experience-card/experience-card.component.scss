@@ -1,0 +1,34 @@
+@import "src/assets/scss/mixins";
+
+.experience-card {
+  color: #B7B7B7;
+
+  &__header {
+    display: flex;
+    align-items: center;
+
+    h2 {
+      @include setFontParams($fontError, normal, 500, 45px);
+      font-size: 24px;
+      color: $white;
+      text-transform: uppercase;
+      display: inline-flex;
+      margin: 0;
+    }
+
+    span {
+      @include setFontParams($fontError, normal, 300, 16px);
+      font-size: 12px;
+      margin-left: 20px;
+    }
+  }
+
+  &__description {
+    p {
+      @include setFontParams($fontError, normal, 400, 24px);
+      font-size: 16px;
+    }
+  }
+
+  border-bottom: 1px solid #4B4949;
+}
