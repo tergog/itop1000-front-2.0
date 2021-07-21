@@ -1,0 +1,11 @@
+@import "src/assets/scss/mixins";
+
+::ng-deep{
+  .mat-dialog-container{
+    width: 495px;
+    max-width: 495px;
+    padding: 20px;
+    background-color: $addModalBackground;
+    overflow: hidden;
+  }
+}

@@ -27,6 +27,16 @@ export class TestUiComponent implements OnInit {
     errorMessage: 'Please, accept Terms of use and privace',
   }
 
+  public arrChipsElements = [
+    'React', 'JS', 'Figma',
+    'Python Numpy FastAI',
+    'Python Numpy FastAI',
+    'Web', 'React',
+    'JS', 'Figma',
+    'Python Numpy FastAI',
+    'Python Numpy FastAI',
+    'Web'];
+
   public objSelectParameters = {
     label: 'Category',
     options: [
@@ -70,7 +80,7 @@ export class TestUiComponent implements OnInit {
   public objBenefitsCardParameters = {
     img: 'certificate.svg',
     title: 'Certified pros',
-    subtitle: 'Entrust your project to experts with lots of experience in their given field.'
+    subtitle: 'Entrust your project to experts with lots of component in their given field.'
   };
 
   public objPreviewCardParameters = {

@@ -89,7 +89,7 @@ export const CLandingData = {
     role: ELandingRole.Freelancer,
     fullscreen: {
       title: 'Find top-level freelance developers for your project',
-      subtitle: 'Hire certified developers with years of experience in the tech world',
+      subtitle: 'Hire certified developers with years of component in the tech world',
       button: {
         text: 'Hire a freelancer',
         type: '',
@@ -103,7 +103,7 @@ export const CLandingData = {
         {
           img: 'certificate.svg',
           title: 'Certified pros',
-          subtitle: 'Entrust your project to experts with lots of experience in their given field.'
+          subtitle: 'Entrust your project to experts with lots of component in their given field.'
         },
         {
           img: 'track.svg',

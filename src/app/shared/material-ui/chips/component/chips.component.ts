@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormArray, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-chips',
@@ -6,17 +7,29 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./chips.component.scss']
 })
 export class ChipsComponent implements OnInit {
+  public chipsGroup: FormArray;
+  public _chipsParameters: string[];
+  @Input() set chipsParameters(value: string[]) {
+    this._chipsParameters = value;
+  }
+  get chipsParameters(): string[] {
+    return this._chipsParameters;
+  }
 
-  public chipsElements = ['React', 'JS', 'Figma', 'Python Numpy FastAI', 'Python Numpy FastAI', 'Web','React', 'JS', 'Figma', 'Python Numpy FastAI', 'Python Numpy FastAI', 'Web'];
+  constructor(private formBuilder: FormBuilder) {
 
-  constructor() {
   }
 
   ngOnInit(): void {
+    this.chipsGroup = this.formBuilder.array([...this.chipsParameters]);
   }
 
   selectChip(chip: any): void {
     chip.selected = !chip.selected;
+  }
+
+  deleteChip(index: number): void {
+    this.chipsGroup.removeAt(index);
   }
 
 }
