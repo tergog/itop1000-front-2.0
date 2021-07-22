@@ -1,7 +1,160 @@
 import { ELandingRole } from '../landing/landing.enums';
+import { EStepperType } from '../shared/stepper/stepper.enums';
+
+export const CStepperData = {
+  [EStepperType.Freelancer]: {
+    type: 'freelancer',
+    selects: {
+      category: {
+        label: 'Category',
+        options: [
+          'Accounting & Consulting',
+          'Admin Support',
+          'Customer Service',
+          'Data science & Analytics',
+          'Design & Creative',
+          'Engineering & Architecture',
+          'IT & Networking',
+          'Legal',
+          'Sales & Marketing',
+          'Translation'
+        ],
+        defaultValue: 'Select the category'
+      },
+      subcategory: {
+        label: 'Subcategory',
+        options: [
+          'Accounting & Consulting',
+          'Admin Support',
+          'Customer Service',
+          'Data science & Analytics',
+          'Design & Creative',
+          'Engineering & Architecture',
+          'IT & Networking',
+          'Legal',
+          'Sales & Marketing',
+          'Translation'
+        ],
+        defaultValue: 'Select the subcategory'
+      }
+    },
+    chipsValues: ['HTML', 'CSS', 'JavaScript'],
+    searchInputs: {
+      big: {
+        placeholder: 'Search',
+        label: 'Search skills or add your own',
+        view: 'big'
+      }
+    },
+    inputs: {
+      money: {
+        placeholder: '0.00',
+        type: 'money',
+        label: '',
+        error: 'Data is required'
+      },
+    },
+    buttons: {
+      send: {
+        text: 'send the cv',
+        type: '',
+        view: 'medium',
+        disabled: false
+      },
+      next: {
+        text: 'NEXT',
+        type: '',
+        view: 'medium',
+        disabled: false
+      },
+      previous: {
+        text: 'Back',
+        type: '',
+        view: 'small-empty',
+        disabled: false
+      }
+    }
+  },
+  [EStepperType.ProductOwner]: {
+    type: 'product-owner',
+    selects: {
+      category: {
+        label: 'Category',
+        options: [
+          'Accounting & Consulting',
+          'Admin Support',
+          'Customer Service',
+          'Data science & Analytics',
+          'Design & Creative',
+          'Engineering & Architecture',
+          'IT & Networking',
+          'Legal',
+          'Sales & Marketing',
+          'Translation'
+        ],
+        defaultValue: 'Select the category'
+      },
+      location: {
+        label: 'Location',
+        options: [
+          'Ukraine',
+          'United States',
+          'Uruguay',
+          'Venezuela',
+          'United Kingdom'
+        ],
+        defaultValue: 'Select the location'
+      },
+      operationMode: {
+        label: 'Operation mode',
+        options: [
+          'Full-time',
+          'Part-time'
+        ],
+        defaultValue: 'Choose the operation mode'
+      }
+    },
+    searchInputs: {},
+    chipsValues: [],
+    inputs: {
+      companyName: {
+        placeholder: 'Name',
+        type: 'text',
+        label: 'Company Name',
+        error: 'Please, enter required data'
+      },
+      description: {
+        placeholder: 'Tell about your company',
+        type: 'textarea',
+        label: 'Description',
+        error: ''
+      },
+    },
+    buttons: {
+      send: {
+        text: 'send the cv',
+        type: '',
+        view: 'medium',
+        disabled: false
+      },
+      next: {
+        text: 'NEXT',
+        type: '',
+        view: 'medium',
+        disabled: false
+      },
+      previous: {
+        text: 'Back',
+        type: '',
+        view: 'small-empty',
+        disabled: false
+      }
+    }
+  }
+};
 
 export const CLandingData = {
-[ELandingRole.ProductOwner] : {
+  [ELandingRole.ProductOwner]: {
     role: ELandingRole.ProductOwner,
     fullscreen: {
       title: 'Find world-class companies with exiSting projects',
@@ -169,8 +322,14 @@ export const CLandingData = {
     description: {
       title: 'ITOP1000 is an amazing user-friendly platform for freelance developers and clients:',
       contentItems: [
-        { title: 'For Employers: ', description: 'You gain access to the best freelance developers in the industry. All you need is to post a project, and our team will match you with the best-fitted talent to complete your project. Monitor your project status on our platform and communicate with the writer throughout the duration of the project. You can also pay with your preferred payment option, and the freelancer will only get paid once you accept the final task.' },
-        { title: 'For Freelancers:', description: 'Create an account and upload your qualifications. Our team will verify your credentials, and you can start accepting gigs. Earn money by working with world-renowned companies. Boost your portfolio and reputation in the industry. ' }
+        {
+          title: 'For Employers: ',
+          description: 'You gain access to the best freelance developers in the industry. All you need is to post a project, and our team will match you with the best-fitted talent to complete your project. Monitor your project status on our platform and communicate with the writer throughout the duration of the project. You can also pay with your preferred payment option, and the freelancer will only get paid once you accept the final task.'
+        },
+        {
+          title: 'For Freelancers:',
+          description: 'Create an account and upload your qualifications. Our team will verify your credentials, and you can start accepting gigs. Earn money by working with world-renowned companies. Boost your portfolio and reputation in the industry. '
+        }
       ],
       button: {
         text: 'Hire a freelancer',

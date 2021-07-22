@@ -11,7 +11,7 @@
   }
 
   .mat-stepper-horizontal-line {
-    background: #E2B515;
+    background: $horizontalLineColor;
     border-top-width: 2px !important;
   }
 
@@ -25,7 +25,7 @@
       text-transform: uppercase;
       @include setFontParams($fontFamily, normal, 400, 16px);
       font-size: 14px;
-      color: #DEDEDE;
+      color: $stepLabelColor;
     }
 
     mat-step-header .mat-step-label.mat-step-label-active {
@@ -40,12 +40,12 @@
     }
 
     mat-step-header .mat-step-icon.mat-step-icon-state-done, mat-step-header .mat-step-icon.mat-step-icon-selected {
-      background: linear-gradient(164.88deg, #E07504 41.53%, #E07504 41.54%, #FBDF15 79.69%, #FFFFFF 112.9%);
+      background: $stepIconContentBackground;
     }
 
     mat-step-header .mat-step-icon-content {
-      border: 5px solid #1F1E1E;
-      background: linear-gradient(164.88deg, #E07504 41.53%, #E07504 41.54%, #FBDF15 79.69%, #FFFFFF 112.9%);
+      border: 5px solid $stepIconContentColor;
+      background: $stepIconContentBackground;
       border-radius: 50%;
       font-size: 0;
       width: 8px;
@@ -88,7 +88,8 @@ form {
     app-select,
     app-search-input,
     app-chips,
-    app-experience{
+    app-experience,
+    app-input{
       width: 100%;
     }
 

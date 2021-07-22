@@ -62,9 +62,20 @@
     mat-expansion-panel {
       width: 100%;
       max-width: 769px;
+      min-height: 61px;
       background: linear-gradient($pageBackground, $pageBackground) padding-box,
       $borderGradient border-box;
       border: 1px solid transparent;
+    }
+
+    mat-expansion-panel-header{
+      min-height: 61px;
+    }
+
+    mat-expansion-panel-header,
+    mat-expansion-panel-header:hover,
+    mat-expansion-panel-header:focus{
+      background: none;
     }
 
     mat-expansion-panel.closed {

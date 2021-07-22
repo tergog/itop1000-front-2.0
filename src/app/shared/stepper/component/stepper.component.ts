@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+import { EStepperType } from '../stepper.enums';
+import { IStepperParameters } from '../stepper.interfaces';
 
 @Component({
   selector: 'app-stepper',
@@ -7,76 +10,20 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./stepper.component.scss']
 })
 export class StepperComponent implements OnInit {
+  public EStepperType = EStepperType;
   public firstFormGroup: FormGroup;
   public secondFormGroup: FormGroup;
   public thirdFormGroup: FormGroup;
   public fourthFormGroup: FormGroup;
-  public stepperParameters = {
-    firstStep: {
-      category: {
-        label: 'Category',
-        options: [
-          'Accounting & Consulting',
-          'Admin Support',
-          'Customer Service',
-          'Data science & Analytics',
-          'Design & Creative',
-          'Engineering & Architecture',
-          'IT & Networking',
-          'Legal',
-          'Sales & Marketing',
-          'Translation'
-        ],
-        defaultValue: 'Select the category'
-      },
-      subcategory: {
-        label: 'Subcategory',
-        options: [
-          'Accounting & Consulting',
-          'Admin Support',
-          'Customer Service',
-          'Data science & Analytics',
-          'Design & Creative',
-          'Engineering & Architecture',
-          'IT & Networking',
-          'Legal',
-          'Sales & Marketing',
-          'Translation'
-        ],
-        defaultValue: 'Select the subcategory'
-      }
-    },
-    chipsValues: ['HTML', 'CSS', 'JavaScript'],
-    searchInput: {
-      placeholder: 'Search',
-      label: 'Search skills or add your own',
-      view: 'big'
-    },
-    inputMoney: {
-      placeholder: '0.00',
-      type: 'money',
-      label: '',
-      error: 'Data is required'
-    },
-    buttonSend: {
-      text: 'send the cv',
-      type: '',
-      view: 'medium',
-      disabled: false
-    },
-    buttonNext: {
-      text: 'NEXT',
-      type: '',
-      view: 'medium',
-      disabled: false
-    },
-    buttonPrevious: {
-      text: 'Back',
-      type: '',
-      view: 'small-empty',
-      disabled: false
-    }
-  };
+
+  public _stepperParameters: IStepperParameters;
+  @Input() set stepperParameters(value: IStepperParameters) {
+    this._stepperParameters = value;
+  }
+
+  get stepperParameters(): IStepperParameters {
+    return this._stepperParameters;
+  }
 
   constructor(private _formBuilder: FormBuilder) {
   }

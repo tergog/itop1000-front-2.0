@@ -77,7 +77,7 @@ export class AuthorizationComponent implements OnInit {
         error: 'There is a mistake, check and enter the Last name'
       },
       checkbox: {
-        pollicy: {
+        policy: {
           label: 'Accent Terms of Use and Privace',
           errorMessage: 'Please, accept Terms of use and privace'
         },
