@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { StepperComponent } from './component/stepper.component';
 import { MaterialUiModule } from '../material-ui/material-ui.module';
 import { CustomUiModule } from '../custom-ui/custom-ui.module';
+import { ChipsModule } from '../material-ui/chips/chips.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { CustomUiModule } from '../custom-ui/custom-ui.module';
   imports: [
     CommonModule,
     MaterialUiModule,
-    CustomUiModule
+    CustomUiModule,
+    ChipsModule
   ],
   exports: [
     StepperComponent

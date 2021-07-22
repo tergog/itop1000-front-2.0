@@ -1,7 +1,6 @@
 @import "src/assets/scss/mixins";
 
 .form-item {
-  min-height: 122px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -29,7 +28,7 @@
     margin-bottom: 7px;
   }
 
-  .item-input, .item-textarea, .item-money {
+  .item-input-search {
     width: 100%;
     background: linear-gradient($pageBackground, $pageBackground) padding-box,
     $borderGradient border-box;
@@ -37,7 +36,7 @@
     max-width: 769px;
     max-height: 103px;
 
-    textarea, input {
+    input {
       width: 100%;
       color: $white;
       background: $inputBackground;
@@ -47,54 +46,20 @@
     }
   }
 
-  .item-input.focus, .item-textarea.focus, .item-money.focus {
+  .item-input-search.focus {
     background: none;
     border: 1px solid $focusBorderColor;
     transition: 0.5s all ease;
   }
 
-  .item-input.invalid, .item-textarea.invalid, .item-money.invalid {
+  .item-input-search.invalid {
     background: none;
     border: 1px solid $invalidBorderColor;
     transition: 0.5s all ease;
   }
-
-  .item-textarea {
-    border-radius: 10px;
-
-    textarea {
-      padding: 13px 22px;
-      border-radius: 10px;
-      height: 103px;
-      resize: none;
-    }
-
-    textarea::placeholder {
-      color: $placeholderColor;
-    }
-  }
-
-  .item-money{
-    position: relative;
-    border-radius: 10px;
-    max-width: 152px;
-
-    input {
-      max-width: 152px;
-      padding: 20px 22px;
-      border-radius: 10px;
-      display: inline-block;
-      text-align:right
-    }
-
-    input::placeholder {
-      color: $placeholderColor;
-    }
-  }
-
-  .item-input {
+  .item-input-search {
     border-radius: 50px;
-
+    position: relative;
     input {
       padding: 23px 28px;
       border-radius: 50px;
@@ -104,18 +69,21 @@
     input::placeholder {
       color: $placeholderColor;
     }
-  }
 
-  .item-error {
-    color: $textError;
-    @include setFontParams($fontError, 300, normal, 30px);
-    font-size: 14px;
-  }
-
-  .item-money-icon{
-    display: inline-flex;
-    position: absolute;
-    left: 16px;
-    top: calc(50% - 9px);
+    .search-icon{
+      display: inline-flex;
+      position: absolute;
+      right: 25px;
+      top: calc(50% - 13px);
+      svg path{
+        fill: $searchIconColor;
+        transition: 0.5s all ease;
+      }
+    }
+    .search-icon.focus{
+     svg path{
+       fill: $focusBorderColor;
+     }
+    }
   }
 }

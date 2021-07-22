@@ -6,11 +6,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./test-ui.component.scss']
 })
 export class TestUiComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  public objSearchInputParameters = {
+    big: {
+      placeholder: 'Search',
+      label: 'Search skills or add your own',
+      view: 'big'
+    },
+    small: {
+      placeholder: 'Search',
+      label: 'Search skills or add your own',
+      view: 'small'
+    },
+    medium: {
+      placeholder: 'Search',
+      label: 'Search skills or add your own',
+      view: 'medium'
+    }
+  };
 
   public arrSocialListParameters = [
     { view: 'instagram', href: '' },
@@ -25,7 +37,7 @@ export class TestUiComponent implements OnInit {
   public objCheckboxParameters = {
     label: 'Accent Terms of Use and Privace',
     errorMessage: 'Please, accept Terms of use and privace',
-  }
+  };
 
   public arrChipsElements = [
     'React', 'JS', 'Figma',
@@ -198,4 +210,9 @@ export class TestUiComponent implements OnInit {
     },
   };
 
+  constructor() {
+  }
+
+  ngOnInit(): void {
+  }
 }

@@ -46,6 +46,24 @@ export class StepperComponent implements OnInit {
         defaultValue: 'Select the subcategory'
       }
     },
+    chipsValues: ['HTML', 'CSS', 'JavaScript'],
+    searchInput: {
+      placeholder: 'Search',
+      label: 'Search skills or add your own',
+      view: 'big'
+    },
+    inputMoney: {
+      placeholder: '0.00',
+      type: 'money',
+      label: '',
+      error: 'Data is required'
+    },
+    buttonSend: {
+      text: 'send the cv',
+      type: '',
+      view: 'medium',
+      disabled: false
+    },
     buttonNext: {
       text: 'NEXT',
       type: '',

@@ -14,6 +14,7 @@ import { CheckboxModule } from './checkbox/checkbox.module';
 import { RoleToggleModule } from './role-toggle/role-toggle.module';
 import { MatChipsModule } from '@angular/material/chips';
 import { ExperienceModule } from './experience/experience.module';
+import { SearchInputModule } from './search-input/search-input.module';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ExperienceModule } from './experience/experience.module';
     MatInputModule,
     MatTabsModule,
     MatChipsModule,
-    ExperienceModule
+    ExperienceModule,
+    SearchInputModule
   ],
   exports: [
     ButtonToggleComponent,
@@ -46,7 +48,8 @@ import { ExperienceModule } from './experience/experience.module';
     MatInputModule,
     MatTabsModule,
     MatChipsModule,
-    ExperienceModule
+    ExperienceModule,
+    SearchInputModule
   ]
 })
 

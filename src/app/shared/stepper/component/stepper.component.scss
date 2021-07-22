@@ -85,9 +85,13 @@ form {
     display: flex;
     justify-content: center;
 
-    app-select {
+    app-select,
+    app-search-input,
+    app-chips,
+    app-experience{
       width: 100%;
     }
+
   }
 
   .form-item:nth-child(2) {
@@ -98,5 +102,10 @@ form {
     margin-bottom: 0;
     display: flex;
     justify-content: space-around;
+  }
+
+  .form-item.money{
+    margin-top: 140px;
+    border-bottom: 1px solid $addModalBodyBorderBottomColor;
   }
 }

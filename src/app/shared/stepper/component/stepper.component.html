@@ -17,10 +17,10 @@
     <form [formGroup]="secondFormGroup">
       <ng-template matStepLabel>hard Skills</ng-template>
       <div class="form-item">
-        <app-select [selectParameters]="stepperParameters.firstStep.category"></app-select>
+      <app-search-input [searchInputParameters]="stepperParameters.searchInput"></app-search-input>
       </div>
       <div class="form-item">
-        <app-select [selectParameters]="stepperParameters.firstStep.subcategory"></app-select>
+     <app-chips [chipsValues]="stepperParameters.chipsValues"></app-chips>
       </div>
       <div class="form-item">
         <app-button (click)="stepper.previous()" [buttonParameters]="stepperParameters.buttonPrevious"></app-button>
@@ -32,10 +32,7 @@
     <form [formGroup]="thirdFormGroup">
       <ng-template matStepLabel>experience</ng-template>
       <div class="form-item">
-        <app-select [selectParameters]="stepperParameters.firstStep.category"></app-select>
-      </div>
-      <div class="form-item">
-        <app-select [selectParameters]="stepperParameters.firstStep.subcategory"></app-select>
+       <app-experience></app-experience>
       </div>
       <div class="form-item">
         <app-button (click)="stepper.previous()" [buttonParameters]="stepperParameters.buttonPrevious"></app-button>
@@ -48,14 +45,14 @@
     <form [formGroup]="fourthFormGroup">
       <ng-template matStepLabel>work field</ng-template>
       <div class="form-item">
-        <app-select [selectParameters]="stepperParameters.firstStep.category"></app-select>
+       <app-input [inputParameters]="stepperParameters.inputMoney"></app-input>
       </div>
-      <div class="form-item">
-        <app-select [selectParameters]="stepperParameters.firstStep.subcategory"></app-select>
+      <div class="form-item money">
+
       </div>
       <div class="form-item">
         <app-button (click)="stepper.previous()" [buttonParameters]="stepperParameters.buttonPrevious"></app-button>
-        <app-button (click)="stepper.next()" [buttonParameters]="stepperParameters.buttonNext"></app-button>
+        <app-button (click)="stepper.next()" [buttonParameters]="stepperParameters.buttonSend"></app-button>
       </div>
     </form>
   </mat-step>
