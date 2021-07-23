@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ModalSelectRoleComponent implements OnInit {
 
-  constructor() { }
+  public modalParameters = {
+    button: {
+      text: 'Next',
+      type: '',
+      view: 'medium',
+      disabled: false
+    }
+  };
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
-
 }

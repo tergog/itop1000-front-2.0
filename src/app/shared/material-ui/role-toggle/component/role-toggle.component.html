@@ -3,8 +3,8 @@
 
     <div class="role-toggle__item"
          [ngClass]="{active:  first.checked}"
-         (click)="first.checked = true">
-      <mat-radio-button value="1" #first checked></mat-radio-button>
+         (click)="first.checked = true; setRole(first.value)">
+      <mat-radio-button [value]="EUserRole.ProductOwner" #first></mat-radio-button>
       <div class="item-title">
         <h2>Product owner</h2>
       </div>
@@ -19,8 +19,8 @@
 
     <div class="role-toggle__item"
          [ngClass]="{active:  second.checked}"
-         (click)="second.checked = true">
-      <mat-radio-button value="2" #second></mat-radio-button>
+         (click)="second.checked = true; setRole(second.value)">
+      <mat-radio-button [value]="EUserRole.Freelancer" #second  checked></mat-radio-button>
       <div class="item-title">
       <h2>Performer</h2>
     </div>

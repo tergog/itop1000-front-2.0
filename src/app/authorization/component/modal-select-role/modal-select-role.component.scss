@@ -1,0 +1,34 @@
+@import "src/assets/scss/mixins";
+
+.modal-select-role{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: $modalBackgroundColor;
+  padding: 40px 69px;
+  &__title{
+    h2{
+      @include setFontParams($fontFamily, normal, 300, 24px);
+      font-size: 24px;
+      background: $textGradient;
+      text-align: center;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  &__body{
+    margin: 46px 0;
+  }
+}
+
+
+::ng-deep{
+  .mat-dialog-container{
+    padding: 0;
+    border-radius: 20px;
+  }
+  .cdk-overlay-dark-backdrop {
+    background: rgba(0, 0, 0, 0.72);
+  }
+}
