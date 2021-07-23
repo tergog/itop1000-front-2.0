@@ -5,6 +5,7 @@ import { ReactiveComponentModule } from '@ngrx/component';
 import { LandingComponent } from './component/landing.component';
 import { LandingRoutingModule } from './landing-routing.module';
 import { SharedModule } from '../shared/shared.module';
+import { LoaderModule } from '../shared/loader/loader.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule,
     SharedModule,
     LandingRoutingModule,
-    ReactiveComponentModule
+    ReactiveComponentModule,
+    LoaderModule
   ],
   exports: [
     LandingComponent

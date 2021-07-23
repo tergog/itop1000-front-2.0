@@ -1,4 +1,4 @@
-<a [routerLink]="['/']">
+<a *ngIf="_logoParameters.view !==ELogoView.Loader" [routerLink]="['/']">
   <div *ngIf="_logoParameters.view === ELogoView.Big" class="logo-container big">
     <div class="logo-image">
       <img src="/assets/img/big-logo-img.svg" alt="big-logo-img">
@@ -31,10 +31,10 @@
       <img src="/assets/img/medium-logo-img.svg" alt="medium-logo-img">
     </div>
   </div>
-
-  <div *ngIf="_logoParameters.view === ELogoView.Loader" class="logo-container loader">
-    <div class="logo-image">
-      <img src="/assets/img/big-logo-img.svg" alt="big-logo-img">
-    </div>
-  </div>
 </a>
+
+<div *ngIf="_logoParameters.view === ELogoView.Loader" class="logo-container loader">
+  <div class="logo-image">
+    <img src="/assets/img/big-logo-img.svg" alt="big-logo-img">
+  </div>
+</div>

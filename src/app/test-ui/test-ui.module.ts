@@ -6,6 +6,7 @@ import { SharedModule } from '../shared/shared.module';
 import { TestUiRoutingModule } from './test-ui-routing.module';
 import { ChipsModule } from '../shared/material-ui/chips/chips.module';
 import { StepperModule } from '../shared/stepper/stepper.module';
+import { LoaderModule } from '../shared/loader/loader.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { StepperModule } from '../shared/stepper/stepper.module';
     SharedModule,
     TestUiRoutingModule,
     ChipsModule,
-    StepperModule
+    StepperModule,
+    LoaderModule
   ],
   exports: [
     TestUiComponent
