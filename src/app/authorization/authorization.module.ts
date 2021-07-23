@@ -6,10 +6,14 @@ import { AuthorizationRoutingModule } from './authorization-routing.module';
 import { CustomUiModule } from '../shared/custom-ui/custom-ui.module';
 import { StepperModule } from '../shared/stepper/stepper.module';
 import { MaterialUiModule } from '../shared/material-ui/material-ui.module';
+import { ModalSelectRoleComponent } from './component/modal-select-role/modal-select-role.component';
+import { AuthorizationFormComponent } from './component/authorization-form/authorization-form.component';
 
 @NgModule({
   declarations: [
-    AuthorizationComponent
+    AuthorizationComponent,
+    ModalSelectRoleComponent,
+    AuthorizationFormComponent
   ],
   imports: [
     CommonModule,

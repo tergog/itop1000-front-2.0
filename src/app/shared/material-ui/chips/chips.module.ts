@@ -4,6 +4,8 @@ import { MatChipsModule } from '@angular/material/chips';
 
 import { ChipsComponent } from './component/chips.component';
 import { ButtonModule } from '../../custom-ui/button/button.module';
+import { SearchInputModule } from '../search-input/search-input.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -12,7 +14,9 @@ import { ButtonModule } from '../../custom-ui/button/button.module';
   imports: [
     CommonModule,
     MatChipsModule,
-    ButtonModule
+    ButtonModule,
+    SearchInputModule,
+    ReactiveFormsModule
   ],
   exports: [
     ChipsComponent

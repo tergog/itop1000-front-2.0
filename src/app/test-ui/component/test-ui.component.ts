@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { CStepperData } from '../../constantes/constantes';
-import { EStepperType } from '../../shared/stepper/stepper.enums';
 
 @Component({
   selector: 'app-test-ui',
@@ -8,11 +6,6 @@ import { EStepperType } from '../../shared/stepper/stepper.enums';
   styleUrls: ['./test-ui.component.scss']
 })
 export class TestUiComponent implements OnInit {
-
-  public objStepperParameters = {
-    freelancer: CStepperData[EStepperType.Freelancer],
-    productOwner: CStepperData[EStepperType.ProductOwner]
-  };
 
   public objSearchInputParameters = {
     big: {
@@ -200,6 +193,12 @@ export class TestUiComponent implements OnInit {
       text: 'Decline',
       type: '',
       view: 'small-empty',
+      disabled: false
+    },
+    smallEmptyBorder: {
+      text: 'Add Skill',
+      type: '',
+      view: 'small-empty-border',
       disabled: false
     },
     login: {

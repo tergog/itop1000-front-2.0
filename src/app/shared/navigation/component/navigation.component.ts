@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 
 import { INavigationParameters } from '../navigation.interfaces';
 import { ENavigationView } from '../navigation.enums';
-import { LandingDataService } from '../../../services/landing-data/landing-data.service';
+import { ItopDataService } from '../../../services/itop-data/itop-data.service';
 import { BehaviorSubject } from 'rxjs';
 
 @Component({
@@ -21,8 +21,8 @@ export class NavigationComponent implements OnInit {
   }
   public landingRole$: BehaviorSubject<string>;
 
-  constructor(private landingData: LandingDataService) {
-    this.landingRole$ = landingData.landingRole$;
+  constructor(private landingData: ItopDataService) {
+    this.landingRole$ = landingData.userRole$;
   }
 
   ngOnInit(): void {

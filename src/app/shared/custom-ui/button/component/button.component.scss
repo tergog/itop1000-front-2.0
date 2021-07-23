@@ -35,12 +35,18 @@ button.btn {
     height: 20px;
   }
 
-  &__small-empty {
+  &__small-empty, &__small-empty-border {
     text-transform: uppercase;
     background: transparent;
     color: $buttonEmptyColor;
     border: none;
     font-size: 14px;
+  }
+
+  &__small-empty-border {
+   border: 1px solid $buttonBackground;
+    border-radius: 34px;
+    padding: 21px 30px;
   }
 
   &__big:hover,
@@ -49,8 +55,9 @@ button.btn {
     background: $buttonHoverBackground;
   }
 
-  &__small-empty:hover {
+  &__small-empty:hover, &__small-empty-border:hover {
     color: $buttonEmptyHoverColor;
+    border-color: $buttonEmptyHoverColor;
   }
 
   &__big[disabled],

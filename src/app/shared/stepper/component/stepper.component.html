@@ -1,59 +1,58 @@
 <!--========================================Freelancer==========================================================-->
-
-<mat-horizontal-stepper linear #stepper *ngIf="_stepperParameters.type === EStepperType.Freelancer">
-  <mat-step [stepControl]="firstFormGroup">
-    <form [formGroup]="firstFormGroup">
+<h2 class="stepper-title">{{ declension[step] }} STAGE</h2>
+<mat-horizontal-stepper linear #stepper *ngIf="(stepperParameters$ | ngrxPush).type === EStepperType.Freelancer"
+(keydown.enter)="$event.preventDefault()">
+  <mat-step [stepControl]="firstStepFormGroup">
+    <form [formGroup]="firstStepFormGroup">
       <ng-template matStepLabel>work field</ng-template>
       <div class="form-item">
-        <app-select [selectParameters]="_stepperParameters.selects.category"></app-select>
+        <app-select formControlName="category" [selectParameters]="(stepperParameters$ | ngrxPush).selects.category"></app-select>
       </div>
       <div class="form-item">
-        <app-select [selectParameters]="_stepperParameters.selects.subcategory"></app-select>
+        <app-select formControlName="subcategory" [selectParameters]="(stepperParameters$ | ngrxPush).selects.subcategory"></app-select>
       </div>
       <div class="form-item">
-        <app-button (click)="stepper.next()" [buttonParameters]="_stepperParameters.buttons.next"></app-button>
+        <app-button (click)="stepper.next()" [buttonParameters]="(stepperParameters$ | ngrxPush).buttons.next"></app-button>
       </div>
     </form>
   </mat-step>
-  <mat-step [stepControl]="secondFormGroup">
-    <form [formGroup]="secondFormGroup">
+  <mat-step [stepControl]="secondStepFormGroup">
+    <form [formGroup]="secondStepFormGroup">
       <ng-template matStepLabel>hard Skills</ng-template>
       <div class="form-item">
-        <app-search-input [searchInputParameters]="_stepperParameters.searchInputs!.big"></app-search-input>
+        <app-chips formControlName="skills"></app-chips>
       </div>
       <div class="form-item">
-        <app-chips [chipsValues]="_stepperParameters!.chipsValues"></app-chips>
-      </div>
-      <div class="form-item">
-        <app-button (click)="stepper.previous()" [buttonParameters]="_stepperParameters.buttons.previous"></app-button>
-        <app-button (click)="stepper.next()" [buttonParameters]="_stepperParameters.buttons.next"></app-button>
+        <app-button (click)="stepper.previous()" [buttonParameters]="(stepperParameters$ | ngrxPush).buttons.previous"></app-button>
+        <app-button (click)="stepper.next()" [buttonParameters]="(stepperParameters$ | ngrxPush).buttons.next"></app-button>
       </div>
     </form>
   </mat-step>
-  <mat-step [stepControl]="thirdFormGroup">
-    <form [formGroup]="thirdFormGroup">
+  <mat-step [stepControl]="thirdStepFormGroup">
+    <form [formGroup]="thirdStepFormGroup">
       <ng-template matStepLabel>experience</ng-template>
       <div class="form-item">
-        <app-experience></app-experience>
+        <app-experience formControlName="experience"></app-experience>
       </div>
       <div class="form-item">
-        <app-button (click)="stepper.previous()" [buttonParameters]="_stepperParameters.buttons.previous"></app-button>
-        <app-button (click)="stepper.next()" [buttonParameters]="_stepperParameters.buttons.next"></app-button>
+        <app-button (click)="stepper.previous()" [buttonParameters]="(stepperParameters$ | ngrxPush).buttons.previous"></app-button>
+        <app-button (click)="stepper.next()" [buttonParameters]="(stepperParameters$ | ngrxPush).buttons.next"></app-button>
       </div>
     </form>
   </mat-step>
-  <mat-step [stepControl]="fourthFormGroup">
-    <form [formGroup]="fourthFormGroup">
+  <mat-step [stepControl]="fourthStepFormGroup">
+    <form [formGroup]="fourthStepFormGroup">
       <ng-template matStepLabel>hourly rate</ng-template>
       <div class="form-item">
-        <app-input [inputParameters]="_stepperParameters.inputs.money"></app-input>
+        <app-input class="money" formControlName="rate" [inputParameters]="(stepperParameters$ | ngrxPush).inputs.money"></app-input>
       </div>
       <div class="form-item money">
 
       </div>
       <div class="form-item">
-        <app-button (click)="stepper.previous()" [buttonParameters]="_stepperParameters.buttons.previous"></app-button>
-        <app-button (click)="stepper.next()" [buttonParameters]="_stepperParameters.buttons.send"></app-button>
+        <app-button (click)="stepper.previous()" [buttonParameters]="(stepperParameters$ | ngrxPush).buttons.previous"></app-button>
+        <app-button [buttonParameters]="(stepperParameters$ | ngrxPush).buttons.send"
+                    (click)="sendUserSignUpData()"></app-button>
       </div>
     </form>
   </mat-step>
@@ -61,54 +60,58 @@
 
 <!--========================================Product owner==========================================================-->
 
-<mat-horizontal-stepper linear #stepper *ngIf="_stepperParameters.type === EStepperType.ProductOwner">
-  <mat-step [stepControl]="firstFormGroup">
-    <form [formGroup]="firstFormGroup">
+<mat-horizontal-stepper linear #stepper *ngIf="(stepperParameters$ | ngrxPush).type === EStepperType.ProductOwner">
+  <mat-step [stepControl]="firstStepFormGroup">
+    <form [formGroup]="firstStepFormGroup">
       <ng-template matStepLabel>Company name</ng-template>
       <div class="form-item">
-        <app-input [inputParameters]="_stepperParameters.inputs.companyName"></app-input>
+        <app-input [inputParameters]="(stepperParameters$ | ngrxPush).inputs.companyName"></app-input>
       </div>
       <div class="form-item">
-        <app-input [inputParameters]="_stepperParameters.inputs.description"></app-input>
+        <app-input [inputParameters]="(stepperParameters$ | ngrxPush).inputs.description"></app-input>
       </div>
       <div class="form-item">
-        <app-button (click)="stepper.next()" [buttonParameters]="_stepperParameters.buttons.next"></app-button>
+        <app-button (click)="stepper.next()" [buttonParameters]="(stepperParameters$ | ngrxPush).buttons.next"></app-button>
       </div>
     </form>
   </mat-step>
-  <mat-step [stepControl]="secondFormGroup">
-    <form [formGroup]="secondFormGroup">
+  <mat-step [stepControl]="secondStepFormGroup">
+    <form [formGroup]="secondStepFormGroup">
       <ng-template matStepLabel>work field</ng-template>
       <div class="form-item">
-        <app-select [selectParameters]="_stepperParameters.selects.category"></app-select>
+        <app-select [selectParameters]="(stepperParameters$ | ngrxPush).selects.category"></app-select>
       </div>
+      <div class="form-item"></div>
       <div class="form-item">
-        <app-button (click)="stepper.previous()" [buttonParameters]="_stepperParameters.buttons.previous"></app-button>
-        <app-button (click)="stepper.next()" [buttonParameters]="_stepperParameters.buttons.next"></app-button>
+        <app-button (click)="stepper.previous()" [buttonParameters]="(stepperParameters$ | ngrxPush).buttons.previous"></app-button>
+        <app-button (click)="stepper.next()" [buttonParameters]="(stepperParameters$ | ngrxPush).buttons.next"></app-button>
       </div>
     </form>
   </mat-step>
-  <mat-step [stepControl]="thirdFormGroup">
-    <form [formGroup]="thirdFormGroup">
+  <mat-step [stepControl]="thirdStepFormGroup">
+    <form [formGroup]="thirdStepFormGroup">
       <ng-template matStepLabel>location</ng-template>
       <div class="form-item">
-        <app-select [selectParameters]="_stepperParameters.selects.location"></app-select>
+        <app-select [selectParameters]="(stepperParameters$ | ngrxPush).selects.location"></app-select>
       </div>
+      <div class="form-item"></div>
       <div class="form-item">
-        <app-button (click)="stepper.previous()" [buttonParameters]="_stepperParameters.buttons.previous"></app-button>
-        <app-button (click)="stepper.next()" [buttonParameters]="_stepperParameters.buttons.next"></app-button>
+        <app-button (click)="stepper.previous()" [buttonParameters]="(stepperParameters$ | ngrxPush).buttons.previous"></app-button>
+        <app-button (click)="stepper.next()" [buttonParameters]="(stepperParameters$ | ngrxPush).buttons.next"></app-button>
       </div>
     </form>
   </mat-step>
-  <mat-step [stepControl]="fourthFormGroup">
-    <form [formGroup]="fourthFormGroup">
+  <mat-step [stepControl]="fourthStepFormGroup">
+    <form [formGroup]="fourthStepFormGroup">
       <ng-template matStepLabel>operation mode</ng-template>
       <div class="form-item">
-        <app-select [selectParameters]="_stepperParameters.selects.operationMode"></app-select>
+        <app-select [selectParameters]="(stepperParameters$ | ngrxPush).selects.operationMode"></app-select>
       </div>
+      <div class="form-item"></div>
       <div class="form-item">
-        <app-button (click)="stepper.previous()" [buttonParameters]="_stepperParameters.buttons.previous"></app-button>
-        <app-button (click)="stepper.next()" [buttonParameters]="_stepperParameters.buttons.send"></app-button>
+        <app-button (click)="stepper.previous()" [buttonParameters]="(stepperParameters$ | ngrxPush).buttons.previous"></app-button>
+        <app-button [buttonParameters]="(stepperParameters$ | ngrxPush).buttons.send"
+                    (click)="sendUserSignUpData()"></app-button>
       </div>
     </form>
   </mat-step>

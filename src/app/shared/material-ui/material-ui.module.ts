@@ -7,12 +7,12 @@ import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatChipsModule } from '@angular/material/chips';
 
 import { ButtonToggleComponent } from './button-toggle/button-toggle.component';
 import { SelectModule } from './select/select.module';
 import { CheckboxModule } from './checkbox/checkbox.module';
 import { RoleToggleModule } from './role-toggle/role-toggle.module';
-import { MatChipsModule } from '@angular/material/chips';
 import { ExperienceModule } from './experience/experience.module';
 import { SearchInputModule } from './search-input/search-input.module';
 
@@ -32,7 +32,6 @@ import { SearchInputModule } from './search-input/search-input.module';
     MatButtonModule,
     MatInputModule,
     MatTabsModule,
-    MatChipsModule,
     ExperienceModule,
     SearchInputModule
   ],

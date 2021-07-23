@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { LandingDataService } from './landing-data.service';
+import { ItopDataService } from './itop-data.service';
 
 describe('LandingDataService', () => {
-  let service: LandingDataService;
+  let service: ItopDataService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(LandingDataService);
+    service = TestBed.inject(ItopDataService);
   });
 
   it('should be created', () => {

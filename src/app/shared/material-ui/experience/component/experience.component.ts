@@ -1,36 +1,72 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, forwardRef, Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { FormArray, FormBuilder } from '@angular/forms';
+import { FormArray, FormBuilder, NG_VALUE_ACCESSOR, ControlValueAccessor, FormControl } from '@angular/forms';
 
 import { AddExperienceModalComponent } from './add-experience-modal/add-experience-modal.component';
+
+export const EXPERIENCE_VALUE_ACCESSOR: any = {
+  provide: NG_VALUE_ACCESSOR,
+  useExisting: forwardRef(() => ExperienceComponent),
+  multi: true
+};
 
 @Component({
   selector: 'app-experience',
   templateUrl: './experience.component.html',
-  styleUrls: ['./experience.component.scss']
+  styleUrls: ['./experience.component.scss'],
+  providers: [EXPERIENCE_VALUE_ACCESSOR]
 })
-export class ExperienceComponent implements OnInit {
-
+export class ExperienceComponent implements OnInit, ControlValueAccessor {
+  private onChange: any;
+  private onTouched: any;
+  public value: object[];
+  public disableState: boolean;
   public experienceGroup: FormArray;
 
   constructor(
     private dialog: MatDialog,
     private formBuilder: FormBuilder
   ) {
+    this.disableState = false;
+    this.value = [];
     this.experienceGroup = this.formBuilder.array([]);
   }
 
   ngOnInit(): void {
+    this.experienceGroup.statusChanges.subscribe(change => {
+      this.change();
+    });
   }
 
   openAddExperienceModal(): void {
     this.dialog.open(AddExperienceModalComponent)
       .afterClosed()
       .subscribe(exp => {
-      if (exp) {
-        (this.experienceGroup as FormArray).push(exp);
-      }
-    });
+        if (exp) {
+          (this.experienceGroup as FormArray).push(exp);
+        }
+      });
   }
 
+  writeValue(value: object[]): void {
+    this.value = value;
+  }
+
+  registerOnChange(fn: any): void {
+    this.onChange = fn;
+  }
+
+  registerOnTouched(fn: any): void {
+    this.onTouched = fn;
+  }
+
+  setDisabledState(isDisabled: boolean): void {
+    this.disableState = isDisabled;
+  }
+
+  change(): void {
+    this.value = this.experienceGroup.value;
+    this.onChange(this.value);
+    this.onTouched(this.value);
+  }
 }

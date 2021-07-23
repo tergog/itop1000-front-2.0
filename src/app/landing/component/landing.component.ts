@@ -3,7 +3,7 @@ import { BehaviorSubject } from 'rxjs';
 
 import { ILandingData } from '../landing.interfaces';
 import { ELandingRole } from '../landing.enums';
-import { LandingDataService } from '../../services/landing-data/landing-data.service';
+import { ItopDataService } from '../../services/itop-data/itop-data.service';
 import { animateText } from 'src/app/animations/animations'
 
 @Component({
@@ -17,7 +17,7 @@ export class LandingComponent implements OnInit {
   public landingData$: BehaviorSubject<ILandingData>;
   public ELandingRole = ELandingRole;
 
-  constructor(private landingPageData: LandingDataService) {
+  constructor(private landingPageData: ItopDataService) {
     this.landingData$ = landingPageData.landingPageData$;
   }
 

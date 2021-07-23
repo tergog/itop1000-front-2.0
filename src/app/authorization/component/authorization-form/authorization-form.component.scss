@@ -1,0 +1,123 @@
+@import "src/assets/scss/mixins";
+
+.authorization-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 0;
+  width: 100%;
+
+  app-logo {
+    margin-bottom: 20px;
+  }
+
+  app-social-list {
+    margin-bottom: 24px;
+  }
+}
+
+.login-form {
+  width: 769px;
+  max-width: 769px;
+
+  .form-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .form-item:nth-child(3){
+    justify-content: space-between;
+  }
+
+  .form-item app-input {
+    width: 99%;
+  }
+
+  .form-item app-button {
+    margin-top: 50px;
+  }
+
+  .form-item a {
+    text-decoration: none;
+    color: $white;
+  }
+
+  .form-item a:hover {
+    color: $tabLabelHoverTextColor;
+  }
+}
+
+.sign-up-form{
+  width: 769px;
+  max-width: 769px;
+  overflow: hidden;
+  .form-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .form-item app-input {
+    width: 99%;
+  }
+  .form-item:nth-child(2){
+    justify-content: space-between;
+    app-input{
+      width: 49%;
+    }
+    app-input:last-child{
+      margin-right: 1px;
+    }
+  }
+  .form-item:last-child{
+    justify-content: center;
+  }
+}
+
+
+::ng-deep {
+  .mat-tab-header {
+    margin-bottom: 32px;
+  }
+
+  .mat-tab-labels {
+    justify-content: center;
+  }
+
+  .mat-tab-label-content {
+    color: $tabLabelTextColor;
+    text-transform: uppercase;
+    @include setFontParams($fontFamily, normal, 500, 35px);
+    font-size: 30px;
+    opacity: 1;
+  }
+
+  .mat-tab-label.mat-tab-label-active .mat-tab-label-content {
+    color: $tabLabelHoverTextColor;
+  }
+
+  .mat-tab-label.mat-tab-label-active{
+    opacity: 1.0;
+  }
+
+  .mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+    background-color: $tabLabelHoverTextColor;
+    display: flex;
+    justify-content: center;
+  }
+
+  mat-tab-group {
+    height: 100%;
+  }
+
+  .mat-tab-body-wrapper {
+    height: 100%;
+  }
+
+  .mat-tab-body-content {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow: hidden;
+  }
+}

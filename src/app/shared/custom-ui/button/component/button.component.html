@@ -26,6 +26,13 @@
   {{ _buttonParameters.text }}
 </button>
 
+<button *ngIf="_buttonParameters.view === EButtonView.SmallEmptyBorder"
+        [type]="_buttonParameters.type"
+        [disabled]="_buttonParameters.disabled"
+        class="btn btn__small-empty-border">
+  {{ _buttonParameters.text }}
+</button>
+
 <button *ngIf="_buttonParameters.view === EButtonView.Close"
         [type]="_buttonParameters.type"
         [disabled]="_buttonParameters.disabled"
@@ -61,3 +68,4 @@
     {{ _buttonParameters.text }}
   </button>
 </a>
+

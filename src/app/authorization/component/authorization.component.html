@@ -1,56 +1,6 @@
 <div class="authorization">
-  <div class="authorization-content">
-    <app-logo [logoParameters]="authorizationPageParameters.logo.empty"></app-logo>
-    <mat-tab-group>
-      <mat-tab label="sign-up">
-        <form action="" class="sign-up-form">
-          <div class="form-item">
-            <app-input [inputParameters]="authorizationPageParameters.signUpFormElements.email"></app-input>
-          </div>
-          <div class="form-item">
-            <app-input [inputParameters]="authorizationPageParameters.signUpFormElements.firstName"></app-input>
-            <app-input [inputParameters]="authorizationPageParameters.signUpFormElements.lastName"></app-input>
-          </div>
-          <div class="form-item">
-            <app-input [inputParameters]="authorizationPageParameters.signUpFormElements.password"></app-input>
-          </div>
-          <div class="form-item">
-            <app-input [inputParameters]="authorizationPageParameters.signUpFormElements.confirmPassword"></app-input>
-          </div>
-          <div class="form-item">
-            <app-checkbox [checkboxParameters]="authorizationPageParameters.signUpFormElements.checkbox.policy"></app-checkbox>
-          </div>
-          <div class="form-item">
-            <app-checkbox [checkboxParameters]="authorizationPageParameters.signUpFormElements.checkbox.terms"></app-checkbox>
-          </div>
-          <div class="form-item">
-            <app-button [buttonParameters]="authorizationPageParameters.signUpFormElements.buttonSubmit"></app-button>
-          </div>
-        </form>
-      </mat-tab>
-      <mat-tab label="sign-in">
-        <app-social-list [iconParameters]="authorizationPageParameters.social"></app-social-list>
-        <form action="" class="login-form">
-          <div class="form-item">
-            <app-input [inputParameters]="authorizationPageParameters.loginFormElements.email"></app-input>
-          </div>
-          <div class="form-item">
-            <app-input [inputParameters]="authorizationPageParameters.loginFormElements.password"></app-input>
-          </div>
-          <div class="form-item">
-            <app-checkbox [checkboxParameters]="authorizationPageParameters.loginFormElements.checkbox"></app-checkbox>
-            <a href="">Forgot password?</a>
-          </div>
-          <div class="form-item">
-            <app-button [buttonParameters]="authorizationPageParameters.loginFormElements.buttonSubmit"></app-button>
-          </div>
-        </form>
-      </mat-tab>
-    </mat-tab-group>
-  </div>
+    <router-outlet></router-outlet>
   <aside>
-    <app-logo [logoParameters]="authorizationPageParameters.logo.big"></app-logo>
+    <app-logo [logoParameters]="logo"></app-logo>
   </aside>
 </div>
-
-

@@ -1,5 +1,14 @@
 @import "src/assets/scss/mixins";
 
+h2.stepper-title{
+  @include setFontParams($fontTitle, normal, 700, 75px);
+  font-size: 50px;
+  color: $white;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 40px;
+}
+
 ::ng-deep {
   mat-horizontal-stepper {
     max-width: 769px;
@@ -39,7 +48,9 @@
       background: transparent;
     }
 
-    mat-step-header .mat-step-icon.mat-step-icon-state-done, mat-step-header .mat-step-icon.mat-step-icon-selected {
+    mat-step-header .mat-step-icon.mat-step-icon-state-done,
+    mat-step-header .mat-step-icon.mat-step-icon-selected,
+    mat-step-header .mat-step-icon.mat-step-icon-state-edit{
       background: $stepIconContentBackground;
     }
 
@@ -92,7 +103,9 @@ form {
     app-input{
       width: 100%;
     }
-
+    app-input.money{
+      width: auto;
+    }
   }
 
   .form-item:nth-child(2) {

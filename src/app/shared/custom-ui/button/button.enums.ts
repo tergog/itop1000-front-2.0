@@ -5,6 +5,7 @@ export enum EButtonView {
   Login = 'login',
   SignUp = 'sign-up',
   SmallEmpty = 'small-empty',
+  SmallEmptyBorder = 'small-empty-border',
   Close = 'close',
   CloseSmall = 'close-small',
 }

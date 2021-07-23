@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LandingDataService } from '../../../services/landing-data/landing-data.service';
+import { ItopDataService } from '../../../services/itop-data/itop-data.service';
 import { ELandingRole } from '../../../landing/landing.enums';
 
 @Component({
@@ -10,7 +10,7 @@ import { ELandingRole } from '../../../landing/landing.enums';
 export class ButtonToggleComponent implements OnInit {
 
   constructor(
-    private landingData: LandingDataService
+    private landingData: ItopDataService
   ) {
   }
 
@@ -18,11 +18,11 @@ export class ButtonToggleComponent implements OnInit {
   }
 
   setProductOwnerRole(): void {
-    this.landingData.landingRole$.next(ELandingRole.ProductOwner);
+    this.landingData.userRole$.next(ELandingRole.ProductOwner);
   }
 
   setFreelancerRole(): void {
-    this.landingData.landingRole$.next(ELandingRole.Freelancer);
+    this.landingData.userRole$.next(ELandingRole.Freelancer);
   }
 
 }

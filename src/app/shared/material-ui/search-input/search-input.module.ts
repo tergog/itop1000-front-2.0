@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { SearchInputComponent } from './component/search-input.component';
 import { ReactiveComponentModule } from '@ngrx/component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { ReactiveComponentModule } from '@ngrx/component';
   imports: [
     CommonModule,
     MatAutocompleteModule,
-    ReactiveComponentModule
+    ReactiveComponentModule,
+    ReactiveFormsModule
   ],
   exports: [
     SearchInputComponent

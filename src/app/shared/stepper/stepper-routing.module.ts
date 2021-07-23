@@ -1,15 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { LandingComponent } from './component/landing.component';
+import { StepperComponent } from './component/stepper.component';
 
 const routes: Routes = [
-  { path: '', component: LandingComponent, pathMatch: 'full' }
+  {
+    path: '',
+    component: StepperComponent
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class LandingRoutingModule {
+export class StepperRoutingModule {
 }

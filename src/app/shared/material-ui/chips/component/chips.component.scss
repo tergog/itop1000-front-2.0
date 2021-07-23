@@ -1,5 +1,15 @@
 @import "src/assets/scss/mixins";
 
+.chips-input{
+  display: flex;
+  align-items: flex-end;
+  app-search-input{
+    flex: 1 0 auto;
+    margin-right: 10px;
+  }
+  margin-bottom: 32px;
+}
+
 .chips-list {
   max-width: 769px;
 }

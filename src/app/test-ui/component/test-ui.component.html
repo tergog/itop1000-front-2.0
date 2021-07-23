@@ -1,12 +1,11 @@
 <app-header ></app-header>
 <hr>
-<app-stepper [stepperParameters]="objStepperParameters.freelancer"></app-stepper>
-<hr>
-<app-stepper [stepperParameters]="objStepperParameters.productOwner"></app-stepper>
+<app-stepper></app-stepper>
 <hr>
 <app-search-input [searchInputParameters]="objSearchInputParameters.big"></app-search-input>
 <hr>
-<app-chips [chipsValues]="arrChipsElements"></app-chips>
+<!--<app-chips [chipsValues]="arrChipsElements"></app-chips>-->
+<app-chips></app-chips>
 <hr>
 <app-experience></app-experience>
 <hr>
@@ -22,6 +21,7 @@
 <app-button [buttonParameters]="objButtonParameters.smallEmpty"></app-button>
 <app-button [buttonParameters]="objButtonParameters.login"></app-button>
 <app-button [buttonParameters]="objButtonParameters.signUp"></app-button>
+<app-button [buttonParameters]="objButtonParameters.smallEmptyBorder"></app-button>
 <hr>
 <app-input [inputParameters]="objInputParameters.email"></app-input>
 <app-input [inputParameters]="objInputParameters.text"></app-input>

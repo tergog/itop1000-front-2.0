@@ -1,5 +1,5 @@
 import { Component, OnInit, forwardRef, Input } from '@angular/core';
-import { NG_VALUE_ACCESSOR, ControlValueAccessor, FormBuilder, FormControl } from '@angular/forms';
+import { NG_VALUE_ACCESSOR, ControlValueAccessor, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
 import { ISearchInputParameters } from '../search-input.interfaces';
 import { ESearchInputElementType } from '../search-input.enums';
@@ -19,15 +19,9 @@ export const INPUT_VALUE_ACCESSOR: any = {
   providers: [INPUT_VALUE_ACCESSOR],
 })
 export class SearchInputComponent implements OnInit, ControlValueAccessor {
-  public myControl = new FormControl();
-  public options: string[] = ['React', 'JS', 'Figma',
-    'Python Numpy FastAI',
-    'Python Numpy FastAI',
-    'Web', 'React',
-    'JS', 'Figma',
-    'Python Numpy FastAI',
-    'Python Numpy FastAI',
-    'Web'];
+  public searchFormGroup: FormGroup;
+  public myControl: FormControl;
+  public options: string[] = ['React', 'JS', 'Figma', 'Python Numpy FastAI', 'Web'];
   public filteredOptions: Observable<string[]>;
   public focus = false;
   public invalid = false;
@@ -51,6 +45,7 @@ export class SearchInputComponent implements OnInit, ControlValueAccessor {
   }
 
   ngOnInit(): void {
+    this.myControl = this.formBuilder.control('');
     this.filteredOptions = this.myControl.valueChanges.pipe(
       startWith(''),
       map(value => this._filter(value))
@@ -79,7 +74,13 @@ export class SearchInputComponent implements OnInit, ControlValueAccessor {
   }
 
   private _filter(value: string): string[] {
+    console.log(value);
     const filterValue = value.toLowerCase();
     return this.options.filter(option => option.toLowerCase().includes(filterValue));
+  }
+
+  setInputValue(option: string): void{
+    this.onChange(option);
+    this.onTouched(option);
   }
 }

@@ -19,7 +19,7 @@ import { StepperModule } from './stepper/stepper.module';
     MaterialUiModule,
     NavigationModule,
     FooterModule,
-    StepperModule
+    // StepperModule
   ],
   exports: [
     CustomUiModule,
@@ -28,7 +28,7 @@ import { StepperModule } from './stepper/stepper.module';
     NavigationModule,
     LandingGuideComponent,
     FooterModule,
-    StepperModule
+    // StepperModule
   ]
 })
 export class SharedModule {
