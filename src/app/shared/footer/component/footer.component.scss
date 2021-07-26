@@ -3,13 +3,8 @@
 footer {
   display: flex;
   flex-direction: column;
-  padding-bottom: 62px;
-}
-
-footer::before {
-  content: '';
-  border-top: 5px solid $redRibbon;
-  margin-bottom: 115px;
+  padding: 115px 0 62px 0;
+  background: $codGrayStrong;
 }
 
 .container {
