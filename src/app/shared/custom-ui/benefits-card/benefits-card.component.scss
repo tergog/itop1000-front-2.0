@@ -9,7 +9,7 @@
   justify-content: center;
   color: $white;
   text-align: center;
-  @include setFontParams($fontError, 500, normal, 24px);
+  @include setFontParams($fontWorkSans, 500, normal, 24px);
 
   &__title {
     margin: 20px 0 10px 0;

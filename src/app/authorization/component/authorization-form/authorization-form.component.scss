@@ -43,7 +43,7 @@
   }
 
   .form-item a:hover {
-    color: $tabLabelHoverTextColor;
+    color: $redRibbon;
   }
 }
 
@@ -84,15 +84,15 @@
   }
 
   .mat-tab-label-content {
-    color: $tabLabelTextColor;
+    color: $delta;
     text-transform: uppercase;
-    @include setFontParams($fontFamily, normal, 500, 35px);
+    @include setFontParams($fontRaleway, normal, 500, 35px);
     font-size: 30px;
     opacity: 1;
   }
 
   .mat-tab-label.mat-tab-label-active .mat-tab-label-content {
-    color: $tabLabelHoverTextColor;
+    color: $redRibbon;
   }
 
   .mat-tab-label.mat-tab-label-active{
@@ -100,7 +100,7 @@
   }
 
   .mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar {
-    background-color: $tabLabelHoverTextColor;
+    background-color: $redRibbon;
     display: flex;
     justify-content: center;
   }

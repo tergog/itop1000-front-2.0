@@ -1,7 +1,7 @@
 @import "src/assets/scss/mixins";
 
 h2.stepper-title{
-  @include setFontParams($fontTitle, normal, 700, 75px);
+  @include setFontParams($fontRajdhani, normal, 700, 75px);
   font-size: 50px;
   color: $white;
   text-align: center;
@@ -20,7 +20,7 @@ h2.stepper-title{
   }
 
   .mat-stepper-horizontal-line {
-    background: $horizontalLineColor;
+    background: $goldTips;
     border-top-width: 2px !important;
   }
 
@@ -32,13 +32,13 @@ h2.stepper-title{
       top: 60px;
       left: -30px;
       text-transform: uppercase;
-      @include setFontParams($fontFamily, normal, 400, 16px);
+      @include setFontParams($fontRaleway, normal, 400, 16px);
       font-size: 14px;
-      color: $stepLabelColor;
+      color: $brightGray;
     }
 
     mat-step-header .mat-step-label.mat-step-label-active {
-      background: $textGradient;
+      background: $goldTextGradient;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       font-weight: 500;
@@ -51,12 +51,12 @@ h2.stepper-title{
     mat-step-header .mat-step-icon.mat-step-icon-state-done,
     mat-step-header .mat-step-icon.mat-step-icon-selected,
     mat-step-header .mat-step-icon.mat-step-icon-state-edit{
-      background: $stepIconContentBackground;
+      background: $goldGradient;
     }
 
     mat-step-header .mat-step-icon-content {
-      border: 5px solid $stepIconContentColor;
-      background: $stepIconContentBackground;
+      border: 5px solid $codGray;
+      background: $goldGradient;
       border-radius: 50%;
       font-size: 0;
       width: 8px;
@@ -120,6 +120,6 @@ form {
 
   .form-item.money{
     margin-top: 140px;
-    border-bottom: 1px solid $addModalBodyBorderBottomColor;
+    border-bottom: 1px solid $tundora;
   }
 }

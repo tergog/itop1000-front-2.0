@@ -1,109 +1,31 @@
+// Fonts
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap');
-
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&display=swap');
 
-
-$fontFamily: 'Raleway', sans-serif;
-$fontError: 'Work Sans', sans-serif;
-$fontTitle: 'Rajdhani', sans-serif;;
-
-// Page
-//$pageBackground: #171616;
-$pageBackground: #201F1F;
-
-// Landing Page
-$titleTextColor: #CDCDCD;
-$textSpanLandingTitleColor: #F31D42;
-
-$linkSeeAllColor: #A9A9A8;
-$linkSeeAllHoverColor: #EFEFEF;
-
-
-// Buttons
-$buttonColor: #FFFFFF;
-$buttonEmptyColor: #F31D42;
-$buttonBackground: #E81C3F;
-$buttonHoverBackground: #B91C37;
-$buttonEmptyHoverColor: #B91C37;
-$buttonDisabledBackground: #828282;
-
-// Link Buttons
-$borderGradient: linear-gradient(164.88deg, #E07504 41.53%, #E07504 41.54%, #FBDF15 79.69%, #FFFFFF 112.9%);
-
-// Text
-$textGradient: linear-gradient(180deg, hsla(31, 96%, 45%, 1) 0%, hsla(31, 96%, 45%, 1) 31%, hsla(53, 97%, 53%, 1) 100%);
-
-
-$textError: #FF0707;
-$textSpanLandingGuideColor: #F31D42;
-
-// Role toggle
-$radioButtonGradient: linear-gradient(164.88deg, #E07504 41.53%, #E07504 41.54%, #FBDF15 79.69%, #FFFFFF 112.9%);
-$roleToggleBackgroundColor: #242424F2;
-
-// Social Icon
-$socialIconHover: #F1D261;
-
-// Preview Card
-$textPreviewCardHover: #F31D42;
-$borderPreviewCardHover: #F31D42;
-
-// Project Card
-$projectCardBoxShadow: #000000;
-$projectCardBackground: #1E1D1D;
-$projectCardHoverBackground: #101010;
+$fontRaleway: 'Raleway', sans-serif;  // main
+$fontWorkSans: 'Work Sans', sans-serif; // error
+$fontRajdhani: 'Rajdhani', sans-serif; // title
 
 // Colors
-$white: #FFFFFF;
+$red: #FF0707; // errors
+$redRibbon: #F31D42; // text color
+$crimson: #E81C3F; // button background
+$cardinal: #B91C37; // button hover background
+$white: #FFFFFF; // text color
+$nobel: #B7B7B7;
 $brightGray: #EFEFEF;
+$delta: #A9A9A8; // link more color
+$gray: #828282; // disabled buttons
 $dimGray: #696969;
-$gray: #848484;
+$tundora: #4B4949;
+$mineShaft: #2D2C2C;
+$codGray: #1E1D1D;
+$codGrayStrong: #121212;
+$black: #000000;
+$malibu: #62A9FF; // focus elements
+$creamCan: #F1D261; // link color
+$goldTips: #E2B515; // horizontal Line color stepper
 
-// Selects
-$textSelectOptionHover: #F31D42;
-$selectArrowDownColor: #F31D42;
-
-//Checkbox
-$checkmarkColor: #000000;
-
-// Inputs
-$inputBackground: #2D2C2C;
-$placeholderColor: #848484;
-$invalidBorderColor: #FF0707;
-$invalidLabelColor: #FF0707;
-$focusBorderColor: #62A9FF;
-$focusLabelColor: #62A9FF;
-
-// Header
-$headerBackground: #0E0E0E;
-$navigationListAfterColor: #F31D42;
-
-// Footer
-$footerBorderTopColor: #F31D42;
-$footerListNavigationItemHoverColor: #F1D261;
-$footerBorderAfterColor: #E5E5E5;
-
-// Sign Up
-$asideBackground: #121212;
-$tabLabelTextColor: #BDBDBD;
-$tabLabelHoverTextColor: #F31D42;
-
-// Experience
-$addModalBackground: #151515;
-$addModalHeaderBackground: #121212;
-$addModalBodyBorderBottomColor: #4B4949;
-$experienceCardColor: #B7B7B7;
-$experienceBorderBottomColor: #4B4949;
-
-// Search Input
-$searchIconColor: #F31D42;
-
-// Stepper
-$horizontalLineColor: #E2B515;
-$stepLabelColor: #DEDEDE;
-$stepIconContentColor: #1F1E1E;
-$stepIconContentBackground: linear-gradient(164.88deg, #E07504 41.53%, #E07504 41.54%, #FBDF15 79.69%, #FFFFFF 112.9%);
-
-// Modal Role-Toggle
-$modalBackgroundColor: #242424F2;
+$goldGradient: linear-gradient(164.88deg, #E07504 41.53%, #E07504 41.54%, #FBDF15 79.69%, #FFFFFF 112.9%);
+$goldTextGradient: linear-gradient(180deg, hsla(31, 96%, 45%, 1) 0%, hsla(31, 96%, 45%, 1) 31%, hsla(53, 97%, 53%, 1) 100%);

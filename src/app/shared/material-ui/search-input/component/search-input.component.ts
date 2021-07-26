@@ -74,7 +74,6 @@ export class SearchInputComponent implements OnInit, ControlValueAccessor {
   }
 
   private _filter(value: string): string[] {
-    console.log(value);
     const filterValue = value.toLowerCase();
     return this.options.filter(option => option.toLowerCase().includes(filterValue));
   }

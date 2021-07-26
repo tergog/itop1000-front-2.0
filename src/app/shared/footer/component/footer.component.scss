@@ -8,7 +8,7 @@ footer {
 
 footer::before {
   content: '';
-  border-top: 5px solid $footerBorderTopColor;
+  border-top: 5px solid $redRibbon;
   margin-bottom: 115px;
 }
 
@@ -26,18 +26,18 @@ footer::before {
     list-style-type: none;
 
     .navigation-list-item a, .question-list-item a {
-      @include setFontParams($fontFamily, 300, normal, 40px);
+      @include setFontParams($fontRaleway, 300, normal, 40px);
       font-size: 24px;
       text-transform: uppercase;
       color: $white;
 
       span {
-        @include setFontParams($fontError, 300, normal, 40px);
+        @include setFontParams($fontWorkSans, 300, normal, 40px);
       }
     }
 
     .navigation-list-item a:hover, .question-list-item a:hover {
-      color: $footerListNavigationItemHoverColor;
+      color: $creamCan;
     }
   }
 }
@@ -59,7 +59,7 @@ footer::before {
 .footer-social::before {
   content: '';
   display: block;
-  border-left: 1px solid $footerBorderAfterColor;
+  border-left: 1px solid $white;
   margin-right: 70px;
   height: 238px;
 }

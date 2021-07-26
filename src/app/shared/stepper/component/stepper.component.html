@@ -1,5 +1,5 @@
 <!--========================================Freelancer==========================================================-->
-<h2 class="stepper-title">{{ declension[step] }} STAGE</h2>
+<!--<h2 class="stepper-title">{{ declension[step] }} STAGE</h2>-->
 <mat-horizontal-stepper linear #stepper *ngIf="(stepperParameters$ | ngrxPush).type === EStepperType.Freelancer"
 (keydown.enter)="$event.preventDefault()">
   <mat-step [stepControl]="freelancerGroupLinks.firstGroup">

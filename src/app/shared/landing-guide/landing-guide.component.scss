@@ -12,12 +12,12 @@
     margin-bottom: 114px;
 
     span {
-      color: $textSpanLandingGuideColor;
+      color: $redRibbon;
     }
   }
 
   ::ng-deep h2 {
-    @include setFontParams($fontError, 700, bold, 50px);
+    @include setFontParams($fontWorkSans, 700, bold, 50px);
     font-size: 56px;
   }
 
@@ -37,7 +37,7 @@
 
     .list-item .headline {
       border-radius: 50%;
-      background: $buttonBackground;
+      background: $crimson;
       width: 83px;
       height: 83px;
       display: flex;
@@ -46,7 +46,7 @@
 
       span {
         color: $white;
-        @include setFontParams($fontFamily, 700, bold, 40px);
+        @include setFontParams($fontRaleway, 700, bold, 40px);
         font-size: 44px;
       }
     }
@@ -54,12 +54,12 @@
     .list-item .description {
       margin-left: 19px;
       .description-title {
-        @include setFontParams($fontError, 400, normal, 40px);
+        @include setFontParams($fontWorkSans, 400, normal, 40px);
         font-size: 36px;
       }
 
       .description-subtitle {
-        @include setFontParams($fontError, 300, normal, 40px);
+        @include setFontParams($fontWorkSans, 300, normal, 40px);
         font-size: 28px;
         color: $gray;
       }

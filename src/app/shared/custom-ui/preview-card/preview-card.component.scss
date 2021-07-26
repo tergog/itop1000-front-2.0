@@ -34,7 +34,7 @@ a {
       display: block;
       text-align: center;
       text-transform: uppercase;
-      @include setFontParams($fontFamily, 500, normal, 36px);
+      @include setFontParams($fontRaleway, 500, normal, 36px);
       font-size: 30px;
     }
   }
@@ -47,9 +47,9 @@ a {
     margin-top: 12px;
 
     span {
-      @include setFontParams($fontError, 500, normal, 16px);
+      @include setFontParams($fontWorkSans, 500, normal, 16px);
       font-size: 20px;
-      background: $textGradient;
+      background: $goldTextGradient;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -74,12 +74,12 @@ a {
 
 .preview-card:hover {
   transition: 0.5s all ease;
-  color: $textPreviewCardHover;
+  color: $redRibbon;
 }
 
 .preview-card:hover .preview-card__img {
-  border: 1px solid $borderPreviewCardHover;
+  border: 1px solid $redRibbon;
   transition: 0.2s all ease-in-out;
-  -webkit-box-shadow: inset 0px 0px 0px 5px $borderPreviewCardHover;
-  box-shadow: inset 0px 0px 0px 5px $borderPreviewCardHover;
+  -webkit-box-shadow: inset 0px 0px 0px 5px $redRibbon;
+  box-shadow: inset 0px 0px 0px 5px $redRibbon;
 }

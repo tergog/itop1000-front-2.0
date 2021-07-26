@@ -26,15 +26,15 @@
   }
 
   mat-chip.mat-standard-chip.mat-chip-selected {
-    background: linear-gradient($pageBackground, $pageBackground) padding-box,
-    $borderGradient border-box;
+    background: linear-gradient($codGray, $codGray) padding-box,
+    $goldGradient border-box;
     border: 1px solid transparent;
 
     .chips-content {
-      background: $textGradient;
+      background: $goldTextGradient;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      @include setFontParams($fontFamily, normal, 600, 16px);
+      @include setFontParams($fontRaleway, normal, 600, 16px);
       font-size: 14px;
     }
 
@@ -54,7 +54,7 @@
 
     .chips-content {
       color: $white;
-      @include setFontParams($fontFamily, normal, 300, 16px);
+      @include setFontParams($fontRaleway, normal, 300, 16px);
       font-size: 14px;
     }
   }

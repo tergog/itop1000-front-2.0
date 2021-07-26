@@ -13,16 +13,16 @@
 
     label {
       color: $white;
-      @include setFontParams($fontFamily, 600, normal, 16px);
+      @include setFontParams($fontRaleway, 600, normal, 16px);
       font-size: 16px;
       transition: 0.5s all ease;
     }
     label.focus{
-      color: $focusLabelColor;
+      color: $malibu;
       transition: 0.5s all ease;
     }
     label.invalid{
-      color: $invalidLabelColor;
+      color: $red;
       transition: 0.5s all ease;
     }
 
@@ -31,8 +31,8 @@
 
   .item-input, .item-textarea, .item-money {
     width: 100%;
-    background: linear-gradient($pageBackground, $pageBackground) padding-box,
-    $borderGradient border-box;
+    background: linear-gradient($codGray, $codGray) padding-box,
+    $goldGradient border-box;
     border: 1px solid transparent;
     max-width: 769px;
     max-height: 103px;
@@ -40,7 +40,7 @@
     textarea, input {
       width: 100%;
       color: $white;
-      background: $inputBackground;
+      background: $mineShaft;
       box-sizing: border-box;
       border: none;
       transition: 0.5s all ease;
@@ -49,13 +49,13 @@
 
   .item-input.focus, .item-textarea.focus, .item-money.focus {
     background: none;
-    border: 1px solid $focusBorderColor;
+    border: 1px solid $malibu;
     transition: 0.5s all ease;
   }
 
   .item-input.invalid, .item-textarea.invalid, .item-money.invalid {
     background: none;
-    border: 1px solid $invalidBorderColor;
+    border: 1px solid $red;
     transition: 0.5s all ease;
   }
 
@@ -70,7 +70,7 @@
     }
 
     textarea::placeholder {
-      color: $placeholderColor;
+      color: $gray;
     }
   }
 
@@ -88,7 +88,7 @@
     }
 
     input::placeholder {
-      color: $placeholderColor;
+      color: $gray;
     }
   }
 
@@ -102,13 +102,13 @@
     }
 
     input::placeholder {
-      color: $placeholderColor;
+      color: $gray;
     }
   }
 
   .item-error {
-    color: $textError;
-    @include setFontParams($fontError, 300, normal, 30px);
+    color: $red;
+    @include setFontParams($fontWorkSans, 300, normal, 30px);
     font-size: 14px;
   }
 

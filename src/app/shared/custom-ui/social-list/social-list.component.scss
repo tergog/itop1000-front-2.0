@@ -21,11 +21,11 @@
 
   &__item:hover svg {
     circle {
-      stroke: $socialIconHover;
+      stroke: $creamCan;
     }
 
     path {
-      fill: $socialIconHover;
+      fill: $creamCan;
     }
   }
 }

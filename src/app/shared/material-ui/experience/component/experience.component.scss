@@ -8,14 +8,14 @@
   &__header {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid $experienceBorderBottomColor;
+    border-bottom: 1px solid $tundora;
     opacity: 0.9;
   }
 
   &__title {
     h2.title-experience {
       text-transform: uppercase;
-      @include setFontParams($fontError, normal, 500, 45px);
+      @include setFontParams($fontWorkSans, normal, 500, 45px);
       font-size: 24px;
       color: $white;
     }
