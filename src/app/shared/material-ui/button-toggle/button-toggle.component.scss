@@ -18,7 +18,7 @@
 
       mat-button-toggle {
         color: $white;
-        @include ($fontRaleway, 600, bold, $subTitleLineHeight);
+        @include setFontParams($fontRaleway, 600, bold, $subTitleLineHeight);
         font-size: 24px;
         width: 198px;
         background: linear-gradient(180deg, #6A6363 48.48%, #413E3E 136.36%);

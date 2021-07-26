@@ -85,7 +85,7 @@
   .mat-tab-label-content {
     color: $delta;
     text-transform: uppercase;
-    @include ($fontRaleway, normal, 500, $titleLineHeight);
+    @include setFontParams($fontRaleway, normal, 500, $titleLineHeight);
     font-size: 30px;
     opacity: 1;
   }

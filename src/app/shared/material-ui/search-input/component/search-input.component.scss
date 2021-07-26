@@ -12,7 +12,7 @@
 
     label {
       color: $white;
-      @include ($fontRaleway, 600, normal, $textLineHeight);
+      @include setFontParams($fontRaleway, 600, normal, $textLineHeight);
       font-size: 16px;
       transition: 0.5s all ease;
     }
