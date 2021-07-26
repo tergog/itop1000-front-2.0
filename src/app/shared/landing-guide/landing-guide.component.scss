@@ -46,7 +46,7 @@
 
       span {
         color: $white;
-        @include setFontParams($fontRaleway, 700, bold, 40px);
+        @include setFontParams($fontWorkSans, 700, bold, 40px);
         font-size: 44px;
       }
     }
