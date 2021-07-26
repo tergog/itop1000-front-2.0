@@ -2,9 +2,36 @@ import { ELandingRole } from '../landing/landing.enums';
 import { EStepperType } from '../shared/stepper/stepper.enums';
 
 export const CSubcategoryWorks = {
-'Accounting & consulting': ['Accounting', 'Financial Planning', 'Human Resources', 'Management Consulting', 'Other - Accounting & Consulting'],
+  'Accounting & Consulting': ['Accounting', 'Financial Planning', 'Human Resources', 'Management Consulting', 'Other - Accounting & Consulting'],
+  'Admin Support': ['Data Entry', 'Other-Admin Support', 'Personal/virtual Assistence', 'Project Management', 'Research'],
+  'Design & Creative': ['Art Illustration', 'Branding', 'Gaming & Ar/VR', 'Graphic & Presentation', 'Product Design'],
+  'Data Science & Analytics': ['A/B testing', 'Data Extraction/eTL', 'Data Mining & Management',
+    'Data Visualization', 'Machine Learning', 'Other - Data Science & Analytics', 'Quantitative Analysis'],
+  'Engineering & Architecture': ['3D modeling & cAD', 'Architecture',
+    'Chemical Engineering', 'Civil & Structural Engineering', 'Contract Manufacturing', 'Electrical Engineering', 'Interior Design', 'Mechanical Engineering',
+    'Other - Engineering', 'Physical Sciences'],
+  'Customer Service': ['Customer Service', 'Technical Support'],
+  'IT & Networking': ['Database Administration', 'ERP/CRM Software', 'Information Security', 'Network & System Administration', 'Other - IT & Networking'],
+  'Legal': ['Contract Law', 'Corporate Law', 'Intellectual Property Law', 'Other - Legal', 'Paralegal Services'],
+  'Sales & Marketing': ['Display Advertising', 'Email & Marketing Automation',
+    'Lead generation', 'Market & Customer Research', 'Marketing Strategy',
+    'Other - Sales & Marketing', 'Public Relations', 'SEM - Search Engine Marketing', 'SEO - Search Engine Optimization', 'SMM - Social Media Marketing'],
+  'Translation': ['General Translation', 'Email & Marketing Automation', 'Legal Translation',
+    'Medical Translation', 'Technical Translation']
+};
 
-}
+export const CCategoryWorks = [
+  'Accounting & Consulting',
+  'Admin Support',
+  'Customer Service',
+  'Data Science & Analytics',
+  'Design & Creative',
+  'Engineering & Architecture',
+  'IT & Networking',
+  'Legal',
+  'Sales & Marketing',
+  'Translation'
+];
 
 export const CAuthorizationData = {
   logo: {

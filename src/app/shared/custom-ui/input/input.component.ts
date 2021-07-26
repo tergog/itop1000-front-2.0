@@ -21,21 +21,23 @@ export class InputComponent implements OnInit, ControlValueAccessor {
   public invalid = false;
   public EInputElementType = EInputElementType;
   public _inputParameters: IInputParameters;
-  @Input() set inputParameters(value: IInputParameters){
+
+  @Input() set inputParameters(value: IInputParameters) {
     this._inputParameters = value;
   }
 
-  get inputParameters(): IInputParameters{
+  get inputParameters(): IInputParameters {
     return this._inputParameters;
   }
+
   private onChange: any;
   private onTouched: any;
   public value: string;
   public disableState: boolean;
 
   constructor(private formBuilder: FormBuilder) {
-   this.disableState = false;
-   this.value = '';
+    this.disableState = false;
+    this.value = '';
   }
 
   ngOnInit(): void {

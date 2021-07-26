@@ -3,13 +3,11 @@ import { NG_VALUE_ACCESSOR, ControlValueAccessor, FormBuilder } from '@angular/f
 
 import { ICheckboxParameters } from '../checkbox.interfaces';
 
-
 export const CHECKBOX_VALUE_ACCESSOR: any = {
   provide: NG_VALUE_ACCESSOR,
   useExisting: forwardRef(() => CheckboxComponent),
   multi: true
 };
-
 
 @Component({
   selector: 'app-checkbox',

@@ -26,7 +26,7 @@
           </mat-panel-title>
         </mat-expansion-panel-header>
 
-        <p *ngFor="let option of _selectParameters.options"
+        <p *ngFor="let option of value"
            class="select-option"
            [attr.data-value]="option"
            (click)="setSelectValue($event)">

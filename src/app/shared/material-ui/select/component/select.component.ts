@@ -24,14 +24,15 @@ export class SelectComponent implements OnInit, ControlValueAccessor {
   get selectParameters(): ISelectParameters{
     return this._selectParameters;
   }
-  private onChange: any;
-  private onTouched: any;
-  public value: string;
-  public disableState: boolean;
   @ViewChild('expansionPanel') expansionPanel: MatExpansionPanel;
   public panelOpenState = false;
+  private onChange: any;
+  private onTouched: any;
+  public value: string[];
+  public disableState: boolean;
   public selectValue: string;
-  public defaultSelectValue: string;
+  // public defaultSelectValue: string;
+  public defaultSelectValue = 'Select 1 option';
 
   constructor() {
   }
@@ -40,7 +41,7 @@ export class SelectComponent implements OnInit, ControlValueAccessor {
     this.selectValue = this.defaultSelectValue;
   }
 
-  writeValue(value: any): void {
+  writeValue(value: string[]): void {
     this.value = value;
   }
 

@@ -2,7 +2,7 @@
 <app-logo [logoParameters]="authorizationPageParameters.logo.empty"></app-logo>
 <mat-tab-group>
   <mat-tab label="sign-up">
-    <form action="" class="sign-up-form" [formGroup]="signUpFormGroup">
+    <form action="" class="sign-up-form" [formGroup]="signUpFormGroup" (submit)="signUp()">
       <div class="form-item">
         <app-input
           formControlName="email"
@@ -44,15 +44,13 @@
         </app-checkbox>
       </div>
       <div class="form-item">
-        <a [routerLink]="['/authorization/info']">
           <app-button [buttonParameters]="authorizationPageParameters.signUpFormElements.buttonSubmit"></app-button>
-        </a>
       </div>
     </form>
   </mat-tab>
   <mat-tab label="sign-in">
     <app-social-list [iconParameters]="authorizationPageParameters.social"></app-social-list>
-    <form action="" class="login-form" [formGroup]="signInFormGroup">
+    <form action="" class="login-form" [formGroup]="signInFormGroup" (submit)="signIn()">
       <div class="form-item">
         <app-input
           formControlName="email"

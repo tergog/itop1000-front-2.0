@@ -6,6 +6,7 @@ import { MatHorizontalStepper } from '@angular/material/stepper';
 import { EStepperType } from '../stepper.enums';
 import { IStepperParameters } from '../stepper.interfaces';
 import { ItopDataService } from '../../../services/itop-data/itop-data.service';
+import { CCategoryWorks, CSubcategoryWorks } from '../../../constantes/constantes';
 
 @Component({
   selector: 'app-stepper',
@@ -14,6 +15,8 @@ import { ItopDataService } from '../../../services/itop-data/itop-data.service';
 })
 export class StepperComponent implements OnInit, AfterViewInit {
   @ViewChild('stepper') stepper: MatHorizontalStepper;
+  public selectCategories = CCategoryWorks;
+  public selectSubcategories: {[key: string]: string[]} = CSubcategoryWorks;
   public EStepperType = EStepperType;
   public productOwnerFormsGroup: FormGroup;
   public freelancerFormsGroup: FormGroup;
@@ -44,7 +47,7 @@ export class StepperComponent implements OnInit, AfterViewInit {
     });
     this.freelancerFormsGroup = this._formBuilder.group({
       firstStepFormGroup: _formBuilder.group({
-        category: _formBuilder.control('', [Validators.required]),
+        category: _formBuilder.control(this.selectCategories, [Validators.required]),
         subcategory: _formBuilder.control('', [Validators.required])
       }),
       secondStepFormGroup: _formBuilder.group({
@@ -73,8 +76,10 @@ export class StepperComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.stepperParameters$ = this.stepperData.stepperPageData$;
-    this.freelancerGroupLinks.firstGroup.controls.category.statusChanges.subscribe(value => {
-      this.freelancerGroupLinks.firstGroup.controls.subcategory.setValue('Hello');
+    this.freelancerGroupLinks.firstGroup.controls.category.valueChanges.subscribe((value: string) => {
+      console.log(value);
+      this.freelancerGroupLinks.firstGroup.controls.subcategory
+        .setValue(this.selectSubcategories[value]);
     });
   }
 
