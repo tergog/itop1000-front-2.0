@@ -1,5 +1,5 @@
 <div class="checkbox">
-  <mat-checkbox class="example-margin" [(ngModel)]="checked">
+  <mat-checkbox class="example-margin" [(ngModel)]="value" (change)="change($event)">
     {{ _checkboxParameters.label }}
   </mat-checkbox>
   <div class="checkbox__error">

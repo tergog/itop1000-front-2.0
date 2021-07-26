@@ -15,10 +15,10 @@ import { ItopDataService } from '../../../services/itop-data/itop-data.service';
 export class StepperComponent implements OnInit, AfterViewInit {
   @ViewChild('stepper') stepper: MatHorizontalStepper;
   public EStepperType = EStepperType;
-  public firstStepFormGroup: FormGroup;
-  public secondStepFormGroup: FormGroup;
-  public thirdStepFormGroup: FormGroup;
-  public fourthStepFormGroup: FormGroup;
+  public productOwnerFormsGroup: FormGroup;
+  public freelancerFormsGroup: FormGroup;
+  public productOwnerFormsGroupLinks: { [key: string]: FormGroup };
+  public freelancerGroupLinks: { [key: string]: FormGroup };
   public stepperParameters$: BehaviorSubject<IStepperParameters>;
   public declension = ['1st', '2nd', '3rd', '4th'];
   public step = 0;
@@ -27,25 +27,54 @@ export class StepperComponent implements OnInit, AfterViewInit {
     private stepperData: ItopDataService,
     private _formBuilder: FormBuilder
   ) {
-    this.firstStepFormGroup = _formBuilder.group({
-      category: _formBuilder.control('', [Validators.required]),
-      subcategory: _formBuilder.control('', [Validators.required])
+    this.productOwnerFormsGroup = this._formBuilder.group({
+      firstStepFormGroup: this._formBuilder.group({
+        companyName: this._formBuilder.control('', []),
+        companyDescription: this._formBuilder.control('', [])
+      }),
+      secondStepFormGroup: this._formBuilder.group({
+        category: this._formBuilder.control('', [])
+      }),
+      thirdStepFormGroup: this._formBuilder.group({
+        location: this._formBuilder.control('', [])
+      }),
+      fourthStepFormGroup: _formBuilder.group({
+        operationMode: this._formBuilder.control('', [])
+      })
     });
-    this.secondStepFormGroup = _formBuilder.group({
-      skills: _formBuilder.control(['HTML', 'CSS', 'JavaScript'], [])
+    this.freelancerFormsGroup = this._formBuilder.group({
+      firstStepFormGroup: _formBuilder.group({
+        category: _formBuilder.control('', [Validators.required]),
+        subcategory: _formBuilder.control('', [Validators.required])
+      }),
+      secondStepFormGroup: _formBuilder.group({
+        skills: _formBuilder.control(['HTML', 'CSS', 'JavaScript'], [])
+      }),
+      thirdStepFormGroup: _formBuilder.group({
+        experience: _formBuilder.control([])
+      }),
+      fourthStepFormGroup: _formBuilder.group({
+        rate: _formBuilder.control('', [Validators.required])
+      })
     });
-    this.thirdStepFormGroup = _formBuilder.group({
-      experience: _formBuilder.control([])
-    });
-    this.fourthStepFormGroup = _formBuilder.group({
-      rate: _formBuilder.control('', [Validators.required])
-    });
+    this.productOwnerFormsGroupLinks = {
+      firstGroup: this.productOwnerFormsGroup.get('firstStepFormGroup') as FormGroup,
+      secondGroup: this.productOwnerFormsGroup.get('secondStepFormGroup') as FormGroup,
+      thirdGroup: this.productOwnerFormsGroup.get('thirdStepFormGroup') as FormGroup,
+      fourthGroup: this.productOwnerFormsGroup.get('fourthStepFormGroup') as FormGroup,
+    };
+    this.freelancerGroupLinks = {
+      firstGroup: this.freelancerFormsGroup.get('firstStepFormGroup') as FormGroup,
+      secondGroup: this.freelancerFormsGroup.get('secondStepFormGroup') as FormGroup,
+      thirdGroup: this.freelancerFormsGroup.get('thirdStepFormGroup') as FormGroup,
+      fourthGroup: this.freelancerFormsGroup.get('fourthStepFormGroup') as FormGroup,
+    };
   }
 
   ngOnInit(): void {
     this.stepperParameters$ = this.stepperData.stepperPageData$;
-    this.firstStepFormGroup.controls.category.statusChanges.subscribe(value => {
-      this.firstStepFormGroup.controls.subcategory.setValue('Hello');
+    this.freelancerGroupLinks.firstGroup.controls.category.statusChanges.subscribe(value => {
+      this.freelancerGroupLinks.firstGroup.controls.subcategory.setValue('Hello');
     });
   }
 
@@ -54,12 +83,7 @@ export class StepperComponent implements OnInit, AfterViewInit {
   }
 
   sendUserSignUpData(): void {
-    const stepperFormGroup = this._formBuilder.group({
-      first: this.firstStepFormGroup,
-      second: this.secondStepFormGroup,
-      third: this.thirdStepFormGroup,
-      fourth: this.fourthStepFormGroup,
-    });
-    console.log(stepperFormGroup.value);
+    console.log(this.productOwnerFormsGroup.value);
+    console.log(this.freelancerFormsGroup.value);
   }
 }

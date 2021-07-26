@@ -35,6 +35,7 @@ export class HeaderComponent implements OnInit {
     links: [
       { text: 'Projects', href: 'projects' },
       { text: 'Chat', href: 'chat' },
+      { text: 'About us', href: 'about' },
       { text: 'Support / FAQ', href: 'support' }
     ]
   };

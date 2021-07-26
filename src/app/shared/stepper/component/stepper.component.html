@@ -2,8 +2,8 @@
 <h2 class="stepper-title">{{ declension[step] }} STAGE</h2>
 <mat-horizontal-stepper linear #stepper *ngIf="(stepperParameters$ | ngrxPush).type === EStepperType.Freelancer"
 (keydown.enter)="$event.preventDefault()">
-  <mat-step [stepControl]="firstStepFormGroup">
-    <form [formGroup]="firstStepFormGroup">
+  <mat-step [stepControl]="freelancerGroupLinks.firstGroup">
+    <form [formGroup]="freelancerGroupLinks.firstGroup">
       <ng-template matStepLabel>work field</ng-template>
       <div class="form-item">
         <app-select formControlName="category" [selectParameters]="(stepperParameters$ | ngrxPush).selects.category"></app-select>
@@ -16,8 +16,8 @@
       </div>
     </form>
   </mat-step>
-  <mat-step [stepControl]="secondStepFormGroup">
-    <form [formGroup]="secondStepFormGroup">
+  <mat-step [stepControl]="freelancerGroupLinks.secondGroup">
+    <form [formGroup]="freelancerGroupLinks.secondGroup">
       <ng-template matStepLabel>hard Skills</ng-template>
       <div class="form-item">
         <app-chips formControlName="skills"></app-chips>
@@ -28,8 +28,8 @@
       </div>
     </form>
   </mat-step>
-  <mat-step [stepControl]="thirdStepFormGroup">
-    <form [formGroup]="thirdStepFormGroup">
+  <mat-step [stepControl]="freelancerGroupLinks.thirdGroup">
+    <form [formGroup]="freelancerGroupLinks.thirdGroup">
       <ng-template matStepLabel>experience</ng-template>
       <div class="form-item">
         <app-experience formControlName="experience"></app-experience>
@@ -40,8 +40,8 @@
       </div>
     </form>
   </mat-step>
-  <mat-step [stepControl]="fourthStepFormGroup">
-    <form [formGroup]="fourthStepFormGroup">
+  <mat-step [stepControl]="freelancerGroupLinks.fourthGroup">
+    <form [formGroup]="freelancerGroupLinks.fourthGroup">
       <ng-template matStepLabel>hourly rate</ng-template>
       <div class="form-item">
         <app-input class="money" formControlName="rate" [inputParameters]="(stepperParameters$ | ngrxPush).inputs.money"></app-input>
@@ -61,25 +61,37 @@
 <!--========================================Product owner==========================================================-->
 
 <mat-horizontal-stepper linear #stepper *ngIf="(stepperParameters$ | ngrxPush).type === EStepperType.ProductOwner">
-  <mat-step [stepControl]="firstStepFormGroup">
-    <form [formGroup]="firstStepFormGroup">
+  <mat-step [stepControl]="productOwnerFormsGroupLinks.firstGroup">
+    <form [formGroup]="productOwnerFormsGroupLinks.firstGroup">
       <ng-template matStepLabel>Company name</ng-template>
       <div class="form-item">
-        <app-input [inputParameters]="(stepperParameters$ | ngrxPush).inputs.companyName"></app-input>
+        <app-input
+          formControlName="companyName"
+          [inputParameters]="(stepperParameters$ | ngrxPush).inputs.companyName">
+        </app-input>
       </div>
       <div class="form-item">
-        <app-input [inputParameters]="(stepperParameters$ | ngrxPush).inputs.description"></app-input>
+        <app-input
+          formControlName="companyDescription"
+          [inputParameters]="(stepperParameters$ | ngrxPush).inputs.description">
+        </app-input>
       </div>
       <div class="form-item">
-        <app-button (click)="stepper.next()" [buttonParameters]="(stepperParameters$ | ngrxPush).buttons.next"></app-button>
+        <app-button
+          (click)="stepper.next()"
+          [buttonParameters]="(stepperParameters$ | ngrxPush).buttons.next">
+        </app-button>
       </div>
     </form>
   </mat-step>
-  <mat-step [stepControl]="secondStepFormGroup">
-    <form [formGroup]="secondStepFormGroup">
+  <mat-step [stepControl]="productOwnerFormsGroupLinks.secondGroup">
+    <form [formGroup]="productOwnerFormsGroupLinks.secondGroup">
       <ng-template matStepLabel>work field</ng-template>
       <div class="form-item">
-        <app-select [selectParameters]="(stepperParameters$ | ngrxPush).selects.category"></app-select>
+        <app-select
+          formControlName="category"
+          [selectParameters]="(stepperParameters$ | ngrxPush).selects.category">
+        </app-select>
       </div>
       <div class="form-item"></div>
       <div class="form-item">
@@ -88,11 +100,14 @@
       </div>
     </form>
   </mat-step>
-  <mat-step [stepControl]="thirdStepFormGroup">
-    <form [formGroup]="thirdStepFormGroup">
+  <mat-step [stepControl]="productOwnerFormsGroupLinks.thirdGroup">
+    <form [formGroup]="productOwnerFormsGroupLinks.thirdGroup">
       <ng-template matStepLabel>location</ng-template>
       <div class="form-item">
-        <app-select [selectParameters]="(stepperParameters$ | ngrxPush).selects.location"></app-select>
+        <app-select
+          formControlName="location"
+          [selectParameters]="(stepperParameters$ | ngrxPush).selects.location">
+        </app-select>
       </div>
       <div class="form-item"></div>
       <div class="form-item">
@@ -101,11 +116,14 @@
       </div>
     </form>
   </mat-step>
-  <mat-step [stepControl]="fourthStepFormGroup">
-    <form [formGroup]="fourthStepFormGroup">
+  <mat-step [stepControl]="productOwnerFormsGroupLinks.fourthGroup">
+    <form [formGroup]="productOwnerFormsGroupLinks.fourthGroup">
       <ng-template matStepLabel>operation mode</ng-template>
       <div class="form-item">
-        <app-select [selectParameters]="(stepperParameters$ | ngrxPush).selects.operationMode"></app-select>
+        <app-select
+          formControlName="operationMode"
+          [selectParameters]="(stepperParameters$ | ngrxPush).selects.operationMode">
+        </app-select>
       </div>
       <div class="form-item"></div>
       <div class="form-item">
