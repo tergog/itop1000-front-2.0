@@ -21,13 +21,13 @@ footer {
     list-style-type: none;
 
     .navigation-list-item a, .question-list-item a {
-      @include setFontParams($fontRaleway, 300, normal, 40px);
+      @include setFontParams($fontRaleway, 300, normal, $titleLineHeight);
       font-size: 24px;
       text-transform: uppercase;
       color: $white;
 
       span {
-        @include setFontParams($fontWorkSans, 300, normal, 40px);
+        @include setFontParams($fontWorkSans, 300, normal, $titleLineHeight);
       }
     }
 

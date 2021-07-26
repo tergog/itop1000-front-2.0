@@ -34,7 +34,7 @@ a {
       display: block;
       text-align: center;
       text-transform: uppercase;
-      @include setFontParams($fontRaleway, 500, normal, 36px);
+      @include setFontParams($fontRaleway, 500, normal, $titleLineHeight);
       font-size: 30px;
     }
   }
@@ -47,7 +47,7 @@ a {
     margin-top: 12px;
 
     span {
-      @include setFontParams($fontWorkSans, 500, normal, 16px);
+      @include setFontParams($fontWorkSans, 500, normal, $textLineHeight);
       font-size: 20px;
       background: $goldTextGradient;
       -webkit-background-clip: text;

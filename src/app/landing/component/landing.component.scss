@@ -13,7 +13,7 @@
   margin-bottom: 145px;
 
   .fullscreen-title {
-    @include setFontParams($fontRajdhani, normal, 700, 75px);
+    @include setFontParams($fontRajdhani, normal, 700, $landingTitleLineHeight);
     font-size: 90px;
     text-transform: uppercase;
     text-align: center;
@@ -22,7 +22,7 @@
   }
 
   .fullscreen-subtitle {
-    @include setFontParams($fontRaleway, normal, 300, 75px);
+    @include setFontParams($fontRaleway, normal, 300, $landingTitleLineHeight);
     font-size: 28px;
     text-align: center;
     color: $white;
@@ -37,7 +37,7 @@
   margin-bottom: 183px;
 
   .benefits-title {
-    @include setFontParams($fontWorkSans, normal, 700, 40px);
+    @include setFontParams($fontWorkSans, normal, 700, $titleLineHeight);
     font-size: 56px;
     text-align: center;
     text-transform: uppercase;
@@ -72,7 +72,7 @@
   margin-bottom: 183px;
 
   .top-title {
-    @include setFontParams($fontWorkSans, normal, 700, 40px);
+    @include setFontParams($fontWorkSans, normal, 700, $titleLineHeight);
     font-size: 56px;
     text-align: center;
     text-transform: uppercase;
@@ -92,24 +92,6 @@
       justify-content: center;
     }
   }
-
-  .top-see-all {
-    cursor: pointer;
-    margin-top: 112px;
-
-    a {
-      color: $delta;
-      text-decoration: underline;
-      @include setFontParams($fontWorkSans, normal, 500, 16px);
-      font-size: 20px;
-      transition: 0.5s all ease;
-    }
-
-    a:hover {
-      color: $white;
-      transition: 0.5s all ease;
-    }
-  }
 }
 
 .landing-top-project {
@@ -117,10 +99,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 78px;
+  margin-bottom: 183px;
 
   .top-project-title {
-    @include setFontParams($fontWorkSans, normal, 700, 40px);
+    @include setFontParams($fontWorkSans, normal, 700, $titleLineHeight);
     font-size: 56px;
     text-align: center;
     text-transform: uppercase;
@@ -140,24 +122,6 @@
       justify-content: center;
     }
   }
-
-  .top-project-see-all {
-    cursor: pointer;
-    margin-top: 112px;
-
-    a {
-      color: $delta;
-      text-decoration: underline;
-      @include setFontParams($fontWorkSans, normal, 500, 16px);
-      font-size: 20px;
-      transition: 0.5s all ease;
-    }
-
-    a:hover {
-      color: $white;
-      transition: 0.5s all ease;
-    }
-  }
 }
 
 .landing-description {
@@ -168,7 +132,7 @@
   margin-bottom: 81px;;
 
   .description-title {
-    @include setFontParams($fontWorkSans, normal, 600, 55px);
+    @include setFontParams($fontWorkSans, normal, 600, $landingTitleLineHeight);
     font-size: 44px;
     text-align: center;
     margin-bottom: 64px;
@@ -189,13 +153,13 @@
     }
 
     .description-item-title {
-      @include setFontParams($fontRaleway, normal, 500, 24px);
+      @include setFontParams($fontRaleway, normal, 500, $subTitleLineHeight);
       font-size: 24px;
       margin-bottom: 20px;
     }
 
     .description-item-content {
-      @include setFontParams($fontRaleway, normal, 300, 24px);
+      @include setFontParams($fontRaleway, normal, 300, $subTitleLineHeight);
       font-size: 20px;
     }
   }

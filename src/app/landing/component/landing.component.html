@@ -48,11 +48,6 @@
       </div>
     </div>
 
-    <div class="top-see-all">
-      <a [routerLink]="[(landingData$ | ngrxPush).top.seeAllLink.href]">
-        {{ (landingData$ | ngrxPush).top.seeAllLink.text }}
-      </a>
-    </div>
   </section>
 
   <section class="landing-top-project">
@@ -66,11 +61,6 @@
       </div>
     </div>
 
-    <div class="top-project-see-all">
-      <a [routerLink]="[(landingData$ | ngrxPush).topProject.seeAllLink.href]">
-        {{ (landingData$ | ngrxPush).topProject.seeAllLink.text }}
-      </a>
-    </div>
   </section>
 
   <section *ngIf="(landingData$ | ngrxPush).description" class="landing-description">

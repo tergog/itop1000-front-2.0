@@ -8,7 +8,7 @@
     align-items: center;
 
     h2 {
-      @include setFontParams($fontWorkSans, normal, 500, 45px);
+      @include setFontParams($fontWorkSans, normal, 500, $titleLineHeight);
       font-size: 24px;
       color: $white;
       text-transform: uppercase;
@@ -17,7 +17,7 @@
     }
 
     span {
-      @include setFontParams($fontWorkSans, normal, 300, 16px);
+      @include setFontParams($fontWorkSans, normal, 300, $textLineHeight);
       font-size: 12px;
       margin-left: 20px;
     }
@@ -25,7 +25,7 @@
 
   &__description {
     p {
-      @include setFontParams($fontWorkSans, normal, 400, 24px);
+      @include setFontParams($fontWorkSans, normal, 400, $subTitleLineHeight);
       font-size: 16px;
     }
   }

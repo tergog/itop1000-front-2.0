@@ -1,7 +1,7 @@
 @import "src/assets/scss/mixins";
 
 h2.stepper-title{
-  @include setFontParams($fontRajdhani, normal, 700, 75px);
+  @include setFontParams($fontRajdhani, normal, 700, $landingTitleLineHeight);
   font-size: 50px;
   color: $white;
   text-align: center;
@@ -32,7 +32,7 @@ h2.stepper-title{
       top: 60px;
       left: -30px;
       text-transform: uppercase;
-      @include setFontParams($fontRaleway, normal, 400, 16px);
+      @include setFontParams($fontRaleway, normal, 400, $textLineHeight);
       font-size: 14px;
       color: $brightGray;
     }

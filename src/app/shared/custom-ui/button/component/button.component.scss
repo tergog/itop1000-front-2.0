@@ -1,7 +1,7 @@
 @import "src/assets/scss/mixins";
 
 button.btn {
-  @include setFontParams($fontRaleway, 500, bold, 18px);
+  @include ($fontRaleway, 500, bold, $textLineHeight);
   text-align: center;
   cursor: pointer;
   transition: 0.5s all ease;

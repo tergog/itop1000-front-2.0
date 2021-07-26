@@ -8,7 +8,7 @@
   padding: 40px 69px;
   &__title{
     h2{
-      @include setFontParams($fontRaleway, normal, 300, 24px);
+      @include ($fontRaleway, normal, 300, $titleLineHeight);
       font-size: 24px;
       background: $goldTextGradient;
       text-align: center;

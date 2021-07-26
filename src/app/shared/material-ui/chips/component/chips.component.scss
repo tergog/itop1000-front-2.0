@@ -34,7 +34,7 @@
       background: $goldTextGradient;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      @include setFontParams($fontRaleway, normal, 600, 16px);
+      @include setFontParams($fontRaleway, normal, 600, $textLineHeight);
       font-size: 14px;
     }
 
@@ -54,7 +54,7 @@
 
     .chips-content {
       color: $white;
-      @include setFontParams($fontRaleway, normal, 300, 16px);
+      @include setFontParams($fontRaleway, normal, 300, $textLineHeight);
       font-size: 14px;
     }
   }

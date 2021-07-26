@@ -274,7 +274,7 @@ export const CLandingData = {
   [ELandingRole.ProductOwner]: {
     role: ELandingRole.ProductOwner,
     fullscreen: {
-      title: 'Find world-class companies with exiSting projects',
+      title: 'Find world-class companies with existing projects',
       subtitle: 'Convert your special skills into money instantly',
       button: {
         text: 'Discover Projects',

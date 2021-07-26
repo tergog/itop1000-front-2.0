@@ -73,7 +73,6 @@
   }
 }
 
-
 ::ng-deep {
   .mat-tab-header {
     margin-bottom: 32px;
@@ -86,7 +85,7 @@
   .mat-tab-label-content {
     color: $delta;
     text-transform: uppercase;
-    @include setFontParams($fontRaleway, normal, 500, 35px);
+    @include ($fontRaleway, normal, 500, $titleLineHeight);
     font-size: 30px;
     opacity: 1;
   }

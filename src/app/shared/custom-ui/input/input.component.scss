@@ -13,7 +13,7 @@
 
     label {
       color: $white;
-      @include setFontParams($fontRaleway, 600, normal, 16px);
+      @include setFontParams($fontRaleway, 600, normal, $textLineHeight);
       font-size: 16px;
       transition: 0.5s all ease;
     }
@@ -108,7 +108,7 @@
 
   .item-error {
     color: $red;
-    @include setFontParams($fontWorkSans, 300, normal, 30px);
+    @include setFontParams($fontWorkSans, 300, normal, $subTitleLineHeight);
     font-size: 14px;
   }
 

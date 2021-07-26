@@ -12,7 +12,7 @@
 
     label {
       color: $white;
-      @include setFontParams($fontRaleway, 600, normal, 16px);
+      @include setFontParams($fontRaleway, 600, normal, $textLineHeight);
       font-size: 16px;
     }
 
@@ -24,7 +24,7 @@
   }
 
   .select-option {
-    @include setFontParams($fontRaleway, 400, normal, 16px);
+    @include setFontParams($fontRaleway, 400, normal, $textLineHeight);
     font-size: 16px;
     color: $white;
     cursor: pointer;
@@ -40,14 +40,14 @@
   }
 
   .select-option:hover {
-    @include setFontParams($fontRaleway, 700, bold, 16px);
+    @include setFontParams($fontRaleway, 700, bold, $textLineHeight);
     color: $redRibbon;
   }
 
   ::ng-deep mat-accordion {
     mat-panel-title {
       span {
-        @include setFontParams($fontRaleway, 400, normal, 16px);
+        @include setFontParams($fontRaleway, 400, normal, $textLineHeight);
       }
 
       span.default {
