@@ -1,17 +1,29 @@
 <div class="modal-accept-rule">
- <div class="modal-accept-rule__header">
-   <h2 class="modal-accept-rule__title">
-
-   </h2>
- </div>
+  <div class="modal-accept-rule__header">
+    <h2 class="modal-accept-rule__title">
+      {{ modalAcceptRuleData.title }}
+    </h2>
+  </div>
   <div class="modal-accept-rule__body">
-    <div class="modal-accept-rule__item">
-      <div class="item__title">
-
+    <div class="modal-accept-rule__content">
+      <div class="modal-accept-rule__item" *ngFor="let item of modalAcceptRuleData.descriptions">
+        <div class="item-title">
+          {{ item.title }}
+        </div>
+        <div class="item-description">
+          {{ item.description }}
+        </div>
       </div>
-      <div class="item__description">
-
-      </div>
+    </div>
+    <div class="modal-accept-rule__control">
+      <app-button
+        [buttonParameters]="modalAcceptRuleData.buttons.decline"
+        [mat-dialog-close]="false">
+      </app-button>
+      <app-button
+        [buttonParameters]="modalAcceptRuleData.buttons.accept"
+        [mat-dialog-close]="true">
+      </app-button>
     </div>
   </div>
 </div>

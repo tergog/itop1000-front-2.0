@@ -34,13 +34,15 @@
       <div class="form-item">
         <app-checkbox
           formControlName="policy"
-          [checkboxParameters]="authorizationPageParameters.signUpFormElements.checkbox.policy">
+          [checkboxParameters]="authorizationPageParameters.signUpFormElements.checkbox.policy"
+          (click)="openAcceptRuleDialog($event, EModalAcceptRuleView.PrivacyPolicy)">
         </app-checkbox>
       </div>
       <div class="form-item">
         <app-checkbox
           formControlName="terms"
-          [checkboxParameters]="authorizationPageParameters.signUpFormElements.checkbox.terms">
+          [checkboxParameters]="authorizationPageParameters.signUpFormElements.checkbox.terms"
+          (click)="openAcceptRuleDialog($event, EModalAcceptRuleView.TermsAndConditional)">
         </app-checkbox>
       </div>
       <div class="form-item">
@@ -48,6 +50,7 @@
       </div>
     </form>
   </mat-tab>
+
   <mat-tab label="sign-in">
     <app-social-list [iconParameters]="authorizationPageParameters.social"></app-social-list>
     <form action="" class="login-form" [formGroup]="signInFormGroup" (submit)="signIn()">

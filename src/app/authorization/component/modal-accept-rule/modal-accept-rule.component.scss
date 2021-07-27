@@ -1,1 +1,53 @@
-.
+@import "src/assets/scss/mixins";
+
+.modal-accept-rule {
+  width: 709px;
+  color: $white;
+
+  &__header {
+    background: $codGrayStrong;
+    padding: 20px 0;
+  }
+
+  &__title {
+    @include setFontParams($fontRaleway, normal, 500, $subTitleLineHeight);
+    font-size: $bigTextFontSize;
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &__content {
+    background: $mineShaft;
+    padding: 30px;
+  }
+
+  &__item {
+    .item-title {
+      @include setFontParams($fontRaleway, normal, 300, $subTitleLineHeight);
+      font-size: $bigTextFontSize;
+      color: $creamCan !important;
+    }
+
+    .item-description {
+      @include setFontParams($fontRaleway, normal, 300, $subTitleLineHeight);
+      font-size: $smallTextFontSize;
+    }
+    margin-bottom: 35px;
+  }
+  &__item:last-child{
+    margin-bottom: 0;
+  }
+
+  &__control {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $mineShaft;
+    padding: 10px 0 30px 0;
+
+    app-button:first-child{
+      margin-right: 35px;
+    }
+  }
+}

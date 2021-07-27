@@ -1,5 +1,53 @@
 import { ELandingRole } from '../landing/landing.enums';
 import { EStepperType } from '../shared/stepper/stepper.enums';
+import { EModalAcceptRuleView } from '../authorization/component/modal-accept-rule/modal-accept-rule.enums';
+
+export const CModalAcceptRuleData = {
+  [EModalAcceptRuleView.PrivacyPolicy]: {
+    title: 'Privacy Policy',
+    descriptions: [
+      { title: 'Description of Platform', description: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni m eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam' },
+      { title: 'Description of Platform', description: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni m eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam' },
+      { title: 'Description of Platform', description: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni m eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam' }
+    ],
+    buttons: {
+      decline: {
+        text: 'Decline',
+        type: '',
+        view: 'small-empty',
+        disabled: false
+      },
+      accept: {
+        text: 'Accept',
+        type: '',
+        view: 'small',
+        disabled: false
+      }
+    }
+  },
+  [EModalAcceptRuleView.TermsAndConditional]: {
+    title: 'Terms & Conditions',
+    descriptions: [
+      { title: 'Description of Platform', description: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni m eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam' },
+      { title: 'Description of Platform', description: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni m eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam' },
+      { title: 'Description of Platform', description: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni m eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam' }
+    ],
+    buttons: {
+      decline: {
+        text: 'Decline',
+        type: '',
+        view: 'small-empty',
+        disabled: false
+      },
+      accept: {
+        text: 'Accept',
+        type: '',
+        view: 'small',
+        disabled: false
+      }
+    }
+  }
+};
 
 export const CSubcategoryWorks = {
   'Accounting & Consulting': ['Accounting', 'Financial Planning', 'Human Resources', 'Management Consulting', 'Other - Accounting & Consulting'],
