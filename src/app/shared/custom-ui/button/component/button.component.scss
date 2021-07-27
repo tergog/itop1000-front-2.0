@@ -18,7 +18,7 @@ button.btn {
   }
 
   &__small {
-    font-size: 14px;
+    font-size: $smallTextFontSize;
   }
 
   &__close-small, &__close {
@@ -46,7 +46,7 @@ button.btn {
   &__small-empty-border {
     border: 1px solid $crimson;
     border-radius: 34px;
-    padding: 21px 30px;
+    padding: 20px 30px;
   }
 
   &__big:hover,
@@ -68,24 +68,21 @@ button.btn {
 
   &__big {
     font-weight: 700;
-    padding: 0 114px;
+    padding: $bigButtonPadding;
     @include setButtonSize($bigButtonLineHeight, $bigButtonFontSize);
   }
 
   &__medium {
-    max-width: 214px;
-    padding: 0 85px;
+    padding: $mediumButtonPadding;
     @include setButtonSize($mediumButtonLineHeight, $mediumButtonFontSize);
   }
 
   &__small {
-    max-width: 214px;
-    padding: 6px 43px;
+    padding: $smallButtonPadding;
     @include setButtonSize($smallButtonLineHeight, $smallButtonFontSize);
   }
 
   &__small-empty {
-    max-width: 214px;
     @include setButtonSize($smallButtonLineHeight, $smallButtonFontSize);
   }
 

@@ -18,7 +18,7 @@
 
   ::ng-deep h2 {
     @include setFontParams($fontWorkSans, 700, bold, $titleLineHeight);
-    font-size: 56px;
+    font-size: $sectionTitleFontSize;
   }
 
   &__list {
@@ -47,7 +47,7 @@
       span {
         color: $white;
         @include setFontParams($fontWorkSans, 700, bold, $titleLineHeight);
-        font-size: 44px;
+        font-size: $bigTitleFontSize;
       }
     }
 
@@ -55,12 +55,12 @@
       margin-left: 19px;
       .description-title {
         @include setFontParams($fontWorkSans, 400, normal, $titleLineHeight);
-        font-size: 36px;
+        font-size: $bigTitleFontSize;
       }
 
       .description-subtitle {
         @include setFontParams($fontWorkSans, 300, normal, $titleLineHeight);
-        font-size: 28px;
+        font-size: $mediumTitleFontSize;
         color: $gray;
       }
     }

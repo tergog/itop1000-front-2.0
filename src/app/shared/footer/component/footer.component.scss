@@ -22,7 +22,7 @@ footer {
 
     .navigation-list-item a, .question-list-item a {
       @include setFontParams($fontRaleway, 300, normal, $titleLineHeight);
-      font-size: 24px;
+      font-size: $titleFontSize;
       text-transform: uppercase;
       color: $white;
 

@@ -38,7 +38,7 @@ a {
 
 .developer .project-card__company-name, .owner .project-card__project-name {
   @include setFontParams($fontRaleway, 500, normal, $subTitleLineHeight);
-  font-size: 24px;
+  font-size: $titleFontSize;
   background: $goldTextGradient;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -48,20 +48,20 @@ a {
 
 .developer .project-card__date {
   @include setFontParams($fontWorkSans, 300, normal, $textLineHeight);
-  font-size: 20px;
+  font-size: $bigTextFontSize;
   color: $gray;
 }
 
 .owner .project-card__company-name {
   @include setFontParams($fontRaleway, 300, normal, $subTitleLineHeight);
-  font-size: 14px;
+  font-size: $bigTextFontSize;
   text-transform: uppercase;
 }
 
 .owner .project-card__budget {
   margin-top: 9px;
   @include setFontParams($fontWorkSans, 400, normal, $textLineHeight);
-  font-size: 12px;
+  font-size: $smallTextFontSize;
   background: $goldTextGradient;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

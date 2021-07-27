@@ -64,7 +64,7 @@
     border-radius: 10px;
 
     textarea {
-      padding: 13px 22px;
+      padding: $textAreaPadding;
       border-radius: 10px;
       height: 103px;
       resize: none;
@@ -82,7 +82,7 @@
 
     input {
       max-width: 152px;
-      padding: 20px 22px;
+      padding: $inputMoneyPadding;
       border-radius: 10px;
       display: inline-block;
       text-align:right
@@ -97,7 +97,7 @@
     border-radius: 50px;
 
     input {
-      padding: 23px 28px;
+      padding: $inputPadding;
       border-radius: 50px;
       display: inline-block;
     }

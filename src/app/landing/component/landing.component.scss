@@ -154,7 +154,7 @@
 
     .description-item-title {
       @include setFontParams($fontRaleway, normal, 500, $titleLineHeight);
-      font-size: $subTitleFontSize;
+      font-size: $mediumTitleFontSize;
       margin-bottom: 20px;
     }
 

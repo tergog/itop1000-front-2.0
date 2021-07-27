@@ -9,7 +9,7 @@
 
     h2 {
       @include setFontParams($fontWorkSans, normal, 500, $titleLineHeight);
-      font-size: 24px;
+      font-size: $titleFontSize;
       color: $white;
       text-transform: uppercase;
       display: inline-flex;

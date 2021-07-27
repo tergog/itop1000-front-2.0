@@ -9,7 +9,7 @@
 
     .navigation-item {
       @include setFontParams($fontRaleway, 300, normal, $textLineHeight);
-      font-size: 24px;
+      font-size: $titleFontSize;
 
       a {
         color: $white;

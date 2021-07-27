@@ -35,7 +35,7 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       @include setFontParams($fontRaleway, normal, 600, $textLineHeight);
-      font-size: 14px;
+      font-size: $smallTextFontSize;
     }
 
     .chips-remove {

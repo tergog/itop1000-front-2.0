@@ -35,7 +35,7 @@ a {
       text-align: center;
       text-transform: uppercase;
       @include setFontParams($fontRaleway, 500, normal, $titleLineHeight);
-      font-size: 30px;
+      font-size: $bigTitleFontSize;
     }
   }
 }
@@ -48,7 +48,7 @@ a {
 
     span {
       @include setFontParams($fontWorkSans, 500, normal, $textLineHeight);
-      font-size: 20px;
+      font-size: $titleFontSize;
       background: $goldTextGradient;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;

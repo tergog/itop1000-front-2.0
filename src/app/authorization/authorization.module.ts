@@ -10,12 +10,14 @@ import { ModalSelectRoleComponent } from './component/modal-select-role/modal-se
 import { AuthorizationFormComponent } from './component/authorization-form/authorization-form.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ButtonModule } from '../shared/custom-ui/button/button.module';
+import { ModalAcceptRuleComponent } from './component/modal-accept-rule/modal-accept-rule.component';
 
 @NgModule({
   declarations: [
     AuthorizationComponent,
     ModalSelectRoleComponent,
-    AuthorizationFormComponent
+    AuthorizationFormComponent,
+    ModalAcceptRuleComponent
   ],
   imports: [
     CommonModule,

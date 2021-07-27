@@ -16,7 +16,7 @@
     h2.title-experience {
       text-transform: uppercase;
       @include setFontParams($fontWorkSans, normal, 500, $titleLineHeight);
-      font-size: 24px;
+      font-size: $titleFontSize;
       color: $white;
     }
   }

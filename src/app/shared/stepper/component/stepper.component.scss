@@ -2,7 +2,7 @@
 
 h2.stepper-title{
   @include setFontParams($fontRajdhani, normal, 700, $landingTitleLineHeight);
-  font-size: 50px;
+  font-size: $sectionTitleFontSize;
   color: $white;
   text-align: center;
   text-transform: uppercase;
@@ -33,7 +33,7 @@ h2.stepper-title{
       left: -30px;
       text-transform: uppercase;
       @include setFontParams($fontRaleway, normal, 400, $textLineHeight);
-      font-size: 14px;
+      font-size: $smallTextFontSize;
       color: $brightGray;
     }
 
