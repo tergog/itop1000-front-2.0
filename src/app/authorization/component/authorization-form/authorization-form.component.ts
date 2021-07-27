@@ -1,13 +1,15 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { CAuthorizationData } from '../../../constantes/constantes';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
-
-import { ModalAcceptRuleComponent } from '../modal-accept-rule/modal-accept-rule.component';
-import { EModalAcceptRuleView } from '../modal-accept-rule/modal-accept-rule.enums';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+
+import { CAuthorizationData } from '../../../constantes/constantes';
+import { ModalAcceptRuleComponent } from '../modal-accept-rule/modal-accept-rule.component';
+import { EModalAcceptRuleView } from '../modal-accept-rule/modal-accept-rule.enums';
+import { AuthorizationDataService } from '../../services/authorization-data/authorization-data.service';
+import { ConfirmPasswordValidator } from '../../services/authorization-validation/authorization-validation.service';
 
 @Component({
   selector: 'app-authorization-form',
@@ -24,6 +26,7 @@ export class AuthorizationFormComponent implements OnInit, OnDestroy {
   public unsubscribe$ = new Subject<void>();
 
   constructor(
+    private authorizationData: AuthorizationDataService,
     private formBuilder: FormBuilder,
     private router: Router,
     private dialog: MatDialog
@@ -36,7 +39,10 @@ export class AuthorizationFormComponent implements OnInit, OnDestroy {
       confirmPassword: this.formBuilder.control('', [Validators.required]),
       policy: this.formBuilder.control(false, [Validators.required]),
       terms: this.formBuilder.control(false, [Validators.required])
-    });
+    },
+      {
+        validator: ConfirmPasswordValidator('password', 'confirmPassword')
+      });
     this.signInFormGroup = this.formBuilder.group({
       email: this.formBuilder.control('', [Validators.required]),
       password: this.formBuilder.control('', [Validators.required]),
@@ -69,6 +75,7 @@ export class AuthorizationFormComponent implements OnInit, OnDestroy {
 
   signUp(): void {
     if (this.signUpFormGroup.valid) {
+      this.authorizationData.setData(this.signUpFormGroup.value);
       this.router.navigate(['/authorization/info']);
     } else {
       this.invalid = true;
