@@ -5,32 +5,36 @@
          [ngClass]="{active:  first.checked}"
          (click)="first.checked = true; setRole(first.value)">
       <mat-radio-button [value]="EUserRole.ProductOwner" #first></mat-radio-button>
-      <div class="item-title">
-        <h2>Product owner</h2>
-      </div>
-      <div class="item-description">
-        <ul>
-          <li>post your projects</li>
-          <li>search for the performers</li>
-          <li>control workflow</li>
-        </ul>
+      <div class="role-toggle__content">
+        <div class="item-title">
+          <h2>Product owner</h2>
+        </div>
+        <div class="item-description">
+          <ul>
+            <li>post your projects</li>
+            <li>search for the performers</li>
+            <li>control workflow</li>
+          </ul>
+        </div>
       </div>
     </div>
 
     <div class="role-toggle__item"
          [ngClass]="{active:  second.checked}"
          (click)="second.checked = true; setRole(second.value)">
-      <mat-radio-button [value]="EUserRole.Freelancer" #second  checked></mat-radio-button>
-      <div class="item-title">
-      <h2>Performer</h2>
-    </div>
-      <div class="item-description">
-        <ul>
-          <li>fill your CV</li>
-          <li>interview with HR</li>
-          <li>find the projects</li>
-          <li>earn money</li>
-        </ul>
+      <mat-radio-button [value]="EUserRole.Freelancer" #second checked></mat-radio-button>
+      <div class="role-toggle__content">
+        <div class="item-title">
+          <h2>Performer</h2>
+        </div>
+        <div class="item-description">
+          <ul>
+            <li>fill your CV</li>
+            <li>interview with HR</li>
+            <li>find the projects</li>
+            <li>earn money</li>
+          </ul>
+        </div>
       </div>
     </div>
 

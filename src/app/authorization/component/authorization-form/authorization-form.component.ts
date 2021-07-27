@@ -9,7 +9,9 @@ import { CAuthorizationData } from '../../../constantes/constantes';
 import { ModalAcceptRuleComponent } from '../modal-accept-rule/modal-accept-rule.component';
 import { EModalAcceptRuleView } from '../modal-accept-rule/modal-accept-rule.enums';
 import { AuthorizationDataService } from '../../services/authorization-data/authorization-data.service';
-import { ConfirmPasswordValidator } from '../../services/authorization-validation/authorization-validation.service';
+import {
+  confirmPasswordValidator
+} from '../../services/authorization-validation/authorization-validation.service';
 
 @Component({
   selector: 'app-authorization-form',
@@ -32,17 +34,16 @@ export class AuthorizationFormComponent implements OnInit, OnDestroy {
     private dialog: MatDialog
   ) {
     this.signUpFormGroup = this.formBuilder.group({
-      email: this.formBuilder.control('', [Validators.required]),
-      firstName: this.formBuilder.control('', [Validators.required]),
-      lastName: this.formBuilder.control('', [Validators.required]),
-      password: this.formBuilder.control('', [Validators.required]),
-      confirmPassword: this.formBuilder.control('', [Validators.required]),
+      email: this.formBuilder.control('', [Validators.required, Validators.email]),
+      firstName: this.formBuilder.control('', [Validators.required, Validators.minLength(2)]),
+      lastName: this.formBuilder.control('', [Validators.required, Validators.minLength(2)]),
+      password: this.formBuilder.control('', [Validators.required, Validators.minLength(6)]),
+      confirmPassword: this.formBuilder.control('', [Validators.required, Validators.minLength(6)]),
       policy: this.formBuilder.control(false, [Validators.required]),
       terms: this.formBuilder.control(false, [Validators.required])
-    },
-      {
-        validator: ConfirmPasswordValidator('password', 'confirmPassword')
-      });
+    }, {
+      validator: confirmPasswordValidator('password', 'confirmPassword')
+    });
     this.signInFormGroup = this.formBuilder.group({
       email: this.formBuilder.control('', [Validators.required]),
       password: this.formBuilder.control('', [Validators.required]),
