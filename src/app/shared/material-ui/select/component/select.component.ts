@@ -31,7 +31,6 @@ export class SelectComponent implements OnInit, ControlValueAccessor {
   public value: string[];
   public disableState: boolean;
   public selectValue: string;
-  // public defaultSelectValue: string;
   public defaultSelectValue = 'Select 1 option';
 
   constructor() {

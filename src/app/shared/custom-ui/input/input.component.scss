@@ -14,7 +14,7 @@
     label {
       color: $white;
       @include setFontParams($fontRaleway, 600, normal, $textLineHeight);
-      font-size: 16px;
+      font-size: $labelFontSize;
       transition: 0.5s all ease;
     }
     label.focus{
@@ -44,6 +44,7 @@
       box-sizing: border-box;
       border: none;
       transition: 0.5s all ease;
+      font-size: $inputFontSize;
     }
   }
 
@@ -109,7 +110,7 @@
   .item-error {
     color: $red;
     @include setFontParams($fontWorkSans, 300, normal, $subTitleLineHeight);
-    font-size: 14px;
+    font-size: $inputErrorFontSize;
   }
 
   .item-money-icon{

@@ -55,7 +55,6 @@
     .chips-content {
       color: $white;
       @include setFontParams($fontRaleway, normal, 300, $textLineHeight);
-      font-size: 14px;
     }
   }
 }

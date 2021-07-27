@@ -13,7 +13,7 @@
     label {
       color: $white;
       @include setFontParams($fontRaleway, 600, normal, $textLineHeight);
-      font-size: 16px;
+      font-size: $labelFontSize;
       transition: 0.5s all ease;
     }
     label.focus{
@@ -37,6 +37,7 @@
     max-height: 103px;
 
     input {
+      font-size: $inputFontSize;
       width: 100%;
       color: $white;
       background: $mineShaft;

@@ -7,8 +7,7 @@
   line-height: $lineHeight;
 }
 
-@mixin setButtonSize($width, $height, $fontSize) {
-  width: $width;
-  height: $height;
+@mixin setButtonSize($lineHeight, $fontSize) {
+  line-height: $lineHeight;
   font-size: $fontSize;
 }

@@ -14,7 +14,7 @@
 
   .fullscreen-title {
     @include setFontParams($fontRajdhani, normal, 700, $landingTitleLineHeight);
-    font-size: 90px;
+    font-size: $landingMainTitleFontSize;
     text-transform: uppercase;
     text-align: center;
     color: $white;
@@ -23,7 +23,7 @@
 
   .fullscreen-subtitle {
     @include setFontParams($fontRaleway, normal, 300, $landingTitleLineHeight);
-    font-size: 28px;
+    font-size: $bigTitleFontSize;
     text-align: center;
     color: $white;
   }
@@ -38,7 +38,7 @@
 
   .benefits-title {
     @include setFontParams($fontWorkSans, normal, 700, $titleLineHeight);
-    font-size: 56px;
+    font-size: $sectionTitleFontSize;
     text-align: center;
     text-transform: uppercase;
     color: $white;
@@ -73,7 +73,7 @@
 
   .top-title {
     @include setFontParams($fontWorkSans, normal, 700, $titleLineHeight);
-    font-size: 56px;
+    font-size: $sectionTitleFontSize;
     text-align: center;
     text-transform: uppercase;
     color: $white;
@@ -103,7 +103,7 @@
 
   .top-project-title {
     @include setFontParams($fontWorkSans, normal, 700, $titleLineHeight);
-    font-size: 56px;
+    font-size: $sectionTitleFontSize;
     text-align: center;
     text-transform: uppercase;
     color: $white;
@@ -129,11 +129,11 @@
   flex-direction: column;
   align-items: center;
   color: $white;
-  margin-bottom: 81px;;
+  margin-bottom: 81px;
 
   .description-title {
     @include setFontParams($fontWorkSans, normal, 600, $landingTitleLineHeight);
-    font-size: 44px;
+    font-size: $sectionTitleFontSize;
     text-align: center;
     margin-bottom: 64px;
 
@@ -149,18 +149,18 @@
     margin-bottom: 81px;
 
     .description-item {
-      max-width: 489px;
+      max-width: 600px;
     }
 
     .description-item-title {
-      @include setFontParams($fontRaleway, normal, 500, $subTitleLineHeight);
-      font-size: 24px;
+      @include setFontParams($fontRaleway, normal, 500, $titleLineHeight);
+      font-size: $subTitleFontSize;
       margin-bottom: 20px;
     }
 
     .description-item-content {
-      @include setFontParams($fontRaleway, normal, 300, $subTitleLineHeight);
-      font-size: 20px;
+      @include setFontParams($fontRaleway, normal, 300, $titleLineHeight);
+      font-size: $titleFontSize;
     }
   }
 }

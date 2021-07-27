@@ -30,7 +30,7 @@ button.btn {
     background-size: contain;
   }
 
-  &__close{
+  &__close {
     width: 20px;
     height: 20px;
   }
@@ -44,7 +44,7 @@ button.btn {
   }
 
   &__small-empty-border {
-   border: 1px solid $crimson;
+    border: 1px solid $crimson;
     border-radius: 34px;
     padding: 21px 30px;
   }
@@ -68,19 +68,25 @@ button.btn {
 
   &__big {
     font-weight: 700;
-    @include setButtonSize(352px, 75px, 22px);
+    padding: 0 114px;
+    @include setButtonSize($bigButtonLineHeight, $bigButtonFontSize);
   }
 
   &__medium {
-    @include setButtonSize(214px, 55px, 16px);
+    max-width: 214px;
+    padding: 0 85px;
+    @include setButtonSize($mediumButtonLineHeight, $mediumButtonFontSize);
   }
 
   &__small {
-    @include setButtonSize(141px, 38px, 14px);
+    max-width: 214px;
+    padding: 6px 43px;
+    @include setButtonSize($smallButtonLineHeight, $smallButtonFontSize);
   }
 
   &__small-empty {
-    @include setButtonSize(100px, 38px, 14px);
+    max-width: 214px;
+    @include setButtonSize($smallButtonLineHeight, $smallButtonFontSize);
   }
 
   // button (login, sign up)
@@ -89,65 +95,39 @@ button.btn {
     font-weight: 400;
   }
 
-  &__login {
-    border: none;
-    @include setButtonSize(auto, 55px, 24px);
-    background: $goldTextGradient;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  &__sign-up {
-    border: none;
-    background: $goldTextGradient;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    @include setButtonSize(214px, 55px, 24px);
-  }
-}
-
-// link
-a.link {
-  box-sizing: border-box;
-  text-decoration: none;
-  transition: 0.3s all ease;
-
   &__sign-up, &__login {
     display: inline-flex;
     justify-content: center;
     align-items: center;
   }
 
+  &__login {
+    border: none;
+    @include setButtonSize($mediumButtonLineHeight, $bigButtonFontSize);
+    color: $creamCan;
+  }
+
   &__sign-up {
     max-width: 214px;
-    background: linear-gradient($codGray, $codGray) padding-box,
-    $goldGradient border-box;
-    border: 1px solid transparent;
-
-    //box-shadow: inset 0 0 0 1px #E07504,
-    //            inset 0 0 0 1px #E07504,
-    //            inset 0 0 0 1px #FBDF15,
-    //            inset 0 0 0 1px #FFFFFF;
+    padding: 0 50px;
+    border: none;
+    -webkit-box-shadow: inset 0px 0px 0px 2px $creamCan;
+    box-shadow: inset 0px 0px 0px 2px $creamCan;
     border-radius: 50px;
+    color: $creamCan;
     transition: 0.5s all ease;
+    @include setButtonSize($mediumButtonLineHeight, $bigButtonFontSize);
   }
 
   &__sign-up:hover {
-    border-width: 4px;
-
-    transition: 0.5s all ease;
-    //box-shadow: inset 0 0 0 4px #E07504,
-    //            inset 0 0 0 4px #E07504,
-    //            inset 0 0 0 4px #FBDF15,
-    //            inset 0 0 0 4px #FFFFFF;
+    -webkit-box-shadow: inset 0px 0px 0px 4px $creamCan;
+    box-shadow: inset 0px 0px 0px 4px $creamCan;
   }
+}
 
+a.link {
   &__login:hover {
-    display: inline;
-    text-decoration: none;
-    background-image: linear-gradient(transparent, transparent), linear-gradient(transparent, transparent), $goldTextGradient;
-    background-repeat: no-repeat;
-    background-position: 120%, 122%, 0 150%;
-    background-size: 100% 6px;
+    text-decoration-color: $creamCan !important;
+    text-decoration: underline;
   }
 }

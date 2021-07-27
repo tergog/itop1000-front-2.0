@@ -440,12 +440,12 @@ export const CLandingData = {
       title: 'ITOP1000 is an amazing user-friendly platform for freelance developers and clients:',
       contentItems: [
         {
-          title: 'For Employers: ',
-          description: 'You gain access to the best freelance developers in the industry. All you need is to post a project, and our team will match you with the best-fitted talent to complete your project. Monitor your project status on our platform and communicate with the writer throughout the duration of the project. You can also pay with your preferred payment option, and the freelancer will only get paid once you accept the final task.'
+          title: 'For Employers:',
+          description: 'All you need is to post a project, and our team will match you with the best-fitted talent to complete your project. You can also pay with your preferred payment option, and the freelancer will only get paid once you accept the final task.'
         },
         {
           title: 'For Freelancers:',
-          description: 'Create an account and upload your qualifications. Our team will verify your credentials, and you can start accepting gigs. Earn money by working with world-renowned companies. Boost your portfolio and reputation in the industry. '
+          description: 'Create an account and upload your qualifications. Our team will verify your credentials, and you can start accepting gigs. Earn money by working with world-renowned companies. Boost your portfolio and reputation in the industry.'
         }
       ],
       button: {

@@ -30,8 +30,38 @@ $goldTips: #E2B515; // horizontal Line color stepper
 $goldGradient: linear-gradient(164.88deg, #E07504 41.53%, #E07504 41.54%, #FBDF15 79.69%, #FFFFFF 112.9%);
 $goldTextGradient: linear-gradient(180deg, hsla(31, 96%, 45%, 1) 0%, hsla(31, 96%, 45%, 1) 31%, hsla(53, 97%, 53%, 1) 100%);
 
-// Line height
+// ============================= Buttons =============================================
+// Line Height
+$bigButtonLineHeight: 75px;
+$mediumButtonLineHeight: 55px;
+$smallButtonLineHeight: 24px;
+
+// Font Size
+$bigButtonFontSize: 24px;
+$mediumButtonFontSize: 16px;
+$smallButtonFontSize: 14px;
+
+// ================== Form Elements (Inputs, Textarea, Select, Checkbox) =============
+// Line Height
+$labelLineHeight: 16px;
+$inputErrorLineHeight: 24px;
+// Font Size
+$labelFontSize: 16px;
+$inputErrorFontSize: 14px;
+$inputFontSize: 16px;
+
+
+// ====================================== Landing ====================================
+// Line Height
 $landingTitleLineHeight: 75px;
 $titleLineHeight: 40px;
 $subTitleLineHeight: 24px;
 $textLineHeight: 16px;
+// Font Size
+$landingMainTitleFontSize: 90px;
+$sectionTitleFontSize: 56px;
+$bigTitleFontSize: 30px;
+$subTitleFontSize: 28px;
+$titleFontSize: 24px;
+$bigTextFontSize: 16px;
+$smallTextFontSize: 14px;
