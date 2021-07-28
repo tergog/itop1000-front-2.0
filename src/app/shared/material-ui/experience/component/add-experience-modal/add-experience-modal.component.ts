@@ -77,11 +77,11 @@ export class AddExperienceModalComponent implements OnInit {
       positionTitle: this.formBuilder.control({ value: 'Position Title', disabled: false }, [Validators.required]),
       jobDescription: this.formBuilder.control({ value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam', disabled: false }, [Validators.required]),
       dateFrom: this.formBuilder.control(
-        { value: '20.07.2021', disabled: false },
+        '',
         [Validators.required]
       ),
       dateTill: this.formBuilder.control(
-        { value: '21.07.2021', disabled: false },
+        '',
         [Validators.required]
       ),
     });

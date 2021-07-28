@@ -1,63 +1,74 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 import { MatHorizontalStepper } from '@angular/material/stepper';
+import { takeUntil } from 'rxjs/operators';
 
 import { EStepperType } from '../stepper.enums';
 import { IStepperParameters } from '../stepper.interfaces';
 import { ItopDataService } from '../../../services/itop-data/itop-data.service';
-import { CCategoryWorks, CSubcategoryWorks } from '../../../constantes/constantes';
+import {
+  CFreelancerCategoryWorks,
+  CLocation,
+  COperationMode,
+  CProductOwnerCategoryWorks,
+  CSubcategoryWorks
+} from '../../../constantes/constantes';
+import { AuthorizationDataService } from '../../../authorization/services/authorization-data/authorization-data.service';
 
 @Component({
   selector: 'app-stepper',
   templateUrl: './stepper.component.html',
   styleUrls: ['./stepper.component.scss']
 })
-export class StepperComponent implements OnInit, AfterViewInit {
+export class StepperComponent implements OnInit, OnDestroy {
   @ViewChild('stepper') stepper: MatHorizontalStepper;
-  public selectCategories = CCategoryWorks;
-  public selectSubcategories: {[key: string]: string[]} = CSubcategoryWorks;
+  public selectFreelancerCategories = CFreelancerCategoryWorks;
+  public selectProductOwnerCategories = CProductOwnerCategoryWorks;
+  public selectSubcategories: { [key: string]: string[] } = CSubcategoryWorks;
+  public locationList = CLocation;
+  public operationModeList = COperationMode;
   public EStepperType = EStepperType;
   public productOwnerFormsGroup: FormGroup;
   public freelancerFormsGroup: FormGroup;
   public productOwnerFormsGroupLinks: { [key: string]: FormGroup };
   public freelancerGroupLinks: { [key: string]: FormGroup };
   public stepperParameters$: BehaviorSubject<IStepperParameters>;
-  public declension = ['1st', '2nd', '3rd', '4th'];
-  public step = 0;
+  public unsubscribe$ = new Subject<void>();
 
   constructor(
     private stepperData: ItopDataService,
-    private _formBuilder: FormBuilder
+    private _formBuilder: FormBuilder,
+    private authorizationData: AuthorizationDataService
   ) {
     this.productOwnerFormsGroup = this._formBuilder.group({
       firstStepFormGroup: this._formBuilder.group({
-        companyName: this._formBuilder.control('', []),
+        companyName: this._formBuilder.control('', [Validators.required, Validators.minLength(2)]),
         companyDescription: this._formBuilder.control('', [])
       }),
       secondStepFormGroup: this._formBuilder.group({
-        category: this._formBuilder.control('', [])
+        category: this._formBuilder.control(this.selectProductOwnerCategories, [Validators.required])
       }),
       thirdStepFormGroup: this._formBuilder.group({
-        location: this._formBuilder.control('', [])
+        location: this._formBuilder.control(this.locationList, [Validators.required])
       }),
       fourthStepFormGroup: _formBuilder.group({
-        operationMode: this._formBuilder.control('', [])
+        operationMode: this._formBuilder.control(this.operationModeList, [Validators.required])
       })
     });
     this.freelancerFormsGroup = this._formBuilder.group({
       firstStepFormGroup: _formBuilder.group({
-        category: _formBuilder.control(this.selectCategories, [Validators.required]),
+        category: _formBuilder.control(this.selectFreelancerCategories, [Validators.required]),
         subcategory: _formBuilder.control('', [Validators.required])
       }),
       secondStepFormGroup: _formBuilder.group({
-        skills: _formBuilder.control(['HTML', 'CSS', 'JavaScript'], [])
+        skills: _formBuilder.control([], [Validators.required])
       }),
       thirdStepFormGroup: _formBuilder.group({
-        experience: _formBuilder.control([])
+        experience: _formBuilder.control([], [Validators.required])
       }),
       fourthStepFormGroup: _formBuilder.group({
-        rate: _formBuilder.control('', [Validators.required])
+        rate: _formBuilder.control('', [Validators.required, Validators.minLength(2)])
       })
     });
     this.productOwnerFormsGroupLinks = {
@@ -76,19 +87,28 @@ export class StepperComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.stepperParameters$ = this.stepperData.stepperPageData$;
-    this.freelancerGroupLinks.firstGroup.controls.category.valueChanges.subscribe((value: string) => {
-      console.log(value);
+    this.freelancerGroupLinks.firstGroup.controls.category.valueChanges
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe((value: string) => {
       this.freelancerGroupLinks.firstGroup.controls.subcategory
         .setValue(this.selectSubcategories[value]);
     });
   }
 
-  ngAfterViewInit(): void {
-    this.stepper.selectionChange.subscribe(steps => this.step = steps.selectedIndex);
+  sendFreelancerSignUpData(): void {
+    if (this.freelancerFormsGroup.valid) {
+      this.authorizationData.setStepperData(this.freelancerFormsGroup.value);
+    }
   }
 
-  sendUserSignUpData(): void {
-    console.log(this.productOwnerFormsGroup.value);
-    console.log(this.freelancerFormsGroup.value);
+  sendProductOwnerSignUpData(): void {
+    if (this.productOwnerFormsGroup.valid) {
+      this.authorizationData.setStepperData(this.productOwnerFormsGroup.value);
+    }
+  }
+
+  ngOnDestroy(): void {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
   }
 }

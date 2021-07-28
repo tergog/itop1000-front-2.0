@@ -44,7 +44,11 @@
     <form [formGroup]="freelancerGroupLinks.fourthGroup">
       <ng-template matStepLabel>hourly rate</ng-template>
       <div class="form-item">
-        <app-input class="money" formControlName="rate" [inputParameters]="(stepperParameters$ | ngrxPush).inputs.money"></app-input>
+        <app-input class="money"
+                   [control]="freelancerGroupLinks.fourthGroup.controls.rate"
+                   formControlName="rate"
+                   [inputParameters]="(stepperParameters$ | ngrxPush).inputs.money">
+        </app-input>
       </div>
       <div class="form-item money">
 
@@ -52,7 +56,7 @@
       <div class="form-item">
         <app-button (click)="stepper.previous()" [buttonParameters]="(stepperParameters$ | ngrxPush).buttons.previous"></app-button>
         <app-button [buttonParameters]="(stepperParameters$ | ngrxPush).buttons.send"
-                    (click)="sendUserSignUpData()"></app-button>
+                    (click)="sendFreelancerSignUpData()"></app-button>
       </div>
     </form>
   </mat-step>
@@ -66,12 +70,14 @@
       <ng-template matStepLabel>Company name</ng-template>
       <div class="form-item">
         <app-input
+          [control]="productOwnerFormsGroupLinks.firstGroup.controls.companyName"
           formControlName="companyName"
           [inputParameters]="(stepperParameters$ | ngrxPush).inputs.companyName">
         </app-input>
       </div>
       <div class="form-item">
         <app-input
+          [control]="productOwnerFormsGroupLinks.firstGroup.controls.companyDescription"
           formControlName="companyDescription"
           [inputParameters]="(stepperParameters$ | ngrxPush).inputs.description">
         </app-input>
@@ -129,7 +135,7 @@
       <div class="form-item">
         <app-button (click)="stepper.previous()" [buttonParameters]="(stepperParameters$ | ngrxPush).buttons.previous"></app-button>
         <app-button [buttonParameters]="(stepperParameters$ | ngrxPush).buttons.send"
-                    (click)="sendUserSignUpData()"></app-button>
+                    (click)="sendProductOwnerSignUpData()"></app-button>
       </div>
     </form>
   </mat-step>

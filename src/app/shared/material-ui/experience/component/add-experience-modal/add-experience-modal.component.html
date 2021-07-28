@@ -6,20 +6,38 @@
   <div class="experience-modal__body">
     <form action="" class="experience-form" [formGroup]="addModalFormGroup">
       <div class="experience-form__item">
-        <app-input [inputParameters]="modalData.inputs.companyName" formControlName="companyName"></app-input>
+        <app-input
+          [control]="addModalFormGroup.controls.companyName"
+          [inputParameters]="modalData.inputs.companyName"
+          formControlName="companyName"></app-input>
       </div>
       <div class="experience-form__item">
-        <app-input [inputParameters]="modalData.inputs.jobTitle" formControlName="jobTitle"></app-input>
+        <app-input
+          [control]="addModalFormGroup.controls.jobTitle"
+          [inputParameters]="modalData.inputs.jobTitle"
+          formControlName="jobTitle"></app-input>
       </div>
       <div class="experience-form__item">
-        <app-input [inputParameters]="modalData.inputs.positionTitle" formControlName="positionTitle"></app-input>
+        <app-input
+          [control]="addModalFormGroup.controls.positionTitle"
+          [inputParameters]="modalData.inputs.positionTitle"
+          formControlName="positionTitle"></app-input>
       </div>
       <div class="experience-form__item">
-        <app-input [inputParameters]="modalData.inputs.jobDescription" formControlName="jobDescription"></app-input>
+        <app-input
+          [control]="addModalFormGroup.controls.jobDescription"
+          [inputParameters]="modalData.inputs.jobDescription"
+          formControlName="jobDescription"></app-input>
       </div>
       <div class="experience-form__item">
-        <app-input class="date" [inputParameters]="modalData.inputs.dateFrom" formControlName="dateFrom"></app-input>
-        <app-input class="date" [inputParameters]="modalData.inputs.dateTill" formControlName="dateTill"></app-input>
+        <app-input class="date"
+                   [control]="addModalFormGroup.controls.dateFrom"
+                   [inputParameters]="modalData.inputs.dateFrom"
+                   formControlName="dateFrom"></app-input>
+        <app-input class="date"
+                   [control]="addModalFormGroup.controls.dateTill"
+                   [inputParameters]="modalData.inputs.dateTill"
+                   formControlName="dateTill"></app-input>
       </div>
       <div class="experience-form__item">
         <app-button [buttonParameters]="modalData.buttons.cancel" mat-dialog-close="false"></app-button>

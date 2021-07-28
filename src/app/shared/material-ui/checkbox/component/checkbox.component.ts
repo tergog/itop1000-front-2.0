@@ -1,5 +1,5 @@
 import { Component, forwardRef, Input, OnInit } from '@angular/core';
-import { NG_VALUE_ACCESSOR, ControlValueAccessor, FormBuilder } from '@angular/forms';
+import { NG_VALUE_ACCESSOR, ControlValueAccessor, FormBuilder, AbstractControl } from '@angular/forms';
 
 import { ICheckboxParameters } from '../checkbox.interfaces';
 
@@ -22,6 +22,9 @@ export class CheckboxComponent implements OnInit, ControlValueAccessor {
   public value: boolean;
   public disableState: boolean;
   public _checkboxParameters: ICheckboxParameters;
+  @Input() control?: AbstractControl;
+  @Input() validation?: boolean;
+
   @Input() set checkboxParameters(value: ICheckboxParameters) {
     this._checkboxParameters = value;
   }

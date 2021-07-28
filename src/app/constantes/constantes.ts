@@ -68,7 +68,7 @@ export const CSubcategoryWorks = {
     'Medical Translation', 'Technical Translation']
 };
 
-export const CCategoryWorks = [
+export const CFreelancerCategoryWorks = [
   'Accounting & Consulting',
   'Admin Support',
   'Customer Service',
@@ -79,6 +79,26 @@ export const CCategoryWorks = [
   'Legal',
   'Sales & Marketing',
   'Translation'
+];
+
+export const CProductOwnerCategoryWorks = [
+  'Web Developing',
+  'Software Developing',
+  'Mobile Developing',
+  'Cross Platform'
+];
+
+export const CLocation = [
+  'Ukraine',
+  'United States',
+  'Uruguay',
+  'Venezuela',
+  'United Kingdom'
+];
+
+export const COperationMode = [
+    'Full-time',
+    'Part-time'
 ];
 
 export const CAuthorizationData = {
@@ -97,7 +117,7 @@ export const CAuthorizationData = {
       placeholder: 'email@example.com',
       type: 'email',
       label: 'Email',
-      error: 'Please, enter required data'
+      error: 'The email is not correct, try again :('
     },
     password: {
       placeholder: 'Enter password',
@@ -121,7 +141,7 @@ export const CAuthorizationData = {
       placeholder: 'email@example.com',
       type: 'email',
       label: 'Email',
-      error: 'Please, enter required data'
+      error: 'The email is not correct, try again :('
     },
     password: {
       placeholder: 'Your password',
@@ -149,11 +169,11 @@ export const CAuthorizationData = {
     },
     checkbox: {
       policy: {
-        label: 'Accent Terms of Use and Privace',
-        errorMessage: 'Please, accept Terms of use and privace'
+        label: 'Accent Terms of Use and Privacy',
+        errorMessage: 'Please, accept Terms of use and privacy'
       },
       terms: {
-        label: 'Accept Privacy Pollicy',
+        label: 'Accept Privacy Policy',
         errorMessage: 'Please, accept Privacy Policy'
       }
     },
@@ -172,35 +192,35 @@ export const CStepperData = {
     selects: {
       category: {
         label: 'Category',
-        options: [
-          'Accounting & Consulting',
-          'Admin Support',
-          'Customer Service',
-          'Data science & Analytics',
-          'Design & Creative',
-          'Engineering & Architecture',
-          'IT & Networking',
-          'Legal',
-          'Sales & Marketing',
-          'Translation'
-        ],
-        defaultValue: 'Select the category'
+        // options: [
+        //   'Accounting & Consulting',
+        //   'Admin Support',
+        //   'Customer Service',
+        //   'Data science & Analytics',
+        //   'Design & Creative',
+        //   'Engineering & Architecture',
+        //   'IT & Networking',
+        //   'Legal',
+        //   'Sales & Marketing',
+        //   'Translation'
+        // ],
+        // defaultValue: 'Select the category'
       },
       subcategory: {
         label: 'Subcategory',
-        options: [
-          'Accounting & Consulting',
-          'Admin Support',
-          'Customer Service',
-          'Data science & Analytics',
-          'Design & Creative',
-          'Engineering & Architecture',
-          'IT & Networking',
-          'Legal',
-          'Sales & Marketing',
-          'Translation'
-        ],
-        defaultValue: 'Select the subcategory'
+        // options: [
+        //   'Accounting & Consulting',
+        //   'Admin Support',
+        //   'Customer Service',
+        //   'Data science & Analytics',
+        //   'Design & Creative',
+        //   'Engineering & Architecture',
+        //   'IT & Networking',
+        //   'Legal',
+        //   'Sales & Marketing',
+        //   'Translation'
+        // ],
+        // defaultValue: 'Select the subcategory'
       }
     },
     chipsValues: ['HTML', 'CSS', 'JavaScript'],
@@ -245,38 +265,32 @@ export const CStepperData = {
     selects: {
       category: {
         label: 'Category',
-        options: [
-          'Accounting & Consulting',
-          'Admin Support',
-          'Customer Service',
-          'Data science & Analytics',
-          'Design & Creative',
-          'Engineering & Architecture',
-          'IT & Networking',
-          'Legal',
-          'Sales & Marketing',
-          'Translation'
-        ],
-        defaultValue: 'Select the category'
+        // options: [
+        //   'Web Developing',
+        //   'Software Developing',
+        //   'Mobile Developing',
+        //   'Cross Platform'
+        // ],
+        // defaultValue: 'Select the category'
       },
       location: {
         label: 'Location',
-        options: [
-          'Ukraine',
-          'United States',
-          'Uruguay',
-          'Venezuela',
-          'United Kingdom'
-        ],
-        defaultValue: 'Select the location'
+        // options: [
+        //   'Ukraine',
+        //   'United States',
+        //   'Uruguay',
+        //   'Venezuela',
+        //   'United Kingdom'
+        // ],
+        // defaultValue: 'Select the location'
       },
       operationMode: {
         label: 'Operation mode',
-        options: [
-          'Full-time',
-          'Part-time'
-        ],
-        defaultValue: 'Choose the operation mode'
+        // options: [
+        //   'Full-time',
+        //   'Part-time'
+        // ],
+        // defaultValue: 'Choose the operation mode'
       }
     },
     searchInputs: {},

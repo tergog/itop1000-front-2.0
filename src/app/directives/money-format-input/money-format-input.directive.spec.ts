@@ -1,4 +1,4 @@
-import { DateFormatInputDirective } from './date-format-input.directive';
+import { DateFormatInputDirective } from './money-format-input.directive';
 
 describe('DateFormatInputDirective', () => {
   it('should create an instance', () => {

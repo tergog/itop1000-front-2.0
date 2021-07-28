@@ -10,6 +10,7 @@ import { ModalAcceptRuleComponent } from '../modal-accept-rule/modal-accept-rule
 import { EModalAcceptRuleView } from '../modal-accept-rule/modal-accept-rule.enums';
 import { AuthorizationDataService } from '../../services/authorization-data/authorization-data.service';
 import {
+  confirmCheckboxValidator,
   confirmPasswordValidator
 } from '../../services/authorization-validation/authorization-validation.service';
 
@@ -23,7 +24,7 @@ export class AuthorizationFormComponent implements OnInit, OnDestroy {
   public authorizationPageParameters = CAuthorizationData;
   public signUpFormGroup: FormGroup;
   public signInFormGroup: FormGroup;
-  public invalid: boolean;
+  public validation: boolean;
   public EModalAcceptRuleView = EModalAcceptRuleView;
   public unsubscribe$ = new Subject<void>();
 
@@ -42,7 +43,11 @@ export class AuthorizationFormComponent implements OnInit, OnDestroy {
       policy: this.formBuilder.control(false, [Validators.required]),
       terms: this.formBuilder.control(false, [Validators.required])
     }, {
-      validator: confirmPasswordValidator('password', 'confirmPassword')
+      validator: [
+        confirmPasswordValidator('password', 'confirmPassword'),
+        confirmCheckboxValidator('policy'),
+        confirmCheckboxValidator('terms')
+      ]
     });
     this.signInFormGroup = this.formBuilder.group({
       email: this.formBuilder.control('', [Validators.required]),
@@ -76,10 +81,10 @@ export class AuthorizationFormComponent implements OnInit, OnDestroy {
 
   signUp(): void {
     if (this.signUpFormGroup.valid) {
-      this.authorizationData.setData(this.signUpFormGroup.value);
+      this.authorizationData.setSignUpData(this.signUpFormGroup.value);
       this.router.navigate(['/authorization/info']);
     } else {
-      this.invalid = true;
+      this.validation = true;
     }
   }
 

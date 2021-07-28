@@ -5,34 +5,46 @@
     <form action="" class="sign-up-form" [formGroup]="signUpFormGroup" (submit)="signUp()">
       <div class="form-item">
         <app-input
+          [validation]="validation"
+          [control]="signUpFormGroup.controls.email"
           formControlName="email"
           [inputParameters]="authorizationPageParameters.signUpFormElements.email">
         </app-input>
       </div>
       <div class="form-item">
         <app-input
+          [validation]="validation"
+          [control]="signUpFormGroup.controls.firstName"
           formControlName="firstName"
           [inputParameters]="authorizationPageParameters.signUpFormElements.firstName">
         </app-input>
         <app-input
+          [validation]="validation"
+          [control]="signUpFormGroup.controls.lastName"
           formControlName="lastName"
           [inputParameters]="authorizationPageParameters.signUpFormElements.lastName">
         </app-input>
       </div>
       <div class="form-item">
         <app-input
+          [validation]="validation"
+          [control]="signUpFormGroup.controls.password"
           formControlName="password"
           [inputParameters]="authorizationPageParameters.signUpFormElements.password">
         </app-input>
       </div>
       <div class="form-item">
         <app-input
+          [validation]="validation"
+          [control]="signUpFormGroup.controls.confirmPassword"
           formControlName="confirmPassword"
           [inputParameters]="authorizationPageParameters.signUpFormElements.confirmPassword">
         </app-input>
       </div>
       <div class="form-item">
         <app-checkbox
+          [validation]="validation"
+          [control]="signUpFormGroup.controls.policy"
           formControlName="policy"
           [checkboxParameters]="authorizationPageParameters.signUpFormElements.checkbox.policy"
           (click)="openAcceptRuleDialog($event, EModalAcceptRuleView.PrivacyPolicy)">
@@ -40,6 +52,8 @@
       </div>
       <div class="form-item">
         <app-checkbox
+          [validation]="validation"
+          [control]="signUpFormGroup.controls.terms"
           formControlName="terms"
           [checkboxParameters]="authorizationPageParameters.signUpFormElements.checkbox.terms"
           (click)="openAcceptRuleDialog($event, EModalAcceptRuleView.TermsAndConditional)">
@@ -56,18 +70,24 @@
     <form action="" class="login-form" [formGroup]="signInFormGroup" (submit)="signIn()">
       <div class="form-item">
         <app-input
+          [validation]="validation"
+          [control]="signUpFormGroup.controls.email"
           formControlName="email"
           [inputParameters]="authorizationPageParameters.loginFormElements.email">
         </app-input>
       </div>
       <div class="form-item">
         <app-input
+          [validation]="validation"
+          [control]="signUpFormGroup.controls.password"
           formControlName="password"
           [inputParameters]="authorizationPageParameters.loginFormElements.password">
         </app-input>
       </div>
       <div class="form-item">
         <app-checkbox
+          [validation]="validation"
+          [control]="signInFormGroup.controls.remember"
           formControlName="remember"
           [checkboxParameters]="authorizationPageParameters.loginFormElements.checkbox">
         </app-checkbox>

@@ -3,6 +3,8 @@
     {{ _checkboxParameters.label }}
   </mat-checkbox>
   <div class="checkbox__error">
-    <span *ngIf="invalid">{{ _checkboxParameters.errorMessage }}</span>
+    <span *ngIf="control!.invalid && validation">
+      {{ _checkboxParameters.errorMessage }}
+    </span>
   </div>
 </div>

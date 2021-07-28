@@ -19,7 +19,7 @@ export class SelectComponent implements OnInit, ControlValueAccessor {
   public _selectParameters: ISelectParameters;
   @Input() set selectParameters(value: ISelectParameters){
     this._selectParameters = value;
-    this.defaultSelectValue = value.defaultValue;
+    // this.defaultSelectValue = value.defaultValue;
   }
   get selectParameters(): ISelectParameters{
     return this._selectParameters;

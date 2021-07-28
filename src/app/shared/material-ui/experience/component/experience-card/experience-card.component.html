@@ -1,7 +1,7 @@
 <div class="experience-card">
   <div class="experience-card__header">
     <h2>{{ _experienceCardData.companyName }}</h2>
-    <span>{{ _experienceCardData.dateFrom }} - {{ _experienceCardData.dateTill }}</span>
+    <span>{{ _experienceCardData.dateFrom | date:'MMMM y' }} - {{ _experienceCardData.dateTill | date:'MMMM y' }}</span>
   </div>
   <div class="experience-card__description">
     <p>

@@ -1,5 +1,5 @@
 import { Component, OnInit, forwardRef, Input } from '@angular/core';
-import { NG_VALUE_ACCESSOR, ControlValueAccessor, FormBuilder } from '@angular/forms';
+import { NG_VALUE_ACCESSOR, ControlValueAccessor, FormControl, AbstractControl } from '@angular/forms';
 
 import { IInputParameters } from './input.interfaces';
 import { EInputElementType } from './input.enums';
@@ -18,9 +18,10 @@ export const INPUT_VALUE_ACCESSOR: any = {
 })
 export class InputComponent implements OnInit, ControlValueAccessor {
   public focus = false;
-  public invalid = false;
   public EInputElementType = EInputElementType;
   public _inputParameters: IInputParameters;
+  @Input() control?: AbstractControl;
+  @Input() validation?: boolean;
 
   @Input() set inputParameters(value: IInputParameters) {
     this._inputParameters = value;
@@ -35,7 +36,7 @@ export class InputComponent implements OnInit, ControlValueAccessor {
   public value: string;
   public disableState: boolean;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor() {
     this.disableState = false;
     this.value = '';
   }
@@ -62,5 +63,17 @@ export class InputComponent implements OnInit, ControlValueAccessor {
   change(event: any): void {
     this.onChange(event.target.value);
     this.onTouched(event.target.value);
+  }
+
+  changeDate(event: any): void{
+    const value = (event.target.value as Date).getTime();
+    this.onChange(value);
+    this.onTouched(value);
+  }
+
+  changeRate(event: any): void{
+    const value = Number(event.target.value);
+    this.onChange(value);
+    this.onTouched(value);
   }
 }

@@ -25,7 +25,8 @@
     justify-content: center;
     align-items: center;
   }
-  .form-item:nth-child(3){
+
+  .form-item:nth-child(3) {
     justify-content: space-between;
   }
 
@@ -47,28 +48,35 @@
   }
 }
 
-.sign-up-form{
+.sign-up-form {
   width: 769px;
   max-width: 769px;
   overflow: hidden;
+
   .form-item {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    position: relative;
   }
+
   .form-item app-input {
     width: 99%;
   }
-  .form-item:nth-child(2){
+
+  .form-item:nth-child(2) {
     justify-content: space-between;
-    app-input{
+
+    app-input {
       width: 49%;
     }
-    app-input:last-child{
+
+    app-input:last-child {
       margin-right: 1px;
     }
   }
-  .form-item:last-child{
+
+  .form-item:last-child {
     justify-content: center;
   }
 }
@@ -94,7 +102,7 @@
     color: $redRibbon;
   }
 
-  .mat-tab-label.mat-tab-label-active{
+  .mat-tab-label.mat-tab-label-active {
     opacity: 1.0;
   }
 

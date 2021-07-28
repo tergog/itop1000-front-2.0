@@ -18,7 +18,7 @@
       transition: 0.5s all ease;
     }
     label.focus{
-      color: $malibu;
+      color: $malibu !important;
       transition: 0.5s all ease;
     }
     label.invalid{
@@ -75,7 +75,7 @@
     }
   }
 
-  .item-money{
+  .item-money {
     position: relative;
     border-radius: 10px;
     max-width: 152px;
@@ -94,6 +94,7 @@
   }
 
   .item-input {
+    position: relative;
     border-radius: 50px;
 
     input {
@@ -113,10 +114,17 @@
     font-size: $inputErrorFontSize;
   }
 
-  .item-money-icon{
+  .item-money-icon, .item-date-icon{
     display: inline-flex;
     position: absolute;
-    left: 16px;
     top: calc(50% - 9px);
+  }
+
+  .item-money-icon{
+    left: 16px;
+  }
+
+  .item-date-icon{
+    right: 16px;
   }
 }
