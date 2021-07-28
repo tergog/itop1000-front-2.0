@@ -8,8 +8,13 @@
     </div>
   </div>
   <div class="work-experience__body">
-    <div class="work-experience__item" *ngFor="let item of this.experienceGroup.value">
-      <app-experience-card [experienceCardData]="item"></app-experience-card>
+    <div class="work-experience__item" *ngFor="let item of this.experienceGroup.value; index as i">
+      <app-experience-card
+        [experienceCardData]="item"
+        [id]="i"
+        (editExperienceModal)="openEditExperienceModal($event)"
+        (removeExperienceModal)="openRemoveExperienceModal($event)">
+      </app-experience-card>
     </div>
   </div>
 </div>

@@ -1,8 +1,12 @@
-import { Component, OnInit, forwardRef, Input } from '@angular/core';
+import { Component, OnInit, forwardRef, Input, OnDestroy } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { FormArray, FormBuilder, NG_VALUE_ACCESSOR, ControlValueAccessor, FormControl } from '@angular/forms';
 
 import { AddExperienceModalComponent } from './add-experience-modal/add-experience-modal.component';
+import { EditExperienceModalComponent } from './edit-experience-modal/edit-experience-modal.component';
+import { RemoveExperienceModalComponent } from './remove-experience-modal/remove-experience-modal.component';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
 export const EXPERIENCE_VALUE_ACCESSOR: any = {
   provide: NG_VALUE_ACCESSOR,
@@ -16,12 +20,13 @@ export const EXPERIENCE_VALUE_ACCESSOR: any = {
   styleUrls: ['./experience.component.scss'],
   providers: [EXPERIENCE_VALUE_ACCESSOR]
 })
-export class ExperienceComponent implements OnInit, ControlValueAccessor {
+export class ExperienceComponent implements OnInit, ControlValueAccessor, OnDestroy {
   private onChange: any;
   private onTouched: any;
   public value: object[];
   public disableState: boolean;
   public experienceGroup: FormArray;
+  public unsubscribe$ = new Subject<void>();
 
   constructor(
     private dialog: MatDialog,
@@ -41,9 +46,39 @@ export class ExperienceComponent implements OnInit, ControlValueAccessor {
   openAddExperienceModal(): void {
     this.dialog.open(AddExperienceModalComponent)
       .afterClosed()
+      .pipe(takeUntil(this.unsubscribe$))
       .subscribe(exp => {
         if (exp) {
           (this.experienceGroup as FormArray).push(exp);
+        }
+      });
+  }
+
+  openEditExperienceModal(event: any): void {
+    const id = event;
+    this.dialog.open(EditExperienceModalComponent, {
+      data: (this.experienceGroup as FormArray).value[id]
+    })
+      .afterClosed()
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe(exp => {
+        if (exp) {
+          (this.experienceGroup as FormArray).removeAt(id);
+          (this.experienceGroup as FormArray).push(exp);
+        }
+      });
+  }
+
+  openRemoveExperienceModal(event: any): void {
+    const id = event;
+    this.dialog.open(RemoveExperienceModalComponent, {
+      data: id
+    })
+      .afterClosed()
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe(removeSubmit => {
+        if (removeSubmit) {
+          (this.experienceGroup as FormArray).removeAt(id);
         }
       });
   }
@@ -68,5 +103,10 @@ export class ExperienceComponent implements OnInit, ControlValueAccessor {
     this.value = this.experienceGroup.value;
     this.onChange(this.value);
     this.onTouched(this.value);
+  }
+
+  ngOnDestroy(): void {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
   }
 }

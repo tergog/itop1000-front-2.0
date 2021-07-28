@@ -4,8 +4,16 @@
     <span>{{ _experienceCardData.dateFrom | date:'MMMM y' }} - {{ _experienceCardData.dateTill | date:'MMMM y' }}</span>
   </div>
   <div class="experience-card__description">
-    <p>
+    <div class="description-content">
       {{ _experienceCardData.jobDescription }}
-    </p>
+    </div>
+    <div class="description-control">
+      <button (click)="openRemoveExperienceModal(id)" class="remove-experience">
+        <img src="/assets/img/remove.svg" alt="remove-icon">
+      </button>
+      <button (click)="openEditExperienceModal(id)" class="edit-experience">
+        <img src="/assets/img/edit.svg" alt="edit-icon">
+      </button>
+    </div>
   </div>
 </div>

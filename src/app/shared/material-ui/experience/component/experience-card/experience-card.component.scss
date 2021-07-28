@@ -24,9 +24,24 @@
   }
 
   &__description {
-    p {
+    display: flex;
+    max-width: 100%;
+
+    .description-content {
       @include setFontParams($fontWorkSans, normal, 400, $subTitleLineHeight);
       font-size: 16px;
+      flex: 1 0 auto;
+      display: contents;
+    }
+
+    .description-control {
+      display: flex;
+    }
+
+    .description-control button {
+      cursor: pointer;
+      border: none;
+      background: transparent;
     }
   }
 

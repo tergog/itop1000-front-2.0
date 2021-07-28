@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-experience-card',
@@ -7,6 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ExperienceCardComponent implements OnInit {
   public _experienceCardData: any;
+  @Input() id: number;
   @Input() set experienceCardData(value: any) {
     this._experienceCardData = value;
   }
@@ -15,9 +16,20 @@ export class ExperienceCardComponent implements OnInit {
     return this._experienceCardData;
   }
 
+  @Output() editExperienceModal = new EventEmitter<number>();
+  @Output() removeExperienceModal = new EventEmitter<number>();
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  openEditExperienceModal(id: number): void{
+    this.editExperienceModal.emit(id);
+  }
+
+  openRemoveExperienceModal(id: number): void{
+    this.removeExperienceModal.emit(id);
   }
 
 }

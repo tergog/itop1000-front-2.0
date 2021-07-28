@@ -7,12 +7,16 @@ import { AddExperienceModalComponent } from './component/add-experience-modal/ad
 import { ExperienceCardComponent } from './component/experience-card/experience-card.component';
 import { CustomUiModule } from '../../custom-ui/custom-ui.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { EditExperienceModalComponent } from './component/edit-experience-modal/edit-experience-modal.component';
+import { RemoveExperienceModalComponent } from './component/remove-experience-modal/remove-experience-modal.component';
 
 @NgModule({
   declarations: [
     ExperienceComponent,
     AddExperienceModalComponent,
-    ExperienceCardComponent
+    ExperienceCardComponent,
+    EditExperienceModalComponent,
+    RemoveExperienceModalComponent
   ],
   imports: [
     CommonModule,
