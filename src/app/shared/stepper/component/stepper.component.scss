@@ -89,6 +89,9 @@ h2.stepper-title{
 form {
   width: 769px;
   max-width: 769px;
+  //min-height: 400px;
+  //display: flex;
+  //flex-direction: column;
 
   .form-item {
     width: 99%;
@@ -116,6 +119,8 @@ form {
     margin-bottom: 0;
     display: flex;
     justify-content: space-around;
+    align-items: center;
+    //flex: 1 0 auto;
   }
 
   .form-item.money{

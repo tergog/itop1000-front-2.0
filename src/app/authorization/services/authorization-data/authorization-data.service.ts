@@ -26,6 +26,10 @@ export class AuthorizationDataService implements OnDestroy {
     this.store.dispatch(new SetSignUpStateAction({ data }));
   }
 
+  setSignInData(userData: { email: string, password: string }): void {
+
+  }
+
   setStepperData(stepperData: any): void {
     stepperData = Object.values(stepperData)
       .reduce((acc: ISignUpState, item: any) => (acc = { ...acc, ...item }, acc), {} as ISignUpState);

@@ -5,7 +5,7 @@
     <form action="" class="sign-up-form" [formGroup]="signUpFormGroup" (submit)="signUp()">
       <div class="form-item">
         <app-input
-          [validation]="validation"
+          [validation]="signUpValidation"
           [control]="signUpFormGroup.controls.email"
           formControlName="email"
           [inputParameters]="authorizationPageParameters.signUpFormElements.email">
@@ -13,13 +13,13 @@
       </div>
       <div class="form-item">
         <app-input
-          [validation]="validation"
+          [validation]="signUpValidation"
           [control]="signUpFormGroup.controls.firstName"
           formControlName="firstName"
           [inputParameters]="authorizationPageParameters.signUpFormElements.firstName">
         </app-input>
         <app-input
-          [validation]="validation"
+          [validation]="signUpValidation"
           [control]="signUpFormGroup.controls.lastName"
           formControlName="lastName"
           [inputParameters]="authorizationPageParameters.signUpFormElements.lastName">
@@ -27,7 +27,7 @@
       </div>
       <div class="form-item">
         <app-input
-          [validation]="validation"
+          [validation]="signUpValidation"
           [control]="signUpFormGroup.controls.password"
           formControlName="password"
           [inputParameters]="authorizationPageParameters.signUpFormElements.password">
@@ -35,7 +35,7 @@
       </div>
       <div class="form-item">
         <app-input
-          [validation]="validation"
+          [validation]="signUpValidation"
           [control]="signUpFormGroup.controls.confirmPassword"
           formControlName="confirmPassword"
           [inputParameters]="authorizationPageParameters.signUpFormElements.confirmPassword">
@@ -43,7 +43,7 @@
       </div>
       <div class="form-item">
         <app-checkbox
-          [validation]="validation"
+          [validation]="signUpValidation"
           [control]="signUpFormGroup.controls.policy"
           formControlName="policy"
           [checkboxParameters]="authorizationPageParameters.signUpFormElements.checkbox.policy"
@@ -52,7 +52,7 @@
       </div>
       <div class="form-item">
         <app-checkbox
-          [validation]="validation"
+          [validation]="signUpValidation"
           [control]="signUpFormGroup.controls.terms"
           formControlName="terms"
           [checkboxParameters]="authorizationPageParameters.signUpFormElements.checkbox.terms"
@@ -70,7 +70,7 @@
     <form action="" class="login-form" [formGroup]="signInFormGroup" (submit)="signIn()">
       <div class="form-item">
         <app-input
-          [validation]="validation"
+          [validation]="signInValidation"
           [control]="signUpFormGroup.controls.email"
           formControlName="email"
           [inputParameters]="authorizationPageParameters.loginFormElements.email">
@@ -78,7 +78,7 @@
       </div>
       <div class="form-item">
         <app-input
-          [validation]="validation"
+          [validation]="signInValidation"
           [control]="signUpFormGroup.controls.password"
           formControlName="password"
           [inputParameters]="authorizationPageParameters.loginFormElements.password">
@@ -86,7 +86,7 @@
       </div>
       <div class="form-item">
         <app-checkbox
-          [validation]="validation"
+          [validation]="signInValidation"
           [control]="signInFormGroup.controls.remember"
           formControlName="remember"
           [checkboxParameters]="authorizationPageParameters.loginFormElements.checkbox">

@@ -17,11 +17,13 @@
       font-size: $labelFontSize;
       transition: 0.5s all ease;
     }
-    label.focus{
+
+    label.focus {
       color: $malibu !important;
       transition: 0.5s all ease;
     }
-    label.invalid{
+
+    label.invalid {
       color: $red;
       transition: 0.5s all ease;
     }
@@ -85,7 +87,7 @@
       padding: $inputMoneyPadding;
       border-radius: 10px;
       display: inline-block;
-      text-align:right
+      text-align: right
     }
 
     input::placeholder {
@@ -114,17 +116,54 @@
     font-size: $inputErrorFontSize;
   }
 
-  .item-money-icon, .item-date-icon{
+  .item-money-icon, .item-date-icon {
     display: inline-flex;
     position: absolute;
     top: calc(50% - 9px);
   }
 
-  .item-money-icon{
+  .item-money-icon {
     left: 16px;
   }
 
-  .item-date-icon{
+  .item-date-icon {
     right: 16px;
+  }
+}
+
+::ng-deep {
+  // Data Picker
+  mat-calendar {
+    background: $mineShaft;
+    color: $white;
+
+    th, .mat-calendar-body-label, .mat-calendar-body-cell-content{
+      color: $nobel;
+      @include setFontParams($fontWorkSans, 400, normal, $textLineHeight);
+      font-size:$bigTextFontSize;
+    }
+
+    .mat-calendar-body-selected {
+      background: transparent;
+      border: 1px solid $redRibbon;
+      border-radius: 50%;
+      color: $white;
+    }
+
+    .mat-calendar-body-today{
+      border: none;
+    }
+
+    .mat-calendar-arrow{
+      border-top-color: $redRibbon;
+    }
+
+    .mat-calendar-next-button, .mat-calendar-previous-button{
+      color: $redRibbon !important;
+    }
+  }
+
+  .mat-datepicker-content {
+    background: transparent;
   }
 }

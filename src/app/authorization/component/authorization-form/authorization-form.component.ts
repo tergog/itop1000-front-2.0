@@ -24,7 +24,8 @@ export class AuthorizationFormComponent implements OnInit, OnDestroy {
   public authorizationPageParameters = CAuthorizationData;
   public signUpFormGroup: FormGroup;
   public signInFormGroup: FormGroup;
-  public validation: boolean;
+  public signUpValidation: boolean;
+  public signInValidation: boolean;
   public EModalAcceptRuleView = EModalAcceptRuleView;
   public unsubscribe$ = new Subject<void>();
 
@@ -59,10 +60,6 @@ export class AuthorizationFormComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
   }
 
-  signIn(): void {
-
-  }
-
   openAcceptRuleDialog(event: any, view: string): void {
     event.preventDefault();
     this.dialog.open(ModalAcceptRuleComponent, {
@@ -79,12 +76,21 @@ export class AuthorizationFormComponent implements OnInit, OnDestroy {
       });
   }
 
+  signIn(): void {
+    if (this.signInFormGroup.valid) {
+      this.authorizationData.setSignInData(this.signUpFormGroup.value);
+      // this.router.navigate(['/authorization/info']);
+    } else {
+      this.signInValidation = true;
+    }
+  }
+
   signUp(): void {
     if (this.signUpFormGroup.valid) {
       this.authorizationData.setSignUpData(this.signUpFormGroup.value);
       this.router.navigate(['/authorization/info']);
     } else {
-      this.validation = true;
+      this.signUpValidation = true;
     }
   }
 
