@@ -96,8 +96,8 @@ export class AuthorizationFormComponent implements OnInit, OnDestroy {
       this.router.navigate(['/authorization/info']);
     } else {
       this.signUpValidation = true;
+      this.tooltipParameters.status = true;
     }
-    this.tooltipParameters.status = true;
   }
 
   ngOnDestroy(): void {

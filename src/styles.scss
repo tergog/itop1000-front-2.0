@@ -84,3 +84,59 @@ a:active {
   outline: none;
   text-decoration: none;
 }
+
+@import "assets/scss/mixins";
+
+.text-black{
+  color: $black;
+}
+
+.text-white{
+  color: $white;
+}
+
+.text-gray{
+  color: $gray;
+}
+
+.text-error{
+  color: $red;
+}
+
+.text-uppercase{
+ text-transform: uppercase;
+}
+
+.text-underline{
+  text-decoration: underline;
+}
+
+.text-ribbon{
+  color: $redRibbon;
+}
+
+.text-yellow{
+  color: $creamCan;
+}
+
+.text-gradient{
+  background: $goldTextGradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-outline {
+  color: $white;
+  -webkit-text-fill-color: $black;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: $white;
+}
+
+.text-outline-gradient {
+  display: inherit;
+  background: $goldTextGradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: $black;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: transparent;
+}

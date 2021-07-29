@@ -9,7 +9,7 @@ import { takeUntil } from 'rxjs/operators';
 @Directive({ selector: '[tooltip]' })
 export class CustomTooltipDirective implements OnInit {
 
-  @Input('tooltip') tooltipParameters: { text: string, link: string, status: boolean } = { text: '', link: '', status: false };
+  @Input('tooltip') tooltipParameters: { text: string, link: string, status: boolean };
   private overlayRef: OverlayRef;
 
   constructor(private overlay: Overlay,
