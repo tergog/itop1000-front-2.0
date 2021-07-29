@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TestUiComponent implements OnInit {
 
+  public skillGradeParameters = 70;
+
+
   public tooltipParameters = {
     text: 'There is a mistake, please, check and enter the correct data',
     link: 'Email address validation requirements',

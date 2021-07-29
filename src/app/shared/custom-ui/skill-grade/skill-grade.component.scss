@@ -1,0 +1,44 @@
+@import "../../../../assets/scss/mixins";
+
+.skill-grade {
+  max-width: 620px;
+  height: 18px;
+  border-radius: 20px;
+  &__container{
+    border-radius: 20px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: $tundora;
+  }
+
+  &__fill{
+    border-radius: 20px;
+    position: absolute;
+    height: 100%;
+    background: $goldGradientVertical;
+
+    .fill-value-container{
+      position: absolute;
+      right: 0;
+      top: -12px;
+      width: 44px;
+      height: 44px;
+      color: $white;
+      box-sizing: border-box;
+      border: 7px solid $semiError;
+      border-radius: 50%;
+      overflow: hidden;
+      .fill-value{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        background: #E07504;
+        @include setFontParams($fontRaleway, normal, 600, $subTitleLineHeight);
+        font-size: $bigTextFontSize;
+      }
+    }
+  }
+}
