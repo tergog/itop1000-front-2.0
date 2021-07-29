@@ -5,7 +5,7 @@
 <hr>
 <app-stepper></app-stepper>
 <hr>
-<app-search-input [searchInputParameters]="objSearchInputParameters.big"></app-search-input>
+<!--<app-search-input [searchInputParameters]="objSearchInputParameters.big"></app-search-input>-->
 <hr>
 <!--<app-chips [chipsValues]="arrChipsElements"></app-chips>-->
 <app-chips></app-chips>
@@ -17,7 +17,10 @@
 <app-logo [logoParameters]="objLogoParameters.empty"></app-logo>
 <app-logo [logoParameters]="objLogoParameters.loader"></app-logo>
 <hr>
-<app-button tooltip="Hello" [buttonParameters]="objButtonParameters.big"></app-button>
+<app-button [tooltip]="tooltipParameters"
+            [buttonParameters]="objButtonParameters.big"
+(click)="tooltipShow()">
+</app-button>
 <app-button [buttonParameters]="objButtonParameters.medium"></app-button>
 <app-button [buttonParameters]="objButtonParameters.disable"></app-button>
 <app-button [buttonParameters]="objButtonParameters.small"></app-button>
@@ -26,10 +29,10 @@
 <app-button [buttonParameters]="objButtonParameters.signUp"></app-button>
 <app-button [buttonParameters]="objButtonParameters.smallEmptyBorder"></app-button>
 <hr>
-<app-input [inputParameters]="objInputParameters.email"></app-input>
-<app-input [inputParameters]="objInputParameters.text"></app-input>
-<app-input [inputParameters]="objInputParameters.password"></app-input>
-<app-input [inputParameters]="objInputParameters.textarea"></app-input>
+<!--<app-input [inputParameters]="objInputParameters.email"></app-input>-->
+<!--<app-input [inputParameters]="objInputParameters.text"></app-input>-->
+<!--<app-input [inputParameters]="objInputParameters.password"></app-input>-->
+<!--<app-input [inputParameters]="objInputParameters.textarea"></app-input>-->
 <hr>
 <app-arrow-down></app-arrow-down>
 <hr>
@@ -42,13 +45,13 @@
 <hr>
 <app-benefits-card [benefitsCardParameters]="objBenefitsCardParameters"></app-benefits-card>
 <hr>
-<app-select [selectParameters]="objSelectParameters"></app-select>
+<!--<app-select [selectParameters]="objSelectParameters"></app-select>-->
 <hr>
 <app-social-list [iconParameters]="arrSocialListParameters"></app-social-list>
 <hr>
 <app-role-toggle></app-role-toggle>
 <hr>
-<app-checkbox [checkboxParameters]="objCheckboxParameters"></app-checkbox>
+<!--<app-checkbox [checkboxParameters]="objCheckboxParameters"></app-checkbox>-->
 <hr>
 <app-project-card [projectCardParameters]="objProjectCardParameters.developer"></app-project-card>
 <app-project-card [projectCardParameters]="objProjectCardParameters.productOwner"></app-project-card>

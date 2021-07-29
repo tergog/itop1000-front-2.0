@@ -192,35 +192,11 @@ export const CStepperData = {
     selects: {
       category: {
         label: 'Category',
-        // options: [
-        //   'Accounting & Consulting',
-        //   'Admin Support',
-        //   'Customer Service',
-        //   'Data science & Analytics',
-        //   'Design & Creative',
-        //   'Engineering & Architecture',
-        //   'IT & Networking',
-        //   'Legal',
-        //   'Sales & Marketing',
-        //   'Translation'
-        // ],
-        // defaultValue: 'Select the category'
+        error: 'Please, enter required data'
       },
       subcategory: {
         label: 'Subcategory',
-        // options: [
-        //   'Accounting & Consulting',
-        //   'Admin Support',
-        //   'Customer Service',
-        //   'Data science & Analytics',
-        //   'Design & Creative',
-        //   'Engineering & Architecture',
-        //   'IT & Networking',
-        //   'Legal',
-        //   'Sales & Marketing',
-        //   'Translation'
-        // ],
-        // defaultValue: 'Select the subcategory'
+        error: 'Please, enter required data'
       }
     },
     chipsValues: ['HTML', 'CSS', 'JavaScript'],
@@ -242,13 +218,13 @@ export const CStepperData = {
     buttons: {
       send: {
         text: 'send the cv',
-        type: '',
+        type: 'submit',
         view: 'medium',
         disabled: false
       },
       next: {
         text: 'NEXT',
-        type: '',
+        type: 'submit',
         view: 'medium',
         disabled: false
       },
@@ -265,32 +241,15 @@ export const CStepperData = {
     selects: {
       category: {
         label: 'Category',
-        // options: [
-        //   'Web Developing',
-        //   'Software Developing',
-        //   'Mobile Developing',
-        //   'Cross Platform'
-        // ],
-        // defaultValue: 'Select the category'
+        error: 'Please, enter required data'
       },
       location: {
         label: 'Location',
-        // options: [
-        //   'Ukraine',
-        //   'United States',
-        //   'Uruguay',
-        //   'Venezuela',
-        //   'United Kingdom'
-        // ],
-        // defaultValue: 'Select the location'
+        error: 'Please, enter required data'
       },
       operationMode: {
         label: 'Operation mode',
-        // options: [
-        //   'Full-time',
-        //   'Part-time'
-        // ],
-        // defaultValue: 'Choose the operation mode'
+        error: 'Please, enter required data'
       }
     },
     searchInputs: {},

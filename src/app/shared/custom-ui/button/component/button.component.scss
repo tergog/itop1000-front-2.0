@@ -39,14 +39,14 @@ button.btn {
     text-transform: uppercase;
     background: transparent;
     color: $redRibbon;
-    border: none;
+    border: 1px solid transparent;
     font-size: 14px;
+    border-radius: 34px;
+    padding: 20px 30px;
   }
 
   &__small-empty-border {
     border: 1px solid $crimson;
-    border-radius: 34px;
-    padding: 20px 30px;
   }
 
   &__big:hover,
@@ -55,8 +55,10 @@ button.btn {
     background: $cardinal;
   }
 
-  &__small-empty:hover, &__small-empty-border:hover {
+  &__small-empty:hover, &__small-empty-border:hover{
     color: $cardinal;
+  }
+  &__small-empty-border:hover {
     border-color: $cardinal;
   }
 

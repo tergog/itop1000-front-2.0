@@ -1,6 +1,6 @@
 import { Component, forwardRef, Input, OnInit, ViewChild } from '@angular/core';
 import { MatExpansionPanel } from '@angular/material/expansion';
-import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
+import { NG_VALUE_ACCESSOR, ControlValueAccessor, AbstractControl } from '@angular/forms';
 
 import { ISelectParameters } from '../select.interfaces';
 
@@ -19,7 +19,6 @@ export class SelectComponent implements OnInit, ControlValueAccessor {
   public _selectParameters: ISelectParameters;
   @Input() set selectParameters(value: ISelectParameters){
     this._selectParameters = value;
-    // this.defaultSelectValue = value.defaultValue;
   }
   get selectParameters(): ISelectParameters{
     return this._selectParameters;

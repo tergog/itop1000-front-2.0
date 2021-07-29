@@ -59,7 +59,7 @@
            type="text"
            [placeholder]="_inputParameters.placeholder"
            (input)="changeRate($event)"
-           [value]="value | number : '1.2-2'"
+           [value]="value"
            [disabled]="disableState"
            (focusin)="focus = true"
            (focusout)="focus = false" appMoneyFormatCustomInput>

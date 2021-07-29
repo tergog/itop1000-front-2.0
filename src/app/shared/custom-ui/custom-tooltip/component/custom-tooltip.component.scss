@@ -1,10 +1,49 @@
+@import "src/assets/scss/mixins";
+
 :host {
   display: block
 }
 
-div {
-  background-color: #292929;
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
+.tooltip {
+  background-color: $creamCan;
+  color: $black;
+  padding: 21px 41px;
+  border-radius: 9px;
+  max-width: 374px;
+  @include setFontParams($fontRaleway, 300, normal, $subTitleLineHeight);
+  font-size: $smallTextFontSize;
+  position: relative;
+
+  &__content {
+    display: flex;
+  }
+
+  &__text {
+    text-align: center;
+  }
+
+  &__close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+  }
+
+  &__link {
+    text-align: center;
+    text-decoration: underline;
+    cursor: pointer;
+
+    a {
+      color: $black;
+    }
+  }
+}
+
+.tooltip::after {
+  position: absolute;
+  content: '';
+  border: 20px solid transparent;
+  border-top: 20px solid $creamCan;
+  margin-top: 20px;
+  margin-left: calc(50% - 61px);
 }

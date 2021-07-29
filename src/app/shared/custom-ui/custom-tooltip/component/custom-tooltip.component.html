@@ -1,1 +1,16 @@
-<div @tooltip>{{ text }}</div>
+<div class="tooltip" @tooltip>
+  <div class="tooltip__content">
+    <div class="tooltip__icon">
+      <img src="/assets/img/tooltip.svg" alt="tooltip-icon">
+    </div>
+    <div class="tooltip__text">
+      {{ tooltipParameters.text }}
+    </div>
+    <div class="tooltip__close">
+      <img class="tooltip__close-icon" src="/assets/img/tooltip-close.svg" alt="tooltip-close-icon">
+    </div>
+  </div>
+  <div *ngIf="tooltipParameters.link" class="tooltip__link">
+    <a href="">{{ tooltipParameters.link }}</a>
+  </div>
+</div>

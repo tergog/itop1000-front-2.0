@@ -28,6 +28,8 @@ export class StepperComponent implements OnInit, OnDestroy {
   public selectSubcategories: { [key: string]: string[] } = CSubcategoryWorks;
   public locationList = CLocation;
   public operationModeList = COperationMode;
+  // public freelancerValidation = false;
+  // public productOwnerValidation = false;
   public EStepperType = EStepperType;
   public productOwnerFormsGroup: FormGroup;
   public freelancerFormsGroup: FormGroup;
@@ -68,7 +70,7 @@ export class StepperComponent implements OnInit, OnDestroy {
         experience: _formBuilder.control([], [Validators.required])
       }),
       fourthStepFormGroup: _formBuilder.group({
-        rate: _formBuilder.control('', [Validators.required, Validators.minLength(2)])
+        rate: _formBuilder.control(null, [Validators.required, Validators.minLength(2)])
       })
     });
     this.productOwnerFormsGroupLinks = {

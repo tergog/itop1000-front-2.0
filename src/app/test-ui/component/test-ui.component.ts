@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TestUiComponent implements OnInit {
 
+  public tooltipParameters = {
+    text: 'There is a mistake, please, check and enter the correct data',
+    link: 'Email address validation requirements', status: false
+  };
+
   public objSearchInputParameters = {
     big: {
       placeholder: 'Search',
@@ -222,4 +227,10 @@ export class TestUiComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+
+  tooltipShow(): void {
+    this.tooltipParameters.status = true;
+  }
+
 }

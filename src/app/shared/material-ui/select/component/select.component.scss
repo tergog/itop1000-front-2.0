@@ -23,6 +23,12 @@
     width: 100%;
   }
 
+  .item-error {
+    color: $red;
+    @include setFontParams($fontWorkSans, 300, normal, $subTitleLineHeight);
+    font-size: $inputErrorFontSize;
+  }
+
   .select-option {
     @include setFontParams($fontRaleway, 400, normal, $textLineHeight);
     font-size: $inputFontSize;

@@ -1,18 +1,31 @@
 <!--========================================Freelancer==========================================================-->
 
 <mat-horizontal-stepper linear #stepper *ngIf="(stepperParameters$ | ngrxPush).type === EStepperType.Freelancer"
-(keydown.enter)="$event.preventDefault()">
+                        (keydown.enter)="$event.preventDefault()">
   <mat-step [stepControl]="freelancerGroupLinks.firstGroup">
     <form [formGroup]="freelancerGroupLinks.firstGroup">
       <ng-template matStepLabel>work field</ng-template>
       <div class="form-item">
-        <app-select formControlName="category" [selectParameters]="(stepperParameters$ | ngrxPush).selects.category"></app-select>
+        <app-select
+          formControlName="category"
+          [selectParameters]="(stepperParameters$ | ngrxPush).selects.category">
+        </app-select>
+<!--        <div class="item-error">-->
+<!--          <span-->
+<!--            *ngIf="freelancerGroupLinks.firstGroup.invalid">-->
+<!--            Please, enter required data-->
+<!--          </span>-->
+<!--        </div>-->
       </div>
       <div class="form-item">
-        <app-select formControlName="subcategory" [selectParameters]="(stepperParameters$ | ngrxPush).selects.subcategory"></app-select>
+        <app-select
+          formControlName="subcategory"
+          [selectParameters]="(stepperParameters$ | ngrxPush).selects.subcategory">
+        </app-select>
       </div>
       <div class="form-item">
-        <app-button (click)="stepper.next()" [buttonParameters]="(stepperParameters$ | ngrxPush).buttons.next"></app-button>
+        <app-button (click)="stepper.next()"
+                    [buttonParameters]="(stepperParameters$ | ngrxPush).buttons.next"></app-button>
       </div>
     </form>
   </mat-step>
@@ -23,8 +36,10 @@
         <app-chips formControlName="skills"></app-chips>
       </div>
       <div class="form-item">
-        <app-button (click)="stepper.previous()" [buttonParameters]="(stepperParameters$ | ngrxPush).buttons.previous"></app-button>
-        <app-button (click)="stepper.next()" [buttonParameters]="(stepperParameters$ | ngrxPush).buttons.next"></app-button>
+        <app-button (click)="stepper.previous()"
+                    [buttonParameters]="(stepperParameters$ | ngrxPush).buttons.previous"></app-button>
+        <app-button (click)="stepper.next()"
+                    [buttonParameters]="(stepperParameters$ | ngrxPush).buttons.next"></app-button>
       </div>
     </form>
   </mat-step>
@@ -35,8 +50,10 @@
         <app-experience formControlName="experience"></app-experience>
       </div>
       <div class="form-item">
-        <app-button (click)="stepper.previous()" [buttonParameters]="(stepperParameters$ | ngrxPush).buttons.previous"></app-button>
-        <app-button (click)="stepper.next()" [buttonParameters]="(stepperParameters$ | ngrxPush).buttons.next"></app-button>
+        <app-button (click)="stepper.previous()"
+                    [buttonParameters]="(stepperParameters$ | ngrxPush).buttons.previous"></app-button>
+        <app-button (click)="stepper.next()"
+                    [buttonParameters]="(stepperParameters$ | ngrxPush).buttons.next"></app-button>
       </div>
     </form>
   </mat-step>
@@ -54,7 +71,8 @@
 
       </div>
       <div class="form-item">
-        <app-button (click)="stepper.previous()" [buttonParameters]="(stepperParameters$ | ngrxPush).buttons.previous"></app-button>
+        <app-button (click)="stepper.previous()"
+                    [buttonParameters]="(stepperParameters$ | ngrxPush).buttons.previous"></app-button>
         <app-button [buttonParameters]="(stepperParameters$ | ngrxPush).buttons.send"
                     (click)="sendFreelancerSignUpData()"></app-button>
       </div>
@@ -101,8 +119,10 @@
       </div>
       <div class="form-item"></div>
       <div class="form-item">
-        <app-button (click)="stepper.previous()" [buttonParameters]="(stepperParameters$ | ngrxPush).buttons.previous"></app-button>
-        <app-button (click)="stepper.next()" [buttonParameters]="(stepperParameters$ | ngrxPush).buttons.next"></app-button>
+        <app-button (click)="stepper.previous()"
+                    [buttonParameters]="(stepperParameters$ | ngrxPush).buttons.previous"></app-button>
+        <app-button (click)="stepper.next()"
+                    [buttonParameters]="(stepperParameters$ | ngrxPush).buttons.next"></app-button>
       </div>
     </form>
   </mat-step>
@@ -117,8 +137,10 @@
       </div>
       <div class="form-item"></div>
       <div class="form-item">
-        <app-button (click)="stepper.previous()" [buttonParameters]="(stepperParameters$ | ngrxPush).buttons.previous"></app-button>
-        <app-button (click)="stepper.next()" [buttonParameters]="(stepperParameters$ | ngrxPush).buttons.next"></app-button>
+        <app-button (click)="stepper.previous()"
+                    [buttonParameters]="(stepperParameters$ | ngrxPush).buttons.previous"></app-button>
+        <app-button (click)="stepper.next()"
+                    [buttonParameters]="(stepperParameters$ | ngrxPush).buttons.next"></app-button>
       </div>
     </form>
   </mat-step>
@@ -133,7 +155,8 @@
       </div>
       <div class="form-item"></div>
       <div class="form-item">
-        <app-button (click)="stepper.previous()" [buttonParameters]="(stepperParameters$ | ngrxPush).buttons.previous"></app-button>
+        <app-button (click)="stepper.previous()"
+                    [buttonParameters]="(stepperParameters$ | ngrxPush).buttons.previous"></app-button>
         <app-button [buttonParameters]="(stepperParameters$ | ngrxPush).buttons.send"
                     (click)="sendProductOwnerSignUpData()"></app-button>
       </div>

@@ -3,11 +3,13 @@ import { Overlay, OverlayPositionBuilder, OverlayRef } from '@angular/cdk/overla
 import { ComponentPortal } from '@angular/cdk/portal';
 
 import { CustomTooltipComponent } from '../component/custom-tooltip.component';
+import { fromEvent, Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
 @Directive({ selector: '[tooltip]' })
 export class CustomTooltipDirective implements OnInit {
 
-  @Input('tooltip') text = '';
+  @Input('tooltip') tooltipParameters: { text: string, link: string, status: boolean } = { text: '', link: '', status: false };
   private overlayRef: OverlayRef;
 
   constructor(private overlay: Overlay,
@@ -29,14 +31,27 @@ export class CustomTooltipDirective implements OnInit {
     this.overlayRef = this.overlay.create({ positionStrategy });
   }
 
-  @HostListener('mouseenter')
+  @HostListener('click')
   show(): void {
-    const tooltipRef: ComponentRef<CustomTooltipComponent>
-      = this.overlayRef.attach(new ComponentPortal(CustomTooltipComponent));
-    tooltipRef.instance.text = this.text;
+    if (this.tooltipParameters.status) {
+      const tooltipRef: ComponentRef<CustomTooltipComponent>
+        = this.overlayRef.attach(new ComponentPortal(CustomTooltipComponent));
+      tooltipRef.instance.tooltipParameters.text = this.tooltipParameters.text;
+      tooltipRef.instance.tooltipParameters.link = this.tooltipParameters.link;
+      // tooltip close -> will refactor ngZone
+      const tooltip = fromEvent(tooltipRef.location.nativeElement, 'click');
+      const tooltipUnsubscribe$ = new Subject<void>();
+      tooltip.pipe(takeUntil(tooltipUnsubscribe$)).subscribe((event: any) => {
+        const target = event.target;
+        if (target.classList.contains('tooltip__close-icon')) {
+            this.hide();
+            tooltipUnsubscribe$.next();
+            tooltipUnsubscribe$.complete();
+        }
+      });
+    }
   }
 
-  @HostListener('mouseout')
   hide(): void {
     this.overlayRef.detach();
   }

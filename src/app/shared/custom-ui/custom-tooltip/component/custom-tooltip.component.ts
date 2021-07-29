@@ -19,7 +19,7 @@ import { animate, style, transition, trigger } from '@angular/animations';
   ],
 })
 export class CustomTooltipComponent implements OnInit {
-  @Input() text = '';
+  @Input() tooltipParameters: {text: string, link: string} = { text: '', link: '' };
   constructor() { }
 
   ngOnInit(): void {
