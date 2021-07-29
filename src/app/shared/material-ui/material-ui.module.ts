@@ -15,10 +15,12 @@ import { CheckboxModule } from './checkbox/checkbox.module';
 import { RoleToggleModule } from './role-toggle/role-toggle.module';
 import { ExperienceModule } from './experience/experience.module';
 import { SearchInputModule } from './search-input/search-input.module';
+import { SkillGradeComponent } from './skill-grade/skill-grade.component';
 
 @NgModule({
   declarations: [
-    ButtonToggleComponent
+    ButtonToggleComponent,
+    SkillGradeComponent
   ],
   imports: [
     CommonModule,

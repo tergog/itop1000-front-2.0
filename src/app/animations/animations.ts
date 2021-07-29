@@ -10,6 +10,16 @@ import {
   group, stagger
 } from '@angular/animations';
 
+// export const loaderAnimate = trigger('loaderAnimate', [
+//   transition('void => *', [
+//     style({opacity: 1}),
+//     animate(3000, style({opacity: 1}))
+//   ]),
+//   transition('* => void', [
+//     animate(1000, style({opacity: 0}))
+//   ])
+// ]);
+
 export const animateText = trigger('animateText', [
   transition(':enter', [
     style({
