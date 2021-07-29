@@ -60,7 +60,10 @@
         </app-checkbox>
       </div>
       <div class="form-item">
-          <app-button [buttonParameters]="authorizationPageParameters.signUpFormElements.buttonSubmit"></app-button>
+          <app-button
+            [tooltip]="tooltipParameters"
+            [buttonParameters]="authorizationPageParameters.signUpFormElements.buttonSubmit">
+          </app-button>
       </div>
     </form>
   </mat-tab>
@@ -71,7 +74,7 @@
       <div class="form-item">
         <app-input
           [validation]="signInValidation"
-          [control]="signUpFormGroup.controls.email"
+          [control]="signInFormGroup.controls.email"
           formControlName="email"
           [inputParameters]="authorizationPageParameters.loginFormElements.email">
         </app-input>
@@ -79,7 +82,7 @@
       <div class="form-item">
         <app-input
           [validation]="signInValidation"
-          [control]="signUpFormGroup.controls.password"
+          [control]="signInFormGroup.controls.password"
           formControlName="password"
           [inputParameters]="authorizationPageParameters.loginFormElements.password">
         </app-input>

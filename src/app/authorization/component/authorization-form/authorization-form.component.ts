@@ -21,6 +21,11 @@ import {
 })
 export class AuthorizationFormComponent implements OnInit, OnDestroy {
 
+  public tooltipParameters = {
+    text: 'There is a mistake, please, check and enter the correct data',
+    link: 'Email address validation requirements',
+    status: false
+  };
   public authorizationPageParameters = CAuthorizationData;
   public signUpFormGroup: FormGroup;
   public signInFormGroup: FormGroup;
@@ -52,7 +57,7 @@ export class AuthorizationFormComponent implements OnInit, OnDestroy {
     });
     this.signInFormGroup = this.formBuilder.group({
       email: this.formBuilder.control('', [Validators.required]),
-      password: this.formBuilder.control('', [Validators.required]),
+      password: this.formBuilder.control('', [Validators.required, Validators.minLength(6)]),
       remember: this.formBuilder.control(false, [Validators.required])
     });
   }
@@ -92,6 +97,7 @@ export class AuthorizationFormComponent implements OnInit, OnDestroy {
     } else {
       this.signUpValidation = true;
     }
+    this.tooltipParameters.status = true;
   }
 
   ngOnDestroy(): void {

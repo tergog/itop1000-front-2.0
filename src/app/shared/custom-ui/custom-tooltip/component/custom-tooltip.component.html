@@ -10,7 +10,7 @@
       <img class="tooltip__close-icon" src="/assets/img/tooltip-close.svg" alt="tooltip-close-icon">
     </div>
   </div>
-  <div *ngIf="tooltipParameters.link" class="tooltip__link">
-    <a href="">{{ tooltipParameters.link }}</a>
+  <div *ngIf="tooltipParameters.link" class="tooltip__link" >
+    <button (click)="openRequirementsModal()">{{ tooltipParameters.link }}</button>
   </div>
 </div>

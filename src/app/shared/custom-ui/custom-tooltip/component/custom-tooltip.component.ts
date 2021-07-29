@@ -1,5 +1,9 @@
-import { Component, Input, ChangeDetectionStrategy, OnInit } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy, OnInit, OnDestroy } from '@angular/core';
 import { animate, style, transition, trigger } from '@angular/animations';
+import { MatDialog } from '@angular/material/dialog';
+import { Subject } from 'rxjs';
+
+import { CustomTooltipModalRequirementsComponent } from './custom-tooltip-modal-requirements/custom-tooltip-modal-requirements.component';
 
 @Component({
   selector: 'app-tooltip',
@@ -18,11 +22,21 @@ import { animate, style, transition, trigger } from '@angular/animations';
     ]),
   ],
 })
-export class CustomTooltipComponent implements OnInit {
+export class CustomTooltipComponent implements OnInit, OnDestroy {
   @Input() tooltipParameters: {text: string, link: string} = { text: '', link: '' };
-  constructor() { }
+  public unsubscribe$ = new Subject<void>();
+  constructor( private dialog: MatDialog) { }
 
   ngOnInit(): void {
+  }
+
+  openRequirementsModal(): void {
+    this.dialog.open(CustomTooltipModalRequirementsComponent);
+  }
+
+  ngOnDestroy(): void {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
   }
 
 }

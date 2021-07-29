@@ -23,20 +23,25 @@
   }
 
   &__close {
+    cursor: pointer;
     position: absolute;
     top: 12px;
     right: 12px;
   }
 
   &__link {
-    text-align: center;
-    text-decoration: underline;
-    cursor: pointer;
+    display: flex;
+    justify-content: center;
 
-    a {
+    button {
+      cursor: pointer;
+      text-decoration: underline;
       color: $black;
+      background: transparent;
+      border: none;
     }
   }
+
 }
 
 .tooltip::after {

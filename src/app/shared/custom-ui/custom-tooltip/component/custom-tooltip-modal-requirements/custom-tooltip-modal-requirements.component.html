@@ -1,0 +1,39 @@
+<div class="modal-accept-rule">
+  <div class="modal-accept-rule__header">
+    <h2 class="modal-accept-rule__title">
+      Email address validation requirements
+    </h2>
+  </div>
+  <div class="modal-accept-rule__body">
+    <div class="modal-accept-rule__content">
+      <ul class="content__list">
+        <li class="list-item">
+          Email name up to @ (test) can consist of 6–30 digits, contain letters (a–z),
+          numbers (0–9) and dots (.).
+        </li>
+        <li class="list-item">
+          Symbol (@);
+        </li>
+        <li class="list-item">
+          Domain server name (mail) — one or many symbols; Dot (.).
+        </li>
+        <li class="list-item">
+          Domain name of firts level (ru) must be from 2 up to 5 letters.
+        </li>
+        <li class="list-item">
+          Impossible to use ampersand(&), signs of parity (=) and addings (+), brackets (<>),
+          comma (,), underline symbol (_), apostrophe ('), dash (-) and a few dots in a row.
+        </li>
+        <li class="list-item">
+          Users name can start and end by any permitted symbol except dot (.).
+        </li>
+      </ul>
+    </div>
+    <div class="modal-accept-rule__control">
+      <app-button
+        [buttonParameters]="modalRequitementsData.buttons.accept"
+        [mat-dialog-close]="true">
+      </app-button>
+    </div>
+  </div>
+</div>

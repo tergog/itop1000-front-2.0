@@ -15,6 +15,7 @@ import { ProjectCardComponent } from './project-card/project-card.component';
 import { SocialListComponent } from './social-list/social-list.component';
 import { CustomTooltipModule } from './custom-tooltip/custom-tooltip.module';
 import { MoneyFormatInputDirective } from '../../directives/money-format-input/money-format-input.directive';
+import { MatDialog } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [

@@ -9,7 +9,8 @@ export class TestUiComponent implements OnInit {
 
   public tooltipParameters = {
     text: 'There is a mistake, please, check and enter the correct data',
-    link: 'Email address validation requirements', status: false
+    link: 'Email address validation requirements',
+    status: false
   };
 
   public objSearchInputParameters = {
@@ -232,5 +233,4 @@ export class TestUiComponent implements OnInit {
   tooltipShow(): void {
     this.tooltipParameters.status = true;
   }
-
 }
