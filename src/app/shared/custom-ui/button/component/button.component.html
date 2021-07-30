@@ -12,6 +12,13 @@
   {{ _buttonParameters.text }}
 </button>
 
+<button *ngIf="_buttonParameters.view === EButtonView.SmallFill"
+        [type]="_buttonParameters.type"
+        [disabled]="_buttonParameters.disabled"
+        class="btn btn__small-fill">
+  {{ _buttonParameters.text }}
+</button>
+
 <button *ngIf="_buttonParameters.view === EButtonView.Small"
         [type]="_buttonParameters.type"
         [disabled]="_buttonParameters.disabled"
@@ -46,6 +53,74 @@
         class="btn btn__close-small">
   {{ _buttonParameters.text }}
 </button>
+
+<div class="icon-button" *ngIf="_buttonParameters.view === EButtonView.Add">
+  <button [type]="_buttonParameters.type"
+          [disabled]="_buttonParameters.disabled"
+          class="btn btn__add">
+    <img src="/assets/img/add.svg" alt="add-icon">
+  </button>
+</div>
+
+<div class="icon-button" *ngIf="_buttonParameters.view === EButtonView.CloseFill">
+  <span class="text-ribbon first">{{ _buttonParameters.text }}</span>
+  <button [type]="_buttonParameters.type"
+          [disabled]="_buttonParameters.disabled"
+          class="btn btn__close-fill">
+    <img src="/assets/img/add.svg" alt="close-icon">
+  </button>
+</div>
+
+<div class="icon-button" *ngIf="_buttonParameters.view === EButtonView.Edit">
+  <span class="text-ribbon first">{{ _buttonParameters.text }}</span>
+  <button [type]="_buttonParameters.type"
+          [disabled]="_buttonParameters.disabled"
+          class="btn btn__edit">
+    <img src="/assets/img/edit.svg" alt="edit-icon">
+  </button>
+</div>
+
+<div class="icon-button" *ngIf="_buttonParameters.view === EButtonView.EditEmpty">
+  <button [type]="_buttonParameters.type"
+          [disabled]="_buttonParameters.disabled"
+          class="btn btn__edit-empty">
+    <img src="/assets/img/edit.svg" alt="edit-icon">
+  </button>
+</div>
+
+<div class="icon-button" *ngIf="_buttonParameters.view === EButtonView.Delete">
+  <button [type]="_buttonParameters.type"
+          [disabled]="_buttonParameters.disabled"
+          class="btn btn__delete first">
+    <img src="/assets/img/remove.svg" alt="delete-icon">
+  </button>
+  <span class="text-ribbon">{{ _buttonParameters.text }}</span>
+</div>
+
+<div class="icon-button" *ngIf="_buttonParameters.view === EButtonView.DeleteEmpty">
+  <button [type]="_buttonParameters.type"
+          [disabled]="_buttonParameters.disabled"
+          class="btn btn__delete-empty">
+    <img src="/assets/img/remove.svg" alt="delete-icon">
+  </button>
+</div>
+
+<div class="icon-button" *ngIf="_buttonParameters.view === EButtonView.Download">
+  <span class="text-gray first">{{ _buttonParameters.text }}</span>
+  <button [type]="_buttonParameters.type"
+          [disabled]="_buttonParameters.disabled"
+          class="btn btn__download">
+    <img src="/assets/img/download.svg" alt="download-icon">
+  </button>
+</div>
+
+<div class="gradient-button" *ngIf="_buttonParameters.view === EButtonView.Gradient">
+  <button [type]="_buttonParameters.type"
+          [disabled]="_buttonParameters.disabled"
+          class="btn btn__gradient">
+    {{ _buttonParameters.text }}
+  </button>
+</div>
 
 <a *ngIf="_buttonParameters.view === EButtonView.Login"
    [routerLink]="[_buttonParameters.href]"

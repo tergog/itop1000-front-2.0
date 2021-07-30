@@ -20,7 +20,7 @@ export const CModalAcceptRuleData = {
       accept: {
         text: 'Accept',
         type: '',
-        view: 'small',
+        view: 'small-fill',
         disabled: false
       }
     }
@@ -42,7 +42,7 @@ export const CModalAcceptRuleData = {
       accept: {
         text: 'Accept',
         type: '',
-        view: 'small',
+        view: 'small-fill',
         disabled: false
       }
     }

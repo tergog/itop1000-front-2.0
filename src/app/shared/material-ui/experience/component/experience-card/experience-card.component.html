@@ -7,13 +7,15 @@
     <div class="description-content">
       {{ _experienceCardData.jobDescription }}
     </div>
-    <div class="description-control">
-      <button (click)="openRemoveExperienceModal(id)" class="remove-experience">
-        <img src="/assets/img/remove.svg" alt="remove-icon">
-      </button>
-      <button (click)="openEditExperienceModal(id)" class="edit-experience">
-        <img src="/assets/img/edit.svg" alt="edit-icon">
-      </button>
+    <div class="description-control" *ngIf="view === EExperienceCardView.Edit">
+      <app-button
+        (click)="openRemoveExperienceModal()"
+        [buttonParameters]="experienceCardConfig.buttons.delete">
+      </app-button>
+      <app-button
+        (click)="openEditExperienceModal()"
+        [buttonParameters]="experienceCardConfig.buttons.edit">
+      </app-button>
     </div>
   </div>
 </div>

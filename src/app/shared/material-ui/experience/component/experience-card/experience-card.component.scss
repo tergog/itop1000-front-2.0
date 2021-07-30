@@ -30,20 +30,18 @@
     .description-content {
       @include setFontParams($fontWorkSans, normal, 400, $subTitleLineHeight);
       font-size: 16px;
-      flex: 1 0 auto;
-      display: contents;
+      margin-right: 10px;
     }
 
     .description-control {
       display: flex;
-    }
 
-    .description-control button {
-      cursor: pointer;
-      border: none;
-      background: transparent;
+      app-button:first-child {
+        margin-right: 10px;
+      }
     }
   }
 
+  padding-bottom: 48px;
   border-bottom: 1px solid $tundora;
 }

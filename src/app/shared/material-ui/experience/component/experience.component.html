@@ -11,6 +11,7 @@
     <div class="work-experience__item" *ngFor="let item of this.experienceGroup.value; index as i">
       <app-experience-card
         [experienceCardData]="item"
+        [view]="EExperienceCardView.Edit"
         [id]="i"
         (editExperienceModal)="openEditExperienceModal($event)"
         (removeExperienceModal)="openRemoveExperienceModal($event)">

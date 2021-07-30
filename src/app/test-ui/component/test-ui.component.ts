@@ -192,10 +192,10 @@ export class TestUiComponent implements OnInit {
       view: 'medium',
       disabled: true
     },
-    small: {
+    smallFill: {
       text: 'Accept',
       type: '',
-      view: 'small',
+      view: 'small-fill',
       disabled: false
     },
     smallEmpty: {
@@ -223,6 +223,60 @@ export class TestUiComponent implements OnInit {
       view: 'sign-up',
       disabled: false,
       href: ''
+    },
+    add: {
+      text: 'Add',
+      type: '',
+      view: 'add',
+      disabled: false
+    },
+    edit: {
+      text: 'Edit',
+      type: '',
+      view: 'edit',
+      disabled: false
+    },
+    editEmpty: {
+      text: '',
+      type: '',
+      view: 'edit-empty',
+      disabled: false
+    },
+    download: {
+      text: 'Download the task tracker',
+      type: '',
+      view: 'download',
+      disabled: false
+    },
+    delete: {
+      text: 'Delete account',
+      type: '',
+      view: 'delete',
+      disabled: false
+    },
+    deleteEmpty: {
+      text: '',
+      type: '',
+      view: 'delete-empty',
+      disabled: false
+    },
+    gradient: {
+      text: 'Add Language',
+      type: '',
+      view: 'gradient',
+      disabled: false
+    },
+    closeFill: {
+      text: 'Close',
+      type: '',
+      view: 'close-fill',
+      disabled: false
+    },
+    small: {
+      text: 'Close',
+      type: '',
+      view: 'small',
+      disabled: false
     },
   };
 

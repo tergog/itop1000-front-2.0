@@ -1,6 +1,7 @@
 export enum EButtonView {
   Big = 'big',
   Medium = 'medium',
+  SmallFill = 'small-fill',
   Small = 'small',
   Login = 'login',
   SignUp = 'sign-up',
@@ -8,4 +9,12 @@ export enum EButtonView {
   SmallEmptyBorder = 'small-empty-border',
   Close = 'close',
   CloseSmall = 'close-small',
+  CloseFill = 'close-fill',
+  Add = 'add',
+  Edit = 'edit',
+  EditEmpty = 'edit-empty',
+  Download = 'download',
+  Delete = 'delete',
+  DeleteEmpty = 'delete-empty',
+  Gradient = 'gradient'
 }

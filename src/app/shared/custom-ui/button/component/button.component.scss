@@ -9,7 +9,7 @@ button.btn {
   // standart
   &__big,
   &__medium,
-  &__small {
+  &__small-fill {
     text-transform: uppercase;
     color: $white;
     background: $crimson;
@@ -18,7 +18,22 @@ button.btn {
   }
 
   &__small {
-    font-size: $smallTextFontSize;
+    line-height: $smallButtonLineHeight;
+    padding: 10px 60px;
+    color: $redRibbon;
+    border: 1px solid $redRibbon;
+    background: transparent;
+    border-radius: 50px;
+    font-weight: 500;
+  }
+
+  &__small:hover{
+    color: $cardinal;
+    border-color: $cardinal;
+  }
+
+  &__small-fill, &__small {
+    font-size: $smallButtonFontSize;
   }
 
   &__close-small, &__close {
@@ -51,20 +66,21 @@ button.btn {
 
   &__big:hover,
   &__medium:hover,
-  &__small:hover {
+  &__small-fill:hover {
     background: $cardinal;
   }
 
-  &__small-empty:hover, &__small-empty-border:hover{
+  &__small-empty:hover, &__small-empty-border:hover {
     color: $cardinal;
   }
+
   &__small-empty-border:hover {
     border-color: $cardinal;
   }
 
   &__big[disabled],
   &__medium[disabled],
-  &__small[disabled] {
+  &__small-fill[disabled] {
     background: $gray;
   }
 
@@ -79,7 +95,7 @@ button.btn {
     @include setButtonSize($mediumButtonLineHeight, $mediumButtonFontSize);
   }
 
-  &__small {
+  &__small-fill {
     padding: $smallButtonPadding;
     @include setButtonSize($smallButtonLineHeight, $smallButtonFontSize);
   }
@@ -122,6 +138,79 @@ button.btn {
     -webkit-box-shadow: inset 0px 0px 0px 4px $creamCan;
     box-shadow: inset 0px 0px 0px 4px $creamCan;
   }
+
+  // Personal Room
+  &__gradient {
+    @include setButtonSize($smallButtonLineHeight, $mediumButtonFontSize);
+    text-transform: uppercase;
+    width: 100%;
+    border: none;
+    padding: 13px 43px;
+    background: $goldTextGradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &__add,
+  &__close-fill,
+  &__edit,
+  &__edit-empty,
+  &__delete,
+  &__delete-empty,
+  &__download {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 50%;
+  }
+
+  &__close-fill {
+    img {
+      transform: rotate(45deg);
+    }
+  }
+
+  &__add, &__edit, &__close-fill {
+    background: $white;
+    width: 30px;
+    height: 30px;
+  }
+
+  &__download {
+    background: $redRibbon;
+    width: 34px;
+    height: 34px;
+  }
+
+  &__edit-empty, &__delete-empty {
+    width: 21px;
+    height: 21px;
+  }
+
+  &__delete, &__delete-empty {
+    background: transparent;
+  }
+
+}
+
+.icon-button {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+
+  .first {
+    margin-right: 10px;
+  }
+}
+
+.gradient-button {
+  display: inline-flex;
+  background: linear-gradient($codGray, $codGray) padding-box,
+  $goldGradient border-box;
+  border: 1px solid transparent;
+  overflow: hidden;
+  border-radius: 60px;
 }
 
 a.link {

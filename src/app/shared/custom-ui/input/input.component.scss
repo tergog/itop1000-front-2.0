@@ -119,14 +119,15 @@
   .item-money-icon, .item-date-icon {
     display: inline-flex;
     position: absolute;
-    top: calc(50% - 9px);
   }
 
-  .item-money-icon {
+  .item-money-icon{
+    top: calc(50% - 9px);
     left: 16px;
   }
 
-  .item-date-icon {
+  .item-date-icon{
+    top: calc(50% - 12.5px);
     right: 16px;
   }
 }

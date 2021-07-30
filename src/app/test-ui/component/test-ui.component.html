@@ -3,7 +3,15 @@
 <hr>
 <app-header></app-header>
 <hr>
-
+<app-button [buttonParameters]="objButtonParameters.add"></app-button>
+<app-button [buttonParameters]="objButtonParameters.edit"></app-button>
+<app-button [buttonParameters]="objButtonParameters.editEmpty"></app-button>
+<app-button [buttonParameters]="objButtonParameters.delete"></app-button>
+<app-button [buttonParameters]="objButtonParameters.deleteEmpty"></app-button>
+<app-button [buttonParameters]="objButtonParameters.download"></app-button>
+<app-button [buttonParameters]="objButtonParameters.gradient"></app-button>
+<app-button [buttonParameters]="objButtonParameters.closeFill"></app-button>
+<app-button [buttonParameters]="objButtonParameters.small"></app-button>
 <hr>
 <h1 [style.fontSize]="'37px'"  [style.fontWeight]="'700'" [style.fontFamily]="'Rajdhani'"  class="text-outline">40 USD</h1>
 <h1 [style.fontSize]="'84px'"  [style.fontWeight]="'600'" [style.fontFamily]="'Rajdhani'"  class="text-outline-gradient">$ 330</h1>
@@ -37,7 +45,7 @@
 </app-button>
 <app-button [buttonParameters]="objButtonParameters.medium"></app-button>
 <app-button [buttonParameters]="objButtonParameters.disable"></app-button>
-<app-button [buttonParameters]="objButtonParameters.small"></app-button>
+<app-button [buttonParameters]="objButtonParameters.smallFill"></app-button>
 <app-button [buttonParameters]="objButtonParameters.smallEmpty"></app-button>
 <app-button [buttonParameters]="objButtonParameters.login"></app-button>
 <app-button [buttonParameters]="objButtonParameters.signUp"></app-button>

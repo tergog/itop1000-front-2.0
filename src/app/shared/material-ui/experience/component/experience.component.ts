@@ -7,6 +7,7 @@ import { EditExperienceModalComponent } from './edit-experience-modal/edit-exper
 import { RemoveExperienceModalComponent } from './remove-experience-modal/remove-experience-modal.component';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { EExperienceCardView } from './experience-card/experience-card.enums';
 
 export const EXPERIENCE_VALUE_ACCESSOR: any = {
   provide: NG_VALUE_ACCESSOR,
@@ -21,6 +22,7 @@ export const EXPERIENCE_VALUE_ACCESSOR: any = {
   providers: [EXPERIENCE_VALUE_ACCESSOR]
 })
 export class ExperienceComponent implements OnInit, ControlValueAccessor, OnDestroy {
+  public EExperienceCardView = EExperienceCardView;
   private onChange: any;
   private onTouched: any;
   public value: object[];

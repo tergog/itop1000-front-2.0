@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { EExperienceCardView } from './experience-card.enums';
 
 @Component({
   selector: 'app-experience-card',
@@ -6,8 +7,26 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./experience-card.component.scss']
 })
 export class ExperienceCardComponent implements OnInit {
+  public EExperienceCardView = EExperienceCardView;
+  public experienceCardConfig = {
+    buttons: {
+      delete: {
+        text: '',
+        type: '',
+        view: 'delete-empty',
+        disabled: false
+      },
+      edit: {
+        text: '',
+        type: '',
+        view: 'edit-empty',
+        disabled: false
+      }
+    }
+  }
   public _experienceCardData: any;
-  @Input() id: number;
+  @Input() id?: number;
+  @Input() view: string;
   @Input() set experienceCardData(value: any) {
     this._experienceCardData = value;
   }
@@ -24,12 +43,12 @@ export class ExperienceCardComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  openEditExperienceModal(id: number): void{
-    this.editExperienceModal.emit(id);
+  openEditExperienceModal(): void{
+    this.editExperienceModal.emit(this.id);
   }
 
-  openRemoveExperienceModal(id: number): void{
-    this.removeExperienceModal.emit(id);
+  openRemoveExperienceModal(): void{
+    this.removeExperienceModal.emit(this.id);
   }
 
 }
