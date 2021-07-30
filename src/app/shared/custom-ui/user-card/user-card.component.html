@@ -1,0 +1,26 @@
+<div class="user-card">
+  <div class="user-card__photo">
+    <img [src]="componentParameters.photo" alt="user-photo">
+    <div *ngIf="componentParameters.role === EUserCardView.Freelancer"
+         class="user-card__status"
+         [ngClass]="{
+              free: !componentParameters.status,
+              work: componentParameters.status
+              }">
+      <img *ngIf="componentParameters.status" [src]="'/assets/img/icons/work.svg'" alt="user-status">
+      <img *ngIf="!componentParameters.status" [src]="'/assets/img/icons/free.svg'" alt="user-status">
+    </div>
+  </div>
+  <div class="user-card__name text-uppercase text-white">
+    {{ componentParameters.firstName }} {{ componentParameters.lastName }}
+  </div>
+  <div class="user-card__position text-gray">
+    {{ componentParameters.position }}
+  </div>
+  <div class="user-card__email text-white">
+    {{ componentParameters.email }}
+  </div>
+  <div *ngIf="componentParameters.role === EUserCardView.Freelancer" class="user-card__rate text-gradient">
+    ${{ componentParameters.rate }}.00/hr
+  </div>
+</div>

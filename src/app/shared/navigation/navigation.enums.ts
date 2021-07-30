@@ -1,4 +1,5 @@
 export enum ENavigationView {
   Header = 'header',
-  Footer = 'footer'
+  Footer = 'footer',
+  PersonalRoom = 'personal-room'
 }

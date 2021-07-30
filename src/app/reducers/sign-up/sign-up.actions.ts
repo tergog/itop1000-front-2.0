@@ -3,8 +3,8 @@ import { Action } from '@ngrx/store';
 import { ISignUpState } from './sign-up.interfaces';
 
 export enum signUpActionsType {
-  setSignUpState = '[CATALOG] setCatalogState',
-  editSignUpState= '[CATALOG] editCatalog'
+  setSignUpState = '[SIGNUP] setSignUpState',
+  editSignUpState= '[SIGNUP] editSignUpState'
 }
 
 export class SetSignUpStateAction implements Action {

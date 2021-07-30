@@ -1,7 +1,10 @@
 <!--<app-loader></app-loader>-->
-
-<hr>
 <app-header></app-header>
+<hr>
+<app-user-card [userCardParameters]="objUserCardParameters.freelancer"></app-user-card>
+<app-user-card [userCardParameters]="objUserCardParameters.productOwner"></app-user-card>
+<hr>
+<app-navigation [navigationParameters]="objNavigationParameters"></app-navigation>
 <hr>
 <app-button [buttonParameters]="objButtonParameters.add"></app-button>
 <app-button [buttonParameters]="objButtonParameters.edit"></app-button>

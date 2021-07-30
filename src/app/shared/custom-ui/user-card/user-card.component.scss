@@ -1,0 +1,67 @@
+@import "src/assets/scss/mixins";
+
+.user-card {
+  max-width: 276px;
+  min-height: 300px;
+  width: 100%;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid $tundora;
+  @include setFontParams($fontRaleway, 400, normal, $subTitleLineHeight);
+
+  &__photo {
+    position: relative;
+  }
+
+  &__status {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__status.free {
+    background: $gray;
+  }
+
+  &__status.work {
+    background: $green;
+  }
+
+  &__name {
+    font-size: $titleFontSize;
+  }
+
+  &__position {
+    font-size: $smallTextFontSize;
+  }
+
+  &__email {
+    @include setFontParams($fontWorkSans, 400, normal, $textLineHeight);
+    font-size: $bigTextFontSize;
+  }
+
+  &__rate {
+    @include setFontParams($fontWorkSans, 400, normal, $textLineHeight);
+    font-size: $titleFontSize;
+  }
+}
+
+.user-card div {
+  margin-bottom: 16px;
+}
+
+.user-card div:nth-child(2) {
+  margin-bottom: 5px;
+}
+
+.user-card div:last-child {
+  margin-bottom: 0;
+}

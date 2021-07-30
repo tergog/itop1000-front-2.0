@@ -7,8 +7,41 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TestUiComponent implements OnInit {
 
+  public objUserCardParameters = {
+    freelancer: {
+      role: 'freelancer',
+      photo: '/assets/img/user-photo.png',
+      firstName: 'Name',
+      lastName: 'Surname',
+      position: 'Senior',
+      rate: 40,
+      email: 'email@google.com',
+      status: true
+    },
+    productOwner: {
+      role: 'product-owner',
+      photo: '/assets/img/user-photo.png',
+      firstName: 'Name',
+      lastName: 'Surname',
+      position: 'Product Owner',
+      email: 'email@google.com'
+    }
+  };
+
   public skillGradeParameters = 70;
 
+  public objNavigationParameters = {
+    view: 'personal-room',
+    links: [
+      { text: 'Wallet', href: 'wallet', icon: 'wallet' },
+      { text: 'Projects', href: 'projects', icon: 'projects' },
+      { text: 'Documents', href: 'documents', icon: 'documents' },
+      { text: 'Task Tracker', href: 'tracker', icon: 'tracker' },
+      { text: 'Chat', href: 'chat', icon: 'chat' },
+      { text: 'Personal & Security', href: 'personal', icon: 'personal' },
+      { text: 'Support/FAQ', href: 'support', icon: 'support' }
+    ]
+  };
 
   public tooltipParameters = {
     text: 'There is a mistake, please, check and enter the correct data',

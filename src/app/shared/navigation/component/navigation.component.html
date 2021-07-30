@@ -15,3 +15,15 @@
     </li>
   </ul>
 </nav>
+
+<nav *ngIf="_navigationParameters.view === ENavigationView.PersonalRoom" class="navigation personal-room">
+  <ul class="navigation-list">
+    <li *ngFor="let link of _navigationParameters.links" class="navigation-item"
+        [ngClass]="{ active: (landingRole$ | ngrxPush) === link.role }">
+      <mat-icon [svgIcon]="link!.icon"></mat-icon>
+      <a [routerLink]="[link.href]" routerLinkActive="active">
+        {{ link.text }}
+      </a>
+    </li>
+  </ul>
+</nav>

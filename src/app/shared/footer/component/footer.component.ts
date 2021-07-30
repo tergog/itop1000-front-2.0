@@ -21,8 +21,8 @@ export class FooterComponent implements OnInit {
     navigationList: {
       view: 'footer',
       links: [
-        { text: 'Client', href: 'client', role: ELandingRole.ProductOwner},
-        { text: 'Freelancer', href: 'freelance', role: ELandingRole.Freelancer}
+        { text: 'Client', href: 'client', role: ELandingRole.ProductOwner, icon: ''},
+        { text: 'Freelancer', href: 'freelance', role: ELandingRole.Freelancer, icon: ''}
       ]
     }
   };

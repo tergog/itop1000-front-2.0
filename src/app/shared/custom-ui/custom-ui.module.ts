@@ -16,6 +16,7 @@ import { SocialListComponent } from './social-list/social-list.component';
 import { CustomTooltipModule } from './custom-tooltip/custom-tooltip.module';
 import { MoneyFormatInputDirective } from '../../directives/money-format-input/money-format-input.directive';
 import { SkillGradeComponent } from './skill-grade/skill-grade.component';
+import { UserCardComponent } from './user-card/user-card.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { SkillGradeComponent } from './skill-grade/skill-grade.component';
     ProjectCardComponent,
     SocialListComponent,
     MoneyFormatInputDirective,
-    SkillGradeComponent
+    SkillGradeComponent,
+    UserCardComponent
   ],
   imports: [
     CommonModule,
@@ -48,7 +50,8 @@ import { SkillGradeComponent } from './skill-grade/skill-grade.component';
     ProjectCardComponent,
     SocialListComponent,
     CustomTooltipModule,
-    SkillGradeComponent
+    SkillGradeComponent,
+    UserCardComponent
   ]
 })
 export class CustomUiModule {

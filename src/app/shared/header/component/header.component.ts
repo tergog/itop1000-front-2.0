@@ -33,10 +33,10 @@ export class HeaderComponent implements OnInit {
   public objNavigationParameters = {
     view: 'header',
     links: [
-      { text: 'Projects', href: 'projects' },
-      { text: 'Chat', href: 'chat' },
-      { text: 'About us', href: 'about' },
-      { text: 'Support / FAQ', href: 'support' }
+      { text: 'Projects', href: 'projects', icon: '' },
+      { text: 'Chat', href: 'chat', icon: '' },
+      { text: 'About us', href: 'about', icon: ''},
+      { text: 'Support / FAQ', href: 'support', icon: '' }
     ]
   };
 

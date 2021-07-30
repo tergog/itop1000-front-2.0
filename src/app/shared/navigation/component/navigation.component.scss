@@ -32,36 +32,88 @@
 
 .header {
   .navigation-list {
-    .navigation-item:hover {
-      a {
-        background: $goldTextGradient;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
+    .navigation-item:hover a {
+      background: $goldTextGradient;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
-    .navigation-item.active-route {
-      a {
-        background: $goldTextGradient;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
+    .navigation-item.active-route a {
+      background: $goldTextGradient;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
   }
 }
 
 .footer {
   .navigation-list {
+    .navigation-item:hover a {
+      color: $creamCan;
+    }
+
+    .navigation-item.active a {
+      transition: 0.5s all ease;
+      color: $creamCan;
+    }
+  }
+}
+
+.personal-room {
+  .navigation-list {
+    flex-direction: column;
+    align-items: flex-start;
+
+    .navigation-item {
+      box-sizing: border-box;
+      margin-bottom: 22px;
+      @include setFontParams($fontRaleway, 400, normal, $subTitleLineHeight);
+      font-size: $bigTextFontSize;
+      display: flex;
+      align-items: center;
+    }
+
+
+    mat-icon {
+      color: $white;
+      margin-right: 10px;
+    }
+
     .navigation-item:hover {
-      a {
-        color: $creamCan;
+
+      a, mat-icon {
+        transition: 0.5s all ease;
+        cursor: pointer;
+        color: $redRibbon;
       }
     }
 
+    .navigation-item::before{
+      content: '';
+      margin-right: 40px;
+    }
+
     .navigation-item.active {
-      a {
-        color: $creamCan;
+      a, mat-icon {
+        transition: 0.5s all ease;
+        color: $redRibbon;
       }
+    }
+
+    .navigation-item.active::before {
+       content: '';
+       border-right: 2px solid $redRibbon;
+       height: 31px;
+     }
+
+    .navigation-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .navigation-item::after {
+      content: '';
+      margin: 0;
+      border: none;
     }
   }
 }
