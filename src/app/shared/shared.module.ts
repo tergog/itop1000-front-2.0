@@ -8,10 +8,12 @@ import { NavigationModule } from './navigation/navigation.module';
 import { LandingGuideComponent } from './landing-guide/component/landing-guide.component';
 import { FooterModule } from './footer/footer.module';
 import { ReactiveComponentModule } from '@ngrx/component';
+import { ProjectCardComponent } from './project-card/component/project-card.component';
 
 @NgModule({
   declarations: [
-    LandingGuideComponent
+    LandingGuideComponent,
+    ProjectCardComponent
   ],
   imports: [
     CommonModule,

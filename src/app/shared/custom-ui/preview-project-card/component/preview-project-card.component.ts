@@ -1,14 +1,14 @@
 import { Component, Input } from '@angular/core';
 
-import { IProjectCardParameters } from '../project-card.interfaces';
-import { EProjectCardView } from '../project-card.enums';
+import { IProjectCardParameters } from '../preview-project-card.interfaces';
+import { EProjectCardView } from '../preview-project-card.enums';
 
 @Component({
   selector: 'app-project-card',
-  templateUrl: './project-card.component.html',
-  styleUrls: ['./project-card.component.scss']
+  templateUrl: './preview-project-card.component.html',
+  styleUrls: ['./preview-project-card.component.scss']
 })
-export class ProjectCardComponent {
+export class PreviewProjectCardComponent {
   public EProjectCardView = EProjectCardView;
   public _projectCardParameters: IProjectCardParameters;
   @Input() set projectCardParameters(value: IProjectCardParameters) {

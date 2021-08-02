@@ -3,7 +3,7 @@
   <div *ngIf="_projectCardParameters.role === EProjectCardView.Developer" class="project-card developer">
 
     <div class="project-card__img">
-      <img [src]="'/assets/img/project-card/' + _projectCardParameters.img" alt="project-logo">
+      <img [src]="'/assets/img/preview-project-card/' + _projectCardParameters.img" alt="project-logo">
     </div>
 
     <div class="project-card__company-name">
@@ -19,7 +19,7 @@
   <div *ngIf="_projectCardParameters.role === EProjectCardView.ProductOwner" class="project-card owner">
 
     <div class="project-card__img">
-      <img [src]="'/assets/img/project-card/' + _projectCardParameters.img" alt="project-logo">
+      <img [src]="'/assets/img/preview-project-card/' + _projectCardParameters.img" alt="project-logo">
     </div>
     <div class="project-card__project-name">
       {{ _projectCardParameters.projectName }}

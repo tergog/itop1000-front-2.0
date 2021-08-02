@@ -11,7 +11,7 @@ import { ArrowDownComponent } from './arrow-down/arrow-down.component';
 import { LogoComponent } from './logo/component/logo.component';
 import { PreviewCardComponent } from './preview-card/component/preview-card.component';
 import { BenefitsCardComponent } from './benefits-card/benefits-card.component';
-import { ProjectCardComponent } from './project-card/component/project-card.component';
+import { PreviewProjectCardComponent } from './preview-project-card/component/preview-project-card.component';
 import { SocialListComponent } from './social-list/component/social-list.component';
 import { CustomTooltipModule } from './custom-tooltip/custom-tooltip.module';
 import { MoneyFormatInputDirective } from '../../directives/money-format-input/money-format-input.directive';
@@ -25,7 +25,7 @@ import { UserCardComponent } from './user-card/component/user-card.component';
     LogoComponent,
     PreviewCardComponent,
     BenefitsCardComponent,
-    ProjectCardComponent,
+    PreviewProjectCardComponent,
     SocialListComponent,
     MoneyFormatInputDirective,
     SkillGradeComponent,
@@ -47,7 +47,7 @@ import { UserCardComponent } from './user-card/component/user-card.component';
     LogoComponent,
     PreviewCardComponent,
     BenefitsCardComponent,
-    ProjectCardComponent,
+    PreviewProjectCardComponent,
     SocialListComponent,
     CustomTooltipModule,
     SkillGradeComponent,
