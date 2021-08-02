@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-custom-tooltip-modal-requirements',
   templateUrl: './custom-tooltip-modal-requirements.component.html',
   styleUrls: ['./custom-tooltip-modal-requirements.component.scss']
 })
-export class CustomTooltipModalRequirementsComponent implements OnInit {
+export class CustomTooltipModalRequirementsComponent {
 
   public modalRequitementsData = {
     buttons: {
@@ -16,11 +16,4 @@ export class CustomTooltipModalRequirementsComponent implements OnInit {
         disabled: false}
     }
   };
-
-  constructor() {
-  }
-
-  ngOnInit(): void {
-  }
-
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ItopDataService } from '../../../services/itop-data/itop-data.service';
 import { ELandingRole } from '../../../landing/landing.enums';
 
@@ -7,14 +7,11 @@ import { ELandingRole } from '../../../landing/landing.enums';
   templateUrl: './button-toggle.component.html',
   styleUrls: ['./button-toggle.component.scss']
 })
-export class ButtonToggleComponent implements OnInit {
+export class ButtonToggleComponent {
 
   constructor(
     private landingData: ItopDataService
   ) {
-  }
-
-  ngOnInit(): void {
   }
 
   setProductOwnerRole(): void {
@@ -24,5 +21,4 @@ export class ButtonToggleComponent implements OnInit {
   setFreelancerRole(): void {
     this.landingData.userRole$.next(ELandingRole.Freelancer);
   }
-
 }

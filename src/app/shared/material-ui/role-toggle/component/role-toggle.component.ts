@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { ItopDataService } from '../../../../services/itop-data/itop-data.service';
 import { ELandingRole } from '../../../../landing/landing.enums';
@@ -8,14 +8,11 @@ import { ELandingRole } from '../../../../landing/landing.enums';
   templateUrl: './role-toggle.component.html',
   styleUrls: ['./role-toggle.component.scss']
 })
-export class RoleToggleComponent implements OnInit {
+export class RoleToggleComponent {
 
   public EUserRole = ELandingRole;
 
   constructor(private landingData: ItopDataService) { }
-
-  ngOnInit(): void {
-  }
 
   setRole(value: string): void{
     this.landingData.userRole$.next(value);

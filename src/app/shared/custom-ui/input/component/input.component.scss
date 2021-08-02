@@ -1,0 +1,170 @@
+@import "../../../../../assets/scss/mixins";
+
+.form-item {
+  min-height: 122px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 1px;
+  box-sizing: border-box;
+
+  .item-label {
+    width: 100%;
+
+    label {
+      color: $white;
+      @include setFontParams($fontRaleway, 600, normal, $textLineHeight);
+      font-size: $labelFontSize;
+      transition: 0.5s all ease;
+    }
+
+    label.focus {
+      color: $malibu !important;
+      transition: 0.5s all ease;
+    }
+
+    label.invalid {
+      color: $red;
+      transition: 0.5s all ease;
+    }
+
+    margin-bottom: 7px;
+  }
+
+  .item-input, .item-textarea, .item-money {
+    width: 100%;
+    background: linear-gradient($codGray, $codGray) padding-box,
+    $goldGradient border-box;
+    border: 1px solid transparent;
+    max-width: 769px;
+    max-height: 103px;
+
+    textarea, input {
+      width: 100%;
+      color: $white;
+      background: $mineShaft;
+      box-sizing: border-box;
+      border: none;
+      transition: 0.5s all ease;
+      font-size: $inputFontSize;
+    }
+  }
+
+  .item-input.focus, .item-textarea.focus, .item-money.focus {
+    background: none;
+    border: 1px solid $malibu;
+    transition: 0.5s all ease;
+  }
+
+  .item-input.invalid, .item-textarea.invalid, .item-money.invalid {
+    background: none;
+    border: 1px solid $red;
+    transition: 0.5s all ease;
+  }
+
+  .item-textarea {
+    border-radius: 10px;
+
+    textarea {
+      padding: $textAreaPadding;
+      border-radius: 10px;
+      height: 103px;
+      resize: none;
+    }
+
+    textarea::placeholder {
+      color: $gray;
+    }
+  }
+
+  .item-money {
+    position: relative;
+    border-radius: 10px;
+    max-width: 152px;
+
+    input {
+      max-width: 152px;
+      padding: $inputMoneyPadding;
+      border-radius: 10px;
+      display: inline-block;
+      text-align: right
+    }
+
+    input::placeholder {
+      color: $gray;
+    }
+  }
+
+  .item-input {
+    position: relative;
+    border-radius: 50px;
+
+    input {
+      padding: $inputPadding;
+      border-radius: 50px;
+      display: inline-block;
+    }
+
+    input::placeholder {
+      color: $gray;
+    }
+  }
+
+  .item-error {
+    color: $red;
+    @include setFontParams($fontWorkSans, 300, normal, $subTitleLineHeight);
+    font-size: $inputErrorFontSize;
+  }
+
+  .item-money-icon, .item-date-icon {
+    display: inline-flex;
+    position: absolute;
+  }
+
+  .item-money-icon{
+    top: calc(50% - 9px);
+    left: 16px;
+  }
+
+  .item-date-icon{
+    top: calc(50% - 12.5px);
+    right: 16px;
+  }
+}
+
+::ng-deep {
+  // Data Picker
+  mat-calendar {
+    background: $mineShaft;
+    color: $white;
+
+    th, .mat-calendar-body-label, .mat-calendar-body-cell-content{
+      color: $nobel;
+      @include setFontParams($fontWorkSans, 400, normal, $textLineHeight);
+      font-size:$bigTextFontSize;
+    }
+
+    .mat-calendar-body-selected {
+      background: transparent;
+      border: 1px solid $redRibbon;
+      border-radius: 50%;
+      color: $white;
+    }
+
+    .mat-calendar-body-today{
+      border: none;
+    }
+
+    .mat-calendar-arrow{
+      border-top-color: $redRibbon;
+    }
+
+    .mat-calendar-next-button, .mat-calendar-previous-button{
+      color: $redRibbon !important;
+    }
+  }
+
+  .mat-datepicker-content {
+    background: transparent;
+  }
+}

@@ -1,21 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
-import { ELogoView } from '../../custom-ui/logo/logo.enums';
+import { CLoaderConfigList } from '../loader.config';
 
 @Component({
   selector: 'app-loader',
   templateUrl: './loader.component.html',
   styleUrls: ['./loader.component.scss']
 })
-export class LoaderComponent implements OnInit {
-  public loader = {
-    view: ELogoView.Loader
-  };
-
-  constructor() {
-  }
-
-  ngOnInit(): void {
-  }
-
+export class LoaderComponent {
+  public loaderConfig = CLoaderConfigList;
 }

@@ -1,11 +1,11 @@
 import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { BehaviorSubject, interval, Subject, Subscription } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
 import { ILandingData } from '../landing.interfaces';
 import { ELandingRole } from '../landing.enums';
 import { ItopDataService } from '../../services/itop-data/itop-data.service';
 import { animateText } from 'src/app/animations/animations';
-import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-landing',

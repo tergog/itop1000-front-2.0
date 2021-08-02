@@ -3,12 +3,12 @@ import { CommonModule } from '@angular/common';
 import { MatDialogModule } from '@angular/material/dialog';
 
 import { ExperienceComponent } from './component/experience.component';
-import { AddExperienceModalComponent } from './component/add-experience-modal/add-experience-modal.component';
-import { ExperienceCardComponent } from './component/experience-card/experience-card.component';
+import { AddExperienceModalComponent } from './component/add-experience-modal/component/add-experience-modal.component';
+import { ExperienceCardComponent } from './component/experience-card/component/experience-card.component';
 import { CustomUiModule } from '../../custom-ui/custom-ui.module';
 import { ReactiveFormsModule } from '@angular/forms';
-import { EditExperienceModalComponent } from './component/edit-experience-modal/edit-experience-modal.component';
-import { RemoveExperienceModalComponent } from './component/remove-experience-modal/remove-experience-modal.component';
+import { EditExperienceModalComponent } from './component/edit-experience-modal/component/edit-experience-modal.component';
+import { RemoveExperienceModalComponent } from './component/remove-experience-modal/component/remove-experience-modal.component';
 
 @NgModule({
   declarations: [

@@ -8,11 +8,13 @@ import { DomSanitizer } from '@angular/platform-browser';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ITOP1000-FRONT2';
+  public title = 'ITOP1000-FRONT2';
   public svgList = ['wallet', 'projects', 'documents', 'support', 'tracker', 'personal', 'chat'];
 
-  constructor(private matIconRegistry: MatIconRegistry,
-              private domSanitizer: DomSanitizer) {
+  constructor(
+    private matIconRegistry: MatIconRegistry,
+    private domSanitizer: DomSanitizer
+  ) {
     this.svgList.forEach((item: string) => {
       this.matIconRegistry.addSvgIcon(
         item,
@@ -20,5 +22,4 @@ export class AppComponent {
       );
     });
   }
-
 }

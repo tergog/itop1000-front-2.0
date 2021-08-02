@@ -6,17 +6,17 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 
 import { ButtonModule } from './button/button.module';
-import { InputComponent } from './input/input.component';
+import { InputComponent } from './input/component/input.component';
 import { ArrowDownComponent } from './arrow-down/arrow-down.component';
-import { LogoComponent } from './logo/logo.component';
-import { PreviewCardComponent } from './preview-card/preview-card.component';
+import { LogoComponent } from './logo/component/logo.component';
+import { PreviewCardComponent } from './preview-card/component/preview-card.component';
 import { BenefitsCardComponent } from './benefits-card/benefits-card.component';
-import { ProjectCardComponent } from './project-card/project-card.component';
-import { SocialListComponent } from './social-list/social-list.component';
+import { ProjectCardComponent } from './project-card/component/project-card.component';
+import { SocialListComponent } from './social-list/component/social-list.component';
 import { CustomTooltipModule } from './custom-tooltip/custom-tooltip.module';
 import { MoneyFormatInputDirective } from '../../directives/money-format-input/money-format-input.directive';
 import { SkillGradeComponent } from './skill-grade/skill-grade.component';
-import { UserCardComponent } from './user-card/user-card.component';
+import { UserCardComponent } from './user-card/component/user-card.component';
 
 @NgModule({
   declarations: [

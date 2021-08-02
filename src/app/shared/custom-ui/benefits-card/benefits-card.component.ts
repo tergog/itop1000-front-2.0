@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { IBenefitsParameters } from './benefits-card.interfaces';
 
@@ -7,7 +7,7 @@ import { IBenefitsParameters } from './benefits-card.interfaces';
   templateUrl: './benefits-card.component.html',
   styleUrls: ['./benefits-card.component.scss']
 })
-export class BenefitsCardComponent implements OnInit {
+export class BenefitsCardComponent {
   public _benefitsCardParameters: IBenefitsParameters;
   @Input() set benefitsCardParameters(value: IBenefitsParameters) {
     this._benefitsCardParameters = value;
@@ -16,11 +16,4 @@ export class BenefitsCardComponent implements OnInit {
   get benefitsCardParameters(): IBenefitsParameters {
     return this._benefitsCardParameters;
   }
-
-  constructor() {
-  }
-
-  ngOnInit(): void {
-  }
-
 }

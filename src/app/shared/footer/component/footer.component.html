@@ -1,7 +1,7 @@
 <footer>
   <div class="container">
     <div class="footer-logo">
-      <app-logo [logoParameters]="footerObjectParameters.logo"></app-logo>
+      <app-logo [logoParameters]="footerConfig.logo"></app-logo>
     </div>
     <div class="footer-navigation">
       <ul class="footer-navigation-list">
@@ -19,8 +19,8 @@
     </div>
     <div class="footer-social">
       <div class="social-container">
-        <app-social-list [iconParameters]="footerObjectParameters.socialList"></app-social-list>
-        <app-navigation [navigationParameters]="footerObjectParameters.navigationList"></app-navigation>
+        <app-social-list [iconParameters]="footerConfig.social"></app-social-list>
+        <app-navigation [navigationParameters]="footerConfig.navigation"></app-navigation>
       </div>
     </div>
   </div>

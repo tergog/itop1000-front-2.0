@@ -1,14 +1,14 @@
 <header>
   <div class="header-container">
     <div class="logo">
-      <app-logo [logoParameters]="objLogoParameters.small"></app-logo>
+      <app-logo [logoParameters]="headerConfig.logo"></app-logo>
     </div>
     <div class="navigation">
-     <app-navigation [navigationParameters]="objNavigationParameters"></app-navigation>
+     <app-navigation [navigationParameters]="headerConfig.navigation"></app-navigation>
     </div>
     <div class="login">
-      <app-button [buttonParameters]="objButtonParameters.login"></app-button>
-      <app-button [buttonParameters]="objButtonParameters.signUp"></app-button>
+      <app-button [buttonParameters]="headerConfig.buttons.login"></app-button>
+      <app-button [buttonParameters]="headerConfig.buttons.signUp"></app-button>
     </div>
   </div>
 </header>

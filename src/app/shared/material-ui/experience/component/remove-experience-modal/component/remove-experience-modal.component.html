@@ -1,0 +1,15 @@
+<div class="experience-modal">
+  <div class="experience-modal__header">
+    <h2>deletion</h2>
+    <app-button [buttonParameters]="removeExperienceConfig.buttons.close" [mat-dialog-close]="false"></app-button>
+  </div>
+  <div class="experience-modal__body">
+      <div class="body__content">
+        Are you sure you want to delete the section?
+      </div>
+      <div class="body__control">
+        <app-button [buttonParameters]="removeExperienceConfig.buttons.decline" [mat-dialog-close]="false"></app-button>
+        <app-button [buttonParameters]="removeExperienceConfig.buttons.accept" [mat-dialog-close]="true"></app-button>
+      </div>
+  </div>
+</div>

@@ -1,4 +1,4 @@
-import { Component, forwardRef, Input, OnInit } from '@angular/core';
+import { Component, forwardRef, Input } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor, FormBuilder, AbstractControl } from '@angular/forms';
 
 import { ICheckboxParameters } from '../checkbox.interfaces';
@@ -15,7 +15,7 @@ export const CHECKBOX_VALUE_ACCESSOR: any = {
   styleUrls: ['./checkbox.component.scss'],
   providers: [CHECKBOX_VALUE_ACCESSOR]
 })
-export class CheckboxComponent implements OnInit, ControlValueAccessor {
+export class CheckboxComponent implements ControlValueAccessor {
   public invalid = false;
   private onChange: any;
   private onTouched: any;
@@ -36,9 +36,6 @@ export class CheckboxComponent implements OnInit, ControlValueAccessor {
   constructor() {
     this.disableState = false;
     this.value = false;
-  }
-
-  ngOnInit(): void {
   }
 
   writeValue(value: any): void {

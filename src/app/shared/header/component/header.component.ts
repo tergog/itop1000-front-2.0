@@ -1,49 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { CHeaderConfigList } from '../header.config';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
-
-  public objLogoParameters = {
-    small: {
-      view: 'small'
-    }
-  };
-
-  public objButtonParameters = {
-    login: {
-      text: 'Login',
-      type: '',
-      view: 'login',
-      disabled: false,
-      href: 'authorization'
-    },
-    signUp: {
-      text: 'Sign Up',
-      type: '',
-      view: 'sign-up',
-      disabled: false,
-      href: 'authorization'
-    },
-  };
-
-  public objNavigationParameters = {
-    view: 'header',
-    links: [
-      { text: 'Projects', href: 'projects', icon: '' },
-      { text: 'Chat', href: 'chat', icon: '' },
-      { text: 'About us', href: 'about', icon: ''},
-      { text: 'Support / FAQ', href: 'support', icon: '' }
-    ]
-  };
-
-  constructor() {
-  }
-
-  ngOnInit(): void {
-  }
-
+export class HeaderComponent {
+  public headerConfig = CHeaderConfigList;
 }

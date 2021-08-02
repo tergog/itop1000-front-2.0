@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 
 import { LoaderComponent } from './component/loader.component';
 import { CustomUiModule } from '../custom-ui/custom-ui.module';
-import { LoaderRoutingModule } from './loader-routing.module';
 
 @NgModule({
   declarations: [
@@ -11,8 +10,7 @@ import { LoaderRoutingModule } from './loader-routing.module';
   ],
   imports: [
     CommonModule,
-    CustomUiModule,
-    LoaderRoutingModule
+    CustomUiModule
   ],
   exports: [
     LoaderComponent

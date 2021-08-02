@@ -1,8 +1,8 @@
 <div class="chips-input">
   <app-search-input [formControl]="inputSearchControl"
-                    [searchInputParameters]="chipsComponentParameters.searchInputs.big">
+                    [searchInputParameters]="chipsConfig.searchInputs.big">
   </app-search-input>
-  <app-button [buttonParameters]="chipsComponentParameters.buttons.add" (click)="change()">
+  <app-button [buttonParameters]="chipsConfig.buttons.add" (click)="change()">
 
   </app-button>
 </div>
@@ -11,7 +11,7 @@
     <mat-chip *ngFor="let chip of value; index as i" selectable #chips="matChip" (click)="selectChip(chips)">
       <div class="chips-content">{{ chip }}</div>
       <app-button *ngIf="chips.selected"
-                  [buttonParameters]="chipsComponentParameters.buttons.close"
+                  [buttonParameters]="chipsConfig.buttons.close"
                   class="chips-remove"
                   (click)="deleteChip(i)">
       </app-button>

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { EButtonView } from '../button.enums';
 import { IButtonParameters } from '../button.interfaces';
@@ -8,7 +8,7 @@ import { IButtonParameters } from '../button.interfaces';
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.scss']
 })
-export class ButtonComponent implements OnInit {
+export class ButtonComponent {
   public EButtonView = EButtonView;
   public _buttonParameters: IButtonParameters;
   @Input() set buttonParameters(value: IButtonParameters) {
@@ -17,11 +17,5 @@ export class ButtonComponent implements OnInit {
 
   get buttonParameters(): IButtonParameters {
     return this._buttonParameters;
-  }
-
-  constructor() {
-  }
-
-  ngOnInit(): void {
   }
 }

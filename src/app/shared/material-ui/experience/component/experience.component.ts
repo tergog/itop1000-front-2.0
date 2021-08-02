@@ -1,12 +1,12 @@
 import { Component, OnInit, forwardRef, Input, OnDestroy } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { FormArray, FormBuilder, NG_VALUE_ACCESSOR, ControlValueAccessor, FormControl } from '@angular/forms';
-
-import { AddExperienceModalComponent } from './add-experience-modal/add-experience-modal.component';
-import { EditExperienceModalComponent } from './edit-experience-modal/edit-experience-modal.component';
-import { RemoveExperienceModalComponent } from './remove-experience-modal/remove-experience-modal.component';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+
+import { AddExperienceModalComponent } from './add-experience-modal/component/add-experience-modal.component';
+import { EditExperienceModalComponent } from './edit-experience-modal/component/edit-experience-modal.component';
+import { RemoveExperienceModalComponent } from './remove-experience-modal/component/remove-experience-modal.component';
 import { EExperienceCardView } from './experience-card/experience-card.enums';
 
 export const EXPERIENCE_VALUE_ACCESSOR: any = {

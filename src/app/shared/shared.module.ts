@@ -5,7 +5,7 @@ import { CustomUiModule } from './custom-ui/custom-ui.module';
 import { HeaderModule } from './header/header.module';
 import { MaterialUiModule } from './material-ui/material-ui.module';
 import { NavigationModule } from './navigation/navigation.module';
-import { LandingGuideComponent } from './landing-guide/landing-guide.component';
+import { LandingGuideComponent } from './landing-guide/component/landing-guide.component';
 import { FooterModule } from './footer/footer.module';
 import { ReactiveComponentModule } from '@ngrx/component';
 
