@@ -87,6 +87,11 @@ a:active {
 
 @import "assets/scss/mixins";
 
+.container{
+  margin: 0 auto;
+  max-width: 1440px;
+}
+
 .text-black{
   color: $black;
 }

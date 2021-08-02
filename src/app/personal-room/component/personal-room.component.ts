@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CPersonalRoomConfig } from '../personal-room.config';
 
 @Component({
   selector: 'app-personal-room',
@@ -6,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./personal-room.component.scss']
 })
 export class PersonalRoomComponent implements OnInit {
+  public personalRoomConfig = CPersonalRoomConfig;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
