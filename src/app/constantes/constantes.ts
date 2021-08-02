@@ -379,8 +379,8 @@ export const CLandingData = {
   [ELandingRole.Freelancer]: {
     role: ELandingRole.Freelancer,
     fullscreen: {
-      title: 'Find top-level freelance developers for your project',
-      subtitle: 'Hire certified developers with years of component in the tech world',
+      title: 'Find top-level freelance component for your project',
+      subtitle: 'Hire certified component with years of component in the tech world',
       button: {
         text: 'Hire a freelancer',
         type: '',
@@ -441,7 +441,7 @@ export const CLandingData = {
       ],
       seeAllLink: {
         href: '',
-        text: 'See all our talented developers'
+        text: 'See all our talented component'
       }
     },
     topProject: {
@@ -458,7 +458,7 @@ export const CLandingData = {
       }
     },
     description: {
-      title: 'ITOP1000 is an amazing user-friendly platform for freelance developers and clients:',
+      title: 'ITOP1000 is an amazing user-friendly platform for freelance component and clients:',
       contentItems: [
         {
           title: 'For Employers:',
