@@ -4,7 +4,16 @@ import { RouterModule, Routes } from '@angular/router';
 import { PersonalRoomComponent } from './component/personal-room.component';
 
 const routes: Routes = [
-  { path: '', component: PersonalRoomComponent, pathMatch: 'full' }
+  {
+    path: '',
+    component: PersonalRoomComponent,
+    pathMatch: 'full',
+    children: [
+      {
+        path: '', redirectTo: 'component', pathMatch: 'full'
+      }
+    ]
+  }
 ];
 
 @NgModule({
