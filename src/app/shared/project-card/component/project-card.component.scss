@@ -1,0 +1,139 @@
+@import "src/assets/scss/mixins";
+
+.project-card {
+  display: inline-flex;
+  max-width: 1076px;
+  min-height: 290px;
+  border-radius: 9px;
+  background: $codGrayStrong;
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 45px 40px 45px;
+    text-align: center;
+    border-right: 2px solid $redRibbon;
+
+    .title {
+      @include setFontParams($fontWorkSans, normal, 500, $titleLineHeight);
+      font-size: $bigTitleFontSize;
+    }
+
+    .duration {
+      @include setFontParams($fontWorkSans, normal, 500, $titleLineHeight);
+      font-size: $smallTextFontSize;
+    }
+
+    .rate {
+      display: flex;
+      flex: 1 0 auto;
+      flex-direction: column;
+      justify-content: flex-end;
+      @include setFontParams($fontWorkSans, normal, 500, $textLineHeight);
+      font-size: $bigTextFontSize;
+    }
+
+    .accept {
+      margin-top: 28px;
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 40px 50px 30px 50px;
+
+    .title {
+      @include setFontParams($fontRaleway, normal, 400, $textLineHeight);
+      font-size: $smallTextFontSize;
+
+      span {
+        font-weight: 400;
+      }
+    }
+
+    .description {
+      margin-top: 13px;
+      @include setFontParams($fontRaleway, normal, 200, $subTitleLineHeight);
+      font-size: $smallTextFontSize;
+      border-bottom: 1px solid $gray;
+      padding-bottom: 10px;
+
+      p {
+        margin: 0;
+      }
+
+      p.trim {
+        max-width: 90%;
+      }
+
+      .skills {
+        margin-top: 15px;
+        display: flex;
+        justify-content: space-between;
+
+        span {
+          @include setFontParams($fontWorkSans, normal, 500, $subTitleLineHeight);
+          font-size: $smallTextFontSize;
+        }
+      }
+    }
+
+    .control {
+      flex: 1 0 auto;
+      justify-self: flex-end;
+      display: flex;
+      align-items: flex-end;
+
+      .control-wrapper {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .control-info {
+        display: flex;
+        align-items: center;
+        @include setFontParams($fontWorkSans, normal, 400, $textLineHeight);
+        font-size: $smallTextFontSize;
+      }
+
+      .control-info__location {
+        margin-right: 30px;
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    .status {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      mat-icon {
+        color: $white;
+      }
+    }
+
+    .status.free {
+      display: none;
+    }
+
+    .status.completed {
+      background: $green;
+    }
+
+    .status.development {
+      background: $gray;
+    }
+  }
+}

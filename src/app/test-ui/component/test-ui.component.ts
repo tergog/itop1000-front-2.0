@@ -7,6 +7,42 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TestUiComponent implements OnInit {
 
+  public obgProjectCardParameters = {
+    free: {
+      title: 'Script development',
+      duration: '2 months',
+      rate: 1000,
+      companyName: 'Company Name',
+      description: 'On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame',
+      skills: ['JavaScript', 'CSS3', 'HTML5', 'Angular'],
+      location: 'Kharkov, Ukraine',
+      date: 1627896098000,
+      status: 'free'
+    },
+    development: {
+      title: 'Script development',
+      duration: '2 months',
+      rate: 1000,
+      companyName: 'Company Name',
+      description: 'On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame',
+      skills: ['JavaScript', 'CSS3', 'HTML5', 'Angular'],
+      location: 'Kharkov, Ukraine',
+      date: 1627896098000,
+      status: 'development'
+    },
+    completed: {
+      title: 'Script development',
+      duration: '2 months',
+      rate: 1000,
+      companyName: 'Company Name',
+      description: 'On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame',
+      skills: ['JavaScript', 'CSS3', 'HTML5', 'Angular'],
+      location: 'Kharkov, Ukraine',
+      date: 1627896098000,
+      status: 'completed'
+    }
+  };
+
   public objUserCardParameters = {
     freelancer: {
       role: 'freelancer',
@@ -35,7 +71,7 @@ export class TestUiComponent implements OnInit {
     links: [
       { text: 'Wallet', href: 'wallet', icon: 'wallet' },
       { text: 'Projects', href: 'projects', icon: 'projects' },
-      { text: 'Documents', href: 'documents', icon: 'documents' },
+      { text: 'My Works', href: 'works', icon: 'documents' },
       { text: 'Task Tracker', href: 'tracker', icon: 'tracker' },
       { text: 'Chat', href: 'chat', icon: 'chat' },
       { text: 'Personal & Security', href: 'personal', icon: 'personal' },
@@ -155,7 +191,7 @@ export class TestUiComponent implements OnInit {
     }
   };
 
-  public objProjectCardParameters = {
+  public objPreviewProjectCardParameters = {
     productOwner: {
       role: 'product-owner',
       img: 'star.svg',

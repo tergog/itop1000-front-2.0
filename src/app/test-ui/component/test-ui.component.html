@@ -1,6 +1,16 @@
 <!--<app-loader></app-loader>-->
 <app-header></app-header>
 <hr>
+<app-project-card [projectCardParameters]="obgProjectCardParameters.free"></app-project-card>
+<br>
+<br>
+<br>
+<app-project-card [projectCardParameters]="obgProjectCardParameters.development"></app-project-card>
+<br>
+<br>
+<br>
+<app-project-card [projectCardParameters]="obgProjectCardParameters.completed"></app-project-card>
+<hr>
 <app-user-card [userCardParameters]="objUserCardParameters.freelancer"></app-user-card>
 <app-user-card [userCardParameters]="objUserCardParameters.productOwner"></app-user-card>
 <hr>
@@ -78,7 +88,7 @@
 <hr>
 <!--<app-checkbox [checkboxParameters]="objCheckboxParameters"></app-checkbox>-->
 <hr>
-<app-project-card [projectCardParameters]="objProjectCardParameters.developer"></app-project-card>
-<app-project-card [projectCardParameters]="objProjectCardParameters.productOwner"></app-project-card>
+<app-preview-project-card [previewProjectCardParameters]="objPreviewProjectCardParameters.developer"></app-preview-project-card>
+<app-preview-project-card [previewProjectCardParameters]="objPreviewProjectCardParameters.productOwner"></app-preview-project-card>
 <hr>
 <app-footer></app-footer>

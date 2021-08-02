@@ -4,7 +4,7 @@ a {
   text-decoration: none;
 }
 
-.project-card {
+.preview-project-card {
   width: 344px;
   height: 256px;
   display: flex;
@@ -31,12 +31,12 @@ a {
   }
 }
 
-.project-card:hover {
+.preview-project-card:hover {
   transition: 0.5s all ease;
   background: $codGrayStrong;
 }
 
-.developer .project-card__company-name, .owner .project-card__project-name {
+.developer .preview-project-card__company-name, .owner .preview-project-card__project-name {
   @include setFontParams($fontRaleway, 500, normal, $subTitleLineHeight);
   font-size: $titleFontSize;
   background: $goldTextGradient;
@@ -46,19 +46,19 @@ a {
   margin: 22px 0 7px 0;
 }
 
-.developer .project-card__date {
+.developer .preview-project-card__date {
   @include setFontParams($fontWorkSans, 300, normal, $textLineHeight);
   font-size: $bigTextFontSize;
   color: $gray;
 }
 
-.owner .project-card__company-name {
+.owner .preview-project-card__company-name {
   @include setFontParams($fontRaleway, 300, normal, $subTitleLineHeight);
   font-size: $bigTextFontSize;
   text-transform: uppercase;
 }
 
-.owner .project-card__budget {
+.owner .preview-project-card__budget {
   margin-top: 9px;
   @include setFontParams($fontWorkSans, 400, normal, $textLineHeight);
   font-size: $smallTextFontSize;

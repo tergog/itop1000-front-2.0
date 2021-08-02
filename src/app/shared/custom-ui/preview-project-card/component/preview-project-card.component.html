@@ -1,34 +1,34 @@
-<a [href]="_projectCardParameters.href">
+<a [href]="_previewProjectCardParameters.href">
 
-  <div *ngIf="_projectCardParameters.role === EProjectCardView.Developer" class="project-card developer">
+  <div *ngIf="_previewProjectCardParameters.role === EPreviewProjectCardView.Developer" class="preview-project-card developer">
 
-    <div class="project-card__img">
-      <img [src]="'/assets/img/preview-project-card/' + _projectCardParameters.img" alt="project-logo">
+    <div class="preview-project-card__img">
+      <img [src]="'/assets/img/preview-project-card/' + _previewProjectCardParameters.img" alt="preview-project-logo">
     </div>
 
-    <div class="project-card__company-name">
-      {{ _projectCardParameters.companyName}}
+    <div class="preview-project-card__company-name">
+      {{ _previewProjectCardParameters.companyName}}
     </div>
 
-    <div class="project-card__date">
-      {{ _projectCardParameters.date | date: 'd MMMM' }}
+    <div class="preview-project-card__date">
+      {{ _previewProjectCardParameters.date | date: 'd MMMM' }}
     </div>
 
   </div>
 
-  <div *ngIf="_projectCardParameters.role === EProjectCardView.ProductOwner" class="project-card owner">
+  <div *ngIf="_previewProjectCardParameters.role === EPreviewProjectCardView.ProductOwner" class="preview-project-card owner">
 
-    <div class="project-card__img">
-      <img [src]="'/assets/img/preview-project-card/' + _projectCardParameters.img" alt="project-logo">
+    <div class="preview-project-card__img">
+      <img [src]="'/assets/img/preview-project-card/' + _previewProjectCardParameters.img" alt="preview-project-logo">
     </div>
-    <div class="project-card__project-name">
-      {{ _projectCardParameters.projectName }}
+    <div class="preview-project-card__project-name">
+      {{ _previewProjectCardParameters.projectName }}
     </div>
-    <div class="project-card__company-name">
-      {{ _projectCardParameters.companyName }}
+    <div class="preview-project-card__company-name">
+      {{ _previewProjectCardParameters.companyName }}
     </div>
-    <div class="project-card__budget">
-      Budget {{ _projectCardParameters.budget }} $
+    <div class="preview-project-card__budget">
+      Budget {{ _previewProjectCardParameters.budget }} $
     </div>
 
   </div>

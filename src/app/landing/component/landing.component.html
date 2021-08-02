@@ -57,7 +57,7 @@
 
     <div class="top-project-cards">
       <div *ngFor="let card of (landingData$ | ngrxPush).topProject.cards" class="cards-item">
-        <app-project-card [projectCardParameters]="card"></app-project-card>
+        <app-preview-project-card [previewProjectCardParameters]="card"></app-preview-project-card>
       </div>
     </div>
 

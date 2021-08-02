@@ -1,4 +1,4 @@
-export interface IProjectCardParameters {
+export interface IPreviewProjectCardParameters {
   role: string;
   img: string;
   companyName: string;

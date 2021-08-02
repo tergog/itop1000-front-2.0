@@ -27,7 +27,7 @@ button.btn {
     font-weight: 500;
   }
 
-  &__small:hover{
+  &__small:hover {
     color: $cardinal;
     border-color: $cardinal;
   }
@@ -50,8 +50,11 @@ button.btn {
     height: 20px;
   }
 
-  &__small-empty, &__small-empty-border {
+  &__small-empty {
     text-transform: uppercase;
+  }
+
+  &__small-empty, &__small-empty-border {
     background: transparent;
     color: $redRibbon;
     border: 1px solid transparent;

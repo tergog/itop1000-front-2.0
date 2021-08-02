@@ -1,1 +1,75 @@
-<p>project-card works!</p>
+<div class="project-card">
+
+  <div class="project-card__header">
+
+    <div class="project-card__header-title title text-uppercase text-white">
+      {{ projectCardParameters.title }}
+    </div>
+
+    <div class="project-card__header-duration duration text-white">
+      Project duration <span class="text-yellow">{{ projectCardParameters.duration }}</span>
+    </div>
+
+    <div class="project-card__header-rate rate text-yellow">
+      ${{ projectCardParameters.rate | number:'3.2-5' }}/mth
+    </div>
+
+    <div *ngIf="projectCardParameters.status === EProjectCardStatus.Free" class="project-card__header-accept accept">
+      <app-button
+        (click)="acceptProject()"
+        [buttonParameters]="projectCardConfig.buttons.accept">
+      </app-button>
+    </div>
+
+  </div>
+
+  <div class="project-card__body">
+
+    <div class="project-card__body-title title text-white">
+      Company: <span class="text-gray">{{ projectCardParameters.companyName }}</span>
+    </div>
+
+    <div class="project-card__body-description description text-gray">
+      <p [ngClass]="{trim: projectCardParameters.status !== EProjectCardStatus.Free}">
+        {{ projectCardParameters.description }}
+      </p>
+      <div class="skills">
+         <span class="text-white" *ngFor="let skill of projectCardParameters.skills">
+            {{ skill }}
+         </span>
+      </div>
+    </div>
+    <div class="project-card__body-control control">
+      <div class="control-wrapper">
+        <div class="control-info">
+          <div class="control-info__location text-yellow">
+            <mat-icon svgIcon="location"></mat-icon>
+            {{ projectCardParameters.location }}
+          </div>
+          <div class="control-info__date text-yellow">
+            {{ projectCardParameters.date | date: 'd MMMM' }}
+          </div>
+        </div>
+        <div class="control-action">
+          <app-button
+            (click)="closeProject()"
+            *ngIf="projectCardParameters.status === EProjectCardStatus.Development"
+            [buttonParameters]="projectCardConfig.buttons.close"></app-button>
+          <a *ngIf="projectCardParameters.status !== EProjectCardStatus.Development"
+             href="" class="text-gray">Comment</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card__body-status status"
+         *ngIf="projectCardParameters.status !== EProjectCardStatus.Free"
+         [ngClass]="{
+         free: projectCardParameters.status === EProjectCardStatus.Free,
+         completed: projectCardParameters.status === EProjectCardStatus.Completed,
+         development: projectCardParameters.status === EProjectCardStatus.Development
+          }">
+      <mat-icon *ngIf="projectCardParameters.status === EProjectCardStatus.Completed" svgIcon="completed"></mat-icon>
+      <mat-icon *ngIf="projectCardParameters.status === EProjectCardStatus.Development" svgIcon="work"></mat-icon>
+    </div>
+  </div>
+</div>

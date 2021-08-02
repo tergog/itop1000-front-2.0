@@ -17,6 +17,7 @@ import { CustomTooltipModule } from './custom-tooltip/custom-tooltip.module';
 import { MoneyFormatInputDirective } from '../../directives/money-format-input/money-format-input.directive';
 import { SkillGradeComponent } from './skill-grade/skill-grade.component';
 import { UserCardComponent } from './user-card/component/user-card.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { UserCardComponent } from './user-card/component/user-card.component';
     CustomTooltipModule,
     MatFormFieldModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatIconModule
   ],
   exports: [
     ButtonModule,
