@@ -20,11 +20,6 @@
       font-size: $bigTitleFontSize;
     }
 
-    .duration {
-      @include setFontParams($fontWorkSans, normal, 500, $titleLineHeight);
-      font-size: $smallTextFontSize;
-    }
-
     .rate {
       display: flex;
       flex: 1 0 auto;

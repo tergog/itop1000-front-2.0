@@ -1,0 +1,22 @@
+<div class="progress">
+  <div class="progress__header">
+    <div class="progress__title">
+      <h2 class="title-progress">Work Experience</h2>
+    </div>
+    <div class="progress__control">
+      <button (click)="openAddProgressModal()" class="add-progress"></button>
+    </div>
+  </div>
+  <div class="progress__body">
+    <div class="progress__item" *ngFor="let item of this.progressGroup.value; index as i">
+      <app-progress-card
+        [type]="EProgressType.Experience"
+        [progressCardData]="item"
+        [view]="EProgressCardView.Edit"
+        [id]="i"
+        (editProgressModal)="openEditProgressModal($event)"
+        (removeProgressModal)="openRemoveProgressModal($event)">
+      </app-progress-card>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<form action="" class="progress-form" [formGroup]="editModalFormGroup">
+
+  <div class="progress-form__item">
+    <app-input [control]="editModalFormGroup.controls.companyName"
+               [inputParameters]="editProgressModalConfig.inputs.companyName"
+               formControlName="companyName"></app-input>
+  </div>
+
+  <div class="progress-form__item">
+    <app-input [control]="editModalFormGroup.controls.jobTitle"
+               [inputParameters]="editProgressModalConfig.inputs.jobTitle"
+               formControlName="jobTitle"></app-input>
+  </div>
+
+  <div class="progress-form__item">
+    <app-input
+      [control]="editModalFormGroup.controls.positionTitle"
+      [inputParameters]="editProgressModalConfig.inputs.positionTitle"
+      formControlName="positionTitle"></app-input>
+  </div>
+
+  <div class="progress-form__item">
+    <app-input [control]="editModalFormGroup.controls.jobDescription"
+               [inputParameters]="editProgressModalConfig.inputs.jobDescription"
+               formControlName="jobDescription"></app-input>
+  </div>
+
+  <div class="progress-form__item">
+    <app-input class="date"
+               [control]="editModalFormGroup.controls.dateFrom"
+               [inputParameters]="editProgressModalConfig.inputs.dateFrom"
+               formControlName="dateFrom"></app-input>
+    <app-input class="date"
+               [control]="editModalFormGroup.controls.dateTill"
+               [inputParameters]="editProgressModalConfig.inputs.dateTill"
+               formControlName="dateTill"></app-input>
+  </div>
+
+  <div class="progress-form__item">
+    <app-button [buttonParameters]="editProgressModalConfig.buttons.cancel"
+                [mat-dialog-close]="false"></app-button>
+    <app-button [buttonParameters]="editProgressModalConfig.buttons.save"
+                [mat-dialog-close]="editModalFormGroup"></app-button>
+  </div>
+</form>

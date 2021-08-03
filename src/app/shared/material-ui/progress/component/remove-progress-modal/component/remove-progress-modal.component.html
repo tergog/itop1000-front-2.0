@@ -1,0 +1,15 @@
+<div class="progress-modal">
+  <div class="progress-modal__header">
+    <h2>deletion</h2>
+    <app-button [buttonParameters]="removeProgressConfig.buttons.close" [mat-dialog-close]="false"></app-button>
+  </div>
+  <div class="progress-modal__body">
+      <div class="body__content">
+        Are you sure you want to delete the section?
+      </div>
+      <div class="body__control">
+        <app-button [buttonParameters]="removeProgressConfig.buttons.decline" [mat-dialog-close]="false"></app-button>
+        <app-button [buttonParameters]="removeProgressConfig.buttons.accept" [mat-dialog-close]="true"></app-button>
+      </div>
+  </div>
+</div>

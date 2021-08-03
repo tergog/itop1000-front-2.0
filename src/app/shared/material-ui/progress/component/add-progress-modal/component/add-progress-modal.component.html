@@ -1,0 +1,19 @@
+<div class="progress-modal">
+  <div class="progress-modal__header">
+
+    <h2 *ngIf="progressModalType === EProgressModalType.Experience">Employment</h2>
+    <h2 *ngIf="progressModalType === EProgressModalType.Education">Education</h2>
+
+    <app-button [buttonParameters]="addProgressModalConfig.buttons.close" [mat-dialog-close]="false"></app-button>
+  </div>
+  <div class="progress-modal__body">
+    <app-add-form-education
+      *ngIf="progressModalType === EProgressModalType.Education">
+    </app-add-form-education>
+
+    <app-add-form-experience
+      *ngIf="progressModalType === EProgressModalType.Experience">
+    </app-add-form-experience>
+
+  </div>
+</div>

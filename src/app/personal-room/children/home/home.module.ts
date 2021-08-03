@@ -4,7 +4,8 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './component/home.component';
 import { HomeRoutingModule } from './home-routing.module';
 import { CustomUiModule } from '../../../shared/custom-ui/custom-ui.module';
-import { ExperienceModule } from '../../../shared/material-ui/experience/experience.module';
+import { ProgressModule } from '../../../shared/material-ui/progress/progress.module';
+import { LanguageModule } from '../../../shared/custom-ui/language/language.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { ExperienceModule } from '../../../shared/material-ui/experience/experie
     CommonModule,
     HomeRoutingModule,
     CustomUiModule,
-    ExperienceModule
+    ProgressModule,
+    LanguageModule,
   ],
   exports: [
     HomeComponent

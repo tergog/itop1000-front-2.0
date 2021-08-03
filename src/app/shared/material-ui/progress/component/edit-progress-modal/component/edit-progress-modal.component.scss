@@ -1,0 +1,40 @@
+@import "../../../../../../../assets/scss/mixins";
+
+::ng-deep {
+  .mat-dialog-container {
+    width: 495px;
+    max-width: 495px;
+    border-radius: 9px;
+    padding: 0;
+    background-color: $codGray;
+    overflow: hidden;
+  }
+
+  .mat-datepicker-content .mat-calendar{
+    height: auto !important;
+  }
+}
+
+.progress-modal {
+  &__header {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    background: $codGrayStrong;
+
+    h2 {
+      text-align: center;
+      flex: 1 0 auto;
+      @include setFontParams($fontWorkSans, normal, 500, $subTitleLineHeight);
+      font-size: 16px;
+      color: $white;
+      text-transform: uppercase;
+    }
+  }
+
+  &__body {
+    padding: 0 25px;
+    border-bottom: 1px solid $tundora;
+  }
+}

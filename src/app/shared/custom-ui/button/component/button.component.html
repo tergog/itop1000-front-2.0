@@ -55,6 +55,7 @@
 </button>
 
 <div class="icon-button" *ngIf="_buttonParameters.view === EButtonView.Add">
+  <span class="text-ribbon first">{{ _buttonParameters.text }}</span>
   <button [type]="_buttonParameters.type"
           [disabled]="_buttonParameters.disabled"
           class="btn btn__add">

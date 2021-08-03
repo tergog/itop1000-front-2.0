@@ -98,7 +98,31 @@
 
 .experience {
   &__body {
-    app-experience-card:first-child {
+    app-progress-card:first-child {
+      display: block;
+      border-top: 1px solid $gray;
+      padding-top: 40px;
+    }
+  }
+}
+
+// =================================================== Education ============================================
+
+.education {
+
+  &__header {
+    position: relative;
+
+    app-button {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      text-transform: none;
+    }
+  }
+
+  &__body {
+    app-progress-card:first-child {
       display: block;
       border-top: 1px solid $gray;
       padding-top: 40px;

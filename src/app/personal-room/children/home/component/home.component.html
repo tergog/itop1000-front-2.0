@@ -55,9 +55,14 @@
     </div>
 
     <div class="experience__body personal-room-item-body">
-      <app-experience-card [experienceCardData]="experience"></app-experience-card>
-      <app-experience-card [experienceCardData]="experience"></app-experience-card>
-      <app-experience-card [experienceCardData]="experience"></app-experience-card>
+
+        <app-progress-card
+          [type]="EProgressType.Experience"
+          *ngFor="let experience of experienceList"
+          [view]="EProgressCardView.Static"
+          [progressCardData]="experience">
+        </app-progress-card>
+
     </div>
   </section>
 
@@ -67,16 +72,31 @@
     </div>
 
     <div class="language__body personal-room-item-body">
-
+      <app-language></app-language>
     </div>
   </section>
 
   <section class="education">
     <div class="education__header personal-room-item-header text-white text-uppercase">
       Education
+
+      <app-button
+        *ngIf="educationFormArray.value.length < 10"
+        (click)="openAddProgressModal()"
+        [buttonParameters]="homeConfig.buttons.add">
+      </app-button>
     </div>
 
     <div class="education__body personal-room-item-body">
+
+      <app-progress-card *ngFor="let education of this.educationFormArray.value; index as i"
+                         [id]="i"
+                         [type]="EProgressType.Education"
+                         [view]="EProgressCardView.Edit"
+                         [progressCardData]="education"
+                         (editProgressModal)="openEditProgressModal($event)"
+                         (removeProgressModal)="openRemoveProgressModal($event)">>
+      </app-progress-card>
 
     </div>
   </section>

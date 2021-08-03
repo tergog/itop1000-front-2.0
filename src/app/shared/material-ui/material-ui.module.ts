@@ -13,7 +13,7 @@ import { ButtonToggleComponent } from './button-toggle/button-toggle.component';
 import { SelectModule } from './select/select.module';
 import { CheckboxModule } from './checkbox/checkbox.module';
 import { RoleToggleModule } from './role-toggle/role-toggle.module';
-import { ExperienceModule } from './experience/experience.module';
+import { ProgressModule } from './progress/progress.module';
 import { SearchInputModule } from './search-input/search-input.module';
 
 @NgModule({
@@ -32,7 +32,7 @@ import { SearchInputModule } from './search-input/search-input.module';
     MatButtonModule,
     MatInputModule,
     MatTabsModule,
-    ExperienceModule,
+    ProgressModule,
     SearchInputModule
   ],
   exports: [
@@ -47,7 +47,7 @@ import { SearchInputModule } from './search-input/search-input.module';
     MatInputModule,
     MatTabsModule,
     MatChipsModule,
-    ExperienceModule,
+    ProgressModule,
     SearchInputModule
   ]
 })
