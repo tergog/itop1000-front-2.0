@@ -7,7 +7,6 @@ const routes: Routes = [
   {
     path: '',
     component: PersonalRoomComponent,
-    pathMatch: 'full',
     children: [
       {
         path: '', redirectTo: 'home', pathMatch: 'full'

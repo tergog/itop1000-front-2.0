@@ -18,6 +18,7 @@ import { MoneyFormatInputDirective } from '../../directives/money-format-input/m
 import { SkillGradeComponent } from './skill-grade/skill-grade.component';
 import { UserCardComponent } from './user-card/component/user-card.component';
 import { MatIconModule } from '@angular/material/icon';
+import { LanguageModule } from './language/language.module';
 
 @NgModule({
   declarations: [

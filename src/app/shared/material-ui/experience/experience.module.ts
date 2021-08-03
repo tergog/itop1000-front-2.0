@@ -25,7 +25,8 @@ import { RemoveExperienceModalComponent } from './component/remove-experience-mo
     ReactiveFormsModule
   ],
   exports: [
-    ExperienceComponent
+    ExperienceComponent,
+    ExperienceCardComponent
   ]
 })
 export class ExperienceModule {

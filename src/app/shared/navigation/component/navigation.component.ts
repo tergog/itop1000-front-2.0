@@ -4,6 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 import { INavigationParameters } from '../navigation.interfaces';
 import { ENavigationView } from '../navigation.enums';
 import { ItopDataService } from '../../../services/itop-data/itop-data.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-navigation',

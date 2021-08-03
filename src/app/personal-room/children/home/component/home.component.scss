@@ -1,0 +1,107 @@
+@import "src/assets/scss/mixins";
+
+.home {
+  section {
+    border-radius: 9px;
+    overflow: hidden;
+    margin-bottom: 11px;
+    width: 100%;
+  }
+
+  .section:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// =================================================== Personal ============================================
+.personal {
+  width: 100%;
+
+  &__body {
+    display: flex;
+    justify-content: space-between;
+
+    .body__user {
+      display: flex;
+      align-items: center;
+
+      .user-photo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 116px;
+        height: 116px;
+        border-radius: 50%;
+        background: $mineShaft;
+        margin-right: 22px;
+      }
+
+      .user-name {
+        display: flex;
+        flex-direction: column;
+        @include setFontParams($fontRaleway, normal, 400, $subTitleLineHeight);
+        font-size: $titleFontSize;
+
+        span {
+          margin-bottom: 10px;
+        }
+      }
+    }
+
+    .body__info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      font-size: $bigTextFontSize;
+
+      .info-phone {
+        span:first-child {
+          @include setFontParams($fontRaleway, normal, 500, $subTitleLineHeight);
+          margin-right: 75px;
+        }
+
+        span:last-child {
+          @include setFontParams($fontWorkSans, normal, 400, $textLineHeight);
+        }
+      }
+
+      .info-email {
+        span:first-child {
+          @include setFontParams($fontRaleway, normal, 500, $subTitleLineHeight);
+          margin-right: 75px;
+        }
+
+        span:last-child {
+          @include setFontParams($fontWorkSans, normal, 400, $textLineHeight);
+        }
+      }
+    }
+  }
+}
+
+// =================================================== Skills ============================================
+.skills {
+  &__body-item {
+    display: flex;
+    justify-content: space-between;
+    @include setFontParams($fontRaleway, normal, 500, $subTitleLineHeight);
+    font-size: $smallTextFontSize;
+    margin-bottom: 45px;
+  }
+
+  &__body-item:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// =================================================== Experience ============================================
+
+.experience {
+  &__body {
+    app-experience-card:first-child {
+      display: block;
+      border-top: 1px solid $gray;
+      padding-top: 40px;
+    }
+  }
+}

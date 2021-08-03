@@ -1,24 +1,35 @@
 @import "src/assets/scss/mixins";
 
-.personal-room{
+.personal-room {
   min-height: 100vh;
   padding: 84px 0;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
-aside{
+aside {
   background: $codGrayStrong;
+  width: 100%;
   max-width: 355px;
   border-radius: 9px;
   padding: 30px 0;
   display: flex;
   flex-direction: column;
 
-  app-user-card{
+  app-user-card {
     display: flex;
     justify-content: center;
   }
 
-  app-navigation{
+  app-navigation {
     margin-top: 22px;
   }
+}
+
+main {
+  width: 100%;
+  max-width: 1076px;
 }

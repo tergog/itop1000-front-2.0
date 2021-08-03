@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { HomeComponent } from './component/home.component';
 import { HomeRoutingModule } from './home-routing.module';
+import { CustomUiModule } from '../../../shared/custom-ui/custom-ui.module';
+import { ExperienceModule } from '../../../shared/material-ui/experience/experience.module';
 
 @NgModule({
   declarations: [
@@ -10,7 +12,9 @@ import { HomeRoutingModule } from './home-routing.module';
   ],
   imports: [
     CommonModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    CustomUiModule,
+    ExperienceModule
   ],
   exports: [
     HomeComponent

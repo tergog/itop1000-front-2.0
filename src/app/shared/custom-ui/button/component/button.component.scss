@@ -52,6 +52,7 @@ button.btn {
 
   &__small-empty {
     text-transform: uppercase;
+
   }
 
   &__small-empty, &__small-empty-border {
@@ -60,11 +61,12 @@ button.btn {
     border: 1px solid transparent;
     font-size: 14px;
     border-radius: 34px;
-    padding: 20px 30px;
+
   }
 
   &__small-empty-border {
     border: 1px solid $crimson;
+    padding: 20px 30px;
   }
 
   &__big:hover,

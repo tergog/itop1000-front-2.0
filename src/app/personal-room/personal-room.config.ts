@@ -7,8 +7,7 @@ export const CPersonalRoomConfig = {
       { text: 'My Works', href: 'works', icon: 'documents' },
       { text: 'Task Tracker', href: 'tracker', icon: 'tracker' },
       { text: 'Chat', href: 'chat', icon: 'chat' },
-      { text: 'Personal & Security', href: 'personal', icon: 'personal' },
-      { text: 'Support/FAQ', href: 'support', icon: 'support' }
+      { text: 'Personal & Security', href: 'security', icon: 'personal' }
     ]
   },
   role: {

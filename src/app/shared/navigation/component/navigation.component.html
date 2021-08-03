@@ -19,9 +19,9 @@
 <nav *ngIf="_navigationParameters.view === ENavigationView.PersonalRoom" class="navigation personal-room">
   <ul class="navigation-list">
     <li *ngFor="let link of _navigationParameters.links" class="navigation-item"
-        [ngClass]="{ active: (landingRole$ | ngrxPush) === link.role }">
+        [ngClass]="{ active: (landingRole$ | ngrxPush) === link.role }" routerLinkActive="active">
       <mat-icon [svgIcon]="link!.icon"></mat-icon>
-      <a [routerLink]="[link.href]" routerLinkActive="active">
+      <a [routerLink]="[link.href]">
         {{ link.text }}
       </a>
     </li>

@@ -1,1 +1,84 @@
-<p>home works!</p>
+<div class="home">
+
+  <section class="personal">
+    <div class="personal__header personal-room-item-header text-white text-uppercase">
+      Personal Room
+    </div>
+
+    <div class="personal__body personal-room-item-body">
+      <div class="body__user">
+        <div class="user-photo">
+          <img src="/assets/img/icons/profile.svg" alt="user-photo">
+        </div>
+        <div class="user-name">
+          <span class="text-uppercase text-white">Name</span>
+          <span class="text-uppercase text-white">Surname</span>
+        </div>
+      </div>
+      <div class="body__info">
+        <div class="info-phone">
+          <span class="text-white">Phone: </span><span class="text-gray">+380**********</span>
+        </div>
+        <div class="info-email">
+          <span class="text-white">E-mail: </span><span class="text-gray">karina11reznichen@gmail.com</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="skills">
+    <div class="skills__header personal-room-item-header text-white text-uppercase">
+      Hard Skills
+    </div>
+
+    <div class="skills__body personal-room-item-body">
+      <div class="skills__body-item">
+        <span class="text-white">HTML</span>
+        <app-skill-grade [skillGradeValue]="55"></app-skill-grade>
+      </div>
+
+      <div class="skills__body-item">
+        <span class="text-white">React</span>
+        <app-skill-grade [skillGradeValue]="85"></app-skill-grade>
+      </div>
+
+      <div class="skills__body-item">
+        <span class="text-white">JS</span>
+        <app-skill-grade [skillGradeValue]="25"></app-skill-grade>
+      </div>
+    </div>
+  </section>
+
+  <section class="experience">
+    <div class="experience__header personal-room-item-header text-white text-uppercase">
+      Experience
+    </div>
+
+    <div class="experience__body personal-room-item-body">
+      <app-experience-card [experienceCardData]="experience"></app-experience-card>
+      <app-experience-card [experienceCardData]="experience"></app-experience-card>
+      <app-experience-card [experienceCardData]="experience"></app-experience-card>
+    </div>
+  </section>
+
+  <section class="language">
+    <div class="language__header personal-room-item-header text-white text-uppercase">
+      Language
+    </div>
+
+    <div class="language__body personal-room-item-body">
+
+    </div>
+  </section>
+
+  <section class="education">
+    <div class="education__header personal-room-item-header text-white text-uppercase">
+      Education
+    </div>
+
+    <div class="education__body personal-room-item-body">
+
+    </div>
+  </section>
+
+</div>

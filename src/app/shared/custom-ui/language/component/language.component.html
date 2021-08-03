@@ -1,0 +1,22 @@
+<div class="language">
+  <div class="language__list">
+    <div class="language__list-item language__item" *ngFor="let item of languageGroup.value; index as i">
+      <div class="language__item-info">
+        <span class="text-yellow">{{ item.language }}: </span>
+        <span class="text-white">{{ item.proficiency }}</span>
+      </div>
+      <div class="language__item-remove">
+        <app-button
+          (click)="removeLanguage(i)"
+          [buttonParameters]="languageConfig.buttons.remove">
+        </app-button>
+      </div>
+    </div>
+  </div>
+  <div class="language__add">
+    <app-button
+      (click)="openAddExperienceModal()"
+      [buttonParameters]="languageConfig.buttons.add">
+    </app-button>
+  </div>
+</div>

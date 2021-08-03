@@ -145,3 +145,23 @@ a:active {
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: transparent;
 }
+
+
+
+// personal room
+
+.personal-room-item-header {
+  @include setFontParams($fontRaleway, normal, 500, $subTitleLineHeight);
+  font-size: $bigTextFontSize;
+  width: 100%;
+  padding: 25px 0;
+  text-align: center;
+  background: $codGrayStrong; //#121212
+}
+
+.personal-room-item-body {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 25px 119px 25px 119px;
+  background: $codGrayMiddle;  //#151515
+}

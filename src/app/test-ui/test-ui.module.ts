@@ -8,6 +8,7 @@ import { ChipsModule } from '../shared/material-ui/chips/chips.module';
 import { StepperModule } from '../shared/stepper/stepper.module';
 import { LoaderModule } from '../shared/loader/loader.module';
 import { ProjectCardModule } from '../shared/project-card/project-card.module';
+import { LanguageModule } from '../shared/custom-ui/language/language.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ProjectCardModule } from '../shared/project-card/project-card.module';
     ChipsModule,
     StepperModule,
     LoaderModule,
-    ProjectCardModule
+    ProjectCardModule,
+    LanguageModule
   ],
   exports: [
     TestUiComponent
