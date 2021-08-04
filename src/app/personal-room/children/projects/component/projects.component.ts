@@ -1,15 +1,26 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 import { CProjectsConfigList } from '../projects.config';
 
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
-  styleUrls: ['./projects.component.scss']
+  styleUrls: ['./projects.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProjectsComponent {
   public projectsConfig = CProjectsConfigList;
   public panelOpenState = false;
+  public projectFormGroup: FormGroup;
+
+  constructor(private formBuilder: FormBuilder) {
+    this.projectFormGroup  = this.formBuilder.group({
+      type: this.formBuilder.control(this.projectsConfig.filtration.type),
+      skills: this.formBuilder.control(this.projectsConfig.filtration.skills),
+      languages: this.formBuilder.control(this.projectsConfig.filtration.languages)
+    });
+  }
 
   projectsList = [
     {

@@ -22,11 +22,27 @@
   </div>
 
   <div class="projects__filtration">
+
     <mat-expansion-panel #filterPanel
                          (opened)="panelOpenState=true"
                          (closed)="panelOpenState=false">
-      <p>I'm visible because I am open</p>
+      <form action="" [formGroup]="projectFormGroup">
+        <div class="filtration-item" *ngFor="let item of (projectsConfig.filtration | keyvalue)">
+<!--          <app-filtration-card-->
+<!--            [filterValues]="$any(item.value)"-->
+<!--            [formGroupName]="$any(item.key)"-->
+<!--            [type]="$any(item.key)"-->
+<!--            [formControlName]="$any(item.key)">-->
+<!--          </app-filtration-card>         -->
+
+          <app-filtration-card
+            [formGroupName]="$any(item.key)"
+            [type]="$any(item.key)"
+            [formControlName]="$any(item.key)"></app-filtration-card>
+        </div>
+      </form>
     </mat-expansion-panel>
+
   </div>
 
   <div class="projects__body">

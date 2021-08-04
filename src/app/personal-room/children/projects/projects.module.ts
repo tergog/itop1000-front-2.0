@@ -7,6 +7,7 @@ import { ProjectCardModule } from '../../../shared/project-card/project-card.mod
 import { SearchInputModule } from '../../../shared/material-ui/search-input/search-input.module';
 import { ButtonModule } from '../../../shared/custom-ui/button/button.module';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MaterialUiModule } from '../../../shared/material-ui/material-ui.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
     ProjectCardModule,
     SearchInputModule,
     ButtonModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MaterialUiModule
   ],
   exports: [
     ProjectsComponent

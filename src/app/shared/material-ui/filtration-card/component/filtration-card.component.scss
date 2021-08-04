@@ -1,0 +1,24 @@
+@import "src/assets/scss/mixins";
+
+.filtration-card {
+  max-width: 280px;
+  width: 280px;
+
+  &__header {
+    width: 100%;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid $gray;
+  }
+
+  &__body {
+    form {
+      display: flex;
+      flex-wrap: wrap;
+
+      .filtration-card-item {
+        width: 50%;
+      }
+    }
+  }
+}

@@ -1,1 +1,18 @@
-<p>filtration-card works!</p>
+<div class="filtration-card">
+  <div class="filtration-card__header text-white text-uppercase">
+    {{ type }}
+  </div>
+
+  <div class="filtration-card__body">
+
+    <form action="" [formGroup]="filtrationCardFormGroup">
+      <div class="filtration-card-item" *ngFor="let item of filtrationCardConfig">
+        <app-checkbox
+          [formControlName]="item.label"
+          [control]="this.filtrationCardFormGroup.controls[item.label]"
+          [checkboxParameters]="item">
+        </app-checkbox>
+      </div>
+    </form>
+  </div>
+</div>

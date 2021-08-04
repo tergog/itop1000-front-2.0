@@ -1,4 +1,4 @@
-<div class="checkbox">
+<div class="checkbox" [ngClass]="{'not-error': _checkboxParameters.errorMessage === '' }">
   <mat-checkbox class="example-margin" [(ngModel)]="value" (change)="change($event)">
     {{ _checkboxParameters.label }}
   </mat-checkbox>

@@ -15,6 +15,7 @@ import { CheckboxModule } from './checkbox/checkbox.module';
 import { RoleToggleModule } from './role-toggle/role-toggle.module';
 import { ProgressModule } from './progress/progress.module';
 import { SearchInputModule } from './search-input/search-input.module';
+import { FiltrationCardModule } from './filtration-card/filtration-card.module';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { SearchInputModule } from './search-input/search-input.module';
     MatInputModule,
     MatTabsModule,
     ProgressModule,
-    SearchInputModule
+    SearchInputModule,
+    FiltrationCardModule
   ],
   exports: [
     ButtonToggleComponent,
@@ -48,7 +50,8 @@ import { SearchInputModule } from './search-input/search-input.module';
     MatTabsModule,
     MatChipsModule,
     ProgressModule,
-    SearchInputModule
+    SearchInputModule,
+    FiltrationCardModule
   ]
 })
 
