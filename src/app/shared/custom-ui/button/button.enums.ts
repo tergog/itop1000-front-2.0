@@ -16,5 +16,7 @@ export enum EButtonView {
   Download = 'download',
   Delete = 'delete',
   DeleteEmpty = 'delete-empty',
-  Gradient = 'gradient'
+  Gradient = 'gradient',
+  Filter = 'filter',
+  FilterClose = 'filter-close'
 }

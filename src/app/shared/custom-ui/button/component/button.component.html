@@ -123,6 +123,23 @@
   </button>
 </div>
 
+
+<div class="icon-button filter" *ngIf="_buttonParameters.view === EButtonView.Filter">
+  <button [type]="_buttonParameters.type"
+          [disabled]="_buttonParameters.disabled"
+          class="btn btn__filter">
+    <img src="/assets/img/icons/filter.svg" alt="filter-icon">
+  </button>
+</div>
+
+<div class="icon-button filter" *ngIf="_buttonParameters.view === EButtonView.FilterClose">
+  <button [type]="_buttonParameters.type"
+          [disabled]="_buttonParameters.disabled"
+          class="btn btn__filter-close">
+    <img src="/assets/img/icons/add.svg" alt="filter-close-icon">
+  </button>
+</div>
+
 <a *ngIf="_buttonParameters.view === EButtonView.Login"
    [routerLink]="[_buttonParameters.href]"
    class="link link__login">

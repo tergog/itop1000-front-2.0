@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { WorksComponent } from './component/works.component';
 import { WorksRoutingModule } from './works-routing.module';
+import { ProjectCardModule } from '../../../shared/project-card/project-card.module';
 
 @NgModule({
   declarations: [
@@ -10,7 +11,8 @@ import { WorksRoutingModule } from './works-routing.module';
   ],
   imports: [
     CommonModule,
-    WorksRoutingModule
+    WorksRoutingModule,
+    ProjectCardModule
   ],
   exports: [
     WorksComponent

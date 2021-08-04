@@ -1,0 +1,23 @@
+.projects {
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+
+    .header-item:first-child{
+      width: 60%;
+    }
+  }
+
+  &__body {
+    .body-item {
+      margin-bottom: 10px;
+    }
+
+    .body-item:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

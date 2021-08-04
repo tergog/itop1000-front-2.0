@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CWalletConfigList } from '../wallet.config';
 
 @Component({
@@ -6,7 +6,7 @@ import { CWalletConfigList } from '../wallet.config';
   templateUrl: './wallet.component.html',
   styleUrls: ['./wallet.component.scss']
 })
-export class WalletComponent implements OnInit {
+export class WalletComponent {
   public walletConfig = CWalletConfigList;
 
   historyList = [
@@ -14,11 +14,4 @@ export class WalletComponent implements OnInit {
     { companyName: 'Company', date: 1628064901000, total: 50 },
     { companyName: 'Company', date: 1628064901000, total: 320 }
   ];
-
-  constructor() {
-  }
-
-  ngOnInit(): void {
-  }
-
 }

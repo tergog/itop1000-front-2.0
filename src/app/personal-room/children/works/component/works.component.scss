@@ -1,0 +1,10 @@
+.works{
+
+  &__item{
+    margin-bottom: 10px;
+  }
+
+  &__item:last-child{
+    margin-bottom: 0;
+  }
+}
