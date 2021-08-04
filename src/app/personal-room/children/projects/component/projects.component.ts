@@ -9,6 +9,8 @@ import { CProjectsConfigList } from '../projects.config';
 })
 export class ProjectsComponent {
   public projectsConfig = CProjectsConfigList;
+  public panelOpenState = false;
+
   projectsList = [
     {
       title: 'Script development',
