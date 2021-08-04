@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CTrackerConfigList } from '../tracker.config';
 
 @Component({
   selector: 'app-tracker',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tracker.component.scss']
 })
 export class TrackerComponent implements OnInit {
+  public trackerConfig = CTrackerConfigList;
 
   constructor() { }
 

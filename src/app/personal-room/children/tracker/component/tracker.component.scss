@@ -1,0 +1,54 @@
+@import "src/assets/scss/mixins";
+
+.tracker-wrapper {
+  section {
+    border-radius: 9px;
+    overflow: hidden;
+    margin-bottom: 11px;
+    width: 100%;
+  }
+
+  .section:last-child {
+    margin-bottom: 0;
+  }
+}
+
+
+.tracker {
+  &__header {
+    position: relative;
+    margin-bottom: 10px;
+
+    .download {
+      top: 20px;
+      right: 88px;
+      text-transform: none;
+      position: absolute;
+    }
+  }
+
+  &__body {
+    display: flex;
+    justify-content: space-between;
+    .body-item {
+      box-sizing: border-box;
+      padding: 40px 30px 30px 30px;
+      text-align: center;
+      max-width: 345px;
+      width: 100%;
+      border-radius: 9px;
+      background: $codGrayMiddle;
+    }
+
+    .body-item-title{
+      margin-bottom: 20px;
+      @include setFontParams($fontRaleway, normal, normal, $titleLineHeight);
+      font-size: $titleFontSize;
+    }
+
+    .body-item-value{
+      @include setFontParams($fontRajdhani, normal, bold, $titleLineHeight);
+      font-size: $bigTitleFontSize;
+    }
+  }
+}

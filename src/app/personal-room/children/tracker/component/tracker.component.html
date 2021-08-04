@@ -1,1 +1,40 @@
-<p>tracker works!</p>
+<div class="tracker-wrapper">
+
+  <section class="tracker">
+    <div class="tracker__header personal-room-item-header text-white text-uppercase">
+      Task Tracker
+
+      <div class="download">
+        <app-button [buttonParameters]="trackerConfig.buttons.download"></app-button>
+      </div>
+    </div>
+
+    <div class="tracker__body">
+      <div class="body-item">
+        <div class="body-item-title  text-uppercase text-gray">
+          Worked Hours
+        </div>
+        <div class="body-item-value text-outline">
+          40 h
+        </div>
+      </div>
+      <div class="body-item">
+        <div class="body-item-title text-uppercase text-gray">
+          Current Project
+        </div>
+        <div class="body-item-value text-outline">
+          16 h
+        </div>
+      </div>
+      <div class="body-item">
+        <div class="body-item-title  text-uppercase text-gray">
+          Completed Projects
+        </div>
+        <div class="body-item-value text-outline">
+          3
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>

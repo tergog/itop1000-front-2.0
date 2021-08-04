@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { TrackerComponent } from './component/tracker.component';
 import { TrackerRoutingModule } from './tracker-routing.module';
+import { ButtonModule } from '../../../shared/custom-ui/button/button.module';
 
 @NgModule({
   declarations: [
@@ -10,7 +11,8 @@ import { TrackerRoutingModule } from './tracker-routing.module';
   ],
   imports: [
     CommonModule,
-    TrackerRoutingModule
+    TrackerRoutingModule,
+    ButtonModule
   ],
   exports: [
     TrackerComponent

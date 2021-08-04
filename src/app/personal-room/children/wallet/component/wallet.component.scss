@@ -31,12 +31,20 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    @include setFontParams($fontRajdhani, normal, 600,$landingMainTitleLineHeight);
+    @include setFontParams($fontRajdhani, normal, 600, $landingMainTitleLineHeight);
     font-size: $landingMainTitleFontSize;
+
+    .body__action {
+      display: inline-flex;
+
+      app-button {
+        display: inline-flex;
+      }
+    }
   }
 }
 
-.history{
+.history {
 
 }
 

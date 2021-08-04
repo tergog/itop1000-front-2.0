@@ -1,54 +1,53 @@
-<div class="projects">
+<div class="project-wrapper">
 
-  <div class="projects__header">
-    <div class="header-item">
-      <app-search-input [searchInputParameters]="projectsConfig.inputs.search"></app-search-input>
+  <section class="projects">
+
+    <div class="projects__header">
+      <div class="header-item">
+        <app-search-input [searchInputParameters]="projectsConfig.inputs.search"></app-search-input>
+      </div>
+      <div class="header-item">
+        <app-button [buttonParameters]="projectsConfig.buttons.selection"></app-button>
+
+        <app-button
+          *ngIf="!panelOpenState"
+          (click)="filterPanel.open()"
+          [buttonParameters]="projectsConfig.buttons.filter">
+        </app-button>
+
+        <app-button
+          *ngIf="panelOpenState"
+          (click)="filterPanel.close()"
+          [buttonParameters]="projectsConfig.buttons.filterClose">
+        </app-button>
+      </div>
     </div>
-    <div class="header-item">
-      <app-button [buttonParameters]="projectsConfig.buttons.selection"></app-button>
 
-      <app-button
-        *ngIf="!panelOpenState"
-        (click)="filterPanel.open()"
-        [buttonParameters]="projectsConfig.buttons.filter">
-      </app-button>
+    <div class="projects__filtration">
 
-      <app-button
-        *ngIf="panelOpenState"
-        (click)="filterPanel.close()"
-        [buttonParameters]="projectsConfig.buttons.filterClose">
-      </app-button>
+      <mat-expansion-panel #filterPanel
+                           (opened)="panelOpenState=true"
+                           (closed)="panelOpenState=false">
+        <form action="" [formGroup]="projectFormGroup">
+          <div class="filtration-item" *ngFor="let item of (projectsConfig.filtration | keyvalue)">
+
+            <app-filtration-card
+              [formGroupName]="$any(item.key)"
+              [type]="$any(item.key)"
+              [formControlName]="$any(item.key)">
+            </app-filtration-card>
+
+          </div>
+        </form>
+      </mat-expansion-panel>
+
     </div>
-  </div>
 
-  <div class="projects__filtration">
-
-    <mat-expansion-panel #filterPanel
-                         (opened)="panelOpenState=true"
-                         (closed)="panelOpenState=false">
-      <form action="" [formGroup]="projectFormGroup">
-        <div class="filtration-item" *ngFor="let item of (projectsConfig.filtration | keyvalue)">
-<!--          <app-filtration-card-->
-<!--            [filterValues]="$any(item.value)"-->
-<!--            [formGroupName]="$any(item.key)"-->
-<!--            [type]="$any(item.key)"-->
-<!--            [formControlName]="$any(item.key)">-->
-<!--          </app-filtration-card>         -->
-
-          <app-filtration-card
-            [formGroupName]="$any(item.key)"
-            [type]="$any(item.key)"
-            [formControlName]="$any(item.key)"></app-filtration-card>
-        </div>
-      </form>
-    </mat-expansion-panel>
-
-  </div>
-
-  <div class="projects__body">
-    <div class="body-item" *ngFor="let item of projectsList">
-      <app-project-card [projectCardParameters]="item"></app-project-card>
+    <div class="projects__body">
+      <div class="body-item" *ngFor="let item of projectsList">
+        <app-project-card [projectCardParameters]="item"></app-project-card>
+      </div>
     </div>
-  </div>
 
+  </section>
 </div>
