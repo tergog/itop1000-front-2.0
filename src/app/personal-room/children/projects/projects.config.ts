@@ -3,14 +3,14 @@ export const CProjectsConfigList = {
     search: {
       placeholder: 'Search project',
       label: '',
-      view: 'big'
+      view: 'medium'
     }
   },
   buttons: {
     selection: {
       text: 'Selection help',
       type: '',
-      view: 'medium',
+      view: 'small',
       disabled: false
     },
     filter: {

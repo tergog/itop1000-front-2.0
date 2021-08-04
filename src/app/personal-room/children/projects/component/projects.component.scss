@@ -6,8 +6,23 @@
     align-items: center;
     margin-bottom: 18px;
 
-    .header-item:first-child{
+    .header-item {
+      display: flex;
+      align-items: center;
+
+      app-search-input {
+        width: 100%;
+      }
+    }
+
+    .header-item:first-child {
       width: 60%;
+    }
+
+    .header-item:last-child {
+      display: flex;
+      justify-content: flex-end;
+      flex: 1 0 auto;
     }
   }
 

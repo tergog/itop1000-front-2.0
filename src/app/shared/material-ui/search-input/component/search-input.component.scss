@@ -35,6 +35,7 @@
     border: 1px solid transparent;
     max-width: 769px;
     max-height: 103px;
+    position: relative;
 
     input {
       font-size: $inputFontSize;
@@ -44,6 +45,20 @@
       box-sizing: border-box;
       border: none;
       transition: 0.5s all ease;
+    }
+  }
+
+  .item-input-search.search-medium{
+    max-height: 50px;
+
+    input {
+      max-height: 50px;
+    }
+
+    mat-icon{
+      position: absolute;
+      top:15px;
+      right: 30px;
     }
   }
 

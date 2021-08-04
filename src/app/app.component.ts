@@ -9,7 +9,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class AppComponent {
   public title = 'ITOP1000-FRONT2';
-  public svgList = ['wallet', 'projects', 'documents', 'support', 'tracker', 'personal', 'chat', 'completed', 'work', 'free', 'location', 'profile'];
+  public svgList = ['wallet', 'projects', 'documents', 'support', 'tracker', 'personal', 'chat', 'completed', 'work', 'free', 'location', 'profile', 'search'];
 
   constructor(
     private matIconRegistry: MatIconRegistry,
