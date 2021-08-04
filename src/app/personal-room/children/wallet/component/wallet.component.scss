@@ -1,0 +1,42 @@
+@import "src/assets/scss/mixins";
+
+.wallet {
+  section {
+    border-radius: 9px;
+    overflow: hidden;
+    margin-bottom: 11px;
+    width: 100%;
+  }
+
+  .section:last-child {
+    margin-bottom: 0;
+  }
+}
+
+
+.wallet-main {
+  &__header {
+    position: relative;
+
+    .link {
+      top: 24px;
+      right: 20px;
+      position: absolute;
+      text-transform: none !important;
+    }
+  }
+
+  &__body {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include setFontParams($fontRajdhani, normal, 600,$landingMainTitleLineHeight);
+    font-size: $landingMainTitleFontSize;
+  }
+}
+
+.history{
+
+}
+

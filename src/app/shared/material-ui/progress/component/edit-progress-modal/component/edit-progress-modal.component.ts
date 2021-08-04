@@ -13,8 +13,10 @@ export class EditProgressModalComponent {
   public EProgressModalType = EProgressType;
   public editProgressModalConfig = CEditProgressModalConfigList;
   public progressModalType: string;
+  public progressModalData: any;
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: any) {
     this.progressModalType = this.data.type;
+    this.progressModalData = this.data.formValues;
   }
 }

@@ -7,10 +7,14 @@
     <app-button [buttonParameters]="editProgressModalConfig.buttons.close" [mat-dialog-close]="false"></app-button>
   </div>
   <div class="progress-modal__body">
-    <app-edit-form-education *ngIf="progressModalType === EProgressModalType.Education">
+    <app-edit-form-education
+      [progressModalData]="progressModalData"
+      *ngIf="progressModalType === EProgressModalType.Education">
     </app-edit-form-education>
 
-    <app-edit-form-experience  *ngIf="progressModalType === EProgressModalType.Experience">
+    <app-edit-form-experience
+      [progressModalData]="progressModalData"
+      *ngIf="progressModalType === EProgressModalType.Experience">
     </app-edit-form-experience>
 
   </div>

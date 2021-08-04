@@ -1,6 +1,5 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 import { CEditProgressModalConfigList } from '../../edit-progress-modal.config';
 
@@ -9,20 +8,21 @@ import { CEditProgressModalConfigList } from '../../edit-progress-modal.config';
   templateUrl: './edit-form-education.component.html',
   styleUrls: ['./edit-form-education.component.scss']
 })
-export class EditFormEducationComponent {
+export class EditFormEducationComponent implements OnInit{
   public editModalFormGroup: FormGroup;
   public editProgressModalConfig = CEditProgressModalConfigList;
+  @Input() progressModalData: any;
 
-  constructor(
-    @Inject(MAT_DIALOG_DATA) public data: any,
-    private formBuilder: FormBuilder
-  ) {
+  constructor(private formBuilder: FormBuilder) {
+  }
+
+  ngOnInit(): void{
     this.editModalFormGroup = this.formBuilder.group({
-      educationName: this.formBuilder.control(this.data.formValues.companyName, [Validators.required]),
-      specialty: this.formBuilder.control(this.data.formValues.jobTitle, [Validators.required]),
-      educationDescription: this.formBuilder.control(this.data.formValues.jobDescription, [Validators.required]),
-      dateFrom: this.formBuilder.control(this.data.formValues.dateFrom, [Validators.required]),
-      dateTill: this.formBuilder.control(this.data.formValues.dateTill, [Validators.required]),
+      educationName: this.formBuilder.control(this.progressModalData.educationName, [Validators.required]),
+      specialty: this.formBuilder.control(this.progressModalData.specialty, [Validators.required]),
+      educationDescription: this.formBuilder.control(this.progressModalData.educationDescription, [Validators.required]),
+      dateFrom: this.formBuilder.control(this.progressModalData.dateFrom, [Validators.required]),
+      dateTill: this.formBuilder.control(this.progressModalData.dateTill, [Validators.required]),
     });
   }
 }

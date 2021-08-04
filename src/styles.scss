@@ -67,6 +67,9 @@ textarea:focus, input:focus {
   outline: none;
 }
 
+
+@import "assets/scss/mixins";
+
 a {
   outline: none;
   text-decoration: none;
@@ -81,11 +84,11 @@ a:visited,
 a:hover,
 a:focus,
 a:active {
+  color: inherit;
   outline: none;
   text-decoration: none;
 }
 
-@import "assets/scss/mixins";
 
 .container{
   margin: 0 auto;
@@ -162,6 +165,6 @@ a:active {
 .personal-room-item-body {
   box-sizing: border-box;
   width: 100%;
-  padding: 25px 119px 25px 119px;
+  padding: 25px 119px 45px 119px;
   background: $codGrayMiddle;  //#151515
 }

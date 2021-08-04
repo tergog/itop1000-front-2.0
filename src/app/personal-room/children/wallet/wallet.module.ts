@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { WalletComponent } from './component/wallet.component';
 import { WalletRoutingModule } from './wallet-routing.module';
+import { CustomUiModule } from '../../../shared/custom-ui/custom-ui.module';
 
 @NgModule({
   declarations: [
@@ -10,7 +11,8 @@ import { WalletRoutingModule } from './wallet-routing.module';
   ],
   imports: [
     CommonModule,
-    WalletRoutingModule
+    WalletRoutingModule,
+    CustomUiModule
   ],
   exports: [
     WalletComponent

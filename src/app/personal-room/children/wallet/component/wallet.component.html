@@ -1,1 +1,29 @@
-<p>wallet works!</p>
+<div class="wallet">
+
+  <section class="wallet-main">
+    <div class="wallet-main__header personal-room-item-header text-white text-uppercase">
+      Wallet
+      <div class="link text-ribbon"><a href="">Documents</a></div>
+    </div>
+
+    <div class="wallet-main__body personal-room-item-body">
+      <div class="body__total">
+        <span class="text-outline-gradient">$330</span>
+      </div>
+      <div class="body__action">
+        <app-button [buttonParameters]="walletConfig.buttons.withdraw"></app-button>
+      </div>
+    </div>
+  </section>
+
+  <section class="history">
+    <div class="history__header personal-room-item-header text-white text-uppercase">
+      History
+    </div>
+
+    <div class="history__body personal-room-item-body">
+
+    </div>
+  </section>
+
+</div>
