@@ -9,7 +9,14 @@ import { CWalletConfigList } from '../wallet.config';
 export class WalletComponent implements OnInit {
   public walletConfig = CWalletConfigList;
 
-  constructor() { }
+  historyList = [
+    { companyName: 'Company', date: 1628064901000, total: 40 },
+    { companyName: 'Company', date: 1628064901000, total: 50 },
+    { companyName: 'Company', date: 1628064901000, total: 320 }
+  ];
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

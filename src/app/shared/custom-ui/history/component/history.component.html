@@ -1,0 +1,14 @@
+<div class="history-item">
+    <div class="history-item__total text-outline">
+      {{ historyParameters.total }} USD
+    </div>
+
+    <div class="history-item__info text-white">
+      <div class="info-name">
+        <span>Company: </span><span class="text-gray">{{ historyParameters.companyName }}</span>
+      </div>
+      <div class="info-date">
+        <span>Date and time: </span><span class="text-gray">{{ historyParameters.date | date:'d MMM y h:mm' }}</span>
+      </div>
+    </div>
+</div>

@@ -22,7 +22,7 @@
     </div>
 
     <div class="history__body personal-room-item-body">
-
+      <app-history *ngFor="let item of historyList" [historyParameters]="item"></app-history>
     </div>
   </section>
 

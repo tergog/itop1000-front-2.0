@@ -18,7 +18,7 @@ import { MoneyFormatInputDirective } from '../../directives/money-format-input/m
 import { SkillGradeComponent } from './skill-grade/skill-grade.component';
 import { UserCardComponent } from './user-card/component/user-card.component';
 import { MatIconModule } from '@angular/material/icon';
-import { LanguageModule } from './language/language.module';
+import { HistoryComponent } from './history/component/history.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +31,8 @@ import { LanguageModule } from './language/language.module';
     SocialListComponent,
     MoneyFormatInputDirective,
     SkillGradeComponent,
-    UserCardComponent
+    UserCardComponent,
+    HistoryComponent
   ],
   imports: [
     CommonModule,
@@ -54,7 +55,8 @@ import { LanguageModule } from './language/language.module';
     SocialListComponent,
     CustomTooltipModule,
     SkillGradeComponent,
-    UserCardComponent
+    UserCardComponent,
+    HistoryComponent
   ]
 })
 export class CustomUiModule {
