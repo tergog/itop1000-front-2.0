@@ -2,7 +2,11 @@
   <div class="works-comment__header personal-room-item-header text-white text-uppercase">
     Comments
 
-    <app-button [buttonParameters]="worksConfig.buttons.add"></app-button>
+    <app-button
+      *ngIf="!panelOpenState"
+      (click)="addCommentPanel.open()"
+      [buttonParameters]="worksConfig.buttons.add">
+    </app-button>
   </div>
 
   <div class="works-comment__body personal-room-item-body">
@@ -13,4 +17,42 @@
     </div>
 
   </div>
+
+</section>
+
+
+<section class="works-comment-add">
+  <mat-expansion-panel #addCommentPanel
+                       (opened)="panelOpenState=true"
+                       (closed)="panelOpenState=false">
+    <form action="" [formGroup]="commentFormGroup">
+      <div class="works-comment-add__header personal-room-item-header text-white text-uppercase">
+        Comment
+      </div>
+
+      <div class="works-comment-add__body personal-room-item-body">
+        <form action="" [formGroup]="commentFormGroup">
+          <div class="works-comment-add__item">
+            <app-input
+              formControlName="comment"
+              [control]="commentFormGroup.controls.comment"
+              [inputParameters]="worksConfig.inputs.comment">
+            </app-input>
+          </div>
+          <div class="works-comment-add__item">
+            <app-button
+              (click)="addCommentPanel.close()"
+              [buttonParameters]="worksConfig.buttons.cancel">
+            </app-button>
+            <app-button
+              (click)="addCommentPanel.close()"
+              [buttonParameters]="worksConfig.buttons.confirm">
+            </app-button>
+          </div>
+
+        </form>
+
+      </div>
+    </form>
+  </mat-expansion-panel>
 </section>

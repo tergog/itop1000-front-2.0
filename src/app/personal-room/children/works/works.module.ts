@@ -7,6 +7,8 @@ import { ProjectCardModule } from '../../../shared/project-card/project-card.mod
 import { WorksListComponent } from './children/works-list/works-list.component';
 import { WorksCommentComponent } from './children/works-comment/works-comment.component';
 import { CustomUiModule } from '../../../shared/custom-ui/custom-ui.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { CustomUiModule } from '../../../shared/custom-ui/custom-ui.module';
     CommonModule,
     WorksRoutingModule,
     ProjectCardModule,
-    CustomUiModule
+    CustomUiModule,
+    ReactiveFormsModule,
+    MatExpansionModule
   ],
   exports: [
     WorksComponent

@@ -5,6 +5,26 @@ export const CWorksConfigList = {
       type: '',
       view: 'add',
       disabled: false
+    },
+    confirm: {
+      text: 'Confirm',
+      type: '',
+      view: 'small-fill',
+      disabled: false
+    },
+    cancel: {
+      text: 'Cancel',
+      type: '',
+      view: 'small-empty',
+      disabled: false
+    }
+  },
+  inputs: {
+    comment: {
+      placeholder: 'Enter comment',
+      type: 'textarea',
+      label: 'Comment',
+      error: ''
     }
   }
 };
