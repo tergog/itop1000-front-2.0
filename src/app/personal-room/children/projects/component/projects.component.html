@@ -7,7 +7,10 @@
         <app-search-input [searchInputParameters]="projectsConfig.inputs.search"></app-search-input>
       </div>
       <div class="header-item">
-        <app-button [buttonParameters]="projectsConfig.buttons.selection"></app-button>
+        <app-button
+          (click)="openSelectionHelpModal()"
+          [buttonParameters]="projectsConfig.buttons.selection">
+        </app-button>
 
         <app-button
           *ngIf="!panelOpenState"

@@ -2,6 +2,8 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 import { CProjectsConfigList } from '../projects.config';
+import { MatDialog } from '@angular/material/dialog';
+import { SelectionHelpModalComponent } from '../children/selection-help-modal/component/selection-help-modal.component';
 
 @Component({
   selector: 'app-projects',
@@ -14,12 +16,19 @@ export class ProjectsComponent {
   public panelOpenState = false;
   public projectFormGroup: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
-    this.projectFormGroup  = this.formBuilder.group({
+  constructor(
+    private formBuilder: FormBuilder,
+    private dialog: MatDialog
+  ) {
+    this.projectFormGroup = this.formBuilder.group({
       type: this.formBuilder.control(this.projectsConfig.filtration.type),
       skills: this.formBuilder.control(this.projectsConfig.filtration.skills),
       languages: this.formBuilder.control(this.projectsConfig.filtration.languages)
     });
+  }
+
+  openSelectionHelpModal(): void {
+    this.dialog.open(SelectionHelpModalComponent);
   }
 
   projectsList = [
