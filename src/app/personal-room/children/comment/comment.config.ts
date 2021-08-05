@@ -1,4 +1,4 @@
-export const CWorksConfigList = {
+export const CCommentConfigList = {
   buttons: {
     add: {
       text: 'Add',

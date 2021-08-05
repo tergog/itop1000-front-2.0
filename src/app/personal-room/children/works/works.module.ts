@@ -9,6 +9,7 @@ import { WorksCommentComponent } from './children/works-comment/works-comment.co
 import { CustomUiModule } from '../../../shared/custom-ui/custom-ui.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { CommentModule } from '../comment/comment.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
     ProjectCardModule,
     CustomUiModule,
     ReactiveFormsModule,
-    MatExpansionModule
+    MatExpansionModule,
+    CommentModule
   ],
   exports: [
     WorksComponent
