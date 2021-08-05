@@ -1,0 +1,16 @@
+<section class="works-comment">
+  <div class="works-comment__header personal-room-item-header text-white text-uppercase">
+    Comments
+
+    <app-button [buttonParameters]="worksConfig.buttons.add"></app-button>
+  </div>
+
+  <div class="works-comment__body personal-room-item-body">
+
+    <div *ngFor="let comment of commentList"
+         class="works-comment__item">
+      <app-comment-card [commentCardParameters]="comment"></app-comment-card>
+    </div>
+
+  </div>
+</section>

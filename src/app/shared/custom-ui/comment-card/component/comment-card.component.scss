@@ -1,0 +1,29 @@
+@import "src/assets/scss/mixins";
+
+.comment-card {
+  box-sizing: border-box;
+  max-width: 300px;
+  border-radius: 9px;
+  background: $codGray;
+  padding: 14px;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    .header-date {
+      @include setFontParams($fontWorkSans, normal, 300, $textLineHeight);
+      font-size: $smallTextFontSize;
+    }
+  }
+
+  &__body {
+    @include setFontParams($fontRaleway, normal, 400, $subTitleLineHeight);
+    font-size: $smallTextFontSize;
+
+    .body-name {
+      margin: 10px 0;
+    }
+  }
+}

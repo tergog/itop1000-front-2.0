@@ -1,0 +1,35 @@
+section.works-comment {
+  border-radius: 9px;
+  overflow: hidden;
+  margin-bottom: 11px;
+  width: 100%;
+}
+
+section.works-comment:last-child {
+  margin-bottom: 0;
+}
+
+
+.works-comment {
+  &__header {
+    position: relative;
+
+    app-button {
+      text-transform: none;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+  }
+
+  &__body{
+    padding: 25px 70px 45px 70px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+
+  &__item{
+    margin-bottom: 10px;
+  }
+}

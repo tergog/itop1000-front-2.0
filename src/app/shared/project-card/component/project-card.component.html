@@ -52,7 +52,7 @@
             *ngIf="projectCardParameters.status === EProjectCardStatus.Development"
             [buttonParameters]="projectCardConfig.buttons.close"></app-button>
           <a *ngIf="projectCardParameters.status !== EProjectCardStatus.Development"
-             href="">Comment</a>
+            [routerLink]="['comment']">Comment</a>
         </div>
       </div>
     </div>

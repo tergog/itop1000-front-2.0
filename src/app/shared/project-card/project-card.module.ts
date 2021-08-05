@@ -4,6 +4,7 @@ import { MatIconModule } from '@angular/material/icon';
 
 import { ProjectCardComponent } from './component/project-card.component';
 import { ButtonModule } from '../custom-ui/button/button.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { ButtonModule } from '../custom-ui/button/button.module';
     CommonModule,
     ButtonModule,
     MatIconModule,
+    RouterModule,
   ],
   exports: [
     ProjectCardComponent

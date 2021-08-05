@@ -1,6 +1,9 @@
 <app-header></app-header>
 <div class="personal-room">
   <div class="container">
+    <app-breadcrumbs></app-breadcrumbs>
+  </div>
+  <div class="container">
     <aside>
       <app-user-card [userCardParameters]="personalRoomConfig.role.freelancer"></app-user-card>
       <app-navigation [navigationParameters]="personalRoomConfig.navigation"></app-navigation>

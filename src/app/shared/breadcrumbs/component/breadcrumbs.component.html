@@ -1,1 +1,19 @@
-<p>breadcrumbs works!</p>
+<div class="breadcrumbs">
+  <a class="breadcrumbs__item"
+     [routerLink]="['home']"
+     [ngClass]="{
+     tree: breadcrumbsRoutes.length > 1 || breadcrumbsRoutes[0] !== 'home'
+     }">
+    <span class="text-ribbon">Home</span>
+  </a>
+  <ng-container *ngFor="let route of breadcrumbsRoutes">
+<!--    <div class="breadcrumbs__arrow"><img src="/assets/img/icons/breadcrumbs-arrow.svg" alt="breadcrumbs-arrow"></div>-->
+    <a *ngIf="route!=='home'" class="breadcrumbs__item" [routerLink]="[route]"
+       [ngClass]="{
+     'tree-child': breadcrumbsRoutes[0] !== 'home'
+     }">
+      <span class="text-ribbon">{{ route }}</span>
+    </a>
+  </ng-container>
+
+</div>

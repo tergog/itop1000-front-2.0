@@ -19,6 +19,7 @@ import { SkillGradeComponent } from './skill-grade/skill-grade.component';
 import { UserCardComponent } from './user-card/component/user-card.component';
 import { MatIconModule } from '@angular/material/icon';
 import { HistoryComponent } from './history/component/history.component';
+import { CommentCardComponent } from './comment-card/component/comment-card.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { HistoryComponent } from './history/component/history.component';
     MoneyFormatInputDirective,
     SkillGradeComponent,
     UserCardComponent,
-    HistoryComponent
+    HistoryComponent,
+    CommentCardComponent
   ],
   imports: [
     CommonModule,
@@ -56,7 +58,8 @@ import { HistoryComponent } from './history/component/history.component';
     CustomTooltipModule,
     SkillGradeComponent,
     UserCardComponent,
-    HistoryComponent
+    HistoryComponent,
+    CommentCardComponent
   ]
 })
 export class CustomUiModule {

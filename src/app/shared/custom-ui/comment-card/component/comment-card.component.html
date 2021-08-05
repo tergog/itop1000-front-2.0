@@ -1,0 +1,18 @@
+<div class="comment-card">
+  <div class="comment-card__header">
+    <div class="header-photo">
+      <img [src]="commentCardParameters.photo" alt="user-photo">
+    </div>
+    <div class="header-date text-gray">
+      {{ commentCardParameters.date | date: 'd MMMM' }}
+    </div>
+  </div>
+  <div class="comment-card__body">
+    <div class="body-name text-uppercase text-white">
+      {{ commentCardParameters.name }} {{ commentCardParameters.lastName }}
+    </div>
+    <div class="body-comment text-gray">
+      {{ commentCardParameters.comment }}
+    </div>
+  </div>
+</div>

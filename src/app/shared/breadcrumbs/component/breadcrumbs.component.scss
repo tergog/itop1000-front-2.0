@@ -1,0 +1,59 @@
+@import "src/assets/scss/mixins";
+
+.breadcrumbs {
+  display: flex;
+  margin: 20px 0;
+
+  &__item {
+    @include setFontParams($fontRaleway, normal, 500, $subTitleLineHeight);
+    font-size: $smallTextFontSize;
+    text-transform: capitalize;
+    border-radius: 9px;
+    cursor: pointer;
+    box-sizing: border-box;
+    padding: 15px 35px;
+    background: $codGrayMiddle;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__item.tree{
+    border-radius: 9px 0 0 9px;
+  }
+
+  &__item.tree-child{
+    border-radius: 0 9px 9px 0;
+
+  }
+
+  &__arrow{
+    background: $codGrayMiddle;
+  }
+
+  &__item::before{
+    position: absolute;
+    content: '';
+    display: inline-flex;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 17px;
+    background: url("/assets/img/icons/breadcrumbs-arrow.svg") no-repeat;
+    background-size: cover;
+  }
+
+  &__item:first-child::before {
+    position: inherit;
+    content: '';
+    display: inline-flex;
+    margin-right: 10px;
+    width: 15px;
+    height: 12px;
+    background: url("/assets/img/icons/home.svg") no-repeat;
+    background-size: contain;
+  }
+
+
+}

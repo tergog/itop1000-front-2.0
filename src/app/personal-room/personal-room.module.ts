@@ -7,6 +7,7 @@ import { CustomUiModule } from '../shared/custom-ui/custom-ui.module';
 import { NavigationModule } from '../shared/navigation/navigation.module';
 import { HeaderModule } from '../shared/header/header.module';
 import { FooterModule } from '../shared/footer/footer.module';
+import { BreadcrumbsModule } from '../shared/breadcrumbs/breadcrumbs.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FooterModule } from '../shared/footer/footer.module';
     CustomUiModule,
     NavigationModule,
     HeaderModule,
-    FooterModule
+    FooterModule,
+    BreadcrumbsModule
   ],
   exports: [
     PersonalRoomComponent
