@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
 import { BehaviorSubject, interval, Subject, Subscription } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
@@ -14,7 +14,7 @@ import { animateText } from 'src/app/animations/animations';
   changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [animateText]
 })
-export class LandingComponent implements OnInit, AfterViewInit {
+export class LandingComponent {
   public landingData$: BehaviorSubject<ILandingData>;
   public ELandingRole = ELandingRole;
   public loader = true;
@@ -39,12 +39,4 @@ export class LandingComponent implements OnInit, AfterViewInit {
         }
       });
   }
-
-  ngOnInit(): void {
-
-  }
-
-  ngAfterViewInit(): void {
-  }
-
 }

@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
@@ -19,7 +19,7 @@ import {
   templateUrl: './authorization-form.component.html',
   styleUrls: ['./authorization-form.component.scss']
 })
-export class AuthorizationFormComponent implements OnInit, OnDestroy {
+export class AuthorizationFormComponent implements OnDestroy {
 
   public tooltipParameters = {
     text: 'There is a mistake, please, check and enter the correct data',
@@ -60,9 +60,6 @@ export class AuthorizationFormComponent implements OnInit, OnDestroy {
       password: this.formBuilder.control('', [Validators.required, Validators.minLength(6)]),
       remember: this.formBuilder.control(false, [Validators.required])
     });
-  }
-
-  ngOnInit(): void {
   }
 
   openAcceptRuleDialog(event: any, view: string): void {

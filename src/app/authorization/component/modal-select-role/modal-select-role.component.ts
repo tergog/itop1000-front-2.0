@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './modal-select-role.component.html',
   styleUrls: ['./modal-select-role.component.scss']
 })
-export class ModalSelectRoleComponent implements OnInit {
+export class ModalSelectRoleComponent{
 
   public modalParameters = {
     button: {
@@ -15,10 +15,4 @@ export class ModalSelectRoleComponent implements OnInit {
       disabled: false
     }
   };
-
-  constructor() {
-  }
-
-  ngOnInit(): void {
-  }
 }
