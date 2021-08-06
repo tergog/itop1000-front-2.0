@@ -1,19 +1,19 @@
 @import "src/assets/scss/variables";
 
 .arrow-down {
-  svg g path, svg circle{
-    transition: 0.5s all ease;
+  mat-icon {
+    width: 78px;
+    height: 78px;
+    color: $gray;
+  }
+
+  mat-icon:hover{
+    color: $brightGray;
   }
 }
 
 .arrow-down:hover {
-  svg g path {
-    fill: $brightGray;
-    transition: 1s all ease;
-  }
-
-  svg circle {
-    stroke: $brightGray;
-    transition: 1s all ease;
+  mat-icon {
+    color: $brightGray;
   }
 }

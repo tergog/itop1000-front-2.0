@@ -1,15 +1,15 @@
 import { ComponentRef, Directive, ElementRef, HostListener, Input, OnInit } from '@angular/core';
 import { Overlay, OverlayPositionBuilder, OverlayRef } from '@angular/cdk/overlay';
 import { ComponentPortal } from '@angular/cdk/portal';
-
-import { CustomTooltipComponent } from '../component/custom-tooltip.component';
 import { fromEvent, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
-@Directive({ selector: '[tooltip]' })
+import { CustomTooltipComponent } from '../component/custom-tooltip.component';
+
+@Directive({ selector: '[appTooltip]' })
 export class CustomTooltipDirective implements OnInit {
 
-  @Input('tooltip') tooltipParameters: { text: string, link: string, status: boolean };
+  @Input('appTooltip') tooltipParameters: { text: string, link: string, status: boolean };
   private overlayRef: OverlayRef;
 
   constructor(private overlay: Overlay,

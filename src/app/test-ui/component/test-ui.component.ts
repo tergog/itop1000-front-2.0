@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-test-ui',
   templateUrl: './test-ui.component.html',
   styleUrls: ['./test-ui.component.scss']
 })
-export class TestUiComponent implements OnInit {
+export class TestUiComponent {
 
   public obgProjectCardParameters = {
     free: {
@@ -345,13 +345,6 @@ export class TestUiComponent implements OnInit {
       disabled: false
     },
   };
-
-  constructor() {
-  }
-
-  ngOnInit(): void {
-  }
-
 
   tooltipShow(): void {
     this.tooltipParameters.status = true;

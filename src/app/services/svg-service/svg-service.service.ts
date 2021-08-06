@@ -21,7 +21,18 @@ export class SvgServiceService {
     'location',
     'profile',
     'search',
-    'developers'
+    'developers',
+    'apple',
+    'facebook',
+    'facebook-empty',
+    'google',
+    'instagram',
+    'linkedin',
+    'tiktok',
+    'dollar',
+    'calendar',
+    'arrow-down',
+    'arrow-down-select'
   ];
 
   constructor(
