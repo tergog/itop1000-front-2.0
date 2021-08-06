@@ -96,7 +96,8 @@ button.btn {
   }
 
   &__medium {
-    padding: $mediumButtonPadding;
+    min-width: 214px;
+    //padding: $mediumButtonPadding;
     @include setButtonSize($mediumButtonLineHeight, $mediumButtonFontSize);
   }
 

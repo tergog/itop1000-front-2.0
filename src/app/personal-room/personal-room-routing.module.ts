@@ -44,10 +44,6 @@ const routes: Routes = [
         loadChildren: () => import('./children/developers/developers.module').then(m => m.DevelopersModule)
       },
       {
-        path: 'contracts',
-        loadChildren: () => import('./children/contracts/contracts.module').then(m => m.ContractsModule)
-      },
-      {
         path: '**',
         redirectTo: 'home'
       }
