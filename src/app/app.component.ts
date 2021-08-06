@@ -7,5 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ITOP1000-FRONT2';
+  test = "test"
 
+  constructor() {
+  }
 }

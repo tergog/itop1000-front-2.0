@@ -108,10 +108,9 @@
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "eslintConfig": ".eslintrc.json",
             "lintFilePatterns": [
               "src/**/*.ts",
-              "src/**/*.component.html"
+              "src/**/*.html"
             ]
           }
         },
@@ -130,5 +129,8 @@
       }
     }
   },
-  "defaultProject": "ITOP1000-FRONT2"
+  "defaultProject": "ITOP1000-FRONT2",
+  "cli": {
+    "defaultCollection": "@angular-eslint/schematics"
+  }
 }

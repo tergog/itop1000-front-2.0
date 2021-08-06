@@ -13,8 +13,8 @@
       },
       "extends": [
         "plugin:@angular-eslint/recommended",
-        "plugin:@angular-eslint/template/process-inline-templates",
-        "airbnb-typescript/base"
+        "plugin:@angular-eslint/template/process-inline-templates"
+//        "airbnb-typescript/base"
       ],
       "rules": {
         /**
@@ -28,7 +28,8 @@
         "@angular-eslint/component-selector": [
           "error",
           { "type": "element", "prefix": "app", "style": "kebab-case" }
-        ]
+        ],
+        "linebreak-style": 0
       }
     },
     {
