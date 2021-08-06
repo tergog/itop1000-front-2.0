@@ -1,0 +1,35 @@
+import { Action } from '@ngrx/store';
+
+import { UserDataActions, userDataActionsType } from './user-data.actions';
+import { IUserDataState } from './user-data.interfaces';
+
+export const userDataNode = 'userData';
+
+const signUpState: IUserDataState = {
+  email: '',
+  firstName: '',
+  lastName: '',
+  password: '',
+  category: '',
+  subcategory: '',
+  skills: [],
+  experience: [],
+  rate: 0
+};
+
+export const userDataReducer = (state = signUpState, action: Action): IUserDataState => {
+  const userDataActions = action as UserDataActions;
+  switch (userDataActions.type) {
+    case userDataActionsType.setUserData:
+      return {
+        ...state,
+        ...userDataActions.payload.data
+      };
+    case userDataActionsType.editUserData:
+      return {
+        ...state
+      };
+    default:
+      return state;
+  }
+};

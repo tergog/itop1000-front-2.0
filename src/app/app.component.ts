@@ -1,13 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
+import { ItopDataService } from './services/itop-data/itop-data.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   public title = 'ITOP1000-FRONT2';
   public svgList = [
     'wallet',
@@ -23,13 +24,13 @@ export class AppComponent {
     'location',
     'profile',
     'search',
-    'developers',
-    'contracts'
+    'developers'
   ];
 
   constructor(
     private matIconRegistry: MatIconRegistry,
-    private domSanitizer: DomSanitizer
+    private domSanitizer: DomSanitizer,
+    private staticData: ItopDataService
   ) {
     this.svgList.forEach((item: string) => {
       this.matIconRegistry.addSvgIcon(
@@ -37,5 +38,9 @@ export class AppComponent {
         this.domSanitizer.bypassSecurityTrustResourceUrl(`/assets/img/icons/${item}.svg`)
       );
     });
+  }
+
+  ngOnInit(): void{
+    this.staticData.getStaticData();
   }
 }
