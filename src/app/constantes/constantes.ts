@@ -1,6 +1,6 @@
 import { ELandingRole } from '../landing/landing.enums';
 import { EStepperType } from '../shared/stepper/stepper.enums';
-import { EModalAcceptRuleView } from '../authorization/component/modal-accept-rule/modal-accept-rule.enums';
+import { EModalAcceptRuleView } from '../authorization/children/modal-accept-rule/modal-accept-rule.enums';
 
 export const CApi = {
   server: 'https://localhost:3000/',

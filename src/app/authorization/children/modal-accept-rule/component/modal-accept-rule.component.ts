@@ -1,9 +1,9 @@
 import { Component, Inject, OnInit } from '@angular/core';
 
-import { EModalAcceptRuleView } from './modal-accept-rule.enums';
+import { EModalAcceptRuleView } from '../modal-accept-rule.enums';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { CModalAcceptRuleData } from '../../../constantes/constantes';
-import { IModalAcceptRuleData } from './modal-accept-rule.interfaces';
+import { CModalAcceptRuleData } from '../../../../constantes/constantes';
+import { IModalAcceptRuleData } from '../modal-accept-rule.interfaces';
 
 @Component({
   selector: 'app-modal-accept-rule',

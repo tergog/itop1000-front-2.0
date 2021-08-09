@@ -6,7 +6,7 @@ import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
 import { CAuthorizationData } from '../../../constantes/constantes';
-import { ModalAcceptRuleComponent } from '../modal-accept-rule/modal-accept-rule.component';
+import { ModalAcceptRuleComponent } from '../modal-accept-rule/component/modal-accept-rule.component';
 import { EModalAcceptRuleView } from '../modal-accept-rule/modal-accept-rule.enums';
 import { AuthorizationDataService } from '../../services/authorization-data/authorization-data.service';
 import {
