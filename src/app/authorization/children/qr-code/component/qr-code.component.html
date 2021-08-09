@@ -20,5 +20,8 @@
   </div>
 </div>
 <div class="qr-code-action">
-  <app-button [buttonParameters]="qrCodeConfig.buttons.next"></app-button>
+  <app-button
+    (click)="goToAuthentication()"
+    [buttonParameters]="qrCodeConfig.buttons.next">
+  </app-button>
 </div>

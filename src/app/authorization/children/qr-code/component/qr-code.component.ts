@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { CQRCodeConfigList } from '../qr-code.config';
 import { getSignInData, IState } from '../../../../reducers';
 import { ISignInState } from '../../../../reducers/sign-in/sign-in.interfaces';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-qr-code',
@@ -16,7 +17,14 @@ export class QrCodeComponent {
   public signInData: Observable<ISignInState>;
   public token =  localStorage.getItem('token');
 
-  constructor(private store: Store<IState>) {
+  constructor(
+    private router: Router,
+    private store: Store<IState>
+  ) {
     this.signInData = this.store.select(getSignInData);
+  }
+
+  goToAuthentication(): void {
+    this.router.navigate(['/authorization/authentication'])
   }
 }

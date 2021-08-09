@@ -1,0 +1,56 @@
+@import "src/assets/scss/mixins";
+
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  label{
+    @include setFontParams($fontRaleway, normal, 600, $textLineHeight);
+    font-size: $bigTextFontSize;
+    margin-bottom: 10px;
+  }
+
+  .input-auth {
+    display: flex;
+  }
+
+  .input-auth-item {
+    background: linear-gradient($codGray, $codGray) padding-box,
+    $goldGradient border-box;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    max-width: 33px;
+    min-height: 38px;
+    box-sizing: border-box;
+    margin-right: 6px;
+
+    input {
+      padding: 33.333%;
+      border-radius: 10px;
+      width: 100%;
+      height: 38px;
+      color: $white;
+      background: $mineShaft;
+      box-sizing: border-box;
+      border: none;
+      transition: 0.5s all ease;
+      font-size: $inputFontSize;
+    }
+  }
+
+  .input-auth-item.focus{
+    border-color: $malibu;
+  }
+
+
+  .input-auth-item:last-child {
+    margin-right: 0;
+  }
+}
+
+.hidden{
+  width: 0;
+  height: 0;
+  opacity: 0;
+  position: absolute;
+}

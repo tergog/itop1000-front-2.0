@@ -15,6 +15,8 @@ import { ModalAcceptRuleComponent } from './children/modal-accept-rule/component
 import { QrCodeComponent } from './children/qr-code/component/qr-code.component';
 import { AuthenticationComponent } from './children/authentication/authentication.component';
 import { WaitingComponent } from './children/waiting/waiting.component';
+import { InputAuthenticationModule } from '../shared/custom-ui/input-authentication/input-authentication.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { WaitingComponent } from './children/waiting/waiting.component';
     StepperModule,
     MaterialUiModule,
     MatDialogModule,
-    ReactiveComponentModule
+    FormsModule,
+    ReactiveComponentModule,
+    InputAuthenticationModule
   ],
   exports: [
     AuthorizationComponent
