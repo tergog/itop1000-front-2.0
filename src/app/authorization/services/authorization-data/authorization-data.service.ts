@@ -1,10 +1,15 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
+
 import { getSignUpData, IState } from '../../../reducers';
 import { SetSignUpStateAction } from '../../../reducers/sign-up/sign-up.actions';
 import { ISignUpState } from '../../../reducers/sign-up/sign-up.interfaces';
-import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
+import { CApi } from '../../../constantes/constantes';
+import { Router } from '@angular/router';
+import { SetSignInStateAction } from '../../../reducers/sign-in/sign-in.actions';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +19,11 @@ export class AuthorizationDataService implements OnDestroy {
   public userData: any;
   public unsubscribe$ = new Subject<void>();
 
-  constructor(private store: Store<IState>) {
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+    private store: Store<IState>
+  ) {
     this.userData$
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe(data => this.userData = data);
@@ -26,8 +35,19 @@ export class AuthorizationDataService implements OnDestroy {
     this.store.dispatch(new SetSignUpStateAction({ data }));
   }
 
-  setSignInData(userData: { email: string, password: string }): void {
-
+  setSignInData(signInData: { email: string, password: string }): void {
+    const { email, password } = signInData;
+    this.http.post(CApi.server + CApi.auth.signIn.default, { email, password })
+      .pipe()
+      .subscribe((res: any): void => {
+        if (res.qrcode) {
+          this.store.dispatch(new SetSignInStateAction({ data: { qrCode: res.qrcode, token: res.token } }));
+          localStorage.setItem('token', res.token);
+          this.router.navigate(['/authorization/qr-code']);
+        } else {
+          this.router.navigate(['/authorization/authentication']);
+        }
+      });
   }
 
   setStepperData(stepperData: any): void {

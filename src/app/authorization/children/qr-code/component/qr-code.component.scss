@@ -1,0 +1,44 @@
+@import "src/assets/scss/mixins";
+
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .qr-code {
+    &-title {
+      @include setFontParams($fontRaleway, normal, 500, $subTitleLineHeight);
+      font-size: $titleFontSize;
+      margin-bottom: 10px;
+    }
+
+    &-subtitle {
+      @include setFontParams($fontRaleway, normal, 400, $textLineHeight);
+      font-size: $bigTextFontSize;
+      margin-bottom: 50px;
+    }
+
+    &-content {
+      margin-bottom: 65px;
+    }
+
+    &-links {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 125px;
+
+      .links-item a img {
+        max-width: 212px;
+      }
+
+      .links-item:first-child{
+        margin-right: 34px;
+      }
+    }
+
+    &-action {
+
+    }
+  }
+}

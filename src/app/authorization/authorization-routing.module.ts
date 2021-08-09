@@ -3,6 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AuthorizationComponent } from './component/authorization.component';
 import { AuthorizationFormComponent } from './children/authorization-form/authorization-form.component';
+import { WaitingComponent } from './children/waiting/waiting.component';
+import { AuthenticationComponent } from './children/authentication/authentication.component';
+import { QrCodeComponent } from './children/qr-code/component/qr-code.component';
 
 const routes: Routes = [
   {
@@ -21,6 +24,18 @@ const routes: Routes = [
       {
         path: 'info',
         loadChildren: () => import('src/app/shared/stepper/stepper.module').then(m => m.StepperModule)
+      },
+      {
+        path: 'qr-code',
+        component: QrCodeComponent
+      },
+      {
+        path: 'authentication',
+        component: AuthenticationComponent
+      },
+      {
+        path: 'waiting',
+        component: WaitingComponent
       }
     ]
   }

@@ -56,8 +56,8 @@ export class AuthorizationFormComponent implements OnDestroy {
       ]
     });
     this.signInFormGroup = this.formBuilder.group({
-      email: this.formBuilder.control('', [Validators.required]),
-      password: this.formBuilder.control('', [Validators.required, Validators.minLength(6)]),
+      email: this.formBuilder.control('user@gmail.com', [Validators.required]),
+      password: this.formBuilder.control('lslslslsls', [Validators.required, Validators.minLength(6)]),
       remember: this.formBuilder.control(false, [Validators.required])
     });
   }
@@ -80,8 +80,8 @@ export class AuthorizationFormComponent implements OnDestroy {
 
   signIn(): void {
     if (this.signInFormGroup.valid) {
-      this.authorizationData.setSignInData(this.signUpFormGroup.value);
-      // this.router.navigate(['/authorization/info']);
+      this.authorizationData.setSignInData(this.signInFormGroup.value);
+      this.router.navigate(['/authorization/authentication']);
     } else {
       this.signInValidation = true;
     }

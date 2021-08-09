@@ -1,1 +1,24 @@
-<p>qr-code works!</p>
+<div class="qr-code-title text-uppercase text-white">
+  QR-code
+</div>
+<div class="qr-code-subtitle text-gray">
+  Google Authenticator
+</div>
+<div class="qr-code-content">
+  <img [src]="(signInData | ngrxPush).qrCode" alt="qr-code">
+</div>
+<div class="qr-code-links">
+  <div class="links-item">
+    <a href="">
+      <img src="/assets/img/app-store.png" alt="app-store">
+    </a>
+  </div>
+  <div class="links-item">
+    <a href="">
+      <img src="/assets/img/google-play.png" alt="google-play">
+    </a>
+  </div>
+</div>
+<div class="qr-code-action">
+  <app-button [buttonParameters]="qrCodeConfig.buttons.next"></app-button>
+</div>
