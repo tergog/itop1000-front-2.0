@@ -16,13 +16,24 @@ export const CHeaderConfigList = {
       view: 'sign-up',
       disabled: false,
       href: 'authorization'
+    },
+    logout:{
+      text: 'Log Out',
+      type: '',
+      view: 'login',
+      disabled: false
+    },
+    notification: {
+      text: '',
+      type: '',
+      view: 'notification',
+      disabled: false,
+      href: 'notification'
     }
   },
   navigation: {
     view: 'header',
     links: [
-      { text: 'Projects', href: 'projects', icon: '' },
-      { text: 'Chat', href: 'chat', icon: '' },
       { text: 'About us', href: 'about', icon: '' },
       { text: 'Support / FAQ', href: 'support', icon: '' }
     ]

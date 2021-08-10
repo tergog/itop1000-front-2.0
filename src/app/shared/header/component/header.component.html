@@ -7,8 +7,21 @@
      <app-navigation [navigationParameters]="headerConfig.navigation"></app-navigation>
     </div>
     <div class="login">
-      <app-button [buttonParameters]="headerConfig.buttons.login"></app-button>
-      <app-button [buttonParameters]="headerConfig.buttons.signUp"></app-button>
+      <app-button
+        *ngIf="!statusUser"
+        [buttonParameters]="headerConfig.buttons.login"></app-button>
+      <app-button
+        *ngIf="!statusUser"
+        [buttonParameters]="headerConfig.buttons.signUp"></app-button>
+
+      <app-button
+        *ngIf="statusUser"
+        [buttonParameters]="headerConfig.buttons.notification">
+      </app-button>
+      <app-button
+        *ngIf="statusUser"
+        [buttonParameters]="headerConfig.buttons.logout">
+      </app-button>
     </div>
   </div>
 </header>

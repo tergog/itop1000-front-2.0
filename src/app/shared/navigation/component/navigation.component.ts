@@ -4,7 +4,6 @@ import { BehaviorSubject } from 'rxjs';
 import { INavigationParameters } from '../navigation.interfaces';
 import { ENavigationView } from '../navigation.enums';
 import { ItopDataService } from '../../../services/itop-data/itop-data.service';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-navigation',
@@ -13,13 +12,13 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class NavigationComponent {
   public ENavigationView = ENavigationView;
-  public _navigationParameters: INavigationParameters;
+  public componentParameters: INavigationParameters;
   @Input() set navigationParameters(value: INavigationParameters) {
-    this._navigationParameters = value;
+    this.componentParameters = value;
   }
 
   get navigationParameters(): INavigationParameters {
-    return this._navigationParameters;
+    return this.componentParameters;
   }
 
   public landingRole$: BehaviorSubject<string>;

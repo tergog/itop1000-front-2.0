@@ -20,6 +20,7 @@ import { UserCardComponent } from './user-card/component/user-card.component';
 import { MatIconModule } from '@angular/material/icon';
 import { HistoryComponent } from './history/component/history.component';
 import { CommentCardComponent } from './comment-card/component/comment-card.component';
+import { NotificationComponent } from './notification/notification.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { CommentCardComponent } from './comment-card/component/comment-card.comp
     SkillGradeComponent,
     UserCardComponent,
     HistoryComponent,
-    CommentCardComponent
+    CommentCardComponent,
+    NotificationComponent
   ],
   imports: [
     CommonModule,

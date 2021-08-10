@@ -8,4 +8,5 @@ import { CHeaderConfigList } from '../header.config';
 })
 export class HeaderComponent {
   public headerConfig = CHeaderConfigList;
+  public statusUser = localStorage.getItem('role') && localStorage.getItem('token');
 }

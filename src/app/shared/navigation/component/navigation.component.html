@@ -1,13 +1,13 @@
-<nav *ngIf="_navigationParameters.view === ENavigationView.Header" class="navigation header">
+<nav *ngIf="navigationParameters.view === ENavigationView.Header" class="navigation header">
   <ul class="navigation-list">
-    <li *ngFor="let link of _navigationParameters.links" class="navigation-item"><a
+    <li *ngFor="let link of navigationParameters.links" class="navigation-item"><a
       [routerLink]="[link.href]">{{ link.text }}</a></li>
   </ul>
 </nav>
 
-<nav *ngIf="_navigationParameters.view === ENavigationView.Footer" class="navigation footer">
+<nav *ngIf="navigationParameters.view === ENavigationView.Footer" class="navigation footer">
   <ul class="navigation-list">
-    <li *ngFor="let link of _navigationParameters.links" class="navigation-item"
+    <li *ngFor="let link of navigationParameters.links" class="navigation-item"
         [ngClass]="{ active: (landingRole$ | ngrxPush) === link.role }">
       <a [routerLink]="[link.href]">
         {{ link.text }}
@@ -16,9 +16,20 @@
   </ul>
 </nav>
 
-<nav *ngIf="_navigationParameters.view === ENavigationView.PersonalRoom" class="navigation personal-room">
+<nav *ngIf="navigationParameters.view === ENavigationView.FooterSignIn" class="navigation footer-signIn">
   <ul class="navigation-list">
-    <li *ngFor="let link of _navigationParameters.links" class="navigation-item"
+    <li *ngFor="let link of navigationParameters.links" class="navigation-item"
+        [ngClass]="{ active: (landingRole$ | ngrxPush) === link.role }">
+      <a [routerLink]="[link.href]">
+        {{ link.text }}
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<nav *ngIf="navigationParameters.view === ENavigationView.PersonalRoom" class="navigation personal-room">
+  <ul class="navigation-list">
+    <li *ngFor="let link of navigationParameters.links" class="navigation-item"
         [ngClass]="{ active: (landingRole$ | ngrxPush) === link.role }" routerLinkActive="active">
       <mat-icon [svgIcon]="link!.icon"></mat-icon>
       <a [routerLink]="[link.href]">

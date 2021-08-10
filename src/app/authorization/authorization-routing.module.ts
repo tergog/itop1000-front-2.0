@@ -6,6 +6,7 @@ import { AuthorizationFormComponent } from './children/authorization-form/author
 import { WaitingComponent } from './children/waiting/component/waiting.component';
 import { AuthenticationComponent } from './children/authentication/component/authentication.component';
 import { QrCodeComponent } from './children/qr-code/component/qr-code.component';
+import { WaitingGuard } from '../guards/waiting-guard/waiting.guard';
 
 const routes: Routes = [
   {
@@ -35,7 +36,8 @@ const routes: Routes = [
       },
       {
         path: 'waiting',
-        component: WaitingComponent
+        component: WaitingComponent,
+        canActivate: [WaitingGuard]
       }
     ]
   }
