@@ -1,4 +1,4 @@
-import { Component, ElementRef, forwardRef, QueryList, ViewChildren } from '@angular/core';
+import { Component, ElementRef, forwardRef, OnDestroy, QueryList, ViewChildren } from '@angular/core';
 import {
   ControlValueAccessor,
   FormArray,
@@ -6,6 +6,8 @@ import {
   NG_VALUE_ACCESSOR,
   Validators
 } from '@angular/forms';
+import { Subject } from 'rxjs';
+import { take, takeUntil } from 'rxjs/operators';
 
 export const INPUT_AUTH_VALUE_ACCESSOR: any = {
   provide: NG_VALUE_ACCESSOR,
@@ -19,8 +21,9 @@ export const INPUT_AUTH_VALUE_ACCESSOR: any = {
   styleUrls: ['./input-authentication.component.scss'],
   providers: [INPUT_AUTH_VALUE_ACCESSOR]
 })
-export class InputAuthenticationComponent implements ControlValueAccessor {
+export class InputAuthenticationComponent implements ControlValueAccessor, OnDestroy {
   @ViewChildren('input') authInputs: QueryList<ElementRef>;
+  public unsubscribe$ = new Subject<void>();
   public readonly authenticationGroup: FormGroup = new FormGroup({
     authArray: new FormArray([
       new FormControl('', [Validators.required, Validators.maxLength(1)]),
@@ -40,7 +43,9 @@ export class InputAuthenticationComponent implements ControlValueAccessor {
   constructor() {
     this.disableState = false;
     this.value = '';
-    this.authenticationGroup.valueChanges.pipe().subscribe(value => {
+    this.authenticationGroup.valueChanges
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe(value => {
         this.changeValue(this.authenticationGroup.value);
     });
   }
@@ -99,5 +104,10 @@ export class InputAuthenticationComponent implements ControlValueAccessor {
       previousItem.focus();
       item.value = '';
     }
+  }
+
+  ngOnDestroy(): void {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
   }
 }

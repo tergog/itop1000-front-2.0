@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
+
+import { CModalSelectRoleConfigList } from '../modal-select-role.config';
 
 @Component({
   selector: 'app-modal-select-role',
@@ -7,12 +9,5 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ModalSelectRoleComponent{
 
-  public modalParameters = {
-    button: {
-      text: 'Next',
-      type: '',
-      view: 'medium',
-      disabled: false
-    }
-  };
+  public modalSelectRoleConfig = CModalSelectRoleConfigList;
 }

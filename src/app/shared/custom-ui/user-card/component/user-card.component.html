@@ -1,26 +1,26 @@
 <div class="user-card">
   <div class="user-card__photo">
-    <img [src]="componentParameters.photo" alt="user-photo">
-    <div *ngIf="componentParameters.role === EUserCardView.Freelancer"
+    <img [src]="componentParameters.personal.photo" alt="user-photo">
+    <div *ngIf="role === EUserCardView.Freelancer"
          class="user-card__status"
          [ngClass]="{
-              free: !componentParameters.status,
-              work: componentParameters.status
+              free: !componentParameters.personal.isWork,
+              work: componentParameters.personal.isWork
               }">
-      <mat-icon *ngIf="componentParameters.status" svgIcon="work"></mat-icon>
-      <mat-icon *ngIf="!componentParameters.status" svgIcon="free"></mat-icon>
+      <mat-icon *ngIf="componentParameters.personal.isWork" svgIcon="work"></mat-icon>
+      <mat-icon *ngIf="!componentParameters.personal.isWork" svgIcon="free"></mat-icon>
     </div>
   </div>
   <div class="user-card__name text-uppercase text-white">
-    {{ componentParameters.firstName }} {{ componentParameters.lastName }}
+    {{ componentParameters.personal.firstName }} {{ componentParameters.personal.lastName }}
   </div>
-  <div class="user-card__position text-gray">
-    {{ componentParameters.position }}
+  <div class="user-card__position text-gray text-capitalize">
+    {{ componentParameters.personal.level }}
   </div>
   <div class="user-card__email text-white">
-    {{ componentParameters.email }}
+    {{ componentParameters.personal.email }}
   </div>
-  <div *ngIf="componentParameters.role === EUserCardView.Freelancer" class="user-card__rate text-gradient">
-    ${{ componentParameters.rate }}.00/hr
+  <div *ngIf="role === EUserCardView.Freelancer" class="user-card__rate text-gradient">
+    ${{ componentParameters.personal.rate }}.00/hr
   </div>
 </div>

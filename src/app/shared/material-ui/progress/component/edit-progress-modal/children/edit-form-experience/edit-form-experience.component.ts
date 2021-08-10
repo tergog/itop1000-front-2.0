@@ -18,10 +18,10 @@ export class EditFormExperienceComponent implements OnInit {
 
   ngOnInit(): void {
     this.editModalFormGroup = this.formBuilder.group({
-      companyName: this.formBuilder.control(this.progressModalData.companyName, [Validators.required]),
+      name: this.formBuilder.control(this.progressModalData.name, [Validators.required]),
       jobTitle: this.formBuilder.control(this.progressModalData.jobTitle, [Validators.required]),
       positionTitle: this.formBuilder.control(this.progressModalData.positionTitle, [Validators.required]),
-      jobDescription: this.formBuilder.control(this.progressModalData.jobDescription, [Validators.required]),
+      description: this.formBuilder.control(this.progressModalData.description, [Validators.required]),
       dateFrom: this.formBuilder.control(this.progressModalData.dateFrom, [Validators.required]),
       dateTill: this.formBuilder.control(this.progressModalData.dateTill, [Validators.required]),
     });

@@ -8,6 +8,7 @@ import { NavigationModule } from '../shared/navigation/navigation.module';
 import { HeaderModule } from '../shared/header/header.module';
 import { FooterModule } from '../shared/footer/footer.module';
 import { BreadcrumbsModule } from '../shared/breadcrumbs/breadcrumbs.module';
+import { ReactiveComponentModule } from '@ngrx/component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { BreadcrumbsModule } from '../shared/breadcrumbs/breadcrumbs.module';
     NavigationModule,
     HeaderModule,
     FooterModule,
-    BreadcrumbsModule
+    BreadcrumbsModule,
+    ReactiveComponentModule
   ],
   exports: [
     PersonalRoomComponent

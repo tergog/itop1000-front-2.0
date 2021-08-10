@@ -18,9 +18,9 @@ export class EditFormEducationComponent implements OnInit{
 
   ngOnInit(): void{
     this.editModalFormGroup = this.formBuilder.group({
-      educationName: this.formBuilder.control(this.progressModalData.educationName, [Validators.required]),
+      name: this.formBuilder.control(this.progressModalData.name, [Validators.required]),
       specialty: this.formBuilder.control(this.progressModalData.specialty, [Validators.required]),
-      educationDescription: this.formBuilder.control(this.progressModalData.educationDescription, [Validators.required]),
+      description: this.formBuilder.control(this.progressModalData.description, [Validators.required]),
       dateFrom: this.formBuilder.control(this.progressModalData.dateFrom, [Validators.required]),
       dateTill: this.formBuilder.control(this.progressModalData.dateTill, [Validators.required]),
     });

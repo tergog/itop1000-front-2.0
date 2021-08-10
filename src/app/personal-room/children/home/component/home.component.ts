@@ -1,15 +1,17 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl } from '@angular/forms';
-import { takeUntil } from 'rxjs/operators';
-import { Subject } from 'rxjs';
+import { mergeMap, take, takeUntil } from 'rxjs/operators';
+import { Observable, Subject } from 'rxjs';
+import { MatDialog } from '@angular/material/dialog';
 
 import { EProgressCardView } from '../../../../shared/material-ui/progress/component/progress-card/progress-card.enums';
 import { EditProgressModalComponent } from '../../../../shared/material-ui/progress/component/edit-progress-modal/component/edit-progress-modal.component';
 import { RemoveProgressModalComponent } from '../../../../shared/material-ui/progress/component/remove-progress-modal/component/remove-progress-modal.component';
-import { MatDialog } from '@angular/material/dialog';
 import { AddProgressModalComponent } from '../../../../shared/material-ui/progress/component/add-progress-modal/component/add-progress-modal.component';
 import { CHomeConfigList } from '../home.config';
 import { EProgressType } from '../../../../shared/material-ui/progress/progress.enums';
+import { UserDataService } from '../../../../services/user-data/user-data.service';
+import { IUserDataState } from '../../../../reducers/user-data/user-data.interfaces';
 
 @Component({
   selector: 'app-home',
@@ -23,80 +25,23 @@ export class HomeComponent implements OnInit, OnDestroy {
   public homeConfig = CHomeConfigList;
   public educationFormArray: FormArray;
   public unsubscribe$ = new Subject<void>();
-
-  experienceList = [
-    {
-      type: 'experience',
-      view: 'static',
-      companyName: 'Deal Design',
-      jobTitle: 'Job Title',
-      positionTitle: 'Position Title',
-      jobDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      dateFrom: 1627979471000,
-      dateTill: 1627979471000
-    },
-    {
-      type: 'experience',
-      view: 'static',
-      companyName: 'Deal Design',
-      jobTitle: 'Job Title',
-      positionTitle: 'Position Title',
-      jobDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      dateFrom: 1627979471000,
-      dateTill: 1627979471000
-    },
-    {
-      type: 'experience',
-      view: 'static',
-      companyName: 'Deal Design',
-      jobTitle: 'Job Title',
-      positionTitle: 'Position Title',
-      jobDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      dateFrom: 1627979471000,
-      dateTill: 1627979471000
-    }
-  ];
-
-  educationList = [
-    {
-      type: 'education',
-      view: 'edit',
-      educationName: 'Deal Design',
-      specialty: 'Specialty',
-      educationDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      dateFrom: 1627979471000,
-      dateTill: 1627979471000
-    },
-    {
-      type: 'education',
-      view: 'edit',
-      educationName: 'Deal Design',
-      specialty: 'Specialty',
-      educationDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      dateFrom: 1627979471000,
-      dateTill: 1627979471000
-    },
-    {
-      type: 'education',
-      view: 'edit',
-      educationName: 'Deal Design',
-      specialty: 'Specialty',
-      educationDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      dateFrom: 1627979471000,
-      dateTill: 1627979471000
-    }
-  ];
+  public personalRoomData: Observable<IUserDataState> = this.userDataService.userData;
 
   constructor(
     private formBuilder: FormBuilder,
+    private userDataService: UserDataService,
     private dialog: MatDialog
   ) {
     this.educationFormArray = this.formBuilder.array([]);
   }
 
   ngOnInit(): void {
-    this.educationList.forEach((item: any) => {
-      (this.educationFormArray as FormArray).push(new FormControl(item));
+    this.personalRoomData.pipe(
+      takeUntil(this.unsubscribe$)
+    ).subscribe(data => {
+      data.educations.forEach((item: any) => {
+        (this.educationFormArray as FormArray).push(new FormControl(item));
+      });
     });
   }
 

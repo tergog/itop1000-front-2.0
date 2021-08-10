@@ -13,10 +13,10 @@ export class AddFormEducationComponent {
 
   constructor(private formBuilder: FormBuilder) {
     this.addModalFormGroup = this.formBuilder.group({
-      educationName: this.formBuilder.control({ value: 'Education Name', disabled: false }, [Validators.required]),
-      specialty: this.formBuilder.control({ value: 'Specialty', disabled: false }, [Validators.required]),
-      educationDescription: this.formBuilder.control({
-        value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
+      name: this.formBuilder.control({ value: '', disabled: false }, [Validators.required]),
+      specialty: this.formBuilder.control({ value: '', disabled: false }, [Validators.required]),
+      description: this.formBuilder.control({
+        value: '',
         disabled: false
       }, [Validators.required]),
       dateFrom: this.formBuilder.control(

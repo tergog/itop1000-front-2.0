@@ -46,17 +46,17 @@ export class TestUiComponent {
       photo: '/assets/img/user-photo.png',
       firstName: 'Name',
       lastName: 'Surname',
-      position: 'Senior',
+      level: 'Senior',
+      isWork: true,
       rate: 40,
-      email: 'email@google.com',
-      status: true
+      email: 'email@google.com'
     },
     productOwner: {
       role: 'product-owner',
       photo: '/assets/img/user-photo.png',
       firstName: 'Name',
       lastName: 'Surname',
-      position: 'Product Owner',
+      level: 'Product Owner',
       email: 'email@google.com'
     }
   };

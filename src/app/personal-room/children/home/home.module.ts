@@ -6,6 +6,7 @@ import { HomeRoutingModule } from './home-routing.module';
 import { CustomUiModule } from '../../../shared/custom-ui/custom-ui.module';
 import { ProgressModule } from '../../../shared/material-ui/progress/progress.module';
 import { LanguageModule } from '../../../shared/custom-ui/language/language.module';
+import { ReactiveComponentModule } from '@ngrx/component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { LanguageModule } from '../../../shared/custom-ui/language/language.modu
     CustomUiModule,
     ProgressModule,
     LanguageModule,
+    ReactiveComponentModule
   ],
   exports: [
     HomeComponent

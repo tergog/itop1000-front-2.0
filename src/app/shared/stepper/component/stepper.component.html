@@ -47,8 +47,7 @@
     <form [formGroup]="freelancerGroupLinks.thirdGroup">
       <ng-template matStepLabel>experience</ng-template>
       <div class="form-item">
-        <app-progress formControlName="experience">
-        </app-progress>
+        <app-progress formControlName="experience"></app-progress>
       </div>
       <div class="form-item">
         <app-button (click)="stepper.previous()"
@@ -89,14 +88,14 @@
       <ng-template matStepLabel>Company name</ng-template>
       <div class="form-item">
         <app-input
-          [control]="productOwnerFormsGroupLinks.firstGroup.controls.companyName"
+          [control]="productOwnerFormsGroupLinks.firstGroup.controls.name"
           formControlName="companyName"
           [inputParameters]="(stepperParameters$ | ngrxPush).inputs.companyName">
         </app-input>
       </div>
       <div class="form-item">
         <app-input
-          [control]="productOwnerFormsGroupLinks.firstGroup.controls.companyDescription"
+          [control]="productOwnerFormsGroupLinks.firstGroup.controls.description"
           formControlName="companyDescription"
           [inputParameters]="(stepperParameters$ | ngrxPush).inputs.description">
         </app-input>

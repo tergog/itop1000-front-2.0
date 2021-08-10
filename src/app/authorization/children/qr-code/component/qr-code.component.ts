@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
 import { CQRCodeConfigList } from '../qr-code.config';
 import { getSignInData, IState } from '../../../../reducers';
 import { ISignInState } from '../../../../reducers/sign-in/sign-in.interfaces';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-qr-code',

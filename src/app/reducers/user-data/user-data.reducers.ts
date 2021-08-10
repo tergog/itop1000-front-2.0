@@ -6,15 +6,21 @@ import { IUserDataState } from './user-data.interfaces';
 export const userDataNode = 'userData';
 
 const signUpState: IUserDataState = {
-  email: '',
-  firstName: '',
-  lastName: '',
-  password: '',
-  category: '',
-  subcategory: '',
+  personal: {
+    photo: '',
+    email: '',
+    firstName: '',
+    lastName: '',
+    description: '',
+    isWork: false,
+    phone: '',
+    level: '',
+    rate: 0
+  },
   skills: [],
-  experience: [],
-  rate: 0
+  languages: [],
+  experiences: [],
+  educations: []
 };
 
 export const userDataReducer = (state = signUpState, action: Action): IUserDataState => {

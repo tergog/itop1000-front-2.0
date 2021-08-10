@@ -13,6 +13,17 @@
 
   &__photo {
     position: relative;
+    min-height: 135px;
+    min-width: 135px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      border-radius: 50%;
+      max-height: 135px;
+      max-width: 135px;
+    }
   }
 
   &__status {
@@ -25,6 +36,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+
 
     mat-icon{
       color: $white;

@@ -6,15 +6,15 @@ export interface ISignUpState {
   category?: string;
   subcategory?: string;
   skills?: string[];
-  experience?: ISignUpExperience[];
+  experiences?: ISignUpExperience[];
   rate?: number;
 }
 
 export interface ISignUpExperience {
-  companyName: string;
+  name: string;
   jobTitle: string;
   positionTitle: string;
-  jobDescription: string;
+  description: string;
   dateFrom: number;
   dateTill: number;
 }

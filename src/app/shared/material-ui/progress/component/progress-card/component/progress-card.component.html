@@ -1,21 +1,26 @@
 <div class="progress-card">
 
   <div class="progress-card__header">
-    <h2 *ngIf="type === EProgressType.Experience">{{ progressCardData.companyName }}</h2>
+<!--    <h2 *ngIf="type === EProgressType.Experience">{{ progressCardData.companyName }}</h2>-->
 
-    <h2 *ngIf="type === EProgressType.Education">{{ progressCardData.educationName }}</h2>
+<!--    <h2 *ngIf="type === EProgressType.Education">{{ progressCardData.name }}</h2>-->
+    <h2>{{ progressCardData.name }}</h2>
 
     <span>{{ progressCardData.dateFrom | date:'MMMM y' }} - {{ progressCardData.dateTill | date:'MMMM y' }}</span>
   </div>
 
   <div class="progress-card__description">
 
-    <div *ngIf="type === EProgressType.Experience" class="description-content">
-      {{ progressCardData.jobDescription }}
-    </div>
+<!--    <div *ngIf="type === EProgressType.Experience" class="description-content">-->
+<!--      {{ progressCardData.jobDescription }}-->
+<!--    </div>-->
 
-    <div *ngIf="type === EProgressType.Education" class="description-content">
-      {{ progressCardData.educationDescription }}
+<!--    <div *ngIf="type === EProgressType.Education" class="description-content">-->
+<!--      {{ progressCardData.description }}-->
+<!--    </div>    -->
+
+    <div class="description-content">
+      {{ progressCardData.description }}
     </div>
 
     <div class="description-control" *ngIf="view === EProgressCardView.Edit">

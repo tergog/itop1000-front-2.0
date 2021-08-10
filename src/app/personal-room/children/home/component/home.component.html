@@ -1,4 +1,4 @@
-<div class="home">
+<div class="home" *ngrxLet="personalRoomData as userData">
 
   <section class="personal">
     <div class="personal__header personal-room-item-header text-white text-uppercase">
@@ -8,19 +8,19 @@
     <div class="personal__body personal-room-item-body">
       <div class="body__user">
         <div class="user-photo">
-          <img src="/assets/img/icons/profile.svg" alt="user-photo">
+          <img [src]="userData.personal.photo" alt="user-photo">
         </div>
         <div class="user-name">
-          <span class="text-uppercase text-white">Name</span>
-          <span class="text-uppercase text-white">Surname</span>
+          <span class="text-uppercase text-white">{{ userData.personal.firstName }}</span>
+          <span class="text-uppercase text-white">{{ userData.personal.lastName }}</span>
         </div>
       </div>
       <div class="body__info">
         <div class="info-phone">
-          <span class="text-white">Phone: </span><span class="text-gray">+380**********</span>
+          <span class="text-white">Phone: </span><span class="text-gray">{{ userData.personal.phone }}</span>
         </div>
         <div class="info-email">
-          <span class="text-white">E-mail: </span><span class="text-gray">karina11reznichen@gmail.com</span>
+          <span class="text-white">E-mail: </span><span class="text-gray">{{ userData.personal.email }}</span>
         </div>
       </div>
     </div>
@@ -32,19 +32,9 @@
     </div>
 
     <div class="skills__body personal-room-item-body">
-      <div class="skills__body-item">
-        <span class="text-white">HTML</span>
-        <app-skill-grade [skillGradeValue]="55"></app-skill-grade>
-      </div>
-
-      <div class="skills__body-item">
-        <span class="text-white">React</span>
-        <app-skill-grade [skillGradeValue]="85"></app-skill-grade>
-      </div>
-
-      <div class="skills__body-item">
-        <span class="text-white">JS</span>
-        <app-skill-grade [skillGradeValue]="25"></app-skill-grade>
+      <div class="skills__body-item" *ngFor="let skill of userData.skills">
+        <span class="text-white text-uppercase">{{ skill.name }}</span>
+        <app-skill-grade [skillGradeValue]="skill.mark"></app-skill-grade>
       </div>
     </div>
   </section>
@@ -56,12 +46,12 @@
 
     <div class="experience__body personal-room-item-body">
 
-        <app-progress-card
-          [type]="EProgressType.Experience"
-          *ngFor="let experience of experienceList"
-          [view]="EProgressCardView.Static"
-          [progressCardData]="experience">
-        </app-progress-card>
+      <app-progress-card
+        [type]="EProgressType.Experience"
+        *ngFor="let experience of userData.experiences"
+        [view]="EProgressCardView.Static"
+        [progressCardData]="experience">
+      </app-progress-card>
 
     </div>
   </section>
@@ -95,9 +85,8 @@
                          [view]="EProgressCardView.Edit"
                          [progressCardData]="education"
                          (editProgressModal)="openEditProgressModal($event)"
-                         (removeProgressModal)="openRemoveProgressModal($event)">>
+                         (removeProgressModal)="openRemoveProgressModal($event)">
       </app-progress-card>
-
     </div>
   </section>
 

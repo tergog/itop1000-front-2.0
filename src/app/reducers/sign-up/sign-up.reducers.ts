@@ -13,7 +13,7 @@ const signUpState: ISignUpState = {
   category: '',
   subcategory: '',
   skills: [],
-  experience: [],
+  experiences: [],
   rate: 0
 };
 

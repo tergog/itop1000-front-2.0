@@ -13,7 +13,8 @@ export const CApi = {
     signIn: {
       default: 'auth/signIn',
       google: 'auth/googleSignIn'
-    }
+    },
+    status: 'common/user-status'
   },
   data: {
     freelancer: {

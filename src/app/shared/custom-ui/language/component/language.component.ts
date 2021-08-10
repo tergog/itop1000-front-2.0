@@ -1,35 +1,39 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormArray, FormBuilder } from '@angular/forms';
+import { AbstractControl, FormArray, FormBuilder, FormControl } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
 import { CLanguageConfigList } from '../language.config';
 import { AddLanguageModalComponent } from '../children/add-language-modal/component/add-language-modal.component';
 import { DeleteLanguageModalComponent } from '../children/delete-language-modal/component/delete-language-modal.component';
+import { UserDataService } from '../../../../services/user-data/user-data.service';
+import { IUserDataState } from '../../../../reducers/user-data/user-data.interfaces';
 
 @Component({
   selector: 'app-language',
   templateUrl: './language.component.html',
   styleUrls: ['./language.component.scss']
 })
-export class LanguageComponent implements OnInit, OnDestroy {
+export class LanguageComponent implements OnDestroy {
   public languageConfig = CLanguageConfigList;
   public unsubscribe$ = new Subject<void>();
-  public languageGroup: FormArray;
+  public languageArray: FormArray;
+  public personalRoomData: Observable<IUserDataState> = this.userDataService.userData;
 
   constructor(
     private dialog: MatDialog,
+    private userDataService: UserDataService,
     private formBuilder: FormBuilder
   ) {
-  }
-
-  ngOnInit(): void {
-    this.languageGroup = this.formBuilder.array([
-      { language: 'English', proficiency: 'Conversational' },
-      { language: 'Italian', proficiency: 'Basic' },
-      { language: 'German', proficiency: 'Native' },
-    ]);
+    this.languageArray = this.formBuilder.array([]);
+    this.personalRoomData
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe(data => {
+        data.languages.forEach(language => {
+          return (this.languageArray as FormArray).push(new FormControl(language));
+        });
+      });
   }
 
   openAddExperienceModal(): void {
@@ -38,7 +42,7 @@ export class LanguageComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe(language => {
         if (language) {
-          (this.languageGroup as FormArray).push(language);
+          (this.languageArray as FormArray).push(language);
         }
       });
   }
@@ -49,7 +53,7 @@ export class LanguageComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe(result => {
         if (result) {
-          (this.languageGroup as FormArray).removeAt(index);
+          (this.languageArray as FormArray).removeAt(index);
         }
       });
   }

@@ -3,8 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AuthorizationComponent } from './component/authorization.component';
 import { AuthorizationFormComponent } from './children/authorization-form/authorization-form.component';
-import { WaitingComponent } from './children/waiting/waiting.component';
-import { AuthenticationComponent } from './children/authentication/authentication.component';
+import { WaitingComponent } from './children/waiting/component/waiting.component';
+import { AuthenticationComponent } from './children/authentication/component/authentication.component';
 import { QrCodeComponent } from './children/qr-code/component/qr-code.component';
 
 const routes: Routes = [

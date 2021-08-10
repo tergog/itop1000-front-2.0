@@ -1,4 +1,6 @@
 import { Injectable, OnDestroy } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -6,9 +8,7 @@ import { takeUntil } from 'rxjs/operators';
 import { getSignUpData, IState } from '../../../reducers';
 import { SetSignUpStateAction } from '../../../reducers/sign-up/sign-up.actions';
 import { ISignUpState } from '../../../reducers/sign-up/sign-up.interfaces';
-import { HttpClient } from '@angular/common/http';
 import { CApi } from '../../../constantes/constantes';
-import { Router } from '@angular/router';
 import { SetSignInStateAction } from '../../../reducers/sign-in/sign-in.actions';
 
 @Injectable({
@@ -35,16 +35,29 @@ export class AuthorizationDataService implements OnDestroy {
     this.store.dispatch(new SetSignUpStateAction({ data }));
   }
 
+  setGoogleSignInData(data: { authCode: string }): void {
+    this.http.post(CApi.server + CApi.auth.signIn.google, { secretKey: data.authCode })
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe((res: any) => {
+          if (res.role) {
+            localStorage.setItem('role', res.role);
+            this.router.navigate(['/personal-room']);
+          }
+        }
+      );
+  }
+
   setSignInData(signInData: { email: string, password: string }): void {
     const { email, password } = signInData;
     this.http.post(CApi.server + CApi.auth.signIn.default, { email, password })
-      .pipe()
+      .pipe(takeUntil(this.unsubscribe$))
       .subscribe((res: any): void => {
-        if (res.qrcode) {
-          this.store.dispatch(new SetSignInStateAction({ data: { qrCode: res.qrcode, token: res.token } }));
+        if (res.qrCode) {
+          this.store.dispatch(new SetSignInStateAction({ data: { qrCode: res.qrCode, token: res.token } }));
           localStorage.setItem('token', res.token);
           this.router.navigate(['/authorization/qr-code']);
         } else {
+          localStorage.setItem('token', res.token);
           this.router.navigate(['/authorization/authentication']);
         }
       });

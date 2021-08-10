@@ -29,11 +29,16 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 116px;
-        height: 116px;
+        min-width: 116px;
+        min-height: 116px;
         border-radius: 50%;
         background: $mineShaft;
         margin-right: 22px;
+        img{
+          max-width: 116px;
+          max-height: 116px;
+          border-radius: 50%;
+        }
       }
 
       .user-name {

@@ -11,24 +11,24 @@ export const CPersonalRoomConfig = {
       { text: 'Personal & Security', href: 'security', icon: 'personal' }
     ]
   },
-  role: {
-    freelancer: {
-      role: 'freelancer',
-      photo: '/assets/img/user-photo.png',
-      firstName: 'Name',
-      lastName: 'Surname',
-      position: 'Senior',
-      rate: 40,
-      email: 'email@google.com',
-      status: true
-    },
-    productOwner: {
-      role: 'product-owner',
-      photo: '/assets/img/user-photo.png',
-      firstName: 'Name',
-      lastName: 'Surname',
-      position: 'Product Owner',
-      email: 'email@google.com'
-    }
-  }
+  // role: {
+  //   freelancer: {
+  //     role: 'freelancer',
+  //     photo: '/assets/img/user-photo.png',
+  //     firstName: 'Name',
+  //     lastName: 'Surname',
+  //     level: 'Senior',
+  //     isWork: false,
+  //     rate: 40,
+  //     email: 'email@google.com'
+  //   },
+  //   productOwner: {
+  //     role: 'product-owner',
+  //     photo: '/assets/img/user-photo.png',
+  //     firstName: 'Name',
+  //     lastName: 'Surname',
+  //     level: 'Product Owner',
+  //     email: 'email@google.com'
+  //   }
+  // }
 };

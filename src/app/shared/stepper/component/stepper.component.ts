@@ -45,8 +45,8 @@ export class StepperComponent implements OnInit, OnDestroy {
   ) {
     this.productOwnerFormsGroup = this._formBuilder.group({
       firstStepFormGroup: this._formBuilder.group({
-        companyName: this._formBuilder.control('', [Validators.required, Validators.minLength(2)]),
-        companyDescription: this._formBuilder.control('', [])
+        name: this._formBuilder.control('', [Validators.required, Validators.minLength(2)]),
+        description: this._formBuilder.control('', [])
       }),
       secondStepFormGroup: this._formBuilder.group({
         category: this._formBuilder.control(this.selectProductOwnerCategories, [Validators.required])

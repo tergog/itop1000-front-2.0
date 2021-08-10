@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
 import { CPersonalRoomConfig } from '../personal-room.config';
 import { UserDataService } from '../../services/user-data/user-data.service';
+import { IUserDataState } from '../../reducers/user-data/user-data.interfaces';
 
 @Component({
   selector: 'app-personal-room',
@@ -10,15 +12,14 @@ import { UserDataService } from '../../services/user-data/user-data.service';
 })
 export class PersonalRoomComponent implements OnInit {
   public personalRoomConfig = CPersonalRoomConfig;
+  public role = localStorage.getItem('role');
+  public personalRoomData: Observable<IUserDataState> = this.userDataService.userData;
 
-  role = 'freelancer';
-  // role = 'product-owner';
-
-  constructor(private userData: UserDataService) {
+  constructor(private userDataService: UserDataService) {
   }
 
   ngOnInit(): void {
-    this.userData.getUserData(this.role);
+    this.userDataService.getUserData(this.role!);
   }
 
 }

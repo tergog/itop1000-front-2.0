@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { PersonalGuard } from './guards/personal-guard/personal.guard';
 
 const routes: Routes = [
   {
@@ -12,7 +13,8 @@ const routes: Routes = [
   },
   {
     path: 'personal-room',
-    loadChildren: () => import('src/app/personal-room/personal-room.module').then(m => m.PersonalRoomModule)
+    loadChildren: () => import('src/app/personal-room/personal-room.module').then(m => m.PersonalRoomModule),
+    canActivate: [PersonalGuard]
   },
   {
     path: 'test',

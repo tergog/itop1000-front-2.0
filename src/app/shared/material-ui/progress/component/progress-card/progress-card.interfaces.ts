@@ -1,11 +1,9 @@
 export interface IProgressCardParameters {
-  companyName?: string;
-  educationName?: string;
+  name: string;
   specialty?: string;
   jobTitle?: string;
   positionTitle?: string;
-  jobDescription?: string;
-  educationDescription?: string;
+  description: string;
   dateFrom: number;
   dateTill: number;
 }

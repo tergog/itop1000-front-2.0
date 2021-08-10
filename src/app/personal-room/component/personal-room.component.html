@@ -5,7 +5,9 @@
   </div>
   <div class="container">
     <aside>
-      <app-user-card [userCardParameters]="personalRoomConfig.role.freelancer"></app-user-card>
+<!--      <app-user-card [userCardParameters]="personalRoomConfig.role.freelancer"></app-user-card>-->
+      <app-user-card [userCardParameters]="(personalRoomData | ngrxPush)"></app-user-card>
+
       <app-navigation [navigationParameters]="personalRoomConfig.navigation"></app-navigation>
     </aside>
     <main>

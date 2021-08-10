@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { ModalSelectRoleComponent } from '../children/modal-select-role/modal-select-role.component';
+import { ModalSelectRoleComponent } from '../children/modal-select-role/component/modal-select-role.component';
 
 @Component({
   selector: 'app-authorization',

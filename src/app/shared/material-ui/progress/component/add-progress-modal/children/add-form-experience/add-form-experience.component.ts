@@ -14,11 +14,11 @@ export class AddFormExperienceComponent {
 
   constructor(private formBuilder: FormBuilder) {
     this.addModalFormGroup = this.formBuilder.group({
-      companyName: this.formBuilder.control({ value: 'Deal Design', disabled: false }, [Validators.required]),
-      jobTitle: this.formBuilder.control({ value: 'Job Title', disabled: false }, [Validators.required]),
-      positionTitle: this.formBuilder.control({ value: 'Position Title', disabled: false }, [Validators.required]),
-      jobDescription: this.formBuilder.control({
-        value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
+      name: this.formBuilder.control({ value: '', disabled: false }, [Validators.required]),
+      jobTitle: this.formBuilder.control({ value: '', disabled: false }, [Validators.required]),
+      positionTitle: this.formBuilder.control({ value: '', disabled: false }, [Validators.required]),
+      description: this.formBuilder.control({
+        value: '',
         disabled: false
       }, [Validators.required]),
       dateFrom: this.formBuilder.control(

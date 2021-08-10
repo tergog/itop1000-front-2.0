@@ -1,0 +1,26 @@
+@import "src/assets/scss/mixins";
+
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .waiting {
+    &-logo, &-title {
+      margin-bottom: 52px;
+    }
+
+    &-title {
+      margin-bottom: 52px;
+      @include setFontParams($fontWorkSans, normal, 500, $subTitleLineHeight);
+      font-size: $bigTitleFontSize;
+    }
+
+    &-description {
+      text-align: center;
+      @include setFontParams($fontRaleway, normal, 400, $textLineHeight);
+      font-size: $bigTextFontSize;
+    }
+  }
+}

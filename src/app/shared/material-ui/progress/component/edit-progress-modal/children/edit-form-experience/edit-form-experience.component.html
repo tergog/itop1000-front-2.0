@@ -1,9 +1,9 @@
 <form action="" class="progress-form" [formGroup]="editModalFormGroup">
 
   <div class="progress-form__item">
-    <app-input [control]="editModalFormGroup.controls.companyName"
+    <app-input [control]="editModalFormGroup.controls.name"
                [inputParameters]="editProgressModalConfig.inputs.companyName"
-               formControlName="companyName"></app-input>
+               formControlName="name"></app-input>
   </div>
 
   <div class="progress-form__item">
@@ -20,9 +20,9 @@
   </div>
 
   <div class="progress-form__item">
-    <app-input [control]="editModalFormGroup.controls.jobDescription"
+    <app-input [control]="editModalFormGroup.controls.description"
                [inputParameters]="editProgressModalConfig.inputs.jobDescription"
-               formControlName="jobDescription"></app-input>
+               formControlName="description"></app-input>
   </div>
 
   <div class="progress-form__item">
