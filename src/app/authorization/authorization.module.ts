@@ -10,7 +10,7 @@ import { CustomUiModule } from '../shared/custom-ui/custom-ui.module';
 import { StepperModule } from '../shared/stepper/stepper.module';
 import { MaterialUiModule } from '../shared/material-ui/material-ui.module';
 import { ModalSelectRoleComponent } from './children/modal-select-role/component/modal-select-role.component';
-import { AuthorizationFormComponent } from './children/authorization-form/authorization-form.component';
+import { AuthorizationFormComponent } from './children/authorization-form/component/authorization-form.component';
 import { ModalAcceptRuleComponent } from './children/modal-accept-rule/component/modal-accept-rule.component';
 import { QrCodeComponent } from './children/qr-code/component/qr-code.component';
 import { AuthenticationComponent } from './children/authentication/component/authentication.component';

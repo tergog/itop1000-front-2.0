@@ -5,14 +5,14 @@ import { MatDialog } from '@angular/material/dialog';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
-import { CAuthorizationData } from '../../../constantes/constantes';
-import { ModalAcceptRuleComponent } from '../modal-accept-rule/component/modal-accept-rule.component';
-import { EModalAcceptRuleView } from '../modal-accept-rule/modal-accept-rule.enums';
-import { AuthorizationDataService } from '../../services/authorization-data/authorization-data.service';
+import { ModalAcceptRuleComponent } from '../../modal-accept-rule/component/modal-accept-rule.component';
+import { EModalAcceptRuleView } from '../../modal-accept-rule/modal-accept-rule.enums';
+import { AuthorizationDataService } from '../../../services/authorization-data/authorization-data.service';
 import {
   confirmCheckboxValidator,
   confirmPasswordValidator
-} from '../../services/authorization-validation/authorization-validation.service';
+} from '../../../services/authorization-validation/authorization-validation.service';
+import { CAuthorizatioConfigList } from '../authorization-form.config';
 
 @Component({
   selector: 'app-authorization-form',
@@ -26,7 +26,7 @@ export class AuthorizationFormComponent implements OnDestroy {
     link: 'Email address validation requirements',
     status: false
   };
-  public authorizationPageParameters = CAuthorizationData;
+  public authorizationPageParameters = CAuthorizatioConfigList;
   public signUpFormGroup: FormGroup;
   public signInFormGroup: FormGroup;
   public signUpValidation: boolean;
@@ -41,16 +41,16 @@ export class AuthorizationFormComponent implements OnDestroy {
     private dialog: MatDialog
   ) {
     this.signUpFormGroup = this.formBuilder.group({
-      email: this.formBuilder.control('', [Validators.required, Validators.email]),
-      firstName: this.formBuilder.control('', [Validators.required, Validators.minLength(2)]),
-      lastName: this.formBuilder.control('', [Validators.required, Validators.minLength(2)]),
-      password: this.formBuilder.control('', [Validators.required, Validators.minLength(6)]),
-      confirmPassword: this.formBuilder.control('', [Validators.required, Validators.minLength(6)]),
-      policy: this.formBuilder.control(false, [Validators.required]),
-      terms: this.formBuilder.control(false, [Validators.required])
+      email: this.formBuilder.control('user3@gmail.com', [Validators.required, Validators.email]),
+      firstName: this.formBuilder.control('User', [Validators.required, Validators.minLength(2)]),
+      lastName: this.formBuilder.control('User', [Validators.required, Validators.minLength(2)]),
+      password: this.formBuilder.control('222333', [Validators.required, Validators.minLength(6)]),
+      phone: this.formBuilder.control('+380888888888', [Validators.required, Validators.minLength(6)]),
+      policy: this.formBuilder.control(true, [Validators.required]),
+      terms: this.formBuilder.control(true, [Validators.required])
     }, {
       validator: [
-        confirmPasswordValidator('password', 'confirmPassword'),
+        // confirmPasswordValidator('password', 'confirmPassword'),
         confirmCheckboxValidator('policy'),
         confirmCheckboxValidator('terms')
       ]

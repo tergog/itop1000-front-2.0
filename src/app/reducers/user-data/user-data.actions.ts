@@ -4,7 +4,8 @@ import { IUserDataState } from './user-data.interfaces';
 
 export enum userDataActionsType {
   setUserData = '[USERDATA] setUserData',
-  editUserData = '[USERDATA] editUserData'
+  editUserData = '[USERDATA] editUserData',
+  cleanUserData = '[USERDATA] cleanUserData'
 }
 
 export class SetUserDataAction implements Action {
@@ -21,4 +22,11 @@ export class EditUserDataAction implements Action {
   }
 }
 
-export type UserDataActions = SetUserDataAction | EditUserDataAction;
+export class CleanUserDataAction implements Action {
+  readonly type = userDataActionsType.cleanUserData;
+
+  constructor() {
+  }
+}
+
+export type UserDataActions = SetUserDataAction | EditUserDataAction | CleanUserDataAction;

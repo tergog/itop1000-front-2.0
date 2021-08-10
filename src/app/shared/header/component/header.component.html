@@ -14,12 +14,10 @@
         *ngIf="!statusUser"
         [buttonParameters]="headerConfig.buttons.signUp"></app-button>
 
+     <app-notification *ngIf="statusUser"></app-notification>
       <app-button
         *ngIf="statusUser"
-        [buttonParameters]="headerConfig.buttons.notification">
-      </app-button>
-      <app-button
-        *ngIf="statusUser"
+        (click)="logoutUser()"
         [buttonParameters]="headerConfig.buttons.logout">
       </app-button>
     </div>

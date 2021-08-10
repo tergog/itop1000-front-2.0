@@ -10,6 +10,7 @@ import { SetSignUpStateAction } from '../../../reducers/sign-up/sign-up.actions'
 import { ISignUpState } from '../../../reducers/sign-up/sign-up.interfaces';
 import { CApi } from '../../../constantes/constantes';
 import { SetSignInStateAction } from '../../../reducers/sign-in/sign-in.actions';
+import { CleanUserDataAction } from '../../../reducers/user-data/user-data.actions';
 
 @Injectable({
   providedIn: 'root'
@@ -73,16 +74,21 @@ export class AuthorizationDataService implements OnDestroy {
       ...stepperData,
       rate
     };
-    console.log(data);
-    // const { email, password, lastName, firstName } = signUpData;
-    // const data = { email, password, lastName, firstName };
     // this.store.dispatch(new SetSignUpStateAction({ data }));
+    this.http.post(CApi.server + CApi.auth.register.freelancer, { data }).pipe().subscribe(res => console.log(res));
   }
 
   signUpUser(): Promise<{ status: boolean }> {
     return new Promise(((resolve, reject) => {
       resolve({ status: true });
     }));
+  }
+
+  logout(): void {
+    localStorage.clear();
+    this.store.dispatch(new CleanUserDataAction());
+    this.http.post(CApi.server + CApi.auth.logout, {});
+    this.router.navigate(['/authorization']);
   }
 
   ngOnDestroy(): void {

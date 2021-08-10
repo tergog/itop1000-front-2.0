@@ -12,6 +12,11 @@ header {
     align-items: center;
     justify-content: space-between;
 
+    .login{
+      display: flex;
+      align-items: center;
+    }
+
     .login app-button:first-child {
       margin-right: 33px;
     }

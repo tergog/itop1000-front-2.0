@@ -1,0 +1,20 @@
+@import "src/assets/scss/mixins";
+
+:host {
+  cursor: pointer;
+  display: inline-flex;
+  margin-right: 52px;
+
+  a {
+    display: inline-flex;
+  }
+
+  mat-icon {
+    display: inline-flex;
+    color: $creamCan;
+  }
+
+  mat-icon.active {
+    color: $redRibbon;
+  }
+}

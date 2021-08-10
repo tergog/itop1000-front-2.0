@@ -67,7 +67,7 @@ export class StepperComponent implements OnInit, OnDestroy {
         skills: _formBuilder.control([], [Validators.required])
       }),
       thirdStepFormGroup: _formBuilder.group({
-        experience: _formBuilder.control([], [Validators.required])
+        experiences: _formBuilder.control([], [Validators.required])
       }),
       fourthStepFormGroup: _formBuilder.group({
         rate: _formBuilder.control(null, [Validators.required, Validators.minLength(2)])

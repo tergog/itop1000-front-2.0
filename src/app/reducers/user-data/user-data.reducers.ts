@@ -35,6 +35,24 @@ export const userDataReducer = (state = signUpState, action: Action): IUserDataS
       return {
         ...state
       };
+    case userDataActionsType.cleanUserData:
+      return {
+        personal: {
+          photo: '',
+          email: '',
+          firstName: '',
+          lastName: '',
+          description: '',
+          isWork: false,
+          phone: '',
+          level: '',
+          rate: 0
+        },
+        skills: [],
+        languages: [],
+        experiences: [],
+        educations: []
+      };
     default:
       return state;
   }

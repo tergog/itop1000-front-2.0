@@ -61,7 +61,8 @@ import { NotificationComponent } from './notification/notification.component';
     SkillGradeComponent,
     UserCardComponent,
     HistoryComponent,
-    CommentCardComponent
+    CommentCardComponent,
+    NotificationComponent
   ]
 })
 export class CustomUiModule {

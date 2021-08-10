@@ -32,7 +32,9 @@ export class SvgServiceService {
     'dollar',
     'calendar',
     'arrow-down',
-    'arrow-down-select'
+    'arrow-down-select',
+    'notification',
+    'notification-active'
   ];
 
   constructor(

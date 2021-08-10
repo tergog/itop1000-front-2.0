@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AuthorizationComponent } from './component/authorization.component';
-import { AuthorizationFormComponent } from './children/authorization-form/authorization-form.component';
+import { AuthorizationFormComponent } from './children/authorization-form/component/authorization-form.component';
 import { WaitingComponent } from './children/waiting/component/waiting.component';
 import { AuthenticationComponent } from './children/authentication/component/authentication.component';
 import { QrCodeComponent } from './children/qr-code/component/qr-code.component';
