@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { SecurityComponent } from './component/security.component';
 import { SecurityRoutingModule } from './security-routing.module';
+import { CustomUiModule } from '../../../shared/custom-ui/custom-ui.module';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { SecurityRoutingModule } from './security-routing.module';
   ],
   imports: [
     CommonModule,
-    SecurityRoutingModule
+    SecurityRoutingModule,
+    CustomUiModule
   ],
   exports: [
     SecurityComponent

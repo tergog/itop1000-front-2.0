@@ -1,7 +1,7 @@
 import { EModalAcceptRuleView } from '../authorization/children/modal-accept-rule/modal-accept-rule.enums';
 
 export const CNavigationList = {
-  authorization:{
+  authorization: {
     qrCode: '/authorization/qr-code',
     authentication: '/authorization/authentication',
     sign: '/authorization/sign',
@@ -24,7 +24,7 @@ export const CNavigationList = {
     security: '/personal-room/security',
     developers: '/personal-room/developers'
   }
-}
+};
 
 export const CApi = {
   server: 'https://localhost:3000/',
