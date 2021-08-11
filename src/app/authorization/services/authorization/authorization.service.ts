@@ -68,7 +68,7 @@ export class AuthorizationService implements OnDestroy {
 
   signUpUser(stepperData: IStepperData): void {
     const data = this.transformStepperData(stepperData);
-    let userRole: string = localStorage.getItem('role') || EUserRole.Freelancer;
+    const userRole: string = localStorage.getItem('role') || EUserRole.Freelancer;
     this.store.dispatch(new CleanSignUpStateAction());
     // @ts-ignore
     this.http.post<{ token: string, role: string }>(CApi.server + CApi.auth.register[userRole], { ...data })
