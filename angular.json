@@ -25,6 +25,7 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
+            "aot": true,
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -32,13 +33,7 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": [],
-            "vendorChunk": true,
-            "extractLicenses": false,
-            "buildOptimizer": false,
-            "sourceMap": true,
-            "optimization": false,
-            "namedChunks": true
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -68,8 +63,7 @@
                 }
               ]
             }
-          },
-          "defaultConfiguration": ""
+          }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -106,11 +100,15 @@
           }
         },
         "lint": {
-          "builder": "@angular-eslint/builder:lint",
+          "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "lintFilePatterns": [
-              "src/**/*.ts",
-              "src/**/*.html"
+            "tsConfig": [
+              "tsconfig.app.json",
+              "tsconfig.spec.json",
+              "e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
             ]
           }
         },
@@ -129,8 +127,5 @@
       }
     }
   },
-  "defaultProject": "ITOP1000-FRONT2",
-  "cli": {
-    "defaultCollection": "@angular-eslint/schematics"
-  }
+  "defaultProject": "ITOP1000-FRONT2"
 }
