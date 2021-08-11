@@ -8,7 +8,7 @@
 <nav *ngIf="navigationParameters.view === ENavigationView.Footer" class="navigation footer">
   <ul class="navigation-list">
     <li *ngFor="let link of navigationParameters.links" class="navigation-item"
-        [ngClass]="{ active: (landingRole$ | ngrxPush) === link.role }">
+        [ngClass]="{ active: landingRole === link.role }">
       <a [routerLink]="[link.href]">
         {{ link.text }}
       </a>
@@ -19,7 +19,7 @@
 <nav *ngIf="navigationParameters.view === ENavigationView.FooterSignIn" class="navigation footer-signIn">
   <ul class="navigation-list">
     <li *ngFor="let link of navigationParameters.links" class="navigation-item"
-        [ngClass]="{ active: (landingRole$ | ngrxPush) === link.role }">
+        [ngClass]="{ active: landingRole === link.role }">
       <a [routerLink]="[link.href]">
         {{ link.text }}
       </a>
@@ -30,7 +30,7 @@
 <nav *ngIf="navigationParameters.view === ENavigationView.PersonalRoom" class="navigation personal-room">
   <ul class="navigation-list">
     <li *ngFor="let link of navigationParameters.links" class="navigation-item"
-        [ngClass]="{ active: (landingRole$ | ngrxPush) === link.role }" routerLinkActive="active">
+        [ngClass]="{ active: landingRole === link.role }" routerLinkActive="active">
       <mat-icon [svgIcon]="link!.icon"></mat-icon>
       <a [routerLink]="[link.href]">
         {{ link.text }}

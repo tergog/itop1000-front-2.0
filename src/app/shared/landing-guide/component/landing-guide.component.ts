@@ -7,12 +7,12 @@ import { ILandingGuideParameters } from '../landing-guide.interfaces';
   styleUrls: ['./landing-guide.component.scss']
 })
 export class LandingGuideComponent {
-  public _landingGuideParameters: ILandingGuideParameters[];
+  public componentParameters: ILandingGuideParameters[];
   @Input() set landingGuideParameters(value: ILandingGuideParameters[]) {
-    this._landingGuideParameters = value;
+    this.componentParameters = value;
   }
 
   get landingGuideParameters(): ILandingGuideParameters[] {
-    return this._landingGuideParameters;
+    return this.componentParameters;
   }
 }

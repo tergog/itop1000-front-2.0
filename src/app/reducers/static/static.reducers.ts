@@ -6,7 +6,12 @@ import { IStaticState } from './static.interfaces';
 export const staticNode = 'static';
 
 const signUpState: IStaticState = {
-  email: '',
+  categories: {},
+  subcategories: {},
+  countries: [],
+  languages: [],
+  operations: [],
+  proficiencies: []
 };
 
 export const staticReducer = (state = signUpState, action: Action): IStaticState => {

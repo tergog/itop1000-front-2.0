@@ -21,16 +21,16 @@ export class CheckboxComponent implements ControlValueAccessor {
   private onTouched: any;
   public value: boolean;
   public disableState: boolean;
-  public _checkboxParameters: ICheckboxParameters;
+  public componentParameters: ICheckboxParameters;
   @Input() control?: AbstractControl;
   @Input() validation?: boolean;
 
   @Input() set checkboxParameters(value: ICheckboxParameters) {
-    this._checkboxParameters = value;
+    this.componentParameters = value;
   }
 
   get checkboxParameters(): ICheckboxParameters {
-    return this._checkboxParameters;
+    return this.componentParameters;
   }
 
   constructor() {

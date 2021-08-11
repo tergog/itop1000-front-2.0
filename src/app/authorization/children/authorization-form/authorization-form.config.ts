@@ -1,4 +1,4 @@
-export const CAuthorizatioConfigList = {
+export const CAuthorizationFormConfigList = {
   logo: {
     empty: {
       view: 'empty'

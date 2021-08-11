@@ -6,12 +6,12 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./skill-grade.component.scss']
 })
 export class SkillGradeComponent {
-  public _value = 0;
+  public value = 0;
   @Input() set skillGradeValue(value: number) {
-    this._value = value;
+    this.value = value;
   }
 
   get skillGradeValue(): number{
-    return this._value;
+    return this.value;
   }
 }

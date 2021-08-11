@@ -1,7 +1,7 @@
 import { Component, OnDestroy } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { EAuthenticationFormStatus } from '../authentication.enums';
-import { AuthorizationDataService } from '../../../services/authorization-data/authorization-data.service';
+import { AuthorizationService } from '../../../services/authorization/authorization.service';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
@@ -16,7 +16,7 @@ export class AuthenticationComponent implements OnDestroy{
     authCode: new FormControl('', [Validators.required, Validators.minLength(6)])
   });
 
-  constructor(private authorizationData: AuthorizationDataService) {
+  constructor(private authorizationData: AuthorizationService) {
     this.authenticationForm.statusChanges
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe(status => {

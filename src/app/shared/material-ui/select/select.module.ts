@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MatExpansionModule } from '@angular/material/expansion';
 
 import { SelectComponent } from './component/select.component';
+import { ReactiveComponentModule } from '@ngrx/component';
 
 @NgModule({
   declarations: [
@@ -10,7 +11,8 @@ import { SelectComponent } from './component/select.component';
   ],
   imports: [
     CommonModule,
-    MatExpansionModule
+    MatExpansionModule,
+    ReactiveComponentModule
   ],
   exports: [
     SelectComponent

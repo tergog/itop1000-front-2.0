@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CHeaderConfigList } from '../header.config';
 import { UserDataService } from '../../../services/user-data/user-data.service';
-import { AuthorizationDataService } from '../../../authorization/services/authorization-data/authorization-data.service';
+import { AuthorizationService } from '../../../authorization/services/authorization/authorization.service';
 
 @Component({
   selector: 'app-header',
@@ -12,7 +12,7 @@ export class HeaderComponent {
   public headerConfig = CHeaderConfigList;
   public statusUser = localStorage.getItem('role') && localStorage.getItem('token');
 
-  constructor(private authorizationDataService: AuthorizationDataService) {
+  constructor(private authorizationDataService: AuthorizationService) {
   }
 
   logoutUser(): void {

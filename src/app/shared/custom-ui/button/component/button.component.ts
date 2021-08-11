@@ -10,12 +10,12 @@ import { IButtonParameters } from '../button.interfaces';
 })
 export class ButtonComponent {
   public EButtonView = EButtonView;
-  public _buttonParameters: IButtonParameters;
+  public componentParameters: IButtonParameters;
   @Input() set buttonParameters(value: IButtonParameters) {
-    this._buttonParameters = value;
+    this.componentParameters = value;
   }
 
   get buttonParameters(): IButtonParameters {
-    return this._buttonParameters;
+    return this.componentParameters;
   }
 }

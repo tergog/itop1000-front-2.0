@@ -9,13 +9,13 @@
     <app-button-toggle></app-button-toggle>
 
     <h1 [@animateText]="'start'" class="fullscreen-title">
-      {{ (landingData$ | ngrxPush).fullscreen.title }}
+      {{ landingData.fullscreen.title }}
     </h1>
     <h3 class="fullscreen-subtitle">
-      {{ (landingData$ | ngrxPush).fullscreen.subtitle }}
+      {{ landingData.fullscreen.subtitle }}
     </h3>
 
-    <app-button [buttonParameters]="(landingData$ | ngrxPush).fullscreen.button"></app-button>
+    <app-button [buttonParameters]="landingData.fullscreen.button"></app-button>
 
     <app-arrow-down></app-arrow-down>
 
@@ -27,23 +27,23 @@
     </h2>
 
     <div class="benefits-cards">
-      <div *ngFor="let card of (landingData$ | ngrxPush).benefits.cards" class="cards-item">
+      <div *ngFor="let card of landingData.benefits.cards" class="cards-item">
         <app-benefits-card [benefitsCardParameters]="card"></app-benefits-card>
       </div>
     </div>
   </section>
 
   <section class="landing-guide">
-    <app-landing-guide [landingGuideParameters]="(landingData$ | ngrxPush).guide"></app-landing-guide>
+    <app-landing-guide [landingGuideParameters]="landingData.guide"></app-landing-guide>
   </section>
 
   <section class="landing-top">
     <h2 class="top-title">
-      {{ (landingData$ | ngrxPush).top.title }}
+      {{ landingData.top.title }}
     </h2>
 
     <div class="top-cards">
-      <div *ngFor="let card of (landingData$ | ngrxPush).top.cards" class="cards-item">
+      <div *ngFor="let card of landingData.top.cards" class="cards-item">
         <app-preview-card [previewCardParameters]="card"></app-preview-card>
       </div>
     </div>
@@ -52,23 +52,23 @@
 
   <section class="landing-top-project">
     <h2 class="top-project-title">
-      {{ (landingData$ | ngrxPush).topProject.title }}
+      {{ landingData.topProject.title }}
     </h2>
 
     <div class="top-project-cards">
-      <div *ngFor="let card of (landingData$ | ngrxPush).topProject.cards" class="cards-item">
+      <div *ngFor="let card of landingData.topProject.cards" class="cards-item">
         <app-preview-project-card [previewProjectCardParameters]="card"></app-preview-project-card>
       </div>
     </div>
 
   </section>
 
-  <section *ngIf="(landingData$ | ngrxPush).description" class="landing-description">
+  <section *ngIf="landingData.description" class="landing-description">
     <h3 class="description-title">
-      <span>ITOP1000</span> – {{ (landingData$ | ngrxPush).description.title }}
+      <span>ITOP1000</span> – {{ landingData.description.title }}
     </h3>
     <div class="description-body">
-      <div class="description-item" *ngFor="let item of (landingData$ | ngrxPush).description!.contentItems">
+      <div class="description-item" *ngFor="let item of landingData.description!.contentItems">
         <div class="description-item-title">
           {{ item.title }}
         </div>
@@ -78,7 +78,7 @@
       </div>
     </div>
 
-    <app-button [buttonParameters]="(landingData$ | ngrxPush).description!.button"></app-button>
+    <app-button [buttonParameters]="landingData.description!.button"></app-button>
   </section>
 
 </div>

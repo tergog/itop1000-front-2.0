@@ -26,13 +26,13 @@ export class SearchInputComponent implements OnInit, ControlValueAccessor {
   public focus = false;
   public invalid = false;
   public ESearchInputElementType = ESearchInputElementType;
-  public _searchInputParameters: ISearchInputParameters;
+  public componentParameters: ISearchInputParameters;
   @Input() set searchInputParameters(value: ISearchInputParameters){
-    this._searchInputParameters = value;
+    this.componentParameters = value;
   }
 
   get searchInputParameters(): ISearchInputParameters{
-    return this._searchInputParameters;
+    return this.componentParameters;
   }
   private onChange: any;
   private onTouched: any;

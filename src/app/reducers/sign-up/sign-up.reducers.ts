@@ -9,12 +9,8 @@ const signUpState: ISignUpState = {
   email: '',
   firstName: '',
   lastName: '',
-  password: '',
-  category: '',
-  subcategory: '',
-  skills: [],
-  experiences: [],
-  rate: 0
+  phone: '',
+  password: ''
 };
 
 export const signUpReducer = (state = signUpState, action: Action): ISignUpState => {
@@ -25,9 +21,13 @@ export const signUpReducer = (state = signUpState, action: Action): ISignUpState
         ...state,
         ...signUpActions.payload.data
       };
-    case signUpActionsType.editSignUpState:
+    case signUpActionsType.cleanSignUpState:
       return {
-        ...state
+        email: '',
+        firstName: '',
+        lastName: '',
+        phone: '',
+        password: ''
       };
     default:
       return state;

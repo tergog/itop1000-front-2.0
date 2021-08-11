@@ -1,164 +1,164 @@
-<button *ngIf="_buttonParameters.view === EButtonView.Big"
-        [type]="_buttonParameters.type"
-        [disabled]="_buttonParameters.disabled"
+<button *ngIf="buttonParameters.view === EButtonView.Big"
+        [type]="buttonParameters.type"
+        [disabled]="buttonParameters.disabled"
         class="btn btn__big">
-  {{ _buttonParameters.text }}
+  {{ buttonParameters.text }}
 </button>
 
-<button *ngIf="_buttonParameters.view === EButtonView.Medium"
-        [type]="_buttonParameters.type"
-        [disabled]="_buttonParameters.disabled"
+<button *ngIf="buttonParameters.view === EButtonView.Medium"
+        [type]="buttonParameters.type"
+        [disabled]="buttonParameters.disabled"
         class="btn btn__medium">
-  {{ _buttonParameters.text }}
+  {{ buttonParameters.text }}
 </button>
 
-<button *ngIf="_buttonParameters.view === EButtonView.SmallFill"
-        [type]="_buttonParameters.type"
-        [disabled]="_buttonParameters.disabled"
+<button *ngIf="buttonParameters.view === EButtonView.SmallFill"
+        [type]="buttonParameters.type"
+        [disabled]="buttonParameters.disabled"
         class="btn btn__small-fill">
-  {{ _buttonParameters.text }}
+  {{ buttonParameters.text }}
 </button>
 
-<button *ngIf="_buttonParameters.view === EButtonView.Small"
-        [type]="_buttonParameters.type"
-        [disabled]="_buttonParameters.disabled"
+<button *ngIf="buttonParameters.view === EButtonView.Small"
+        [type]="buttonParameters.type"
+        [disabled]="buttonParameters.disabled"
         class="btn btn__small">
-  {{ _buttonParameters.text }}
+  {{ buttonParameters.text }}
 </button>
 
-<button *ngIf="_buttonParameters.view === EButtonView.SmallEmpty"
-        [type]="_buttonParameters.type"
-        [disabled]="_buttonParameters.disabled"
+<button *ngIf="buttonParameters.view === EButtonView.SmallEmpty"
+        [type]="buttonParameters.type"
+        [disabled]="buttonParameters.disabled"
         class="btn btn__small-empty">
-  {{ _buttonParameters.text }}
+  {{ buttonParameters.text }}
 </button>
 
-<button *ngIf="_buttonParameters.view === EButtonView.SmallEmptyBorder"
-        [type]="_buttonParameters.type"
-        [disabled]="_buttonParameters.disabled"
+<button *ngIf="buttonParameters.view === EButtonView.SmallEmptyBorder"
+        [type]="buttonParameters.type"
+        [disabled]="buttonParameters.disabled"
         class="btn btn__small-empty-border">
-  {{ _buttonParameters.text }}
+  {{ buttonParameters.text }}
 </button>
 
-<button *ngIf="_buttonParameters.view === EButtonView.Close"
-        [type]="_buttonParameters.type"
-        [disabled]="_buttonParameters.disabled"
+<button *ngIf="buttonParameters.view === EButtonView.Close"
+        [type]="buttonParameters.type"
+        [disabled]="buttonParameters.disabled"
         class="btn btn__close">
-  {{ _buttonParameters.text }}
+  {{ buttonParameters.text }}
 </button>
 
-<button *ngIf="_buttonParameters.view === EButtonView.CloseSmall"
-        [type]="_buttonParameters.type"
-        [disabled]="_buttonParameters.disabled"
+<button *ngIf="buttonParameters.view === EButtonView.CloseSmall"
+        [type]="buttonParameters.type"
+        [disabled]="buttonParameters.disabled"
         class="btn btn__close-small">
-  {{ _buttonParameters.text }}
+  {{ buttonParameters.text }}
 </button>
 
-<div class="icon-button" *ngIf="_buttonParameters.view === EButtonView.Add">
-  <span class="text-ribbon first">{{ _buttonParameters.text }}</span>
-  <button [type]="_buttonParameters.type"
-          [disabled]="_buttonParameters.disabled"
+<div class="icon-button" *ngIf="buttonParameters.view === EButtonView.Add">
+  <span class="text-ribbon first">{{ buttonParameters.text }}</span>
+  <button [type]="buttonParameters.type"
+          [disabled]="buttonParameters.disabled"
           class="btn btn__add">
     <img src="/assets/img/add.svg" alt="add-icon">
   </button>
 </div>
 
-<div class="icon-button" *ngIf="_buttonParameters.view === EButtonView.CloseFill">
-  <span class="text-ribbon first">{{ _buttonParameters.text }}</span>
-  <button [type]="_buttonParameters.type"
-          [disabled]="_buttonParameters.disabled"
+<div class="icon-button" *ngIf="buttonParameters.view === EButtonView.CloseFill">
+  <span class="text-ribbon first">{{ buttonParameters.text }}</span>
+  <button [type]="buttonParameters.type"
+          [disabled]="buttonParameters.disabled"
           class="btn btn__close-fill">
     <img src="/assets/img/add.svg" alt="close-icon">
   </button>
 </div>
 
-<div class="icon-button" *ngIf="_buttonParameters.view === EButtonView.Edit">
-  <span class="text-ribbon first">{{ _buttonParameters.text }}</span>
-  <button [type]="_buttonParameters.type"
-          [disabled]="_buttonParameters.disabled"
+<div class="icon-button" *ngIf="buttonParameters.view === EButtonView.Edit">
+  <span class="text-ribbon first">{{ buttonParameters.text }}</span>
+  <button [type]="buttonParameters.type"
+          [disabled]="buttonParameters.disabled"
           class="btn btn__edit">
     <img src="/assets/img/edit.svg" alt="edit-icon">
   </button>
 </div>
 
-<div class="icon-button" *ngIf="_buttonParameters.view === EButtonView.EditEmpty">
-  <button [type]="_buttonParameters.type"
-          [disabled]="_buttonParameters.disabled"
+<div class="icon-button" *ngIf="buttonParameters.view === EButtonView.EditEmpty">
+  <button [type]="buttonParameters.type"
+          [disabled]="buttonParameters.disabled"
           class="btn btn__edit-empty">
     <img src="/assets/img/edit.svg" alt="edit-icon">
   </button>
 </div>
 
-<div class="icon-button" *ngIf="_buttonParameters.view === EButtonView.Delete">
-  <button [type]="_buttonParameters.type"
-          [disabled]="_buttonParameters.disabled"
+<div class="icon-button" *ngIf="buttonParameters.view === EButtonView.Delete">
+  <button [type]="buttonParameters.type"
+          [disabled]="buttonParameters.disabled"
           class="btn btn__delete first">
     <img src="/assets/img/remove.svg" alt="delete-icon">
   </button>
-  <span class="text-ribbon">{{ _buttonParameters.text }}</span>
+  <span class="text-ribbon">{{ buttonParameters.text }}</span>
 </div>
 
-<div class="icon-button" *ngIf="_buttonParameters.view === EButtonView.DeleteEmpty">
-  <button [type]="_buttonParameters.type"
-          [disabled]="_buttonParameters.disabled"
+<div class="icon-button" *ngIf="buttonParameters.view === EButtonView.DeleteEmpty">
+  <button [type]="buttonParameters.type"
+          [disabled]="buttonParameters.disabled"
           class="btn btn__delete-empty">
     <img src="/assets/img/remove.svg" alt="delete-icon">
   </button>
 </div>
 
-<div class="icon-button" *ngIf="_buttonParameters.view === EButtonView.Download">
-  <span class="text-gray first">{{ _buttonParameters.text }}</span>
-  <button [type]="_buttonParameters.type"
-          [disabled]="_buttonParameters.disabled"
+<div class="icon-button" *ngIf="buttonParameters.view === EButtonView.Download">
+  <span class="text-gray first">{{ buttonParameters.text }}</span>
+  <button [type]="buttonParameters.type"
+          [disabled]="buttonParameters.disabled"
           class="btn btn__download">
     <img src="/assets/img/download.svg" alt="download-icon">
   </button>
 </div>
 
-<div class="gradient-button" *ngIf="_buttonParameters.view === EButtonView.Gradient">
-  <button [type]="_buttonParameters.type"
-          [disabled]="_buttonParameters.disabled"
+<div class="gradient-button" *ngIf="buttonParameters.view === EButtonView.Gradient">
+  <button [type]="buttonParameters.type"
+          [disabled]="buttonParameters.disabled"
           class="btn btn__gradient">
-    {{ _buttonParameters.text }}
+    {{ buttonParameters.text }}
   </button>
 </div>
 
 
-<div class="icon-button filter" *ngIf="_buttonParameters.view === EButtonView.Filter">
-  <button [type]="_buttonParameters.type"
-          [disabled]="_buttonParameters.disabled"
+<div class="icon-button filter" *ngIf="buttonParameters.view === EButtonView.Filter">
+  <button [type]="buttonParameters.type"
+          [disabled]="buttonParameters.disabled"
           class="btn btn__filter">
     <img src="/assets/img/icons/filter.svg" alt="filter-icon">
   </button>
 </div>
 
-<div class="icon-button filter" *ngIf="_buttonParameters.view === EButtonView.FilterClose">
-  <button [type]="_buttonParameters.type"
-          [disabled]="_buttonParameters.disabled"
+<div class="icon-button filter" *ngIf="buttonParameters.view === EButtonView.FilterClose">
+  <button [type]="buttonParameters.type"
+          [disabled]="buttonParameters.disabled"
           class="btn btn__filter-close">
     <img src="/assets/img/icons/add.svg" alt="filter-close-icon">
   </button>
 </div>
 
-<a *ngIf="_buttonParameters.view === EButtonView.Login"
-   [routerLink]="[_buttonParameters.href]"
+<a *ngIf="buttonParameters.view === EButtonView.Login"
+   [routerLink]="[buttonParameters.href]"
    class="link link__login">
   <button
-          [type]="_buttonParameters.type"
-          [disabled]="_buttonParameters.disabled"
+          [type]="buttonParameters.type"
+          [disabled]="buttonParameters.disabled"
           class="btn btn__login">
-    {{ _buttonParameters.text }}
+    {{ buttonParameters.text }}
   </button>
 </a>
 
-<a *ngIf="_buttonParameters.view === EButtonView.SignUp"
-   [routerLink]="[_buttonParameters.href]"
+<a *ngIf="buttonParameters.view === EButtonView.SignUp"
+   [routerLink]="[buttonParameters.href]"
    class="link link__sign-up">
   <button
-    [type]="_buttonParameters.type"
-    [disabled]="_buttonParameters.disabled"
+    [type]="buttonParameters.type"
+    [disabled]="buttonParameters.disabled"
     class="btn btn__sign-up">
-    {{ _buttonParameters.text }}
+    {{ buttonParameters.text }}
   </button>
 </a>
 

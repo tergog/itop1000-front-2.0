@@ -10,13 +10,13 @@ import { ILogoParameters } from '../logo.interfaces';
 })
 export class LogoComponent {
   public ELogoView = ELogoView;
-  public _logoParameters: ILogoParameters;
+  public componentParameters: ILogoParameters;
   @Input() set logoParameters(value: ILogoParameters) {
-    this._logoParameters = value;
+    this.componentParameters = value;
   }
 
   get logoParameters(): ILogoParameters {
-    return this._logoParameters;
+    return this.componentParameters;
   }
 
   rotate(event: any): void{

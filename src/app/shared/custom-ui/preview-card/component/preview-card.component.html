@@ -1,23 +1,23 @@
-<a [href]="_previewCardParameters.href">
-  <div *ngIf="_previewCardParameters.role === EPreviewCardView.Developer" class="preview-card developer">
+<a [href]="previewCardParameters.href">
+  <div *ngIf="previewCardParameters.role === EPreviewCardView.Developer" class="preview-card developer">
     <div class="preview-card__img">
-      <img [src]="'/assets/img/preview-card/' + _previewCardParameters.img" alt="preview-card">
+      <img [src]="'/assets/img/preview-card/' + previewCardParameters.img" alt="preview-card">
     </div>
     <div class="preview-card__name">
-      <span>{{ _previewCardParameters.name }}</span>
-      <span>{{ _previewCardParameters.surname }}</span>
+      <span>{{ previewCardParameters.name }}</span>
+      <span>{{ previewCardParameters.surname }}</span>
     </div>
     <div class="preview-card__rate">
-      <span>${{_previewCardParameters.rate | number:'1.2-2'}}/hr</span>
+      <span>${{previewCardParameters.rate | number:'1.2-2'}}/hr</span>
     </div>
   </div>
 
-  <div *ngIf="_previewCardParameters.role === EPreviewCardView.ProductOwner" class="preview-card owner">
+  <div *ngIf="previewCardParameters.role === EPreviewCardView.ProductOwner" class="preview-card owner">
     <div class="preview-card__img">
-      <img [src]="'/assets/img/preview-card/' + _previewCardParameters.img" alt="preview-card">
+      <img [src]="'/assets/img/preview-card/' + previewCardParameters.img" alt="preview-card">
     </div>
     <div class="preview-card__name">
-      <span>{{ _previewCardParameters.name }}</span>
+      <span>{{ previewCardParameters.name }}</span>
     </div>
   </div>
 </a>

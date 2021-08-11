@@ -2,11 +2,13 @@ export const CAddLanguageModalConfigList = {
   selects: {
     proficiency: {
       label: 'Proficiency',
-      error: 'Please, enter required data'
+      error: 'Please, enter required data',
+      view: 'proficiencies'
     },
     language: {
       label: 'Language',
-      error: 'Please, enter required data'
+      error: 'Please, enter required data',
+      view: 'languages'
     }
   },
   buttons: {

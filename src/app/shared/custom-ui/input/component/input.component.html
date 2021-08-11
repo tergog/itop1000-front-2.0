@@ -1,72 +1,72 @@
 <div class="form-item">
   <div class="item-label">
     <label>
-      {{ _inputParameters.label }}
+      {{ inputParameters.label }}
     </label>
   </div>
   <div [ngClass]="{
-        'item-money': _inputParameters.type === EInputElementType.Money,
-        'item-textarea': _inputParameters.type === EInputElementType.TextArea,
-        'item-input': _inputParameters.type !== EInputElementType.TextArea && _inputParameters.type !== EInputElementType.Money,
+        'item-money': inputParameters.type === EInputElementType.Money,
+        'item-textarea': inputParameters.type === EInputElementType.TextArea,
+        'item-input': inputParameters.type !== EInputElementType.TextArea && inputParameters.type !== EInputElementType.Money,
         focus: focus,
         invalid: validation && control!.invalid ||
                  control!.invalid && control!.touched && control!.dirty
   }">
-    <input *ngIf=" _inputParameters.type === EInputElementType.Email"
+    <input *ngIf=" inputParameters.type === EInputElementType.Email"
            class=""
-           [type]="_inputParameters.type"
-           [placeholder]="_inputParameters.placeholder"
+           [type]="inputParameters.type"
+           [placeholder]="inputParameters.placeholder"
            (input)="change($event)"
            [value]="value"
            [disabled]="disableState"
            (focusin)="focus = true"
            (focusout)="focus = false">
 
-    <input *ngIf=" _inputParameters.type === EInputElementType.Password"
+    <input *ngIf=" inputParameters.type === EInputElementType.Password"
            class=""
-           [type]="_inputParameters.type"
-           [placeholder]="_inputParameters.placeholder"
+           [type]="inputParameters.type"
+           [placeholder]="inputParameters.placeholder"
            (input)="change($event)"
            [value]="value"
            [disabled]="disableState"
            (focusin)="focus = true"
            (focusout)="focus = false">
 
-    <input *ngIf=" _inputParameters.type === EInputElementType.Text"
+    <input *ngIf=" inputParameters.type === EInputElementType.Text"
            class=""
            type="text"
-           [placeholder]="_inputParameters.placeholder"
+           [placeholder]="inputParameters.placeholder"
            (input)="change($event)"
            [value]="value"
            [disabled]="disableState"
            (focusin)="focus = true"
            (focusout)="focus = false">
 
-    <input *ngIf=" _inputParameters.type === EInputElementType.Date"
+    <input *ngIf=" inputParameters.type === EInputElementType.Date"
            class=""
            type="text"
            (click)="picker.open()"
            [matDatepicker]="picker"
            (dateChange)="changeDate($event)"
-           [placeholder]="_inputParameters.placeholder"
+           [placeholder]="inputParameters.placeholder"
            [value]="value"
            [disabled]="disableState"
            (focusin)="focus = true"
            (focusout)="focus = false">
 
-    <input *ngIf=" _inputParameters.type === EInputElementType.Money"
+    <input *ngIf=" inputParameters.type === EInputElementType.Money"
            class=""
            type="text"
-           [placeholder]="_inputParameters.placeholder"
+           [placeholder]="inputParameters.placeholder"
            (input)="changeRate($event)"
            [value]="value"
            [disabled]="disableState"
            (focusin)="focus = true"
            (focusout)="focus = false" appMoneyFormatCustomInput>
 
-    <textarea *ngIf=" _inputParameters.type === EInputElementType.TextArea"
+    <textarea *ngIf=" inputParameters.type === EInputElementType.TextArea"
               class=""
-              [placeholder]="_inputParameters.placeholder"
+              [placeholder]="inputParameters.placeholder"
               (input)="change($event)"
               [value]="value"
               [disabled]="disableState"
@@ -74,11 +74,11 @@
               (focusout)="focus = false">
     </textarea>
 
-    <div class="item-money-icon" *ngIf="_inputParameters.type === EInputElementType.Money">
+    <div class="item-money-icon" *ngIf="inputParameters.type === EInputElementType.Money">
       <mat-icon svgIcon="dollar"></mat-icon>
     </div>
 
-    <div class="item-date-icon" *ngIf="_inputParameters.type === EInputElementType.Date">
+    <div class="item-date-icon" *ngIf="inputParameters.type === EInputElementType.Date">
       <mat-icon svgIcon="calendar"></mat-icon>
     </div>
 
@@ -87,7 +87,7 @@
 
   <div class="item-error">
     <span
-      *ngIf="control!.invalid && control!.touched && control!.dirty || validation && control!.invalid">{{ _inputParameters.error }}</span>
+      *ngIf="control!.invalid && control!.touched && control!.dirty || validation && control!.invalid">{{ inputParameters.error }}</span>
   </div>
 
 </div>

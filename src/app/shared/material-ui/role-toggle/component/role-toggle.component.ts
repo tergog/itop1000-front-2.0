@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
-import { ItopDataService } from '../../../../services/itop-data/itop-data.service';
 import { ELandingRole } from '../../../../landing/landing.enums';
+import { ItopDataService } from '../../../../services/itop-data/itop-data.service';
 
 @Component({
   selector: 'app-role-toggle',
@@ -9,12 +9,13 @@ import { ELandingRole } from '../../../../landing/landing.enums';
   styleUrls: ['./role-toggle.component.scss']
 })
 export class RoleToggleComponent {
-
   public EUserRole = ELandingRole;
 
-  constructor(private landingData: ItopDataService) { }
+  constructor(private itopDataService: ItopDataService) {
+  }
 
   setRole(value: string): void{
-    this.landingData.userRole$.next(value);
+    this.itopDataService.userRole$.next(value);
+    localStorage.setItem('role', value);
   }
 }

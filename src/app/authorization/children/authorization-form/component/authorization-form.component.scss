@@ -27,7 +27,7 @@
   }
 
   .form-item:nth-child(3) {
-    justify-content: space-between;
+    justify-content: flex-end;
   }
 
   .form-item app-input {
@@ -39,11 +39,13 @@
   }
 
   .form-item a {
+    transition: 0.5s all ease;
     text-decoration: none;
     color: $white;
   }
 
   .form-item a:hover {
+    transition: 0.5s all ease;
     color: $redRibbon;
   }
 }

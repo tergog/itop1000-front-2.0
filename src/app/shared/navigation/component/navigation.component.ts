@@ -1,9 +1,8 @@
 import { Component, Input } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
 
 import { INavigationParameters } from '../navigation.interfaces';
 import { ENavigationView } from '../navigation.enums';
-import { ItopDataService } from '../../../services/itop-data/itop-data.service';
+import { EUserRole } from '../../../enums/itop.enums';
 
 @Component({
   selector: 'app-navigation',
@@ -21,11 +20,5 @@ export class NavigationComponent {
     return this.componentParameters;
   }
 
-  public landingRole$: BehaviorSubject<string>;
-
-  constructor(
-    private landingData: ItopDataService
-  ) {
-    this.landingRole$ = landingData.userRole$;
-  }
+  public landingRole: string = localStorage.getItem('role') || EUserRole.Freelancer;
 }

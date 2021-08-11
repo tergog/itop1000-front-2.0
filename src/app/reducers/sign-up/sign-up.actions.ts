@@ -4,7 +4,7 @@ import { ISignUpState } from './sign-up.interfaces';
 
 export enum signUpActionsType {
   setSignUpState = '[SIGNUP] setSignUpState',
-  editSignUpState= '[SIGNUP] editSignUpState'
+  cleanSignUpState= '[SIGNUP] cleanSignUpState'
 }
 
 export class SetSignUpStateAction implements Action {
@@ -14,11 +14,11 @@ export class SetSignUpStateAction implements Action {
   }
 }
 
-export class EditSignUpAction implements Action {
-  readonly type = signUpActionsType.editSignUpState;
+export class CleanSignUpStateAction implements Action {
+  readonly type = signUpActionsType.cleanSignUpState;
 
-  constructor(public payload: { value: string }) {
+  constructor() {
   }
 }
 
-export type SignUpActions = SetSignUpStateAction | EditSignUpAction;
+export type SignUpActions = SetSignUpStateAction | CleanSignUpStateAction;

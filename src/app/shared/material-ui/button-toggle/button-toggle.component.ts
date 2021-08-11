@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { ItopDataService } from '../../../services/itop-data/itop-data.service';
+
 import { ELandingRole } from '../../../landing/landing.enums';
+import { ItopDataService } from '../../../services/itop-data/itop-data.service';
 
 @Component({
   selector: 'app-button-toggle',
@@ -9,16 +10,16 @@ import { ELandingRole } from '../../../landing/landing.enums';
 })
 export class ButtonToggleComponent {
 
-  constructor(
-    private landingData: ItopDataService
-  ) {
+  constructor(private itopDataService: ItopDataService) {
   }
 
   setProductOwnerRole(): void {
-    this.landingData.userRole$.next(ELandingRole.ProductOwner);
+    this.itopDataService.userRole$.next(ELandingRole.ProductOwner);
+    localStorage.setItem('role', ELandingRole.ProductOwner);
   }
 
   setFreelancerRole(): void {
-    this.landingData.userRole$.next(ELandingRole.Freelancer);
+    this.itopDataService.userRole$.next(ELandingRole.Freelancer);
+    localStorage.setItem('role', ELandingRole.Freelancer);
   }
 }

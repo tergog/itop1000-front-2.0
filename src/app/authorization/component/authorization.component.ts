@@ -1,26 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { ModalSelectRoleComponent } from '../children/modal-select-role/component/modal-select-role.component';
+import { Component } from '@angular/core';
+
+import { CAuthorizationConfigList } from '../authorization.config';
 
 @Component({
   selector: 'app-authorization',
   templateUrl: './authorization.component.html',
   styleUrls: ['./authorization.component.scss']
 })
-export class AuthorizationComponent implements OnInit {
+export class AuthorizationComponent {
 
-  public logo = {
-    view: 'big'
-  };
+public authorizationConfig = CAuthorizationConfigList;
+  constructor() {}
 
-  constructor(public dialog: MatDialog) {}
-
-  ngOnInit(): void {
-    this.openDialog();
-  }
-
-
-  openDialog(): void {
-    this.dialog.open(ModalSelectRoleComponent);
-  }
 }

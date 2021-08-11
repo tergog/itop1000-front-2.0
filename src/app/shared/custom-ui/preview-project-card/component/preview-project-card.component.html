@@ -1,34 +1,34 @@
-<a [href]="_previewProjectCardParameters.href">
+<a [href]="previewProjectCardParameters.href">
 
-  <div *ngIf="_previewProjectCardParameters.role === EPreviewProjectCardView.Developer" class="preview-project-card developer">
+  <div *ngIf="previewProjectCardParameters.role === EPreviewProjectCardView.Developer" class="preview-project-card developer">
 
     <div class="preview-project-card__img">
-      <img [src]="'/assets/img/preview-project-card/' + _previewProjectCardParameters.img" alt="preview-project-logo">
+      <img [src]="'/assets/img/preview-project-card/' + previewProjectCardParameters.img" alt="preview-project-logo">
     </div>
 
     <div class="preview-project-card__company-name">
-      {{ _previewProjectCardParameters.companyName}}
+      {{ previewProjectCardParameters.companyName}}
     </div>
 
     <div class="preview-project-card__date">
-      {{ _previewProjectCardParameters.date | date: 'd MMMM' }}
+      {{ previewProjectCardParameters.date | date: 'd MMMM' }}
     </div>
 
   </div>
 
-  <div *ngIf="_previewProjectCardParameters.role === EPreviewProjectCardView.ProductOwner" class="preview-project-card owner">
+  <div *ngIf="previewProjectCardParameters.role === EPreviewProjectCardView.ProductOwner" class="preview-project-card owner">
 
     <div class="preview-project-card__img">
-      <img [src]="'/assets/img/preview-project-card/' + _previewProjectCardParameters.img" alt="preview-project-logo">
+      <img [src]="'/assets/img/preview-project-card/' + previewProjectCardParameters.img" alt="preview-project-logo">
     </div>
     <div class="preview-project-card__project-name">
-      {{ _previewProjectCardParameters.projectName }}
+      {{ previewProjectCardParameters.projectName }}
     </div>
     <div class="preview-project-card__company-name">
-      {{ _previewProjectCardParameters.companyName }}
+      {{ previewProjectCardParameters.companyName }}
     </div>
     <div class="preview-project-card__budget">
-      Budget {{ _previewProjectCardParameters.budget }} $
+      Budget {{ previewProjectCardParameters.budget }} $
     </div>
 
   </div>

@@ -1,19 +1,19 @@
 <div class="form-item">
-  <div class="item-label"  *ngIf="_searchInputParameters.view !== ESearchInputElementType.Medium">
+  <div class="item-label"  *ngIf="searchInputParameters.view !== ESearchInputElementType.Medium">
     <label [ngClass]="{ focus: focus, invalid: invalid}">
-      {{ _searchInputParameters.label }}
+      {{ searchInputParameters.label }}
     </label>
   </div>
   <div class="item-input-search" [ngClass]="{
         focus: focus,
         invalid: invalid,
-        'search-medium': _searchInputParameters.view === ESearchInputElementType.Medium
+        'search-medium': searchInputParameters.view === ESearchInputElementType.Medium
   }">
-    <ng-container *ngIf="_searchInputParameters.view === ESearchInputElementType.Big">
+    <ng-container *ngIf="searchInputParameters.view === ESearchInputElementType.Big">
       <input
         class=""
         type="text"
-        [placeholder]="_searchInputParameters.placeholder"
+        [placeholder]="searchInputParameters.placeholder"
         (input)="change($event)"
         [value]="value"
         (focusin)="focus = true"
@@ -29,11 +29,11 @@
       </mat-autocomplete>
     </ng-container>
 
-    <ng-container *ngIf="_searchInputParameters.view === ESearchInputElementType.Medium">
+    <ng-container *ngIf="searchInputParameters.view === ESearchInputElementType.Medium">
       <input
         class=""
         type="text"
-        [placeholder]="_searchInputParameters.placeholder"
+        [placeholder]="searchInputParameters.placeholder"
         (input)="change($event)"
         [value]="value"
         (focusin)="focus = true"

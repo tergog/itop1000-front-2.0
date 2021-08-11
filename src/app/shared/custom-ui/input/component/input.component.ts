@@ -19,16 +19,16 @@ export const INPUT_VALUE_ACCESSOR: any = {
 export class InputComponent implements ControlValueAccessor {
   public focus = false;
   public EInputElementType = EInputElementType;
-  public _inputParameters: IInputParameters;
+  public componentParameters: IInputParameters;
   @Input() control?: AbstractControl;
   @Input() validation?: boolean;
 
   @Input() set inputParameters(value: IInputParameters) {
-    this._inputParameters = value;
+    this.componentParameters = value;
   }
 
   get inputParameters(): IInputParameters {
-    return this._inputParameters;
+    return this.componentParameters;
   }
 
   private onChange: any;

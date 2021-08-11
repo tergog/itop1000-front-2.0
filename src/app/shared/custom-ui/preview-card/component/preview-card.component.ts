@@ -10,12 +10,12 @@ import { IPreviewCardParameters } from '../preview-card.interfaces';
 })
 export class PreviewCardComponent {
   public EPreviewCardView = EPreviewCardView;
-  public _previewCardParameters: IPreviewCardParameters;
+  public componentCardParameters: IPreviewCardParameters;
   @Input() set previewCardParameters(value: IPreviewCardParameters) {
-    this._previewCardParameters = value;
+    this.componentCardParameters = value;
   }
 
   get previewCardParameters(): IPreviewCardParameters {
-    return this._previewCardParameters;
+    return this.componentCardParameters;
   }
 }

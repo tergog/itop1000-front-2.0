@@ -1,6 +1,6 @@
 <div class="form-item">
   <div class="item-label">
-    <label>{{ _selectParameters.label }}</label>
+    <label>{{ selectParameters.label }}</label>
   </div>
   <div class="item-select">
     <mat-accordion>
@@ -20,19 +20,39 @@
                   default: selectValue === defaultSelectValue,
                   selected: selectValue !== defaultSelectValue
             }">
-            {{ selectValue }}
+            {{ value ? value : selectValue }}
             </span>
 
           </mat-panel-title>
         </mat-expansion-panel-header>
 
-        <p *ngFor="let option of value"
-           class="select-option"
-           [attr.data-value]="option"
-           (click)="setSelectValue($event)">
-          {{ option }}
-        </p>
+        <ng-container *ngIf="selectParameters.view === EStaticDataType.Categories">
+          <p *ngFor="let option of (staticData$ | ngrxPush)[selectParameters.view][userRole]"
+             class="select-option"
+             [attr.data-value]="option"
+             (click)="setSelectValue($event)">
+            {{ option }}
+          </p>
+        </ng-container>
 
+        <ng-container *ngIf="selectParameters.view === EStaticDataType.SubCategories">
+          <p *ngFor="let option of (staticData$ | ngrxPush)[selectParameters.view][subCategory]"
+             class="select-option"
+             [attr.data-value]="option"
+             (click)="setSelectValue($event)">
+            {{ option }}
+          </p>
+        </ng-container>
+
+        <ng-container
+          *ngIf="selectParameters.view !== EStaticDataType.Categories && selectParameters.view !== EStaticDataType.SubCategories">
+          <p *ngFor="let option of (staticData$ | ngrxPush)[selectParameters.view]"
+             class="select-option"
+             [attr.data-value]="option"
+             (click)="setSelectValue($event)">
+            {{ option }}
+          </p>
+        </ng-container>
       </mat-expansion-panel>
     </mat-accordion>
   </div>

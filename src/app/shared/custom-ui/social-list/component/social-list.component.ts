@@ -10,12 +10,12 @@ import { EIconView } from '../social-list.enums';
 })
 export class SocialListComponent {
   public EIconView = EIconView;
-  public _iconParameters: IIconParameters[];
+  public componentParameters: IIconParameters[];
   @Input() set iconParameters(value: IIconParameters[]) {
-    this._iconParameters = value;
+    this.componentParameters = value;
   }
 
   get iconParameters(): IIconParameters[] {
-    return this._iconParameters;
+    return this.componentParameters;
   }
 }

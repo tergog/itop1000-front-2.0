@@ -1,10 +1,10 @@
-<div class="checkbox" [ngClass]="{'not-error': _checkboxParameters.errorMessage === '' }">
+<div class="checkbox" [ngClass]="{'not-error': checkboxParameters.errorMessage === '' }">
   <mat-checkbox class="example-margin" [(ngModel)]="value" (change)="change($event)">
-    {{ _checkboxParameters.label }}
+    {{ checkboxParameters.label }}
   </mat-checkbox>
   <div class="checkbox__error">
     <span *ngIf="control!.invalid && validation">
-      {{ _checkboxParameters.errorMessage }}
+      {{ checkboxParameters.errorMessage }}
     </span>
   </div>
 </div>

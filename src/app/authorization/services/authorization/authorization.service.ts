@@ -6,16 +6,18 @@ import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
 import { getSignUpData, IState } from '../../../reducers';
-import { SetSignUpStateAction } from '../../../reducers/sign-up/sign-up.actions';
+import { CleanSignUpStateAction, SetSignUpStateAction } from '../../../reducers/sign-up/sign-up.actions';
 import { ISignUpState } from '../../../reducers/sign-up/sign-up.interfaces';
 import { CApi } from '../../../constantes/constantes';
 import { SetSignInStateAction } from '../../../reducers/sign-in/sign-in.actions';
 import { CleanUserDataAction } from '../../../reducers/user-data/user-data.actions';
+import { IStepperData, ITransformStepperData } from '../../../shared/stepper/stepper.interfaces';
+import { EUserRole } from '../../../enums/itop.enums';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthorizationDataService implements OnDestroy {
+export class AuthorizationService implements OnDestroy {
   public userData$ = this.store.select(getSignUpData);
   public userData: any;
   public unsubscribe$ = new Subject<void>();
@@ -31,15 +33,15 @@ export class AuthorizationDataService implements OnDestroy {
   }
 
   setSignUpData(signUpData: ISignUpState): void {
-    const { email, password, lastName, firstName } = signUpData;
-    const data = { email, password, lastName, firstName };
+    const { email, firstName, lastName, password, phone } = signUpData;
+    const data = { email, firstName, lastName, password, phone };
     this.store.dispatch(new SetSignUpStateAction({ data }));
   }
 
   setGoogleSignInData(data: { authCode: string }): void {
-    this.http.post(CApi.server + CApi.auth.signIn.google, { secretKey: data.authCode })
+    this.http.post<{ role: string }>(CApi.server + CApi.auth.signIn.google, { secretKey: data.authCode })
       .pipe(takeUntil(this.unsubscribe$))
-      .subscribe((res: any) => {
+      .subscribe((res): void => {
           if (res.role) {
             localStorage.setItem('role', res.role);
             this.router.navigate(['/personal-room']);
@@ -48,11 +50,11 @@ export class AuthorizationDataService implements OnDestroy {
       );
   }
 
-  setSignInData(signInData: { email: string, password: string }): void {
+  loginUser(signInData: { email: string, password: string }): void {
     const { email, password } = signInData;
-    this.http.post(CApi.server + CApi.auth.signIn.default, { email, password })
+    this.http.post<{ qrCode?: string, token: string }>(CApi.server + CApi.auth.signIn.default, { email, password })
       .pipe(takeUntil(this.unsubscribe$))
-      .subscribe((res: any): void => {
+      .subscribe((res): void => {
         if (res.qrCode) {
           this.store.dispatch(new SetSignInStateAction({ data: { qrCode: res.qrCode, token: res.token } }));
           localStorage.setItem('token', res.token);
@@ -64,24 +66,35 @@ export class AuthorizationDataService implements OnDestroy {
       });
   }
 
-  setStepperData(stepperData: any): void {
-    stepperData = Object.values(stepperData)
-      .reduce((acc: ISignUpState, item: any) => (acc = { ...acc, ...item }, acc), {} as ISignUpState);
-    let { rate } = stepperData;
-    rate = Number(rate);
-    const data = {
-      ...this.userData,
-      ...stepperData,
-      rate
-    };
-    // this.store.dispatch(new SetSignUpStateAction({ data }));
-    this.http.post(CApi.server + CApi.auth.register.freelancer, { data }).pipe().subscribe(res => console.log(res));
+  signUpUser(stepperData: IStepperData): void {
+    const data = this.transformStepperData(stepperData);
+    let userRole: string = localStorage.getItem('role') || EUserRole.Freelancer;
+    this.store.dispatch(new CleanSignUpStateAction());
+    // @ts-ignore
+    this.http.post<{ token: string, role: string }>(CApi.server + CApi.auth.register[userRole], { ...data })
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe((res): void => {
+        if (res.role) {
+          localStorage.setItem('token', res.token);
+          localStorage.setItem('role', res.role);
+          this.router.navigate(['/personal-room']);
+        }
+      });
   }
 
-  signUpUser(): Promise<{ status: boolean }> {
-    return new Promise(((resolve, reject) => {
-      resolve({ status: true });
-    }));
+  transformStepperData(stepperData: IStepperData): ITransformStepperData {
+    const transformStepperData = Object.values(stepperData)
+      .reduce((acc: IStepperData, item: any) => (acc = { ...acc, ...item }, acc), {} as IStepperData);
+    let { rate }: any = stepperData;
+    rate = Number(rate);
+    return rate ? {
+      ...this.userData,
+      ...transformStepperData,
+      rate
+    } : {
+      ...this.userData,
+      ...transformStepperData
+    };
   }
 
   logout(): void {

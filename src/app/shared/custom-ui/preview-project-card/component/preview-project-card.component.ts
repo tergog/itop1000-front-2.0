@@ -10,12 +10,12 @@ import { EPreviewProjectCardView } from '../preview-project-card.enums';
 })
 export class PreviewProjectCardComponent {
   public EPreviewProjectCardView = EPreviewProjectCardView;
-  public _previewProjectCardParameters: IPreviewProjectCardParameters;
+  public componentParameters: IPreviewProjectCardParameters;
   @Input() set previewProjectCardParameters(value: IPreviewProjectCardParameters) {
-    this._previewProjectCardParameters = value;
+    this.componentParameters = value;
   }
 
   get previewProjectCardParameters(): IPreviewProjectCardParameters {
-    return this._previewProjectCardParameters;
+    return this.componentParameters;
   }
 }

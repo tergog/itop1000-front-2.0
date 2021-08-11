@@ -3,7 +3,7 @@ import { environment } from '../../environments/environment';
 
 import { ISignUpState } from './sign-up/sign-up.interfaces';
 import { IUserDataState } from './user-data/user-data.interfaces';
-import { IStaticState } from './static/static.interfaces';
+import { ICategoriesUser, IStaticState } from './static/static.interfaces';
 import { ISignInState } from './sign-in/sign-in.interfaces';
 
 import { signUpNode, signUpReducer } from './sign-up/sign-up.reducers';
@@ -58,6 +58,41 @@ export const getUserData = createSelector(
 export const getStaticData = createSelector(
   getStaticDataState,
   staticDataSelector.selectStaticData
+);
+
+export const getLanguagesData = createSelector(
+  getStaticDataState,
+  staticDataSelector.selectLanguagesData
+);
+
+export const getFreelancerCategories = createSelector(
+  getStaticDataState,
+  staticDataSelector.selectFreelancerCategoriesData
+);
+
+export const getProductOwnerCategories = createSelector(
+  getStaticDataState,
+  staticDataSelector.selectProductOwnerCategoriesData
+);
+
+export const getOperationsData = createSelector(
+  getStaticDataState,
+  staticDataSelector.selectOperationsData
+);
+
+export const getSubCategoriesData = createSelector(
+  getStaticDataState,
+  staticDataSelector.selectSubCategoriesData
+);
+
+export const getProficienciesData = createSelector(
+  getStaticDataState,
+  staticDataSelector.selectProficienciesData
+);
+
+export const getCountriesData = createSelector(
+  getStaticDataState,
+  staticDataSelector.selectCountriesData
 );
 
 export const metaReducers: MetaReducer<IState>[] = !environment.production ? [] : [];

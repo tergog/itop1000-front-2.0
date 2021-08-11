@@ -8,12 +8,12 @@ import { IBenefitsParameters } from './benefits-card.interfaces';
   styleUrls: ['./benefits-card.component.scss']
 })
 export class BenefitsCardComponent {
-  public _benefitsCardParameters: IBenefitsParameters;
+  public componentParameters: IBenefitsParameters;
   @Input() set benefitsCardParameters(value: IBenefitsParameters) {
-    this._benefitsCardParameters = value;
+    this.componentParameters = value;
   }
 
   get benefitsCardParameters(): IBenefitsParameters {
-    return this._benefitsCardParameters;
+    return this.componentParameters;
   }
 }
