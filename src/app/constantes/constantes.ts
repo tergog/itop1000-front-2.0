@@ -43,10 +43,13 @@ export const CApi = {
   },
   data: {
     freelancer: {
-      home: 'room/freelancer/personal'
+      home: 'room/freelancer/personal',
     },
     'product-owner': {
       home: 'room/owner/personal'
+    },
+    common: {
+      secure: 'room/common/secure'
     }
   }
 };

@@ -15,7 +15,8 @@ const signUpState: IUserDataState = {
     isWork: false,
     phone: '',
     level: '',
-    rate: 0
+    rate: 0,
+    birth: 0
   },
   skills: [],
   languages: [],
@@ -46,7 +47,8 @@ export const userDataReducer = (state = signUpState, action: Action): IUserDataS
           isWork: false,
           phone: '',
           level: '',
-          rate: 0
+          rate: 0,
+          birth: 0
         },
         skills: [],
         languages: [],

@@ -33,7 +33,7 @@ export class InputComponent implements ControlValueAccessor {
 
   private onChange: any;
   private onTouched: any;
-  public value: string;
+  public value: any;
   public disableState: boolean;
 
   constructor() {

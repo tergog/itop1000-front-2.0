@@ -9,7 +9,8 @@ export interface IUserDataState {
     level: string;
     rate: number;
     phone: string;
-  },
+    birth: number;
+  };
   skills: ISkillsData[];
   languages: ILanguagesData[];
   experiences: ISignUpExperience[];

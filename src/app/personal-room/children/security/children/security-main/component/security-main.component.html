@@ -1,0 +1,86 @@
+<section class="personal">
+  <div class="personal__header personal-room-item-header text-white">
+    <span class="text-uppercase">PERSONAL and security</span>
+
+    <div class="personal-edit">
+      <a [routerLink]="['edit']">
+        <app-button [buttonParameters]="securityConfig.buttons.edit">
+        </app-button>
+      </a>
+    </div>
+
+  </div>
+
+  <div class="personal__body personal-room-item-body" *ngrxLet="personalData$; let personalData">
+    <div class="body-info">
+      <div class="info-item">
+        <span class="text-capitalize text-white">Name:</span>
+        <span
+          class="text-gray text-capitalize">{{ personalData.personal.firstName }} {{ personalData.personal.lastName }}</span>
+      </div>
+      <div class="info-item">
+
+        <span class="text-capitalize text-white">Age:</span>
+        <span class="text-gray">{{ getAge(personalData.personal.birth) }}</span>
+      </div>
+      <div class="info-item">
+
+        <span class="text-capitalize text-white">Number:</span>
+        <span class="text-gray">{{ personalData.personal.phone }}</span>
+      </div>
+      <div class="info-item">
+
+        <span class="text-capitalize text-white">E-mail:</span>
+        <span class="text-gray">{{ personalData.personal.email }}</span>
+      </div>
+      <div class="info-item">
+
+        <span class="text-capitalize text-white">Password:</span>
+        <span class="text-gray">**********</span>
+        <a [routerLink]="['edit-password']">
+          <app-button
+            [buttonParameters]="securityConfig.buttons.editEmpty">
+          </app-button>
+        </a>
+      </div>
+    </div>
+    <div class="body-photo">
+      <div class="photo-img">
+        <img [src]="personalData.personal.photo" alt="user-photo">
+      </div>
+      <div class="photo-control">
+        <app-button
+          [buttonParameters]="securityConfig.buttons.upload">
+        </app-button>
+
+        <app-button
+          [buttonParameters]="securityConfig.buttons.deletePhoto">
+        </app-button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="qr-code">
+  <div class="qr-code__header personal-room-item-header text-white text-uppercase">
+    qr-code
+  </div>
+
+  <div class="qr-code__body personal-room-item-body">
+
+    <ng-container *ngrxLet="secureData$; let secureData">
+      <img [src]="secureData.qrCode" alt="qr-code">
+    </ng-container>
+
+  </div>
+</section>
+
+<section class="delete-account">
+  <div class="delete-account__header personal-room-item-header text-white text-uppercase">
+    delete account
+  </div>
+
+  <div class="delete-account__body personal-room-item-body">
+    <app-button [buttonParameters]="securityConfig.buttons.deleteAccount"></app-button>
+  </div>
+</section>

@@ -25,18 +25,17 @@ export class HomeComponent implements OnInit, OnDestroy {
   public homeConfig = CHomeConfigList;
   public educationFormArray: FormArray;
   public unsubscribe$ = new Subject<void>();
-  public personalRoomData: Observable<IUserDataState> = this.userDataService.userData;
+  public personalRoomData$: Observable<IUserDataState> = this.userDataService.userData;
 
   constructor(
-    private formBuilder: FormBuilder,
     private userDataService: UserDataService,
     private dialog: MatDialog
   ) {
-    this.educationFormArray = this.formBuilder.array([]);
+    this.educationFormArray = new FormArray([]);
   }
 
   ngOnInit(): void {
-    this.personalRoomData.pipe(
+    this.personalRoomData$.pipe(
       takeUntil(this.unsubscribe$)
     ).subscribe(data => {
       data.educations.forEach((item: any) => {
