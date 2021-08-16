@@ -1,0 +1,42 @@
+@import "src/assets/scss/mixins";
+
+:host {
+  section {
+    border-radius: 9px;
+    overflow: hidden;
+    margin-bottom: 11px;
+    width: 100%;
+  }
+
+  .section:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.personal-edit-password {
+
+  &__body {
+    padding: 150px 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .body-title {
+      @include setFontParams($fontWorkSans, normal, 500, $subTitleLineHeight);
+      font-size: $titleFontSize;
+      margin-bottom: 15px;
+    }
+
+    .body-text {
+      @include setFontParams($fontWorkSans, normal, 300, $subTitleLineHeight);
+      font-size: $bigTextFontSize;
+      margin-bottom: 36px;
+    }
+
+    .body-link a {
+      @include setFontParams($fontRaleway, normal, 500, $subTitleLineHeight);
+      font-size: $bigTextFontSize;
+      color: $creamCan;
+    }
+  }
+}

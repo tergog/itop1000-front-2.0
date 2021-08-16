@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 import { SecurityPasswordStepperService } from '../../../services/security-password-stepper/security-password-stepper.service';
@@ -8,14 +8,10 @@ import { SecurityPasswordStepperService } from '../../../services/security-passw
   templateUrl: './security-edit-password.component.html',
   styleUrls: ['./security-edit-password.component.scss']
 })
-export class SecurityEditPasswordComponent implements OnInit {
+export class SecurityEditPasswordComponent {
   public step$: BehaviorSubject<number>;
 
   constructor(private securityPasswordStepperService: SecurityPasswordStepperService) {
     this.step$ = this.securityPasswordStepperService.editPasswordSteps$;
   }
-
-  ngOnInit(): void {
-  }
-
 }

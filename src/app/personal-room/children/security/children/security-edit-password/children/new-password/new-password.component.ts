@@ -2,15 +2,14 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormControl, FormGroup } from '@angular/forms';
 import { BehaviorSubject, Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
 import { SecurityPasswordStepperService } from '../../../../services/security-password-stepper/security-password-stepper.service';
 import { CSecurityEditPasswordConfigList } from '../../security-edit-password.config';
 import { PersonalSecurityService } from '../../../../services/personal-security/personal-security.service';
 import {
-  confirmPasswordValidator,
   passwordMatchValidator
 } from '../../../../../../../authorization/services/authorization-validation/authorization-validation.service';
-import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-new-password',
@@ -45,7 +44,7 @@ export class NewPasswordComponent implements OnInit, OnDestroy {
         .pipe(takeUntil(this.unsubscribe$))
         .subscribe((res: { message: string }) => {
           if (res.message === 'ok') {
-            this.router.navigate(['/personal-room/security']);
+            this.securityPasswordStepperService.editPasswordSteps$.next(3);
           }
         });
     }
@@ -53,6 +52,7 @@ export class NewPasswordComponent implements OnInit, OnDestroy {
 
   cancelChangePassword(): void {
     this.router.navigate(['/personal-room/security']);
+    this.securityPasswordStepperService.editPasswordSteps$.next(0);
   }
 
   ngOnDestroy(): void {

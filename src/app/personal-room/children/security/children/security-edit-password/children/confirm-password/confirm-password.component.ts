@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormControl, FormGroup } from '@angular/forms';
 import { BehaviorSubject, Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
 import { SecurityPasswordStepperService } from '../../../../services/security-password-stepper/security-password-stepper.service';
 import { CSecurityEditPasswordConfigList } from '../../security-edit-password.config';
 import { PersonalSecurityService } from '../../../../services/personal-security/personal-security.service';
-import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-confirm-password',

@@ -1,0 +1,12 @@
+:host {
+  section {
+    border-radius: 9px;
+    overflow: hidden;
+    margin-bottom: 11px;
+    width: 100%;
+  }
+
+  .section:last-child {
+    margin-bottom: 0;
+  }
+}

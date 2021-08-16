@@ -1,0 +1,54 @@
+:host {
+  section {
+    border-radius: 9px;
+    overflow: hidden;
+    margin-bottom: 11px;
+    width: 100%;
+  }
+
+  .section:last-child {
+    margin-bottom: 0;
+  }
+
+  ::ng-deep{
+    .mat-datepicker-content .mat-calendar{
+      height: auto !important;
+    }
+  }
+}
+
+
+.personal-edit {
+  &__body {
+    padding: 25px 220px 45px 220px;
+
+    .security-edit-item {
+      display: flex;
+      align-items: center;
+
+      app-input {
+        width: 100%;
+      }
+    }
+
+    .security-edit-item:nth-child(3) {
+      justify-content: space-between;
+
+      app-input {
+        width: 30%;
+      }
+
+      app-input:first-child {
+        width: 25%
+      }
+
+      app-input:last-child {
+        width: 41%
+      }
+    }
+
+    .security-edit-item:last-child {
+      justify-content: space-evenly;
+    }
+  }
+}

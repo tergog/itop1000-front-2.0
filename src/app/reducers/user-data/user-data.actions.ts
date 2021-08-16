@@ -1,6 +1,6 @@
 import { Action } from '@ngrx/store';
 
-import { IUserDataState } from './user-data.interfaces';
+import { IUserDataState, IUserPersonalSecurityDataState } from './user-data.interfaces';
 
 export enum userDataActionsType {
   setUserData = '[USERDATA] setUserData',
@@ -18,7 +18,7 @@ export class SetUserDataAction implements Action {
 export class EditUserDataAction implements Action {
   readonly type = userDataActionsType.editUserData;
 
-  constructor(public payload: { value: string }) {
+  constructor(public payload: { data: IUserPersonalSecurityDataState }) {
   }
 }
 

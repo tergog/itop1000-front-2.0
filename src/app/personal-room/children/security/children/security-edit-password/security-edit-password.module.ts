@@ -10,13 +10,15 @@ import { ReactiveComponentModule } from '@ngrx/component';
 import { CustomUiModule } from '../../../../../shared/custom-ui/custom-ui.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { InputAuthenticationModule } from '../../../../../shared/custom-ui/input-authentication/input-authentication.module';
+import { CongratulationsComponent } from './children/congratulations/congratulations.component';
 
 @NgModule({
   declarations: [
     SecurityEditPasswordComponent,
     ConfirmPasswordComponent,
     AuthenticationComponent,
-    NewPasswordComponent
+    NewPasswordComponent,
+    CongratulationsComponent
   ],
   imports: [
     CommonModule,

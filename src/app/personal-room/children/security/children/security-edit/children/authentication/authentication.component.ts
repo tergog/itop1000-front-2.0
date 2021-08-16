@@ -2,10 +2,10 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { BehaviorSubject, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
-import { SecurityPasswordStepperService } from '../../../../services/security-password-stepper/security-password-stepper.service';
-import { CSecurityEditPasswordConfigList } from '../../security-edit-password.config';
 import { PersonalSecurityService } from '../../../../services/personal-security/personal-security.service';
+import { SecurityInfoStepperService } from '../../../../services/security-info-stepper/security-info-stepper.service';
 
 @Component({
   selector: 'app-authentication',
@@ -15,30 +15,33 @@ import { PersonalSecurityService } from '../../../../services/personal-security/
 export class AuthenticationComponent implements OnInit, OnDestroy {
   public unsubscribe$: Subject<void> = new Subject<void>();
   public step$: BehaviorSubject<number>;
-  public securityEditConfig = CSecurityEditPasswordConfigList;
-  public authenticationPasswordGroup: FormGroup;
+  public authenticationInfoGroup: FormGroup;
 
   constructor(
-    private securityPasswordStepperService: SecurityPasswordStepperService,
-    public personalSecurityService: PersonalSecurityService
+    private securityInfoStepperService: SecurityInfoStepperService,
+    public personalSecurityService: PersonalSecurityService,
+    public router: Router
   ) {
-    this.step$ = this.securityPasswordStepperService.editPasswordSteps$;
   }
 
   ngOnInit(): void {
-    this.authenticationPasswordGroup = new FormGroup({
+    this.authenticationInfoGroup = new FormGroup({
       secretKey: new FormControl('', [Validators.minLength(6)])
     });
 
-    this.authenticationPasswordGroup.statusChanges
+    this.authenticationInfoGroup.statusChanges
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe(status => {
         if (status === 'VALID') {
-          this.personalSecurityService.authenticationNewPassword(this.authenticationPasswordGroup.value)
+          this.personalSecurityService.authenticationNewInfo(this.authenticationInfoGroup.value)
             .pipe(takeUntil(this.unsubscribe$))
             .subscribe((res: { message: string }) => {
               if (res.message === 'ok') {
-                this.securityPasswordStepperService.editPasswordSteps$.next(2);
+                const newInfo = this.securityInfoStepperService.editInfoData!;
+                this.personalSecurityService.setNewInfoToStore(newInfo);
+                this.securityInfoStepperService.editInfoSteps$.next(0);
+                this.securityInfoStepperService.editInfoData$.next(null);
+                this.router.navigate(['/personal-room/home']);
               }
             });
         }
@@ -49,5 +52,8 @@ export class AuthenticationComponent implements OnInit, OnDestroy {
     this.unsubscribe$.next();
     this.unsubscribe$.complete();
   }
-
 }
+
+
+
+

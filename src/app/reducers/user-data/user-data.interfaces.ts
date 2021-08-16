@@ -17,6 +17,14 @@ export interface IUserDataState {
   educations: IEducationData[];
 }
 
+export interface IUserPersonalSecurityDataState {
+  firstName: string;
+  lastName: string;
+  phone: string;
+  birth: number;
+  email: string;
+}
+
 export interface ISkillsData {
   name: string;
   mark: number;
@@ -28,7 +36,7 @@ export interface ILanguagesData {
 }
 
 export interface IEducationData {
-  id: 2,
+  // id: 2;
   name: string;
   speciality: string;
   description: string;

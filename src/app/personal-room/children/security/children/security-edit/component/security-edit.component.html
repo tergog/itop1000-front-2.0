@@ -1,45 +1,12 @@
-<section class="personal-edit">
-  <div class="personal-edit__header personal-room-item-header text-white">
-    Edit
-  </div>
+<ng-container *ngrxLet="step$; let step">
 
-  <div class="personal-edit__body personal-room-item-body">
-    <form action="" [formGroup]="securityEditGroup">
-      <div class="security-edit-item">
-        <app-input
-          formControlName="firstName"
-          [control]="securityEditGroup.controls.firstName"
-          [inputParameters]="securityConfig.inputs.firstName"></app-input>
-      </div>
+  <ng-container *ngIf="step === 0">
+    <app-edit-form></app-edit-form>
+  </ng-container>
 
-      <div class="security-edit-item">
-        <app-input
-          formControlName="lastName"
-          [control]="securityEditGroup.controls.lastName"
-          [inputParameters]="securityConfig.inputs.lastName"></app-input>
-      </div>
+  <ng-container  *ngIf="step === 1">
+    <app-authentication></app-authentication>
+  </ng-container>
 
-      <div class="security-edit-item">
-        <app-input
-          formControlName="age"
-          [control]="securityEditGroup.controls.age"
-          [inputParameters]="securityConfig.inputs.date"></app-input>
-        <app-input
-          formControlName="phone"
-          [control]="securityEditGroup.controls.phone"
-          [inputParameters]="securityConfig.inputs.phone"></app-input>
-        <app-input
-          formControlName="email"
-          [control]="securityEditGroup.controls.email"
-          [inputParameters]="securityConfig.inputs.email"></app-input>
-      </div>
+</ng-container>
 
-      <div class="security-edit-item">
-        <a [routerLink]="['../']">
-          <app-button [buttonParameters]="securityConfig.buttons.back"></app-button>
-        </a>
-        <app-button [buttonParameters]="securityConfig.buttons.confirm"></app-button>
-      </div>
-    </form>
-  </div>
-</section>

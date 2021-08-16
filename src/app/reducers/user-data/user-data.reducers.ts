@@ -34,7 +34,11 @@ export const userDataReducer = (state = signUpState, action: Action): IUserDataS
       };
     case userDataActionsType.editUserData:
       return {
-        ...state
+        ...state,
+        personal: {
+          ...state.personal,
+          ...userDataActions.payload.data
+        }
       };
     case userDataActionsType.cleanUserData:
       return {

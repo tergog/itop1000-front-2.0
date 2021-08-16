@@ -32,7 +32,7 @@ export const CSecurityConfigList = {
     },
     confirm: {
       text: 'Confirm',
-      type: '',
+      type: 'submit',
       view: 'medium',
       disabled: false
     },
