@@ -13,7 +13,10 @@ import { takeUntil } from 'rxjs/operators';
 export class AuthenticationComponent implements OnDestroy{
   public unsubscribe$ = new Subject<void>();
   public readonly authenticationForm: FormGroup = new FormGroup({
-    authCode: new FormControl('', [Validators.required, Validators.minLength(6)])
+    authCode: new FormControl(
+      '',
+      [Validators.required, Validators.minLength(6)]
+    )
   });
 
   constructor(private authorizationData: AuthorizationService) {

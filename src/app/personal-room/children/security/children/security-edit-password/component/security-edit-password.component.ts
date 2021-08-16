@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
-import { SecurityPasswordStepperService } from '../services/security-password-stepper/security-password-stepper.service';
+import { SecurityPasswordStepperService } from '../../../services/security-password-stepper/security-password-stepper.service';
 
 @Component({
   selector: 'app-security-edit-password',

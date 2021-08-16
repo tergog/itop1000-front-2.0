@@ -35,9 +35,9 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.personalRoomData$.pipe(
-      takeUntil(this.unsubscribe$)
-    ).subscribe(data => {
+    this.personalRoomData$
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe(data => {
       data.educations.forEach((item: any) => {
         (this.educationFormArray as FormArray).push(new FormControl(item));
       });

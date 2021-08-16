@@ -25,6 +25,6 @@ export class QrCodeComponent {
   }
 
   goToAuthentication(): void {
-    this.router.navigate(['/authorization/authentication'])
+    this.router.navigate(['/authorization/authentication']);
   }
 }

@@ -28,7 +28,7 @@ export const CSecurityEditPasswordConfigList = {
   buttons: {
     confirm: {
       text: 'Confirm',
-      type: '',
+      type: 'submit',
       view: 'medium',
       disabled: false
     },

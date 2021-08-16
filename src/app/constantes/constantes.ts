@@ -49,7 +49,10 @@ export const CApi = {
       home: 'room/owner/personal'
     },
     common: {
-      secure: 'room/common/secure'
+      secure: 'room/common/secure',
+      password: 'room/common/secure/password',
+      authPassword: 'room/common/secure/password',
+      confirmPassword: 'room/common/secure/password/confirm'
     }
   }
 };
