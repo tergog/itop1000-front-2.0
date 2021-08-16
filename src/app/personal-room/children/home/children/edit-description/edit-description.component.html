@@ -1,0 +1,33 @@
+<section class="description">
+  <div class="description__header personal-room-item-header text-white text-uppercase">
+    description
+
+    <div class="description-edit">
+      <app-button [mat-dialog-close]="false"
+        [buttonParameters]="homeConfig.buttons.close">
+      </app-button>
+    </div>
+  </div>
+
+  <div class="description__body personal-room-item-body">
+    <div class="body-item text-white">
+      <form action="" [formGroup]="descriptionFormGroup" (submit)="onSubmit()">
+        <div class="form-item">
+          <app-input
+            formControlName="description"
+            [control]="descriptionFormGroup.controls.description"
+            [inputParameters]="homeConfig.inputs.description">
+          </app-input>
+        </div>
+        <div class="form-item">
+          <app-button [mat-dialog-close]="false"
+            [buttonParameters]="homeConfig.buttons.cancel">
+          </app-button>
+          <app-button [mat-dialog-close]="true"
+            [buttonParameters]="homeConfig.buttons.confirm">
+          </app-button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

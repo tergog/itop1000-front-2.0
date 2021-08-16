@@ -26,6 +26,25 @@
     </div>
   </section>
 
+  <section class="description">
+    <div class="description__header personal-room-item-header text-white text-uppercase">
+      description
+
+      <div class="description-edit">
+        <app-button
+          (click)="openEditDescriptionModal()"
+          [buttonParameters]="homeConfig.buttons.edit">
+        </app-button>
+      </div>
+    </div>
+
+    <div class="description__body personal-room-item-body">
+      <div class="body-item text-white">
+        {{ userData.personal.description }}
+      </div>
+    </div>
+  </section>
+
   <section class="skills">
     <div class="skills__header personal-room-item-header text-white text-uppercase">
       Hard Skills

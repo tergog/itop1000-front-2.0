@@ -7,10 +7,14 @@ import { CustomUiModule } from '../../../shared/custom-ui/custom-ui.module';
 import { ProgressModule } from '../../../shared/material-ui/progress/progress.module';
 import { LanguageModule } from '../../../shared/custom-ui/language/language.module';
 import { ReactiveComponentModule } from '@ngrx/component';
+import { EditDescriptionComponent } from './children/edit-description/edit-description.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
-    HomeComponent
+    HomeComponent,
+    EditDescriptionComponent
   ],
   imports: [
     CommonModule,
@@ -18,7 +22,9 @@ import { ReactiveComponentModule } from '@ngrx/component';
     CustomUiModule,
     ProgressModule,
     LanguageModule,
-    ReactiveComponentModule
+    ReactiveComponentModule,
+    ReactiveFormsModule,
+    MatDialogModule
   ],
   exports: [
     HomeComponent

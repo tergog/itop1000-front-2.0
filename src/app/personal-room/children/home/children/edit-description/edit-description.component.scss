@@ -1,0 +1,47 @@
+@import "src/assets/scss/mixins";
+
+:host {
+  section {
+    min-width: 1076px;
+    border-radius: 9px;
+    overflow: hidden;
+    margin-bottom: 11px;
+    width: 100%;
+  }
+
+  section:last-child {
+    margin-bottom: 0;
+  }
+}
+
+::ng-deep {
+  .mat-dialog-container {
+    padding: 0;
+    background: none;
+  }
+}
+
+
+.description {
+
+  &__header {
+    position: relative;
+
+    .description-edit {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+    }
+  }
+
+  &__body {
+    box-sizing: border-box;
+    .form-item:last-child {
+      display: flex;
+      justify-content: space-evenly;
+      margin-top: 69px;
+    }
+  }
+}
+
+

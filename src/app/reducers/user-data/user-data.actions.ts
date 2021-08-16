@@ -5,6 +5,7 @@ import { IUserDataState, IUserPersonalSecurityDataState } from './user-data.inte
 export enum userDataActionsType {
   setUserData = '[USERDATA] setUserData',
   editUserData = '[USERDATA] editUserData',
+  editUserDescriptionData = '[USERDATA] editUserDescriptionData',
   cleanUserData = '[USERDATA] cleanUserData'
 }
 
@@ -22,6 +23,13 @@ export class EditUserDataAction implements Action {
   }
 }
 
+export class EditUserDescriptionDataAction implements Action {
+  readonly type = userDataActionsType.editUserDescriptionData;
+
+  constructor(public payload: { description: string }) {
+  }
+}
+
 export class CleanUserDataAction implements Action {
   readonly type = userDataActionsType.cleanUserData;
 
@@ -29,4 +37,4 @@ export class CleanUserDataAction implements Action {
   }
 }
 
-export type UserDataActions = SetUserDataAction | EditUserDataAction | CleanUserDataAction;
+export type UserDataActions = SetUserDataAction | EditUserDataAction | CleanUserDataAction | EditUserDescriptionDataAction;

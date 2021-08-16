@@ -1,6 +1,6 @@
 @import "src/assets/scss/mixins";
 
-::ng-deep {
+:host ::ng-deep {
   .mat-dialog-container {
     width: 715px;
     max-width: 715px;

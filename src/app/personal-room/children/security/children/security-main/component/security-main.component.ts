@@ -14,7 +14,7 @@ import { UserDataService } from '../../../../../../services/user-data/user-data.
 export class SecurityMainComponent implements OnInit {
   public securityConfig = CSecurityConfigList;
   public secureData$: Observable<IUserDataSecure> = this.userDataService.getFreelancerSecureData();
-  public personalData$: Observable<IUserDataState> = this.userDataService.userData;
+  public personalData$: Observable<IUserDataState> = this.userDataService.userData$;
 
   constructor(private userDataService: UserDataService) {
   }

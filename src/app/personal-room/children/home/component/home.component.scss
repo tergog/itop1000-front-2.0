@@ -13,6 +13,7 @@
   }
 }
 
+
 // =================================================== Personal ============================================
 .personal {
   width: 100%;
@@ -34,7 +35,8 @@
         border-radius: 50%;
         background: $mineShaft;
         margin-right: 22px;
-        img{
+
+        img {
           max-width: 116px;
           max-height: 116px;
           border-radius: 50%;
@@ -81,6 +83,27 @@
         }
       }
     }
+  }
+}
+
+// ================================================ Description ==========================================
+
+.description {
+
+  &__header {
+    position: relative;
+
+    .description-edit {
+      position: absolute;
+      top: 23px;
+      right: 20px;
+      text-transform: capitalize;
+    }
+  }
+
+  &__body {
+      @include setFontParams($fontRaleway, normal, 200, $subTitleLineHeight);
+      font-size: $smallTextFontSize;
   }
 }
 

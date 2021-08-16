@@ -19,7 +19,7 @@ export class LanguageComponent implements OnDestroy {
   public languageConfig = CLanguageConfigList;
   public unsubscribe$ = new Subject<void>();
   public languageArray: FormArray;
-  public personalRoomData: Observable<IUserDataState> = this.userDataService.userData;
+  public personalRoomData$: Observable<IUserDataState> = this.userDataService.userData$;
 
   constructor(
     private dialog: MatDialog,
@@ -27,7 +27,7 @@ export class LanguageComponent implements OnDestroy {
     private formBuilder: FormBuilder
   ) {
     this.languageArray = this.formBuilder.array([]);
-    this.personalRoomData
+    this.personalRoomData$
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe(data => {
         data.languages.forEach(language => {

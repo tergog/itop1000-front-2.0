@@ -18,7 +18,7 @@ export class EditFormComponent implements OnInit, OnDestroy {
   public unsubscribe$: Subject<void> = new Subject();
   public securityConfig = CSecurityConfigList;
   public securityEditGroup: FormGroup;
-  public personalData$: Observable<IUserDataState> = this.userDataService.userData;
+  public personalData$: Observable<IUserDataState> = this.userDataService.userData$;
   public personalData: IUserDataState;
 
   constructor(

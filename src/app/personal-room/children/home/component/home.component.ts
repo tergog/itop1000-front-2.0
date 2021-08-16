@@ -12,6 +12,7 @@ import { CHomeConfigList } from '../home.config';
 import { EProgressType } from '../../../../shared/material-ui/progress/progress.enums';
 import { UserDataService } from '../../../../services/user-data/user-data.service';
 import { IUserDataState } from '../../../../reducers/user-data/user-data.interfaces';
+import { EditDescriptionComponent } from '../children/edit-description/edit-description.component';
 
 @Component({
   selector: 'app-home',
@@ -25,7 +26,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   public homeConfig = CHomeConfigList;
   public educationFormArray: FormArray;
   public unsubscribe$ = new Subject<void>();
-  public personalRoomData$: Observable<IUserDataState> = this.userDataService.userData;
+  public personalRoomData$: Observable<IUserDataState> = this.userDataService.userData$;
 
   constructor(
     private userDataService: UserDataService,
@@ -92,6 +93,14 @@ export class HomeComponent implements OnInit, OnDestroy {
           (this.educationFormArray as FormArray).removeAt(id);
         }
       });
+  }
+
+  openEditDescriptionModal(): void{
+    this.dialog.open(EditDescriptionComponent, {
+      data: {
+        description: this.userDataService.userData.personal.description
+      }
+    });
   }
 
   ngOnDestroy(): void {
