@@ -34,7 +34,8 @@ export class SvgServiceService {
     'arrow-down',
     'arrow-down-select',
     'notification',
-    'notification-active'
+    'notification-active',
+    'error'
   ];
 
   constructor(

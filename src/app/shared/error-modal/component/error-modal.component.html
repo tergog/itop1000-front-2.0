@@ -1,0 +1,15 @@
+<div class="error-modal" *ngrxLet="errorModalState$; let modalState" [ngClass]="{show: modalState , hide: !modalState}">
+  <div class="error-modal-logo">
+    <img src="/assets/img/icons/error.svg" alt="icon-warning"><span>Warning</span>
+  </div>
+
+  <div class="error-modal-title text-white">
+    {{ errorModalContent$ | ngrxPush }}
+  </div>
+
+  <div *ngIf="EErrorModalView.Action === (errorModalView$| ngrxPush)" class="error-modal-action">
+    <app-button [buttonParameters]="errorModalConfig.buttons.decline"></app-button>
+    <app-button [buttonParameters]="errorModalConfig.buttons.accept"></app-button>
+  </div>
+</div>
+

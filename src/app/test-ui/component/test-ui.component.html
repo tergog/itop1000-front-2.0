@@ -56,9 +56,9 @@
 <hr>
 <app-button [appTooltip]="tooltipParameters"
             [buttonParameters]="objButtonParameters.big"
-(click)="tooltipShow()">
+(click)="tooltipShow(); errorModalHide()">
 </app-button>
-<app-button [buttonParameters]="objButtonParameters.medium"></app-button>
+<app-button [buttonParameters]="objButtonParameters.medium" (click)="errorModalShow()"></app-button>
 <app-button [buttonParameters]="objButtonParameters.disable"></app-button>
 <app-button [buttonParameters]="objButtonParameters.smallFill"></app-button>
 <app-button [buttonParameters]="objButtonParameters.smallEmpty"></app-button>

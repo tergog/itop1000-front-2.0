@@ -8,10 +8,13 @@ import { NavigationModule } from './navigation/navigation.module';
 import { LandingGuideComponent } from './landing-guide/component/landing-guide.component';
 import { FooterModule } from './footer/footer.module';
 import { ReactiveComponentModule } from '@ngrx/component';
+import { ErrorModalComponent } from './error-modal/component/error-modal.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
-    LandingGuideComponent
+    LandingGuideComponent,
+    ErrorModalComponent
   ],
   imports: [
     CommonModule,
@@ -19,7 +22,9 @@ import { ReactiveComponentModule } from '@ngrx/component';
     HeaderModule,
     MaterialUiModule,
     NavigationModule,
-    FooterModule
+    FooterModule,
+    ReactiveComponentModule,
+    MatIconModule
   ],
   exports: [
     CustomUiModule,
@@ -27,7 +32,8 @@ import { ReactiveComponentModule } from '@ngrx/component';
     MaterialUiModule,
     NavigationModule,
     LandingGuideComponent,
-    FooterModule
+    FooterModule,
+    ErrorModalComponent
   ]
 })
 export class SharedModule {

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ErrorModalService } from '../../services/error-modal/error-modal.service';
 
 @Component({
   selector: 'app-test-ui',
@@ -346,7 +347,21 @@ export class TestUiComponent {
     },
   };
 
+  constructor(public errorModalService: ErrorModalService) {
+
+
+  }
+
+
   tooltipShow(): void {
     this.tooltipParameters.status = true;
+  }
+
+  errorModalHide(): void{
+    this.errorModalService.errorModalState$.next(false);
+  }
+
+  errorModalShow(): void{
+    this.errorModalService.errorModalState$.next(true);
   }
 }

@@ -1,0 +1,55 @@
+@import "src/assets/scss/mixins";
+
+:host {
+  position: fixed;
+  top: 224px;
+  right: 0;
+}
+
+.error-modal {
+  box-sizing: border-box;
+  background: $mineShaft;
+  padding: 16px 18px 24px 31px;
+  border-left: 8px solid $guardsmanRed;
+  border-radius: 10px 0px 0px 10px;
+  min-width: 406px;
+  max-width: 406px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &-logo {
+    color: $scarlet;
+    @include setFontParams($fontRaleway, normal, 700, $subTitleLineHeight);
+    font-size: $bigTextFontSize;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+
+    img{
+      margin-right: 10px;
+    }
+  }
+
+  &-title {
+    @include setFontParams($fontRaleway, normal, 400, $subTitleLineHeight);
+    font-size: $bigTextFontSize;
+  }
+
+  &-action {
+    margin-top: 34px;
+
+  }
+}
+
+.error-modal.show {
+  margin-right: 0;
+  transition: 0.5s all ease-in-out;
+  transition-delay: 0.2s;
+}
+
+.error-modal.hide {
+  margin-right: -406px;
+  transition: 0.5s all ease-in-out;
+  transition-delay: 0.2s;
+}
