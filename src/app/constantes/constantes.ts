@@ -56,7 +56,8 @@ export const CApi = {
       authPassword: 'room/common/secure/password',
       confirmPassword: 'room/common/secure/password/confirm',
       info: 'room/common/secure/personal',
-      authInfo: 'room/common/secure/personal'
+      authInfo: 'room/common/secure/personal',
+      language: 'room/common/personal/language'
     }
   }
 };

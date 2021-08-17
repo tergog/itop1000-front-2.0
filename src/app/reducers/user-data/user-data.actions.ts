@@ -1,11 +1,13 @@
 import { Action } from '@ngrx/store';
 
-import { IUserDataState, IUserPersonalSecurityDataState } from './user-data.interfaces';
+import { ILanguagesData, IUserDataState, IUserPersonalSecurityDataState } from './user-data.interfaces';
 
 export enum userDataActionsType {
   setUserData = '[USERDATA] setUserData',
   editUserData = '[USERDATA] editUserData',
   editUserDescriptionData = '[USERDATA] editUserDescriptionData',
+  addNewLanguage = '[USERDATA] addNewLanguage',
+  deleteLanguage = '[USERDATA] deleteLanguage',
   cleanUserData = '[USERDATA] cleanUserData'
 }
 
@@ -37,4 +39,23 @@ export class CleanUserDataAction implements Action {
   }
 }
 
-export type UserDataActions = SetUserDataAction | EditUserDataAction | CleanUserDataAction | EditUserDescriptionDataAction;
+export class AddNewLanguageAction implements Action {
+  readonly type = userDataActionsType.addNewLanguage;
+
+  constructor(public payload: ILanguagesData) {
+  }
+}
+
+export class DeleteLanguageAction implements Action {
+  readonly type = userDataActionsType.deleteLanguage;
+
+  constructor(public payload: { index: number }) {
+  }
+}
+
+export type UserDataActions = SetUserDataAction |
+  EditUserDataAction |
+  CleanUserDataAction |
+  EditUserDescriptionDataAction |
+  DeleteLanguageAction |
+  AddNewLanguageAction;

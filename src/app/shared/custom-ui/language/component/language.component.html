@@ -7,7 +7,7 @@
       </div>
       <div class="language__item-remove">
         <app-button
-          (click)="removeLanguage(i)"
+          (click)="removeLanguageModal(i)"
           [buttonParameters]="languageConfig.buttons.remove">
         </app-button>
       </div>
@@ -15,7 +15,7 @@
   </div>
   <div class="language__add">
     <app-button
-      (click)="openAddExperienceModal()"
+      (click)="openAddLanguageModal()"
       [buttonParameters]="languageConfig.buttons.add">
     </app-button>
   </div>

@@ -5,7 +5,7 @@
 <circle cx="39" cy="39" r="35.5" stroke="currentColor" stroke-width="7"/>
 <defs>
 <clipPath id="clip0">
-<rect width="28" height="28" fill="white" transform="translate(25 27)"/>
+<rect width="28" height="28" fill="currentColor" transform="translate(25 27)"/>
 </clipPath>
 </defs>
 </svg>

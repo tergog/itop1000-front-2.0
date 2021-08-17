@@ -48,6 +48,21 @@ export const userDataReducer = (state = signUpState, action: Action): IUserDataS
           description: userDataActions.payload.description
         }
       };
+    case userDataActionsType.addNewLanguage:
+      return {
+        ...state,
+        languages: [
+          ...state.languages,
+          userDataActions.payload
+        ]
+      };
+    case userDataActionsType.deleteLanguage:
+      const newLanguageArray = [...state.languages];
+      newLanguageArray.splice(userDataActions.payload.index, 1);
+      return {
+        ...state,
+        languages: newLanguageArray
+      };
     case userDataActionsType.cleanUserData:
       return {
         personal: {
